@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Algorithmes · Corrigé · Exercice 1.2 — factorielle</title>
+<meta name="description" content="Algorithmes — Exercice 1.2 — factorielle (Le factoriel d&#x27;un nombre (n!))">
+<link rel="icon" href="../../../assets/favicon.svg?v=012e46bcde" type="image/svg+xml">
+<script>try{var t=localStorage.getItem("maison:theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css"><script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script><script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/c.min.js"></script>
+<link rel="stylesheet" href="../../../assets/styles.css?v=012e46bcde">
+<style>:root{}@media (prefers-color-scheme:dark){:root:not([data-theme=light]){}}:root[data-theme=dark]{}</style>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+
+<script defer src="../../../assets/maison.js?v=012e46bcde"></script>
+</head>
+<body class="page-resume" style="--piece:#475569" data-cle="E2-ALGO/exercices/ex1-2-factorielle" data-sections='["concept-de-base", "types-entiers-pourquoi-uint32-t-uint64-t-llu", "a-iteration-la-boucle-for", "b-recursion-la-fonction-s-appelle-elle-meme", "c-lut-la-table-de-valeurs-preprocesseur", "main-les-trois-boucles", "sortie-attendue-extraits", "comparaison-des-trois-approches", "recapitulatif", "compilation"]' data-url-racine="pieces/e2-algo/exercices/ex1-2-factorielle.html" data-titre="Algorithmes · Corrigé · Exercice 1.2 — factorielle">
+<a class="evitement" href="#contenu">Aller au contenu</a>
+
+<header class="barre">
+  <nav class="ariane" aria-label="Fil d'Ariane">
+    <a href="../../../index.html"><svg class="icone-ariane" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 12 4l9 7"/><path d="M5 9.5V20h14V9.5"/><path d="M10 20v-6h4v6"/></svg><span>Maison</span></a><span class="sep" aria-hidden="true">›</span>
+    <a href="../index.html">Algorithmes</a><span class="sep" aria-hidden="true">›</span>
+    <span aria-current="page">Corrigé · Exercice 1.2 — factorielle</span>
+  </nav>
+  <div class="barre-actions">
+    
+    
+    <button type="button" class="btn-icone" data-theme-bascule aria-label="Basculer clair / sombre"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 4a8 8 0 0 1 0 16z" fill="currentColor"/></svg></button>
+  </div>
+</header>
+<div class="cadre">
+  <aside class="sommaire" aria-label="Sommaire">
+    <details class="sommaire-details" open>
+      <summary><span>Sommaire</span><span class="sommaire-prog" data-progression-texte>0 / 10</span></summary>
+      <ol class="sommaire-liste"><li data-cible="concept-de-base"><div class="sommaire-ligne"><a href="#concept-de-base"><span class="num num-vide">·</span>Concept de base</a><label class="revise-mini" title="Marquer « Concept de base » comme révisé"><input type="checkbox" data-section="concept-de-base" aria-label="Révisé : Concept de base"><span class="revise-coche" aria-hidden="true"></span></label></div></li><li data-cible="types-entiers-pourquoi-uint32-t-uint64-t-llu"><div class="sommaire-ligne"><a href="#types-entiers-pourquoi-uint32-t-uint64-t-llu"><span class="num num-vide">·</span>Types entiers : pourquoi <code>uint32_t</code>, <code>uint64_t</code>, <code>%llu</code></a><label class="revise-mini" title="Marquer « Types entiers : pourquoi uint32_t , uint64_t , %llu » comme révisé"><input type="checkbox" data-section="types-entiers-pourquoi-uint32-t-uint64-t-llu" aria-label="Révisé : Types entiers : pourquoi uint32_t , uint64_t , %llu"><span class="revise-coche" aria-hidden="true"></span></label></div></li><li data-cible="a-iteration-la-boucle-for"><div class="sommaire-ligne"><a href="#a-iteration-la-boucle-for"><span class="num num-vide">·</span>a) Itération — la boucle <code>for</code></a><label class="revise-mini" title="Marquer « a) Itération — la boucle for » comme révisé"><input type="checkbox" data-section="a-iteration-la-boucle-for" aria-label="Révisé : a) Itération — la boucle for"><span class="revise-coche" aria-hidden="true"></span></label></div></li><li data-cible="b-recursion-la-fonction-s-appelle-elle-meme"><div class="sommaire-ligne"><a href="#b-recursion-la-fonction-s-appelle-elle-meme"><span class="num num-vide">·</span>b) Récursion — la fonction s'appelle elle-même</a><label class="revise-mini" title="Marquer « b) Récursion — la fonction s&#x27;appelle elle-même » comme révisé"><input type="checkbox" data-section="b-recursion-la-fonction-s-appelle-elle-meme" aria-label="Révisé : b) Récursion — la fonction s&#x27;appelle elle-même"><span class="revise-coche" aria-hidden="true"></span></label></div></li><li data-cible="c-lut-la-table-de-valeurs-preprocesseur"><div class="sommaire-ligne"><a href="#c-lut-la-table-de-valeurs-preprocesseur"><span class="num num-vide">·</span>c) LUT — la table de valeurs (préprocesseur)</a><label class="revise-mini" title="Marquer « c) LUT — la table de valeurs (préprocesseur) » comme révisé"><input type="checkbox" data-section="c-lut-la-table-de-valeurs-preprocesseur" aria-label="Révisé : c) LUT — la table de valeurs (préprocesseur)"><span class="revise-coche" aria-hidden="true"></span></label></div><ol><li><a href="#c-lut-la-table-de-valeurs-preprocesseur-sizeof-fact-sizeof-fact-0"><span class="num"></span><code>sizeof(Fact) / sizeof(Fact[0])</code></a></li></ol></li><li data-cible="main-les-trois-boucles"><div class="sommaire-ligne"><a href="#main-les-trois-boucles"><span class="num num-vide">·</span>main() : les trois boucles</a><label class="revise-mini" title="Marquer « main() : les trois boucles » comme révisé"><input type="checkbox" data-section="main-les-trois-boucles" aria-label="Révisé : main() : les trois boucles"><span class="revise-coche" aria-hidden="true"></span></label></div></li><li data-cible="sortie-attendue-extraits"><div class="sommaire-ligne"><a href="#sortie-attendue-extraits"><span class="num num-vide">·</span>Sortie attendue (extraits)</a><label class="revise-mini" title="Marquer « Sortie attendue (extraits) » comme révisé"><input type="checkbox" data-section="sortie-attendue-extraits" aria-label="Révisé : Sortie attendue (extraits)"><span class="revise-coche" aria-hidden="true"></span></label></div></li><li data-cible="comparaison-des-trois-approches"><div class="sommaire-ligne"><a href="#comparaison-des-trois-approches"><span class="num num-vide">·</span>Comparaison des trois approches</a><label class="revise-mini" title="Marquer « Comparaison des trois approches » comme révisé"><input type="checkbox" data-section="comparaison-des-trois-approches" aria-label="Révisé : Comparaison des trois approches"><span class="revise-coche" aria-hidden="true"></span></label></div></li><li data-cible="recapitulatif"><div class="sommaire-ligne"><a href="#recapitulatif"><span class="num num-vide">·</span>Récapitulatif</a><label class="revise-mini" title="Marquer « Récapitulatif » comme révisé"><input type="checkbox" data-section="recapitulatif" aria-label="Révisé : Récapitulatif"><span class="revise-coche" aria-hidden="true"></span></label></div></li><li data-cible="compilation"><div class="sommaire-ligne"><a href="#compilation"><span class="num num-vide">·</span>Compilation</a><label class="revise-mini" title="Marquer « Compilation » comme révisé"><input type="checkbox" data-section="compilation" aria-label="Révisé : Compilation"><span class="revise-coche" aria-hidden="true"></span></label></div></li></ol>
+    </details>
+  </aside>
+  <main id="contenu">
+    <section class="hero">
+      <div class="hero-papier" aria-hidden="true"></div>
+      <div class="hero-tete">
+        <a class="hero-piece" href="../index.html"><svg class="icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3c-2 0-3 1-3 3v3c0 1.5-1 3-2.5 3C4 12 5 13.5 5 15v3c0 2 1 3 3 3M16 3c2 0 3 1 3 3v3c0 1.5 1 3 2.5 3-1.5 0-2.5 1.5-2.5 3v3c0 2-1 3-3 3"/></svg><span>Algorithmes</span><span class="hero-aile">Atelier &amp; société</span></a>
+        <div class="anneau" data-anneau role="img" aria-label="Progression"><span data-progression-pourcent>0 %</span></div>
+      </div>
+      
+      <h1 class="visuellement-cache">Algorithmes · Corrigé · Exercice 1.2 — factorielle</h1>
+      <div class="hero-intro"><span class="t-titre">Algo 1.2 — Le factoriel d'un nombre (n!)</span><ul>
+<li><strong>Module :</strong> E2-ALGO (Systèmes Embarqués et Algorithmes) — HEIA-FR, Automne 2026</li>
+<li><strong>Sujet :</strong> <code>Consignes/sources/algo-01-ex1-2-factorial.pdf</code> (Prof. Dominique Bullot)</li>
+<li><strong>Code source :</strong> <code>Code/ex1-2_factoriel.c</code></li>
+</ul>
+</div>
+      <div class="hero-puces"><span class="puce puce-te puce-attente">Date du TE : pas encore annoncée</span><span class="puce puce-corrige">Corrigé</span><span class="puce">10 sections</span></div>
+    </section>
+    <section class="station station-normale" id="concept-de-base" aria-labelledby="concept-de-base-t"><header class="station-tete"><span class="station-num station-num-vide" aria-hidden="true">✦</span><h2 id="concept-de-base-t">Concept de base</h2><label class="revise"><input type="checkbox" data-section="concept-de-base"><span class="revise-coche" aria-hidden="true"></span><span class="revise-texte">Révisé</span></label></header><div class="station-corps"><p>Le <strong>factoriel</strong> d'un nombre entier naturel <code>n</code> (noté <strong>n!</strong>) est le produit de
+tous les entiers de 1 à <code>n</code> :</p>
+<pre class="code"><code>n! = 1 × 2 × 3 × … × n
+</code></pre>
+<p>Deux conventions incontournables :</p>
+<pre class="code"><code>0! = 1      (par définition)
+1! = 1
+</code></pre>
+<p>L'exercice demande d'<strong>implémenter trois algorithmes</strong> différents pour calculer
+le même résultat, de 0 à 20. L'idée n'est pas seulement d'obtenir le nombre,
+mais de <strong>comparer trois façons de coder un algorithme</strong> :</p>
+<div class="tableau"><table>
+<thead>
+<tr>
+<th>Partie</th>
+<th>Technique</th>
+<th>Fonction</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>a)</td>
+<td><strong>Itération</strong> (boucle <code>for</code>)</td>
+<td><code>Factorial_with_iteration()</code></td>
+</tr>
+<tr>
+<td>b)</td>
+<td><strong>Récursion</strong> (la fonction s'appelle elle-même)</td>
+<td><code>Factorial_with_recursion()</code></td>
+</tr>
+<tr>
+<td>c)</td>
+<td><strong>Table de valeurs</strong> calculée par le préprocesseur (<code>LUT</code>)</td>
+<td><code>Factorial_with_lut()</code></td>
+</tr>
+</tbody>
+</table></div>
+<aside class="carte carte-retenir"><div class="carte-tete"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></svg><span class="carte-type">À retenir</span></div><div class="carte-corps"><p><strong>LUT</strong> = <em>Look-Up Table</em> (« table de consultation »). Au lieu de <strong>calculer</strong>
+le résultat à chaque appel, on le <strong>range à l'avance</strong> dans un tableau et on
+le récupère instantanément par son index.</p></div></aside>
+<hr />
+</div></section><section class="station station-normale" id="types-entiers-pourquoi-uint32-t-uint64-t-llu" aria-labelledby="types-entiers-pourquoi-uint32-t-uint64-t-llu-t"><header class="station-tete"><span class="station-num station-num-vide" aria-hidden="true">✦</span><h2 id="types-entiers-pourquoi-uint32-t-uint64-t-llu-t">Types entiers : pourquoi <code>uint32_t</code>, <code>uint64_t</code>, <code>%llu</code></h2><label class="revise"><input type="checkbox" data-section="types-entiers-pourquoi-uint32-t-uint64-t-llu"><span class="revise-coche" aria-hidden="true"></span><span class="revise-texte">Révisé</span></label></header><div class="station-corps"><p>Le factoriel <strong>grandit très vite</strong> : <code>20! = 2 432 702 008 176 640 000</code>. Cela
+dépassé la capacité d'un <code>int</code> (≈ 2 milliards). On utilise donc des types
+<strong>sans signe</strong> et <strong>larges</strong>, venus de <code>&lt;stdint.h&gt;</code> :</p>
+<div class="tableau"><table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Taille</th>
+<th>Valeur max</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>uint32_t</code></td>
+<td>32 bits (4 octets)</td>
+<td>4 294 967 296</td>
+</tr>
+<tr>
+<td><code>uint64_t</code></td>
+<td>64 bits (8 octets)</td>
+<td>18 446 744 073 709 551 615</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li><code>uint32_t number</code> → le <strong>paramètre</strong> (le <code>n</code>, de 0 à 20).</li>
+<li><code>uint64_t</code> → le <strong>résultat</strong> (peut être énorme).</li>
+<li><code>%llu</code> → le <strong>format <code>printf</code></strong> pour un <code>unsigned long long</code> (≈ <code>uint64_t</code>) :
+« l » = <em>long</em>, « ll » = <em>long long</em>.</li>
+</ul>
+<aside class="carte carte-retenir"><div class="carte-tete"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></svg><span class="carte-type">À retenir</span></div><div class="carte-corps"><p><strong>À retenir :</strong> le numéro <code>n</code> tient dans un <code>uint32_t</code>, mais le résultat
+doit être un <code>uint64_t</code> sinon il <strong>déborderait</strong> (overflow). Le <code>%u</code> sert à
+afficher le <code>uint32_t</code>, le <code>%llu</code> au résultat <code>uint64_t</code>.</p></div></aside>
+<hr />
+</div></section><section class="station station-normale" id="a-iteration-la-boucle-for" aria-labelledby="a-iteration-la-boucle-for-t"><header class="station-tete"><span class="station-num station-num-vide" aria-hidden="true">✦</span><h2 id="a-iteration-la-boucle-for-t">a) Itération — la boucle <code>for</code></h2><label class="revise"><input type="checkbox" data-section="a-iteration-la-boucle-for"><span class="revise-coche" aria-hidden="true"></span><span class="revise-texte">Révisé</span></label></header><div class="station-corps"><p>On calcule le factoriel <strong>pas à pas</strong> avec une variable qui s'accroît à chaque
+tour de boucle :</p>
+<pre class="code"><code class="language-c">uint64_t Factorial_with_iteration(uint32_t number)
+{
+    uint64_t result = 1;          /* produit de départ = 1 */
+    if (number &gt;= 2) {            /* 0! et 1! = 1, pas besoin de boucle */
+        for (uint32_t i = number; i &gt;= 2; i--) {
+            result *= (uint64_t)i; /* result = result * i */
+        }
+    }
+    return result;
+}
+</code></pre>
+<ul>
+<li>On <strong>initialise</strong> <code>result</code> à 1.</li>
+<li>La boucle <strong>descend</strong> de <code>number</code> jusqu'à 2 (<code>i--</code>).</li>
+<li>À chaque tour, on <strong>multiplie</strong> <code>result</code> par <code>i</code>.</li>
+<li>Le <code>(uint64_t)i</code> force la multiplication en 64 bits (au cas où <code>i</code> serait
+sur 32 bits).</li>
+</ul>
+<aside class="carte carte-retenir"><div class="carte-tete"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></svg><span class="carte-type">À retenir</span></div><div class="carte-corps"><p><strong>Pourquoi <code>if (number &gt;= 2)</code> ?</strong> Parce que 0! et 1! valent 1. Sans ce
+filtre, la boucle ne ferait rien de toute façon, mais le <code>if</code> l'évite
+explicitement et rend le cas trivial clair.</p></div></aside>
+<p><strong>Déroulé pour <code>3!</code> :</strong> <code>result=1 → ×3=3 → ×2=6</code> → retourne <strong>6</strong>. ✓</p>
+<hr />
+</div></section><section class="station station-normale" id="b-recursion-la-fonction-s-appelle-elle-meme" aria-labelledby="b-recursion-la-fonction-s-appelle-elle-meme-t"><header class="station-tete"><span class="station-num station-num-vide" aria-hidden="true">✦</span><h2 id="b-recursion-la-fonction-s-appelle-elle-meme-t">b) Récursion — la fonction s'appelle elle-même</h2><label class="revise"><input type="checkbox" data-section="b-recursion-la-fonction-s-appelle-elle-meme"><span class="revise-coche" aria-hidden="true"></span><span class="revise-texte">Révisé</span></label></header><div class="station-corps"><p>Le factoriel a une définition <strong>récursive</strong> naturelle :</p>
+<pre class="code"><code>n! = n × (n-1)!      avec le cas de base 0! = 1
+</code></pre>
+<pre class="code"><code class="language-c">uint64_t Factorial_with_recursion(uint32_t number)
+{
+    if (number &lt;= 1) {                 /* cas de base */
+        return 1;
+    }
+    return number * Factorial_with_recursion(number - 1);  /* appel à soi-même */
+}
+</code></pre>
+<ul>
+<li><strong>Cas de base</strong> (<code>number &lt;= 1</code>) : on renvoie 1 → c'est l'<strong>arrêt</strong> de la
+récursion, sinon la fonction appellerait à l'infini.</li>
+<li><strong>Cas récursif</strong> : on renvoie <code>number × Factorial(number - 1)</code>.</li>
+</ul>
+<p><strong>Déroulé pour <code>3!</code></strong> (les appels se « empilent » puis se défilent) :</p>
+<pre class="code"><code>Factorial(3)
+= 3  * Factorial(2)
+      2  * Factorial(1)
+            └─ retourne 1        ← cas de base
+= 3 * (2 * 1) = 6
+</code></pre>
+<aside class="carte carte-retenir"><div class="carte-tete"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></svg><span class="carte-type">À retenir</span></div><div class="carte-corps"><p><strong>À retenir :</strong> toute récursion a <strong>deux parties</strong> :</p>
+<ol>
+<li>un <strong>cas de base</strong> (ici <code>number &lt;= 1</code>) qui <strong>arrête</strong> l'appel,</li>
+<li>une <strong>récursion</strong> qui <strong>récrit le problème</strong> plus petit (<code>n! = n·(n-1)!</code>).
+Sans cas de base → <strong>boucle infinie → plantage</strong> (stack overflow).</li>
+</ol></div></aside>
+<hr />
+</div></section><section class="station station-normale" id="c-lut-la-table-de-valeurs-preprocesseur" aria-labelledby="c-lut-la-table-de-valeurs-preprocesseur-t"><header class="station-tete"><span class="station-num station-num-vide" aria-hidden="true">✦</span><h2 id="c-lut-la-table-de-valeurs-preprocesseur-t">c) LUT — la table de valeurs (préprocesseur)</h2><label class="revise"><input type="checkbox" data-section="c-lut-la-table-de-valeurs-preprocesseur"><span class="revise-coche" aria-hidden="true"></span><span class="revise-texte">Révisé</span></label></header><div class="station-corps"><p>Au lieu de <strong>calculer</strong>, on <strong>stocke</strong> tous les résultats dans un tableau
+<code>static</code> rempli à la compilation. On lit simplement l'index demandé :</p>
+<pre class="code"><code class="language-c">static uint64_t const Fact[] = {
+    (uint64_t)1,                    /* 0!  = 1        */
+    (uint64_t)1,                    /* 1!  = 1        */
+    (uint64_t)1*2,                 /* 2!  = 2        */
+    (uint64_t)1*2*3,               /* 3!  = 6        */
+    ...                            /* ...            */
+    (uint64_t)1*2*3*...*20,        /* 20!             */
+};
+
+uint64_t Factorial_with_lut(uint32_t number)
+{
+    if (number &gt;= sizeof(Fact) / sizeof(Fact[0])) {  /* hors limites */
+        return 0;
+    }
+    return Fact[number];        /* lecture instantanée */
+}
+</code></pre>
+<ul>
+<li>Le tableau <code>Fact[]</code> contient <code>21</code> valeurs (de <code>0!</code> à <code>20!</code>).</li>
+<li><code>Fact[number]</code> renvoie <strong>directement</strong> le résultat : <strong>O(1)</strong>, aucune
+calcul.</li>
+<li>Les <code>(uint64_t)</code> forcent le calcul à la <strong>compilation</strong> (le préprocesseur /
+le compilateur évalue <code>1*2*3*…</code> une fois pour toutes).</li>
+</ul>
+<h3 id="c-lut-la-table-de-valeurs-preprocesseur-sizeof-fact-sizeof-fact-0" class="sous-titre"><code>sizeof(Fact) / sizeof(Fact[0])</code></h3>
+<p>Cette formule donne le <strong>nombre d'éléments</strong> du tableau, sans le noter en dur :</p>
+<pre class="code"><code class="language-c">sizeof(Fact)        /* taille totale du tableau en octets */
+sizeof(Fact[0])     /* taille d'un seul élément (1 uint64_t = 8 octets) */
+sizeof(Fact)/sizeof(Fact[0])   /* = nombre d'éléments = 21 */
+</code></pre>
+<aside class="carte carte-retenir"><div class="carte-tete"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></svg><span class="carte-type">À retenir</span></div><div class="carte-corps"><p><strong>Pourquoi cette condition ?</strong> Le tableau ne contient que 0..20. Si on
+demande <code>21</code> ou plus, on sortirait des limites du tableau (lecture d'une
+mémoire invalide). On renvoie <code>0</code> pour signaler « hors plage ». En vrai,
+<code>21!</code> dépasse déjà un <code>uint64_t</code> → <code>0</code> = message d'erreur honnête.</p></div></aside>
+<aside class="carte carte-retenir"><div class="carte-tete"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></svg><span class="carte-type">À retenir</span></div><div class="carte-corps"><p><strong><code>static</code> + <code>const</code> :</strong> le tableau est créé <strong>une seule fois</strong>, stocké en
+mémoire et <strong>non modifiable</strong>. Il existe pendant toute la vie du programme.</p></div></aside>
+<hr />
+</div></section><section class="station station-normale" id="main-les-trois-boucles" aria-labelledby="main-les-trois-boucles-t"><header class="station-tete"><span class="station-num station-num-vide" aria-hidden="true">✦</span><h2 id="main-les-trois-boucles-t">main() : les trois boucles</h2><label class="revise"><input type="checkbox" data-section="main-les-trois-boucles"><span class="revise-coche" aria-hidden="true"></span><span class="revise-texte">Révisé</span></label></header><div class="station-corps"><p><code>main()</code> parcourt <code>i</code> de 0 à 20 et affiche le résultat des trois fonctions :</p>
+<pre class="code"><code class="language-c">for (uint32_t i = 0; i &lt;= 20; i++) {
+    uint64_t const cResult = Factorial_with_iteration(i);
+    printf(&quot;The factorial of %u using loop is: %llu\n&quot;, i, cResult);
+}
+/* idem avec Factorial_with_recursion(...) et Factorial_with_lut(...) */
+</code></pre>
+<ul>
+<li><code>uint32_t i</code> : compteur de 0 à 20.</li>
+<li><code>uint64_t const cResult</code> : le résultat est <strong>constant</strong> (on ne le modifie
+pas après).</li>
+<li>Boucle <strong>identique</strong> pour les trois fonctions : on compare donc
+<strong>à conditions égales</strong>.</li>
+</ul>
+<hr />
+</div></section><section class="station station-normale" id="sortie-attendue-extraits" aria-labelledby="sortie-attendue-extraits-t"><header class="station-tete"><span class="station-num station-num-vide" aria-hidden="true">✦</span><h2 id="sortie-attendue-extraits-t">Sortie attendue (extraits)</h2><label class="revise"><input type="checkbox" data-section="sortie-attendue-extraits"><span class="revise-coche" aria-hidden="true"></span><span class="revise-texte">Révisé</span></label></header><div class="station-corps"><pre class="code"><code>The factorial of 0 using loop is: 1
+The factorial of 1 using loop is: 1
+The factorial of 2 using loop is: 2
+The factorial of 3 using loop is: 6
+...
+The factorial of 20 using loop is: 2432902008176640000
+</code></pre>
+<p>Les trois méthodes produisent <strong>exactement les mêmes nombres</strong> (de 1 à
+2 432 702 008 176 640 000 pour 20!), mais par des chemins différents.</p>
+<hr />
+</div></section><section class="station station-normale" id="comparaison-des-trois-approches" aria-labelledby="comparaison-des-trois-approches-t"><header class="station-tete"><span class="station-num station-num-vide" aria-hidden="true">✦</span><h2 id="comparaison-des-trois-approches-t">Comparaison des trois approches</h2><label class="revise"><input type="checkbox" data-section="comparaison-des-trois-approches"><span class="revise-coche" aria-hidden="true"></span><span class="revise-texte">Révisé</span></label></header><div class="station-corps"><div class="tableau"><table>
+<thead>
+<tr>
+<th>Critère</th>
+<th>a) Itération</th>
+<th>b) Récursion</th>
+<th>c) LUT</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Principe</strong></td>
+<td>boucle <code>for</code></td>
+<td>appel à soi-même</td>
+<td>tableau précalculé</td>
+</tr>
+<tr>
+<td><strong>Mémoire</strong></td>
+<td>1 variable</td>
+<td>pile d'appels</td>
+<td>21 valeurs fixes</td>
+</tr>
+<tr>
+<td><strong>Vitesse</strong></td>
+<td>rapide</td>
+<td>plus lente (empilement)</td>
+<td><strong>instantanée (O(1))</strong></td>
+</tr>
+<tr>
+<td><strong>Place au compile</strong></td>
+<td>non</td>
+<td>non</td>
+<td>oui (constantes évaluées)</td>
+</tr>
+<tr>
+<td><strong>Limite</strong></td>
+<td>jusqu'à overflow</td>
+<td>jusqu'à overflow</td>
+<td>bornée par le tableau</td>
+</tr>
+<tr>
+<td><strong>Lisible</strong></td>
+<td>oui</td>
+<td>très proche de la définition</td>
+<td>compact</td>
+</tr>
+</tbody>
+</table></div>
+<aside class="carte carte-retenir"><div class="carte-tete"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></svg><span class="carte-type">À retenir</span></div><div class="carte-corps"><p><strong>Le choix en embarqué :</strong> la <strong>LUT</strong> est idéale quand l'ensemble des
+résultats est <strong>connu à l'avance</strong> et <strong>fini</strong> (comme 0..20!) : on paie une
+fois en place mémoire à la compilation, et à l'exécution c'est une simple
+lecture de tableau, <strong>rapide et prédictible</strong> — parfait pour un microcontrôleur.</p></div></aside>
+<hr />
+</div></section><section class="station station-normale" id="recapitulatif" aria-labelledby="recapitulatif-t"><header class="station-tete"><span class="station-num station-num-vide" aria-hidden="true">✦</span><h2 id="recapitulatif-t">Récapitulatif</h2><label class="revise"><input type="checkbox" data-section="recapitulatif"><span class="revise-coche" aria-hidden="true"></span><span class="revise-texte">Révisé</span></label></header><div class="station-corps"><div class="tableau"><table>
+<thead>
+<tr>
+<th>Point</th>
+<th>Notion clé</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Types</td>
+<td><code>uint32_t</code> (n), <code>uint64_t</code> (résultat), <code>%llu</code></td>
+</tr>
+<tr>
+<td>a) Itération</td>
+<td>boucle <code>for</code>, variable accumule le produit</td>
+</tr>
+<tr>
+<td>b) Récursion</td>
+<td>cas de base + <code>n! = n·(n-1)!</code></td>
+</tr>
+<tr>
+<td>c) LUT</td>
+<td>tableau <code>static const</code>, <code>sizeof</code> pour la taille, lecture par index</td>
+</tr>
+<tr>
+<td>main()</td>
+<td>même boucle pour comparer les 3 fonctions</td>
+</tr>
+</tbody>
+</table></div>
+</div></section><section class="station station-normale" id="compilation" aria-labelledby="compilation-t"><header class="station-tete"><span class="station-num station-num-vide" aria-hidden="true">✦</span><h2 id="compilation-t">Compilation</h2><label class="revise"><input type="checkbox" data-section="compilation"><span class="revise-coche" aria-hidden="true"></span><span class="revise-texte">Révisé</span></label></header><div class="station-corps"><pre class="code"><code class="language-bash">gcc -Wall -Wextra ex1-2_factoriel.c -o ex1-2_factoriel
+./ex1-2_factoriel
+</code></pre>
+</div></section>
+    <footer class="pied">
+      <p>Converti depuis <code>Semestre-3/E2-ALGO/Fiches-Revision/algo-01-ex1-2-factorial.md</code></p>
+    </footer>
+  </main>
+</div>
+<dialog id="formulaire" class="dialogue" aria-labelledby="formulaire-titre">
+  <header class="dialogue-tete"><h2 id="formulaire-titre"><span class="btn-sigma" aria-hidden="true">Σ</span> Formulaire — Exercice 1.2 — factorielle</h2>
+  <button type="button" class="btn-icone" data-fermer aria-label="Fermer">✕</button></header>
+  <div class="dialogue-corps"><p>Aucune tuile formule dans ce résumé.</p></div>
+</dialog>
+<dialog id="loupe" class="dialogue loupe" aria-label="Figure agrandie">
+  <button type="button" class="btn-icone loupe-fermer" data-fermer aria-label="Fermer">✕</button>
+  <img alt="">
+</dialog>
+
+</body>
+</html>

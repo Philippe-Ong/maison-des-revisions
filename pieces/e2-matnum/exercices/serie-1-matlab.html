@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mathématiques numériques · Corrigé · Série 1 — MATLAB</title>
+<meta name="description" content="Mathématiques numériques — Série 1 — MATLAB (Corrigé)">
+<link rel="icon" href="../../../assets/favicon.svg?v=012e46bcde" type="image/svg+xml">
+<script>try{var t=localStorage.getItem("maison:theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css"><script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script><script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/c.min.js"></script>
+<link rel="stylesheet" href="../../../assets/styles.css?v=012e46bcde">
+<style>:root{--c-heia:#1F6B3A;--c-orangeheia:#D97A1F;--c-pale:#EAF3EC;--c-palegris:#F4F4F4;--c-codebg:#F7F7F7;--c-rouge:#B23A2D}@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--c-heia:color-mix(in srgb,#1F6B3A 50%,#fff);--c-orangeheia:color-mix(in srgb,#D97A1F 50%,#fff);--c-pale:color-mix(in srgb,#EAF3EC 50%,#fff);--c-palegris:color-mix(in srgb,#F4F4F4 50%,#fff);--c-codebg:color-mix(in srgb,#F7F7F7 50%,#fff);--c-rouge:color-mix(in srgb,#B23A2D 50%,#fff)}}:root[data-theme=dark]{--c-heia:color-mix(in srgb,#1F6B3A 50%,#fff);--c-orangeheia:color-mix(in srgb,#D97A1F 50%,#fff);--c-pale:color-mix(in srgb,#EAF3EC 50%,#fff);--c-palegris:color-mix(in srgb,#F4F4F4 50%,#fff);--c-codebg:color-mix(in srgb,#F7F7F7 50%,#fff);--c-rouge:color-mix(in srgb,#B23A2D 50%,#fff)}</style>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+
+<script defer src="../../../assets/maison.js?v=012e46bcde"></script>
+</head>
+<body class="page-resume" style="--piece:#0F766E" data-cle="E2-MATNUM/exercices/serie-1-matlab" data-sections='["s1-format-long-toutes-les-decimales-de-pi-et-de-e", "s2-format-rat-approximation-rationnelle", "s3-qu-est-ce-qui-est-plus-grand-e-pi-ou-pi-e", "s4-vecteur-ligne-transposee-et-x", "s5-produit-scalaire-de-deux-vecteurs", "s6-les-factorielles-1-a-15-par-cumprod", "s7-carres-magiques-magic-n", "s8-fonction-pair-tous-les-elements-pairs", "s9-fonction-interleave-entrelacer-deux-vecteurs", "s10-tracer-y-x-2-et-x-y-2-dans-la-meme-fenetre", "s11-recapitulatif"]' data-url-racine="pieces/e2-matnum/exercices/serie-1-matlab.html" data-titre="Mathématiques numériques · Corrigé · Série 1 — MATLAB">
+<a class="evitement" href="#contenu">Aller au contenu</a>
+
+<header class="barre">
+  <nav class="ariane" aria-label="Fil d'Ariane">
+    <a href="../../../index.html"><svg class="icone-ariane" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 12 4l9 7"/><path d="M5 9.5V20h14V9.5"/><path d="M10 20v-6h4v6"/></svg><span>Maison</span></a><span class="sep" aria-hidden="true">›</span>
+    <a href="../index.html">Mathématiques numériques</a><span class="sep" aria-hidden="true">›</span>
+    <span aria-current="page">Corrigé · Série 1 — MATLAB</span>
+  </nav>
+  <div class="barre-actions">
+    
+    <a class="btn btn-discret" href="../../../assets/pdf/e2-matnum/corrige-serie-1-matlab.pdf" target="_blank" rel="noopener">PDF</a>
+    <button type="button" class="btn-icone" data-theme-bascule aria-label="Basculer clair / sombre"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 4a8 8 0 0 1 0 16z" fill="currentColor"/></svg></button>
+  </div>
+</header>
+<div class="cadre">
+  <aside class="sommaire" aria-label="Sommaire">
+    <details class="sommaire-details" open>
+      <summary><span>Sommaire</span><span class="sommaire-prog" data-progression-texte>0 / 11</span></summary>
+      <ol class="sommaire-liste"><li data-cible="s1-format-long-toutes-les-decimales-de-pi-et-de-e"><div class="sommaire-ligne"><a href="#s1-format-long-toutes-les-decimales-de-pi-et-de-e"><span class="num">1</span>Format long : toutes les décimales de <span class="km" data-tex="\pi">\pi</span> et de <span class="km" data-tex="e">e</span></a><label class="revise-mini" title="Marquer « Format long : toutes les décimales de \pi et de e » comme révisé"><input type="checkbox" data-section="s1-format-long-toutes-les-decimales-de-pi-et-de-e" aria-label="Révisé : Format long : toutes les décimales de \pi et de e"><span class="revise-coche" aria-hidden="true"></span></label></div><ol><li><a href="#s1-format-long-toutes-les-decimales-de-pi-et-de-e-methode"><span class="num">1.1</span>Méthode</a></li><li><a href="#s1-format-long-toutes-les-decimales-de-pi-et-de-e-code-et-resultat"><span class="num">1.2</span>Code et résultat</a></li><li><a href="#s1-format-long-toutes-les-decimales-de-pi-et-de-e-que-stocke-reellement-la-machine"><span class="num">1.3</span>Que stocke réellement la machine</a></li></ol></li><li data-cible="s2-format-rat-approximation-rationnelle"><div class="sommaire-ligne"><a href="#s2-format-rat-approximation-rationnelle"><span class="num">2</span>Format rat : approximation rationnelle</a><label class="revise-mini" title="Marquer « Format rat : approximation rationnelle » comme révisé"><input type="checkbox" data-section="s2-format-rat-approximation-rationnelle" aria-label="Révisé : Format rat : approximation rationnelle"><span class="revise-coche" aria-hidden="true"></span></label></div><ol><li><a href="#s2-format-rat-approximation-rationnelle-methode"><span class="num">2.1</span>Méthode</a></li><li><a href="#s2-format-rat-approximation-rationnelle-code-et-resultat"><span class="num">2.2</span>Code et résultat</a></li><li><a href="#s2-format-rat-approximation-rationnelle-le-role-de-la-tolerance-demonstration"><span class="num">2.3</span>Le rôle de la tolérance (démonstration)</a></li></ol></li><li data-cible="s3-qu-est-ce-qui-est-plus-grand-e-pi-ou-pi-e"><div class="sommaire-ligne"><a href="#s3-qu-est-ce-qui-est-plus-grand-e-pi-ou-pi-e"><span class="num">3</span>Qu'est-ce qui est plus grand : <span class="km" data-tex="e^{\pi}">e^{\pi}</span> ou <span class="km" data-tex="\pi^{e}">\pi^{e}</span> ?</a><label class="revise-mini" title="Marquer « Qu&#x27;est-ce qui est plus grand : e^{\pi} ou \pi^{e} ? » comme révisé"><input type="checkbox" data-section="s3-qu-est-ce-qui-est-plus-grand-e-pi-ou-pi-e" aria-label="Révisé : Qu&#x27;est-ce qui est plus grand : e^{\pi} ou \pi^{e} ?"><span class="revise-coche" aria-hidden="true"></span></label></div><ol><li><a href="#s3-qu-est-ce-qui-est-plus-grand-e-pi-ou-pi-e-methode-comparer-les-logarithmes"><span class="num">3.1</span>Méthode : comparer les logarithmes</a></li><li><a href="#s3-qu-est-ce-qui-est-plus-grand-e-pi-ou-pi-e-preuve-generale"><span class="num">3.2</span>Preuve générale</a></li></ol></li><li data-cible="s4-vecteur-ligne-transposee-et-x"><div class="sommaire-ligne"><a href="#s4-vecteur-ligne-transposee-et-x"><span class="num">4</span>Vecteur ligne, transposée et x(:)</a><label class="revise-mini" title="Marquer « Vecteur ligne, transposée et x(:) » comme révisé"><input type="checkbox" data-section="s4-vecteur-ligne-transposee-et-x" aria-label="Révisé : Vecteur ligne, transposée et x(:)"><span class="revise-coche" aria-hidden="true"></span></label></div><ol><li><a href="#s4-vecteur-ligne-transposee-et-x-code-et-resultat"><span class="num">4.1</span>Code et résultat</a></li><li><a href="#s4-vecteur-ligne-transposee-et-x-interpretation"><span class="num">4.2</span>Interprétation</a></li></ol></li><li data-cible="s5-produit-scalaire-de-deux-vecteurs"><div class="sommaire-ligne"><a href="#s5-produit-scalaire-de-deux-vecteurs"><span class="num">5</span>Produit scalaire de deux vecteurs</a><label class="revise-mini" title="Marquer « Produit scalaire de deux vecteurs » comme révisé"><input type="checkbox" data-section="s5-produit-scalaire-de-deux-vecteurs" aria-label="Révisé : Produit scalaire de deux vecteurs"><span class="revise-coche" aria-hidden="true"></span></label></div><ol><li><a href="#s5-produit-scalaire-de-deux-vecteurs-methode"><span class="num">5.1</span>Méthode</a></li><li><a href="#s5-produit-scalaire-de-deux-vecteurs-detail-du-calcul"><span class="num">5.2</span>Détail du calcul</a></li></ol></li><li data-cible="s6-les-factorielles-1-a-15-par-cumprod"><div class="sommaire-ligne"><a href="#s6-les-factorielles-1-a-15-par-cumprod"><span class="num">6</span>Les factorielles <span class="km" data-tex="1!">1!</span> à <span class="km" data-tex="15!">15!</span> par cumprod</a><label class="revise-mini" title="Marquer « Les factorielles 1! à 15! par cumprod » comme révisé"><input type="checkbox" data-section="s6-les-factorielles-1-a-15-par-cumprod" aria-label="Révisé : Les factorielles 1! à 15! par cumprod"><span class="revise-coche" aria-hidden="true"></span></label></div><ol><li><a href="#s6-les-factorielles-1-a-15-par-cumprod-methode"><span class="num">6.1</span>Méthode</a></li><li><a href="#s6-les-factorielles-1-a-15-par-cumprod-jusqu-ou-les-entiers-restent-exacts"><span class="num">6.2</span>Jusqu'où les entiers restent exacts ?</a></li></ol></li><li data-cible="s7-carres-magiques-magic-n"><div class="sommaire-ligne"><a href="#s7-carres-magiques-magic-n"><span class="num">7</span>Carrés magiques magic(n)</a><label class="revise-mini" title="Marquer « Carrés magiques magic(n) » comme révisé"><input type="checkbox" data-section="s7-carres-magiques-magic-n" aria-label="Révisé : Carrés magiques magic(n)"><span class="revise-coche" aria-hidden="true"></span></label></div><ol><li><a href="#s7-carres-magiques-magic-n-methode"><span class="num">7.1</span>Méthode</a></li><li><a href="#s7-carres-magiques-magic-n-limites-de-magic"><span class="num">7.2</span>Limites de magic</a></li></ol></li><li data-cible="s8-fonction-pair-tous-les-elements-pairs"><div class="sommaire-ligne"><a href="#s8-fonction-pair-tous-les-elements-pairs"><span class="num">8</span>Fonction pair : tous les éléments pairs</a><label class="revise-mini" title="Marquer « Fonction pair : tous les éléments pairs » comme révisé"><input type="checkbox" data-section="s8-fonction-pair-tous-les-elements-pairs" aria-label="Révisé : Fonction pair : tous les éléments pairs"><span class="revise-coche" aria-hidden="true"></span></label></div><ol><li><a href="#s8-fonction-pair-tous-les-elements-pairs-la-solution-du-professeur-decortiquee"><span class="num">8.1</span>La solution du professeur, décortiquée</a></li><li><a href="#s8-fonction-pair-tous-les-elements-pairs-version-explicite-recommandee-a-l-examen"><span class="num">8.2</span>Version explicite (recommandée à l'examen)</a></li></ol></li><li data-cible="s9-fonction-interleave-entrelacer-deux-vecteurs"><div class="sommaire-ligne"><a href="#s9-fonction-interleave-entrelacer-deux-vecteurs"><span class="num">9</span>Fonction interleave : entrelacer deux vecteurs</a><label class="revise-mini" title="Marquer « Fonction interleave : entrelacer deux vecteurs » comme révisé"><input type="checkbox" data-section="s9-fonction-interleave-entrelacer-deux-vecteurs" aria-label="Révisé : Fonction interleave : entrelacer deux vecteurs"><span class="revise-coche" aria-hidden="true"></span></label></div><ol><li><a href="#s9-fonction-interleave-entrelacer-deux-vecteurs-solution-du-professeur"><span class="num">9.1</span>Solution du professeur</a></li><li><a href="#s9-fonction-interleave-entrelacer-deux-vecteurs-ce-que-revele-l-execution"><span class="num">9.2</span>Ce que révèle l'exécution</a></li><li><a href="#s9-fonction-interleave-entrelacer-deux-vecteurs-correction-minimale"><span class="num">9.3</span>Correction minimale</a></li><li><a href="#s9-fonction-interleave-entrelacer-deux-vecteurs-version-vectorisee-sans-boucle-de-croissance"><span class="num">9.4</span>Version vectorisée (sans boucle de croissance)</a></li></ol></li><li data-cible="s10-tracer-y-x-2-et-x-y-2-dans-la-meme-fenetre"><div class="sommaire-ligne"><a href="#s10-tracer-y-x-2-et-x-y-2-dans-la-meme-fenetre"><span class="num">10</span>Tracer <span class="km" data-tex="y=x^{2}">y=x^{2}</span> et <span class="km" data-tex="x=y^{2}">x=y^{2}</span> dans la même fenêtre</a><label class="revise-mini" title="Marquer « Tracer y=x^{2} et x=y^{2} dans la même fenêtre » comme révisé"><input type="checkbox" data-section="s10-tracer-y-x-2-et-x-y-2-dans-la-meme-fenetre" aria-label="Révisé : Tracer y=x^{2} et x=y^{2} dans la même fenêtre"><span class="revise-coche" aria-hidden="true"></span></label></div><ol><li><a href="#s10-tracer-y-x-2-et-x-y-2-dans-la-meme-fenetre-le-point-delicat-x-y-2-n-est-pas-une-fonction"><span class="num">10.1</span>Le point délicat : <span class="km" data-tex="x=y^2">x=y^2</span> n'est pas une fonction</a></li><li><a href="#s10-tracer-y-x-2-et-x-y-2-dans-la-meme-fenetre-code-retenu"><span class="num">10.2</span>Code retenu</a></li><li><a href="#s10-tracer-y-x-2-et-x-y-2-dans-la-meme-fenetre-les-deux-points-d-intersection"><span class="num">10.3</span>Les deux points d'intersection</a></li></ol></li><li data-cible="s11-recapitulatif"><div class="sommaire-ligne"><a href="#s11-recapitulatif"><span class="num">11</span>Récapitulatif</a><label class="revise-mini" title="Marquer « Récapitulatif » comme révisé"><input type="checkbox" data-section="s11-recapitulatif" aria-label="Révisé : Récapitulatif"><span class="revise-coche" aria-hidden="true"></span></label></div><ol><li><a href="#s11-recapitulatif-les-cinq-pieges-qui-coutent-des-points"><span class="num"></span>Les cinq pièges qui coûtent des points</a></li><li><a href="#s11-recapitulatif-a-connaitre-pour-les-travaux-ecrits"><span class="num"></span>À connaître pour les travaux écrits</a></li></ol></li></ol>
+    </details>
+  </aside>
+  <main id="contenu">
+    <section class="hero">
+      <div class="hero-papier" aria-hidden="true"></div>
+      <div class="hero-tete">
+        <a class="hero-piece" href="../index.html"><svg class="icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M3 15h18M9 3v18M15 3v18"/></svg><span>Mathématiques numériques</span><span class="hero-aile">Aile Sciences</span></a>
+        <div class="anneau" data-anneau role="img" aria-label="Progression"><span data-progression-pourcent>0 %</span></div>
+      </div>
+      <p class="hero-entete">Mathématiques numériques — Série 1 · Philippe, E2-p2</p>
+      <h1 class="visuellement-cache">Mathématiques numériques · Corrigé · Série 1 — MATLAB</h1>
+      <div class="hero-intro"><div class="centre"><span class="t-titre"><strong><span style="color:var(--c-heia)">Mathématiques numériques — Série 1</span></strong><br> <span class="t-grand">Corrigé détaillé (MATLAB)<br> Richard Baltensperger — HEIA-FR, 2026-2027</span></span><br><span class="t-grand">Philippe — E2-p2, Génie électrique</span><br><span class="t-petit">18 septembre 2026</span></div>
+<div class="centre"><em>Source :</em> Consignes/sources/matnum-serie1-exercices.pdf (10 exercices) et matnum-serie1-solutions.pdf (solutions du professeur).<br> <em>Toutes les sorties reproduites ci-dessous proviennent de l'exécution réelle du code dans <strong>MATLAB R2025a Update 1</strong>, jamais d'un calcul de tête.</em><br> Scripts : scripts/serie1_exercices.m (les 10 exercices) et scripts/serie1_pieges.m (cas limites et vérifications). Les valeurs sont reproduites telles quelles ; celles que MATLAB affiche une par ligne ont parfois été regroupées pour la mise en page.</div>
+<hr></div>
+      <div class="hero-puces"><span class="puce puce-te"><svg class="icone-puce" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 21V4M4 4h11l-2 3.5L15 11H4"/><path d="M18 21v-6M14 21h8"/></svg>TE1 · ven. 06.11 · <span data-compte-a-rebours="2026-11-06">J-21</span></span><span class="puce puce-corrige">Corrigé</span><span class="puce">11 sections</span></div>
+    </section>
+    <section class="station station-normale" id="s1-format-long-toutes-les-decimales-de-pi-et-de-e" aria-labelledby="s1-format-long-toutes-les-decimales-de-pi-et-de-e-t"><header class="station-tete"><span class="station-num">1</span><h2 id="s1-format-long-toutes-les-decimales-de-pi-et-de-e-t">Format long : toutes les décimales de <span class="km" data-tex="\pi">\pi</span> et de <span class="km" data-tex="e">e</span></h2><label class="revise"><input type="checkbox" data-section="s1-format-long-toutes-les-decimales-de-pi-et-de-e"><span class="revise-coche" aria-hidden="true"></span><span class="revise-texte">Révisé</span></label></header><div class="station-corps"><p><strong>Énoncé.</strong> Utiliser format long pour trouver toutes les décimales de <span class="km" data-tex="\pi">\pi</span> et <span class="km" data-tex="e">e</span> utilisées en interne dans MATLAB.</p>
+<h3 id="s1-format-long-toutes-les-decimales-de-pi-et-de-e-methode" class="sous-titre"><span class="num">1.1</span> Méthode</h3>
+<p>format long change uniquement <em>l'affichage</em> : les nombres restent des <strong>doubles IEEE 754</strong> (1 bit de signe, 11 bits d'exposant, 52 bits de mantisse, soit 53 bits de précision). Il affiche 15 chiffres significatifs ; pour en voir davantage, imposer le format d'impression.</p>
+<h3 id="s1-format-long-toutes-les-decimales-de-pi-et-de-e-code-et-resultat" class="sous-titre"><span class="num">1.2</span> Code et résultat</h3>
+<pre class="code"><code>format long
+pi
+exp(1)</code></pre>
+<pre class="code"><code>ans = 3.141592653589793
+ans = 2.718281828459045</code></pre>
+<p>Pour forcer l'affichage de 17 chiffres significatifs (script serie1_pieges.m) :</p>
+<pre class="code"><code>fprintf(&#x27;%.17g\n&#x27;, pi)
+fprintf(&#x27;chiffres utiles ~ %.2f\n&#x27;, -log10(eps))</code></pre>
+<pre class="code"><code>3.1415926535897931
+chiffres utiles ~ 15.65</code></pre>
+<h3 id="s1-format-long-toutes-les-decimales-de-pi-et-de-e-que-stocke-reellement-la-machine" class="sous-titre"><span class="num">1.3</span> Que stocke réellement la machine</h3>
+<p>La valeur <em>exacte</em> des doubles les plus proches de <span class="km" data-tex="\pi">\pi</span> et de <span class="km" data-tex="e">e</span> (conversion décimale exacte, vérifiée) est :</p>
+<div class="km km-d" data-tex="\pi_{\text{double}} = 3{,}141592653589793115997963468544185161590576171875">\pi_{\text{double}} = 3{,}141592653589793115997963468544185161590576171875</div>
+<div class="km km-d" data-tex="e_{\text{double}} = 2{,}718281828459045090795598298427648842334747314453125">e_{\text{double}} = 2{,}718281828459045090795598298427648842334747314453125</div>
+<p>On a bien <span class="km" data-tex="\pi - \pi_{\text{double}} = 0">\pi - \pi_{\text{double}} = 0</span> en double : l'affichage format long s'arrête avant les décimales qui trahissent le binaire (<span class="km" data-tex="\ldots 5897931\,1599\ldots">\ldots 5897931\,1599\ldots</span>).</p>
+<aside class="carte carte-retenir"><div class="carte-tete"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></svg><span class="carte-type">À retenir</span></div><div class="carte-corps"><ul><li>format long affiche la valeur arrondie à <strong>15 chiffres significatifs</strong> : ce n'est pas le contenu exact de la mémoire.</li><li>L'écart de représentation est mesuré par eps <span class="km" data-tex="= 2^{-52} = 2{,}220446049250313\times10^{-16}">= 2^{-52} = 2{,}220446049250313\times10^{-16}</span> : environ <strong>15,65 chiffres décimaux</strong> utiles (17 pour garantir un aller-retour exact).</li><li>Pour imprimer 17 chiffres : fprintf('% .17g', x) ou num2str(x, 17).</li><li>format short (défaut) revient à 5 chiffres significatifs.</li></ul></div></aside></div></section><section class="station station-normale" id="s2-format-rat-approximation-rationnelle" aria-labelledby="s2-format-rat-approximation-rationnelle-t"><header class="station-tete"><span class="station-num">2</span><h2 id="s2-format-rat-approximation-rationnelle-t">Format rat : approximation rationnelle</h2><label class="revise"><input type="checkbox" data-section="s2-format-rat-approximation-rationnelle"><span class="revise-coche" aria-hidden="true"></span><span class="revise-texte">Révisé</span></label></header><div class="station-corps"><p><strong>Énoncé.</strong> Utiliser format rat pour trouver une approximation rationnelle de <span class="km" data-tex="\pi">\pi</span> et <span class="km" data-tex="e">e</span>.</p>
+<h3 id="s2-format-rat-approximation-rationnelle-methode" class="sous-titre"><span class="num">2.1</span> Méthode</h3>
+<p>rat(x) décompose <span class="km" data-tex="x">x</span> en <strong>fraction continue</strong> et renvoie le couple [n, d] de numérateur/dénominateur : c'est l'équivalent calculable de l'affichage format rat. La recherche s'arrête dès que l'erreur absolue descend sous une <strong>tolérance</strong> tol (par défaut <span class="km" data-tex="\text{tol} = 10^{-6}\,\lVert x \rVert">\text{tol} = 10^{-6}\,\lVert x \rVert</span>, soit <span class="km" data-tex="3{,}142\times10^{-6}">3{,}142\times10^{-6}</span> pour <span class="km" data-tex="\pi">\pi</span> et <span class="km" data-tex="2{,}718\times10^{-6}">2{,}718\times10^{-6}</span> pour <span class="km" data-tex="e">e</span>).</p>
+<h3 id="s2-format-rat-approximation-rationnelle-code-et-resultat" class="sous-titre"><span class="num">2.2</span> Code et résultat</h3>
+<pre class="code"><code>[n_pi, d_pi] = rat(pi)
+[n_e, d_e] = rat(exp(1))</code></pre>
+<pre class="code"><code>n_pi = 355    d_pi = 113
+n_e  = 1457   d_e  = 536
+erreurs absolues : 2.668e-07 (pi) et 1.754e-06 (e), soit 8.49e-08 et 6.45e-07 en relatif</code></pre>
+<h3 id="s2-format-rat-approximation-rationnelle-le-role-de-la-tolerance-demonstration" class="sous-titre"><span class="num">2.3</span> Le rôle de la tolérance (démonstration)</h3>
+<pre class="code"><code>for tol = [1e-4 1e-6 1e-8 1e-10 1e-12]
+    [n, d] = rat(exp(1), tol);
+    fprintf(&#x27;rat(e, %g) = %d/%d  (erreur %.3e)\n&#x27;, tol, n, d, abs(n/d - exp(1)))
+end</code></pre>
+<pre class="code"><code>rat(e, 0.0001) = 193/71  (erreur 2.803e-05)
+rat(e, 1e-06) = 2721/1001  (erreur 1.102e-07)
+rat(e, 1e-08) = 25946/9545  (erreur 5.515e-09)
+rat(e, 1e-10) = 566827/208524  (erreur 1.154e-11)
+rat(e, 1e-12) = 1084483/398959  (erreur 4.818e-13)</code></pre>
+<p>La fraction renvoyée par défaut (<span class="km" data-tex="1457/536">1457/536</span>) est donc <em>moins</em> précise que <span class="km" data-tex="2721/1001">2721/1001</span> : elle satisfait simplement la tolérance relative de <span class="km" data-tex="10^{-6}">10^{-6}</span>, atteinte plus tôt.</p>
+<aside class="carte carte-retenir"><div class="carte-tete"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></svg><span class="carte-type">À retenir</span></div><div class="carte-corps"><ul><li><span class="km" data-tex="355/113">355/113</span> est la <strong>meilleure approximation rationnelle</strong> de <span class="km" data-tex="\pi">\pi</span> à dénominateur <span class="km" data-tex="&lt; 1000">&lt; 1000</span> (erreur relative <span class="km" data-tex="8{,}5\times10^{-8}">8{,}5\times10^{-8}</span>) ; <span class="km" data-tex="1457/536">1457/536</span> est celle de <span class="km" data-tex="e">e</span> fournie par la tolérance par défaut.</li><li>format rat modifie l'<em>affichage</em> ; [n,d] = rat(x, tol) renvoie les <em>entiers</em> : c'est cette forme qu'il faut utiliser dans un calcul.</li><li>pi est une fraction continue remarquable : <span class="km" data-tex="[3;7,15,1,292,1,1,1,2,\ldots]">[3;7,15,1,292,1,1,1,2,\ldots]</span> ; ses réduites successives sont <span class="km" data-tex="22/7">22/7</span>, <span class="km" data-tex="333/106">333/106</span>, <span class="km" data-tex="355/113">355/113</span>, <span class="km" data-tex="103993/33102">103993/33102</span>.</li></ul></div></aside>
+<aside class="carte carte-piege"><div class="carte-tete"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 2.5 20h19z"/><path d="M12 10v4.5M12 17.2v.3"/></svg><span class="carte-type">Piège</span></div><div class="carte-corps"><span class="km" data-tex="\dfrac{1457}{536}">\dfrac{1457}{536}</span> n'est pas une valeur « remarquable » de <span class="km" data-tex="e">e</span> et le résultat <strong>dépend de la tolérance</strong> : énoncer une fraction sans préciser la tolérance n'a pas de sens. Pour un test, imposer explicitement rat(x, 1e-10).</div></aside></div></section><section class="station station-normale" id="s3-qu-est-ce-qui-est-plus-grand-e-pi-ou-pi-e" aria-labelledby="s3-qu-est-ce-qui-est-plus-grand-e-pi-ou-pi-e-t"><header class="station-tete"><span class="station-num">3</span><h2 id="s3-qu-est-ce-qui-est-plus-grand-e-pi-ou-pi-e-t">Qu'est-ce qui est plus grand : <span class="km" data-tex="e^{\pi}">e^{\pi}</span> ou <span class="km" data-tex="\pi^{e}">\pi^{e}</span> ?</h2><label class="revise"><input type="checkbox" data-section="s3-qu-est-ce-qui-est-plus-grand-e-pi-ou-pi-e"><span class="revise-coche" aria-hidden="true"></span><span class="revise-texte">Révisé</span></label></header><div class="station-corps"><p><strong>Énoncé.</strong> Comparer <span class="km" data-tex="e^{\pi}">e^{\pi}</span> et <span class="km" data-tex="\pi^{e}">\pi^{e}</span>.</p>
+<h3 id="s3-qu-est-ce-qui-est-plus-grand-e-pi-ou-pi-e-methode-comparer-les-logarithmes" class="sous-titre"><span class="num">3.1</span> Méthode : comparer les logarithmes</h3>
+<p><span class="km" data-tex="\ln">\ln</span> est strictement croissante sur <span class="km" data-tex="]0,+\infty[">]0,+\infty[</span>, donc comparer <span class="km" data-tex="a">a</span> et <span class="km" data-tex="b">b</span> revenient à comparer <span class="km" data-tex="\ln a">\ln a</span> et <span class="km" data-tex="\ln b">\ln b</span>. En utilisant <span class="km" data-tex="\ln(u^{v}) = v\ln u">\ln(u^{v}) = v\ln u</span> :</p>
+<div class="km km-d" data-tex="\ln\!\left(e^{\pi}\right)=\pi, \qquad \ln\!\left(\pi^{e}\right)=e\ln(\pi).">\ln\!\left(e^{\pi}\right)=\pi, \qquad \ln\!\left(\pi^{e}\right)=e\ln(\pi).</div>
+<pre class="code"><code>exp(pi)
+pi^exp(1)
+exp(pi) &gt; pi^exp(1)</code></pre>
+<pre class="code"><code>ans = 23.140692632779267
+ans = 22.459157718361041
+ans = logical 1</code></pre>
+<p>L'écart et le contrôle par le logarithme (serie1_pieges.m) :</p>
+<pre class="code"><code>exp(pi) - pi^exp(1)
+pi - exp(1)*log(pi)</code></pre>
+<pre class="code"><code>e^pi - pi^e = 0.681534914418226
+pi - e*log(pi) = 0.029894206391372</code></pre>
+<h3 id="s3-qu-est-ce-qui-est-plus-grand-e-pi-ou-pi-e-preuve-generale" class="sous-titre"><span class="num">3.2</span> Preuve générale</h3>
+<p>Posons <span class="km" data-tex="f(x)=\dfrac{\ln x}{x}">f(x)=\dfrac{\ln x}{x}</span> pour <span class="km" data-tex="x&gt;0">x&gt;0</span> :</p>
+<div class="km km-d" data-tex="f&#x27;(x)=\frac{1-\ln x}{x^{2}}, \qquad f&#x27;(x)&lt;0 \iff x&gt;e .">f&#x27;(x)=\frac{1-\ln x}{x^{2}}, \qquad f&#x27;(x)&lt;0 \iff x&gt;e .</div>
+<p><span class="km" data-tex="f">f</span> est donc <strong>strictement décroissante sur <span class="km" data-tex="]e,+\infty[">]e,+\infty[</span></strong>. Comme <span class="km" data-tex="\pi&gt;e">\pi&gt;e</span> :</p>
+<div class="km km-d" data-tex="\frac{\ln \pi}{\pi} &lt; \frac{\ln e}{e}=\frac{1}{e}
+\;\Longrightarrow\; e\ln\pi &lt; \pi
+\;\Longrightarrow\;
+\boxed{\;\pi^{e} &lt; e^{\pi}\;}">\frac{\ln \pi}{\pi} &lt; \frac{\ln e}{e}=\frac{1}{e}
+\;\Longrightarrow\; e\ln\pi &lt; \pi
+\;\Longrightarrow\;
+\boxed{\;\pi^{e} &lt; e^{\pi}\;}</div>
+<p>Vérification numérique des deux membres : <span class="km" data-tex="\dfrac{\ln\pi}{\pi}=0{,}3643788397">\dfrac{\ln\pi}{\pi}=0{,}3643788397</span> contre <span class="km" data-tex="\dfrac{1}{e}=0{,}3678794412">\dfrac{1}{e}=0{,}3678794412</span>. Le maximum de <span class="km" data-tex="f">f</span> sur <span class="km" data-tex="[2,4]">[2,4]</span> vaut <span class="km" data-tex="0{,}367879441171359">0{,}367879441171359</span>, atteint en <span class="km" data-tex="x = 2{,}71828 \approx e">x = 2{,}71828 \approx e</span> : <span class="km" data-tex="e">e</span> est bien l'abscisse du maximum.</p>
+<aside class="carte carte-retenir"><div class="carte-tete"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></svg><span class="carte-type">À retenir</span></div><div class="carte-corps"><span class="km" data-tex="e^{\pi} &gt; \pi^{e}">e^{\pi} &gt; \pi^{e}</span> avec une marge confortable : <span class="km" data-tex="e^{\pi}-\pi^{e}= 0{,}681534914418223532\ldots">e^{\pi}-\pi^{e}= 0{,}681534914418223532\ldots</span> (30 chiffres significatifs). Aucun risque d'erreur d'arrondi en double, la comparaison exp(pi) &gt; pîexp(1) est fiable.</div></aside>
+<aside class="carte carte-piege"><div class="carte-tete"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 2.5 20h19z"/><path d="M12 10v4.5M12 17.2v.3"/></svg><span class="carte-type">Piège</span></div><div class="carte-corps">Le raisonnement « <span class="km" data-tex="e &lt; \pi">e &lt; \pi</span> donc <span class="km" data-tex="e^{\pi} &lt; \pi^{e}">e^{\pi} &lt; \pi^{e}</span> » est <strong>faux</strong> : les deux exposants diffèrent. Toute comparaison de puissances à bases différentes passe par les logarithmes.</div></aside></div></section><section class="station station-normale" id="s4-vecteur-ligne-transposee-et-x" aria-labelledby="s4-vecteur-ligne-transposee-et-x-t"><header class="station-tete"><span class="station-num">4</span><h2 id="s4-vecteur-ligne-transposee-et-x-t">Vecteur ligne, transposée et x(:)</h2><label class="revise"><input type="checkbox" data-section="s4-vecteur-ligne-transposee-et-x"><span class="revise-coche" aria-hidden="true"></span><span class="revise-texte">Révisé</span></label></header><div class="station-corps"><p><strong>Énoncé.</strong> Définir un vecteur ligne <span class="km" data-tex="x">x</span> contenant <span class="km" data-tex="1,\ldots,10">1,\ldots,10</span>, utiliser la transposée ' pour le rendre colonne, puis expliquer x = x(:).</p>
+<h3 id="s4-vecteur-ligne-transposee-et-x-code-et-resultat" class="sous-titre"><span class="num">4.1</span> Code et résultat</h3>
+<pre class="code"><code>x = 1:10;
+size(x)
+x = x&#x27;;
+size(x)
+y = 1:5;
+size(y(:))</code></pre>
+<pre class="code"><code>ans = 1 10      % vecteur ligne
+ans = 10 1      % vecteur colonne
+ans = 5 1       % x(:) rend toujours une colonne</code></pre>
+<p>Aplatissement d'une matrice et les deux opérateurs de transposition (serie1_pieges.m) :</p>
+<pre class="code"><code>A = [1 2 3; 4 5 6];
+A(:)&#x27;
+v = 1 + 2i;
+v&#x27;
+v.&#x27;
+w = 1:3; wc = w&#x27;;
+isequal(w, wc)
+isequal(w(:), wc(:))</code></pre>
+<pre class="code"><code>ans = 1 4 2 5 3 6                 % A(:) lit colonne par colonne
+ans = 1.000000000000000 - 2.000000000000000i   % v&#x27;  : conjuguee
+ans = 1.000000000000000 + 2.000000000000000i   % v.&#x27; : non conjuguee
+isequal(w, wc) = 0 | isequal(w(:), wc(:)) = 1</code></pre>
+<h3 id="s4-vecteur-ligne-transposee-et-x-interpretation" class="sous-titre"><span class="num">4.2</span> Interprétation</h3>
+<p>x(:) <strong>linéarise</strong> le tableau en un vecteur <strong>colonne</strong>, en parcourant la mémoire <strong>colonne par colonne</strong> (ordre <em>column-major</em> de MATLAB). Il est idempotent : appliqué à un vecteur colonne, il ne change rien. C'est le réflexe à avoir dès qu'une fonction exige un vecteur colonne (ou pour agréger un tableau : sum(A(:)), max(A(:))).</p>
+<aside class="carte carte-retenir"><div class="carte-tete"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></svg><span class="carte-type">À retenir</span></div><div class="carte-corps"><ul><li>' est la transposée <strong>conjuguée</strong> (ctranspose) ; .' la transposée simple. Sur des réels, identiques ; sur du complexe, (1+2i)' = 1-2i.</li><li>size(x) renvoie [lignes colonnes] : size(x,1) = nombre de lignes.</li><li>Deux vecteurs de mêmes valeurs mais d'orientations différentes ne sont <strong>pas égaux</strong> pour isequal (0 ci-dessus) : comparer via isequal(x(:), y(:)).</li></ul></div></aside></div></section><section class="station station-normale" id="s5-produit-scalaire-de-deux-vecteurs" aria-labelledby="s5-produit-scalaire-de-deux-vecteurs-t"><header class="station-tete"><span class="station-num">5</span><h2 id="s5-produit-scalaire-de-deux-vecteurs-t">Produit scalaire de deux vecteurs</h2><label class="revise"><input type="checkbox" data-section="s5-produit-scalaire-de-deux-vecteurs"><span class="revise-coche" aria-hidden="true"></span><span class="revise-texte">Révisé</span></label></header><div class="station-corps"><p><strong>Énoncé.</strong> Calculer <span class="km" data-tex="\sum_{k=1}^{100} x_k y_k">\sum_{k=1}^{100} x_k y_k</span> avec <span class="km" data-tex="x=(1,2,\ldots,100)">x=(1,2,\ldots,100)</span> et <span class="km" data-tex="y=(1,2,1,\ldots,1)">y=(1,2,1,\ldots,1)</span> (tous deux de taille <span class="km" data-tex="1\times100">1\times100</span>).</p>
+<h3 id="s5-produit-scalaire-de-deux-vecteurs-methode" class="sous-titre"><span class="num">5.1</span> Méthode</h3>
+<p>Le produit scalaire est le produit matriciel d'un vecteur ligne par un vecteur <strong>colonne</strong> (taille <span class="km" data-tex="(1\times100)\cdot(100\times1) = 1\times1">(1\times100)\cdot(100\times1) = 1\times1</span>, donc un scalaire) :</p>
+<div class="km km-d" data-tex="x\,y^{\mathsf T}=\sum_{k=1}^{100}x_k y_k .">x\,y^{\mathsf T}=\sum_{k=1}^{100}x_k y_k .</div>
+<pre class="code"><code>x = 1:100;
+y = ones(1, 100);
+y(2) = 2;
+x*y&#x27;</code></pre>
+<pre class="code"><code>ans = 5052</code></pre>
+<p>Contrôles et pièges de dimensions (serie1_pieges.m) :</p>
+<pre class="code"><code>x*y&#x27; = 5052 ; y*y&#x27; = 103 = sum(y.^2) ; taille de x&#x27;*y : 100 x 100
+controles : sum(x.*y) = 5052, dot(x,y) = 5052, sum(1:100)+2 = 5052
+x*y -&gt; Incorrect dimensions for matrix multiplication. Check that the number of columns in
+the first matrix matches the number of rows in the second matrix. To operate on each element
+of the matrix individually, use TIMES (.*) for elementwise multiplication.</code></pre>
+<h3 id="s5-produit-scalaire-de-deux-vecteurs-detail-du-calcul" class="sous-titre"><span class="num">5.2</span> Détail du calcul</h3>
+<p>Sans le y(2) = 2, on aurait <span class="km" data-tex="\sum_{k=1}^{100} k = \frac{100\cdot101}{2}=5050">\sum_{k=1}^{100} k = \frac{100\cdot101}{2}=5050</span>. Le deuxième terme passe de <span class="km" data-tex="2\cdot1=2">2\cdot1=2</span> à <span class="km" data-tex="2\cdot2=4">2\cdot2=4</span>, soit <span class="km" data-tex="+2">+2</span> :</p>
+<div class="km km-d" data-tex="5050+2=\boxed{5052}">5050+2=\boxed{5052}</div>
+<aside class="carte carte-retenir"><div class="carte-tete"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></svg><span class="carte-type">À retenir</span></div><div class="carte-corps"><span class="km" data-tex="y^{\mathsf T}y = \sum_k y_k^2">y^{\mathsf T}y = \sum_k y_k^2</span> est le <em>carré</em> de la norme de <span class="km" data-tex="y">y</span> : ici <span class="km" data-tex="99\cdot1+4=103">99\cdot1+4=103</span> (à ne pas confondre avec <span class="km" data-tex="\left(\sum_k y_k\right)^2 = 101^2 = 10201">\left(\sum_k y_k\right)^2 = 101^2 = 10201</span>).</div></aside>
+<aside class="carte carte-piege"><div class="carte-tete"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 2.5 20h19z"/><path d="M12 10v4.5M12 17.2v.3"/></svg><span class="carte-type">Piège</span></div><div class="carte-corps">x*y (sans transposée) est une multiplication matricielle impossible : <em>« Incorrect dimensions for matrix multiplication  »</em>. Le produit <em>terme à terme</em> s'écrit x.*y. Enfin x'*y n'est pas un scalaire mais un <strong>produit extérieur</strong> <span class="km" data-tex="100\times100">100\times100</span> : la transposée doit être du bon côté.</div></aside></div></section><section class="station station-normale" id="s6-les-factorielles-1-a-15-par-cumprod" aria-labelledby="s6-les-factorielles-1-a-15-par-cumprod-t"><header class="station-tete"><span class="station-num">6</span><h2 id="s6-les-factorielles-1-a-15-par-cumprod-t">Les factorielles <span class="km" data-tex="1!">1!</span> à <span class="km" data-tex="15!">15!</span> par cumprod</h2><label class="revise"><input type="checkbox" data-section="s6-les-factorielles-1-a-15-par-cumprod"><span class="revise-coche" aria-hidden="true"></span><span class="revise-texte">Révisé</span></label></header><div class="station-corps"><p><strong>Énoncé.</strong> Calculer la liste des factorielles <span class="km" data-tex="(1!,2!,\ldots,15!)">(1!,2!,\ldots,15!)</span> avec cumprod.</p>
+<h3 id="s6-les-factorielles-1-a-15-par-cumprod-methode" class="sous-titre"><span class="num">6.1</span> Méthode</h3>
+<p>cumprod(v) calcule les produits cumulés : le <span class="km" data-tex="k">k</span>-ième élément vaut <span class="km" data-tex="v_1v_2\cdots v_k">v_1v_2\cdots v_k</span>. Avec <span class="km" data-tex="v = (1,2,\ldots,15)">v = (1,2,\ldots,15)</span> on obtient exactement <span class="km" data-tex="1!,2!,\ldots,15!">1!,2!,\ldots,15!</span>.</p>
+<pre class="code"><code>x = 1:15;
+y = cumprod(x);
+fprintf(&#x27;%d! = %d\n&#x27;, [x; y])</code></pre>
+<pre class="code"><code>1! = 1                8!  = 40320              15! = 1307674368000
+2! = 2                9!  = 362880
+3! = 6                10! = 3628800
+4! = 24               11! = 39916800
+5! = 120              12! = 479001600
+6! = 720              13! = 6227020800
+7! = 5040             14! = 87178291200</code></pre>
+<h3 id="s6-les-factorielles-1-a-15-par-cumprod-jusqu-ou-les-entiers-restent-exacts" class="sous-titre"><span class="num">6.2</span> Jusqu'où les entiers restent exacts ?</h3>
+<p><span class="km" data-tex="2^{53} = 9\,007\,199\,254\,740\,992">2^{53} = 9\,007\,199\,254\,740\,992</span>. Une factorielle est représentable <em>exactement</em> en double tant que sa partie impaire tient sur 53 bits, c'est-à-dire jusqu'à <span class="km" data-tex="22!">22!</span> :</p>
+<pre class="code"><code>18! MATLAB = 6402373705728000 | exact = 6402373705728000 | identique : 1
+19! MATLAB = 121645100408832000 | exact = 121645100408832000 | identique : 1
+20! MATLAB = 2432902008176640000 | exact = 2432902008176640000 | identique : 1
+21! MATLAB = 51090942171709440000 | exact = 51090942171709440000 | identique : 1
+22! MATLAB = 1124000727777607680000 | exact = 1124000727777607680000 | identique : 1
+23! MATLAB = 25852016738884978212864 | exact = 25852016738884976640000 | identique : 0
+prod(1:170) = 7.257416e+306 (fini) | prod(1:171) = Inf (debordement)</code></pre>
+<aside class="carte carte-retenir"><div class="carte-tete"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></svg><span class="carte-type">À retenir</span></div><div class="carte-corps"><ul><li>cumprod(x) = produits cumulés, prod(x) = produit total, factorial(n) = <span class="km" data-tex="n!">n!</span> pour un scalaire. Les trois coïncident ici (cumprod(1:15) == arrayfun(@factorial, 1:15) vaut 1).</li><li><strong>Exactitude :</strong> jusqu'à <span class="km" data-tex="22!">22!</span> la valeur imprimée est l'entier exact ; à partir de <span class="km" data-tex="23!">23!</span> MATLAB arrondit (<span class="km" data-tex="\ldots78212864">\ldots78212864</span> au lieu de <span class="km" data-tex="\ldots76640000">\ldots76640000</span>). La leçon du chapitre 1 : un résultat « entier » affiché sans point décimal n'est pas pour autant exact.</li><li><strong>Débordement :</strong> <span class="km" data-tex="171! &gt; realmax \approx 1{,}8\times10^{308}">171! &gt; realmax \approx 1{,}8\times10^{308}</span>, donc Inf dès <span class="km" data-tex="171!">171!</span> ; <span class="km" data-tex="170! \approx 7{,}26\times10^{306}">170! \approx 7{,}26\times10^{306}</span> passe encore.</li></ul></div></aside></div></section><section class="station station-normale" id="s7-carres-magiques-magic-n" aria-labelledby="s7-carres-magiques-magic-n-t"><header class="station-tete"><span class="station-num">7</span><h2 id="s7-carres-magiques-magic-n-t">Carrés magiques magic(n)</h2><label class="revise"><input type="checkbox" data-section="s7-carres-magiques-magic-n"><span class="revise-coche" aria-hidden="true"></span><span class="revise-texte">Révisé</span></label></header><div class="station-corps"><p><strong>Énoncé.</strong> Pour <span class="km" data-tex="n = 10, 20, 30">n = 10, 20, 30</span>, vérifier que la somme des lignes et des colonnes de magic(n) est constante et vaut <span class="km" data-tex="(n^3+n)/2">(n^3+n)/2</span>.</p>
+<h3 id="s7-carres-magiques-magic-n-methode" class="sous-titre"><span class="num">7.1</span> Méthode</h3>
+<p>Un carré magique d'ordre <span class="km" data-tex="n">n</span> contient les entiers <span class="km" data-tex="1">1</span> à <span class="km" data-tex="n^2">n^2</span> une fois chacun. La somme totale vaut donc <span class="km" data-tex="\sum_{k=1}^{n^2}k=\frac{n^2(n^2+1)}{2}">\sum_{k=1}^{n^2}k=\frac{n^2(n^2+1)}{2}</span>, répartie sur <span class="km" data-tex="n">n</span> lignes : <span class="ancre" id="lbl-eq-magic"></span></p>
+<div class="km km-d" data-tex="\begin{equation}
+S=\frac{1}{n}\cdot\frac{n^{2}(n^{2}+1)}{2}=\frac{n(n^{2}+1)}{2}=\frac{n^{3}+n}{2}.
+ \tag{1}\end{equation}">\begin{equation}
+S=\frac{1}{n}\cdot\frac{n^{2}(n^{2}+1)}{2}=\frac{n(n^{2}+1)}{2}=\frac{n^{3}+n}{2}.
+ \tag{1}\end{equation}</div>
+<pre class="code"><code>for n = [10 20 30]
+    T = magic(n);
+    fprintf(&#x27;n = %2d : constante %6d, ecart lignes/colonnes = %g / %g\n&#x27;, ...
+            n, (n^3 + n)/2, max(abs(sum(T) - (n^3+n)/2)), max(abs(sum(T&#x27;) - (n^3+n)/2)))
+end</code></pre>
+<pre class="code"><code>n = 10 : constante    505, ecart lignes/colonnes = 0 / 0
+n = 20 : constante   4010, ecart lignes/colonnes = 0 / 0
+n = 30 : constante  13515, ecart lignes/colonnes = 0 / 0</code></pre>
+<h3 id="s7-carres-magiques-magic-n-limites-de-magic" class="sous-titre"><span class="num">7.2</span> Limites de magic</h3>
+<pre class="code"><code>magic(2) : lignes [5  5], colonnes [4  6]
+magic(3) : lignes [15  15  15], colonnes [15  15  15]</code></pre>
+<aside class="carte carte-retenir"><div class="carte-tete"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></svg><span class="carte-type">À retenir</span></div><div class="carte-corps">sum(T) somme les <em>colonnes</em>, sum(T') les <em>lignes</em>, sum(diag(T)) la diagonale principale, sum(diag(fliplr(T))) l'antidiagonale. La constante <a class="renvoi" href="#lbl-eq-magic">(1)</a> se retrouve par simple comptage : pas besoin de la retenir.</div></aside>
+<aside class="carte carte-piege"><div class="carte-tete"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 2.5 20h19z"/><path d="M12 10v4.5M12 17.2v.3"/></svg><span class="carte-type">Piège</span></div><div class="carte-corps">magic(2) = <span class="km" data-tex="\begin{pmatrix}1&amp;3\\4&amp;2\end{pmatrix}">\begin{pmatrix}1&amp;3\\4&amp;2\end{pmatrix}</span> n'est <strong>pas</strong> un carré magique (lignes : 5 et 5 ; colonnes : 4 et 6). magic(n) n'est défini que pour <span class="km" data-tex="n\ge3">n\ge3</span> et pour un entier scalaire. Ne pas conclure « ça marche pour tout <span class="km" data-tex="n">n</span> » à partir du test <span class="km" data-tex="n=10">n=10</span>.</div></aside></div></section><section class="station station-normale" id="s8-fonction-pair-tous-les-elements-pairs" aria-labelledby="s8-fonction-pair-tous-les-elements-pairs-t"><header class="station-tete"><span class="station-num">8</span><h2 id="s8-fonction-pair-tous-les-elements-pairs-t">Fonction pair : tous les éléments pairs</h2><label class="revise"><input type="checkbox" data-section="s8-fonction-pair-tous-les-elements-pairs"><span class="revise-coche" aria-hidden="true"></span><span class="revise-texte">Révisé</span></label></header><div class="station-corps"><p><strong>Énoncé.</strong> Écrire function t = pair(a) qui retourne 1 si tous les éléments de <span class="km" data-tex="a">a</span> sont pairs, 0 sinon (rem peut servir).</p>
+<h3 id="s8-fonction-pair-tous-les-elements-pairs-la-solution-du-professeur-decortiquee" class="sous-titre"><span class="num">8.1</span> La solution du professeur, décortiquée</h3>
+<pre class="code"><code>function t = pair(a)
+    t = prod(rem(a, 2) - 1) ~= 0;
+end</code></pre>
+<p>Découpage de l'expression, sur <span class="km" data-tex="a = (2,4,6,8)">a = (2,4,6,8)</span> :</p>
+<div class="tableau"><table><thead><tr><th>Étape</th><th>expression</th><th><span class="km" data-tex="a=(2,4,6,8)">a=(2,4,6,8)</span></th><th><span class="km" data-tex="a=(2,4,7,8)">a=(2,4,7,8)</span></th></tr></thead><tbody><tr><td>reste modulo 2</td><td>rem(a,2)</td><td><span class="km" data-tex="0\;0\;0\;0">0\;0\;0\;0</span></td><td><span class="km" data-tex="0\;0\;1\;0">0\;0\;1\;0</span></td></tr><tr><td>décalage</td><td>rem(a,2)-1</td><td><span class="km" data-tex="-1\,-1\,-1\,-1">-1\,-1\,-1\,-1</span></td><td><span class="km" data-tex="-1\,-1\,0\,-1">-1\,-1\,0\,-1</span></td></tr><tr><td>produit</td><td>prod(...)</td><td><span class="km" data-tex="-1">-1</span></td><td><span class="km" data-tex="0">0</span></td></tr><tr><td>test</td><td>= 0</td><td><span class="km" data-tex="1">1</span> (vrai)</td><td><span class="km" data-tex="0">0</span> (faux)</td></tr></tbody></table></div>
+<p>L'astuce : rem(a,2)-1 vaut <span class="km" data-tex="0">0</span> pour un <em>impair</em> et <span class="km" data-tex="-1">-1</span> pour un <em>pair</em>. Le produit vaut donc <span class="km" data-tex="0">0</span> dès qu'un seul élément est impair, et <span class="km" data-tex="\pm1">\pm1</span> sinon.</p>
+<pre class="code"><code>ans = logical 1        % pair([2 4 6 8])
+ans = logical 0        % pair([2 4 7 8])</code></pre>
+<p>Cas limites de la solution du professeur (serie1_pieges.m) :</p>
+<pre class="code"><code>pair([]) = 1 | pair(2.5) = 1 | all(rem([],2)==0) = 1</code></pre>
+<h3 id="s8-fonction-pair-tous-les-elements-pairs-version-explicite-recommandee-a-l-examen" class="sous-titre"><span class="num">8.2</span> Version explicite (recommandée à l'examen)</h3>
+<pre class="code"><code>function t = pair_clair(a)
+    t = all(rem(a, 2) == 0);   % lisible et sans piege de produit vide
+end</code></pre>
+<aside class="carte carte-retenir"><div class="carte-tete"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></svg><span class="carte-type">À retenir</span></div><div class="carte-corps">all(cond) teste si <em>toutes</em> les valeurs vérifient cond ; any(cond) si au moins une. C'est la traduction directe de « pour tout » et « il existe ».</div></aside>
+<aside class="carte carte-piege"><div class="carte-tete"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 2.5 20h19z"/><path d="M12 10v4.5M12 17.2v.3"/></svg><span class="carte-type">Piège</span></div><div class="carte-corps"><p>Le contrat de l'énoncé — « un vecteur d'<strong>entiers</strong> » — est indispensable :</p>
+<ul><li>pair([]) = 1 : prod([]) = 1 (élément neutre), donc « tous pairs » est vrai sur un ensemble vide ;</li><li>pair(2.5) = 1 : rem(2.5,2) = 0.5 donne <span class="km" data-tex="0{,}5-1=-0{,}5 \neq 0">0{,}5-1=-0{,}5 \neq 0</span>, mais avec le test all(rem(a,2)==0) le résultat est 0. La fonction du prof ne teste pas l'intégrité de l'entrée.</li></ul></div></aside></div></section><section class="station station-normale" id="s9-fonction-interleave-entrelacer-deux-vecteurs" aria-labelledby="s9-fonction-interleave-entrelacer-deux-vecteurs-t"><header class="station-tete"><span class="station-num">9</span><h2 id="s9-fonction-interleave-entrelacer-deux-vecteurs-t">Fonction interleave : entrelacer deux vecteurs</h2><label class="revise"><input type="checkbox" data-section="s9-fonction-interleave-entrelacer-deux-vecteurs"><span class="revise-coche" aria-hidden="true"></span><span class="revise-texte">Révisé</span></label></header><div class="station-corps"><p><strong>Énoncé.</strong> Écrire function c = interleave(a, b) qui entrelace les éléments de <span class="km" data-tex="a">a</span> et <span class="km" data-tex="b">b</span> : pour <span class="km" data-tex="a = (1,3,5,7)">a = (1,3,5,7)</span> et <span class="km" data-tex="b = (-2,-4)">b = (-2,-4)</span>, on veut <span class="km" data-tex="c = (1,-2,3,-4,5,7)">c = (1,-2,3,-4,5,7)</span>. Le programme doit aussi fonctionner avec des vecteurs vides.</p>
+<h3 id="s9-fonction-interleave-entrelacer-deux-vecteurs-solution-du-professeur" class="sous-titre"><span class="num">9.1</span> Solution du professeur</h3>
+<pre class="code"><code>function c = interleave(a, b)
+    n = length(a); m = length(b);
+    k = min([n m]);
+    c = [];
+    for i = 1:k
+        c = [c a(i) b(i)];
+    end
+    if n == k
+        c = [c b(k+1:m)];
+    elseif m == k
+        c = [c a(k+1:n)];
+    end
+end</code></pre>
+<p>L'idée est juste : entrelacer jusqu'à k = min(n,m) éléments, puis recopier la queue du vecteur le plus long (if n == k signifie « <span class="km" data-tex="b">b</span> est le plus long »).</p>
+<h3 id="s9-fonction-interleave-entrelacer-deux-vecteurs-ce-que-revele-l-execution" class="sous-titre"><span class="num">9.2</span> Ce que révèle l'exécution</h3>
+<p>En lançant ce code tel qu'il est imprimé, avec l'exemple de l'énoncé (vecteurs <em>colonnes</em>) :</p>
+<pre class="code"><code>interleave du prof -&gt; Dimensions of arrays being concatenated are not consistent.
+ecart 1 -&gt; [1 -2  3 -4  5 -6  7] (le defaut ne se voit pas)
+version verticale -&gt; [1 -2  3 -4  5  7]</code></pre>
+<p><strong>Cause.</strong> c démarre à [] et grossit <em>horizontalement</em> ([c a(i) b(i)] produit un vecteur <em>ligne</em>). Or <span class="km" data-tex="a">a</span>, <span class="km" data-tex="b">b</span> et donc la queue a(k+1:n) sont des vecteurs <em>colonnes</em> : concaténer une ligne (<span class="km" data-tex="1\times6">1\times6</span>) et une colonne (<span class="km" data-tex="2\times1">2\times1</span>) est impossible. Le défaut ne se manifeste donc que lorsque la <strong>queue comporte au moins 2 éléments</strong> (écart de longueur <span class="km" data-tex="\geq 2">\geq 2</span>) : avec un écart de 1 la queue est un scalaire, et le test passe. Il ne s'agit pas d'une erreur d'algorithme mais d'une <strong>coquille de concaténation</strong> dans le corrigé distribué.</p>
+<h3 id="s9-fonction-interleave-entrelacer-deux-vecteurs-correction-minimale" class="sous-titre"><span class="num">9.3</span> Correction minimale</h3>
+<p>Remplacer chaque ; manquant par une concaténation verticale :</p>
+<pre class="code"><code>c = [c; a(i); b(i)];   % au lieu de [c a(i) b(i)]
+c = [c; b(k+1:m)];     % au lieu de [c b(k+1:m)]
+c = [c; a(k+1:n)];     % au lieu de [c a(k+1:n)]</code></pre>
+<pre class="code"><code>version verticale -&gt; [1 -2  3 -4  5  7]     % (serie1_pieges.m)</code></pre>
+<h3 id="s9-fonction-interleave-entrelacer-deux-vecteurs-version-vectorisee-sans-boucle-de-croissance" class="sous-titre"><span class="num">9.4</span> Version vectorisée (sans boucle de croissance)</h3>
+<p>Faire grandir c itération par itération est coûteux (MATLAB réalloue le tableau à chaque tour). On préalloue et on remplit par pas de 2 :</p>
+<pre class="code"><code>function c = interleave(a, b)
+% Entrelace a et b. Tolere des tailles differentes et des vecteurs vides.
+% Retourne toujours un vecteur COLONNE.
+    a = a(:); b = b(:);              % on impose la forme colonne
+    n = length(a); m = length(b);
+    k = min(n, m);
+    c = zeros(n + m, 1);             % preallocation
+    c(1:2:2*k) = a(1:k);
+    c(2:2:2*k) = b(1:k);
+    if n &gt; k
+        c(2*k+1:end) = a(k+1:n);     % queue de a
+    elseif m &gt; k
+        c(2*k+1:end) = b(k+1:m);     % queue de b
+    end
+end</code></pre>
+<p>L'appel et la sortie (serie1_exercices.m) :</p>
+<pre class="code"><code>a = [1; 3; 5; 7];
+b = [-2; -4];
+interleave(a, b)&#x27;
+interleave([1 2 3], [10 20 30 40])&#x27;
+interleave([], [1 2 3])&#x27;</code></pre>
+<pre class="code"><code>ans = 1 -2 3 -4 5 7          % conforme a l&#x27;enonce (transpose d&#x27;un vecteur colonne)
+ans = 1 10 2 20 3 30 40
+ans = 1 2 3</code></pre>
+<aside class="carte carte-retenir"><div class="carte-tete"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></svg><span class="carte-type">À retenir</span></div><div class="carte-corps"><ul><li>Réflexe a = a(:); b = b(:) : rendre la fonction insensible à l'orientation des entrées, puis imposer <em>une</em> forme de sortie (ici colonne).</li><li><strong>Préallouer</strong> (zeros(n+m,1)) avant toute boucle de remplissage ; c(1:2:2*k) = a(1:k) remplit les indices impairs, c(2:2:2*k) les indices pairs.</li><li>Toujours tester les <strong>cas limites</strong> demandés par l'énoncé : vecteur vide (min(0,m) = 0), tailles inégales, les deux vides.</li></ul></div></aside></div></section><section class="station station-normale" id="s10-tracer-y-x-2-et-x-y-2-dans-la-meme-fenetre" aria-labelledby="s10-tracer-y-x-2-et-x-y-2-dans-la-meme-fenetre-t"><header class="station-tete"><span class="station-num">10</span><h2 id="s10-tracer-y-x-2-et-x-y-2-dans-la-meme-fenetre-t">Tracer <span class="km" data-tex="y=x^{2}">y=x^{2}</span> et <span class="km" data-tex="x=y^{2}">x=y^{2}</span> dans la même fenêtre</h2><label class="revise"><input type="checkbox" data-section="s10-tracer-y-x-2-et-x-y-2-dans-la-meme-fenetre"><span class="revise-coche" aria-hidden="true"></span><span class="revise-texte">Révisé</span></label></header><div class="station-corps"><p><strong>Énoncé.</strong> Dessiner dans la même fenêtre les graphes de <span class="km" data-tex="y=x^2">y=x^2</span> et de <span class="km" data-tex="x=y^2">x=y^2</span> pour <span class="km" data-tex="-1\le x\le3">-1\le x\le3</span>, avec légendes d'axes, titre, grid et legend.</p>
+<h3 id="s10-tracer-y-x-2-et-x-y-2-dans-la-meme-fenetre-le-point-delicat-x-y-2-n-est-pas-une-fonction" class="sous-titre"><span class="num">10.1</span> Le point délicat : <span class="km" data-tex="x=y^2">x=y^2</span> n'est pas une fonction</h3>
+<p>La courbe <span class="km" data-tex="x=y^2">x=y^2</span> donne <em>deux</em> valeurs de <span class="km" data-tex="y">y</span> pour <span class="km" data-tex="x&gt;0">x&gt;0</span> :</p>
+<div class="km km-d" data-tex="x=y^{2}\iff y=\pm\sqrt{x}, \qquad \text{défini seulement pour } x\ge 0 .">x=y^{2}\iff y=\pm\sqrt{x}, \qquad \text{défini seulement pour } x\ge 0 .</div>
+<p>Il faut donc tracer deux branches. La solution du professeur utilise sqrt(abs(x)), ce qui permet de calculer quelque chose sur <span class="km" data-tex="[-1,0]">[-1,0]</span> — mais la portion ainsi tracée n'appartient <strong>pas</strong> à la courbe. Vérification à l'exécution :</p>
+<pre class="code"><code>x = -1 : sqrt(abs(x)) = 1 alors que x = y^2 exige x &gt;= 0
+ecart max (sqrt(abs(x)))^2 - x sur [-1,0] : 2</code></pre>
+<h3 id="s10-tracer-y-x-2-et-x-y-2-dans-la-meme-fenetre-code-retenu" class="sous-titre"><span class="num">10.2</span> Code retenu</h3>
+<pre class="code"><code>x = -1 : 0.001 : 3;
+y = sqrt(abs(x));
+figure(&#x27;Color&#x27;, &#x27;w&#x27;)
+plot(x, x.^2, &#x27;b&#x27;, &#x27;LineWidth&#x27;, 1.4); hold on
+plot(x, y, &#x27;r&#x27;, &#x27;LineWidth&#x27;, 1.4)
+plot(x, -y, &#x27;r&#x27;, &#x27;LineWidth&#x27;, 1.4)
+plot([0 1], [0 1], &#x27;ko&#x27;, &#x27;MarkerFaceColor&#x27;, &#x27;k&#x27;, &#x27;MarkerSize&#x27;, 6)
+xlabel(&#x27;axe des x&#x27;); ylabel(&#x27;axe des y&#x27;)
+title(&#x27;y = x^2 et x = y^2, pour -1 \leq x \leq 3&#x27;)
+grid on
+legend(&#x27;y = x^2&#x27;, &#x27;x = y^2 (branche y \geq 0)&#x27;, &#x27;x = y^2 (branche y \leq 0)&#x27;, ...
+       &#x27;intersections (0,0) et (1,1)&#x27;, &#x27;Location&#x27;, &#x27;northwest&#x27;)</code></pre>
+<figure class="figure"><button type="button" class="loupe-ouvrir" aria-label="Agrandir la figure"><img src="../../../assets/figures/e2-matnum/matnum_serie1_ex10_paraboles.png" alt="Figure — Tracer y=x^{2} et x=y^{2} dans la même fenêtre" loading="lazy"></button></figure>
+<h3 id="s10-tracer-y-x-2-et-x-y-2-dans-la-meme-fenetre-les-deux-points-d-intersection" class="sous-titre"><span class="num">10.3</span> Les deux points d'intersection</h3>
+<p>Résoudre <span class="km" data-tex="x^2 = x">x^2 = x</span> donne <span class="km" data-tex="x=0">x=0</span> ou <span class="km" data-tex="x=1">x=1</span> : la parabole bleue coupe la branche <span class="km" data-tex="y=\sqrt{x}">y=\sqrt{x}</span> en <span class="km" data-tex="(0,0)">(0,0)</span> et <span class="km" data-tex="(1,1)">(1,1)</span>. Sur <span class="km" data-tex="[-1,0]">[-1,0]</span>, la branche supérieure tracée est horizontale à <span class="km" data-tex="y=1">y=1</span> (<span class="km" data-tex="\sqrt{|x|}=1">\sqrt{|x|}=1</span> en <span class="km" data-tex="x=-1">x=-1</span>) : c'est précisément l'artefact signalé ci-dessus.</p>
+<aside class="carte carte-retenir"><div class="carte-tete"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></svg><span class="carte-type">À retenir</span></div><div class="carte-corps"><ul><li>'.-' et non '*' : y = x.̂2 ; sans le point, MATLAB tente un produit matriciel de deux vecteurs ligne.</li><li>Une courbe <em>non fonctionnelle</em> (<span class="km" data-tex="x=y^2">x=y^2</span>, cercle, …) se <strong>paramètre</strong> : y = linspace(<span class="km" data-tex="-\sqrt{3}">-\sqrt{3}</span>, <span class="km" data-tex="\sqrt{3}">\sqrt{3}</span>, 2000); x = y.̂2; donne la vraie courbe, sans bricolage de valeur absolue.</li><li>Les quatre commandes d'habillage attendues : xlabel, ylabel, title, grid, auxquelles s'ajoute legend ; hold on pour superposer.</li><li>Un marqueur ajouté après coup apparaît comme une entrée de légende (« data1 ») : lui donner son propre libellé, ou l'exclure de la légende.</li></ul></div></aside></div></section><section class="station station-normale" id="s11-recapitulatif" aria-labelledby="s11-recapitulatif-t"><header class="station-tete"><span class="station-num">11</span><h2 id="s11-recapitulatif-t">Récapitulatif</h2><label class="revise"><input type="checkbox" data-section="s11-recapitulatif"><span class="revise-coche" aria-hidden="true"></span><span class="revise-texte">Révisé</span></label></header><div class="station-corps"><div class="tableau"><table><thead><tr><th><strong>Commande</strong></th><th><strong>Ce qu'il faut retenir</strong></th></tr></thead><tbody><tr><td>format long / short</td><td>affichage seulement ; 15 chiffres significatifs ; <span class="km" data-tex="17">17</span> pour un aller-retour exact</td></tr><tr><td>eps</td><td><span class="km" data-tex="2^{-52}=2{,}22\times10^{-16}">2^{-52}=2{,}22\times10^{-16}</span> : granularité relative des doubles</td></tr><tr><td>rat(x) / format rat</td><td>fraction continue ; [n,d] = rat(x, tol) dépend de la tolérance (<span class="km" data-tex="10^{-6}\lVert x\rVert">10^{-6}\lVert x\rVert</span> par défaut)</td></tr><tr><td>x' vs x.'</td><td>transposée conjuguée vs transposée simple</td></tr><tr><td>x(:)</td><td>aplatit en <strong>colonne</strong>, parcours colonne par colonne</td></tr><tr><td>x*y'</td><td>produit scalaire (<span class="km" data-tex="1\times1">1\times1</span>) ; x'*y = produit extérieur</td></tr><tr><td>cumprod / prod</td><td>produits cumulés / produit total ; exact jusqu'à <span class="km" data-tex="22!">22!</span>, Inf dès <span class="km" data-tex="171!">171!</span></td></tr><tr><td>magic(n)</td><td>constante <span class="km" data-tex="(n^3+n)/2">(n^3+n)/2</span> ; <span class="km" data-tex="n\ge3">n\ge3</span> (magic(2) n'est pas magique)</td></tr><tr><td>rem, all, any</td><td>reste modulaire ; « pour tout » / « il existe »</td></tr><tr><td>zeros + indices pas de 2</td><td>préallouer plutôt que faire grandir c = [c ...]</td></tr></tbody></table></div>
+<h3 id="s11-recapitulatif-les-cinq-pieges-qui-coutent-des-points" class="sous-titre">Les cinq pièges qui coûtent des points</h3>
+<ol><li><strong>Confondre affichage et valeur stockée</strong> (format long, format rat) : le cours commence précisément par là, et le barème exige le <em>détail</em> du calcul.</li><li><strong>Comparer des puissances sans logarithmes</strong> (<span class="km" data-tex="e^\pi">e^\pi</span> vs <span class="km" data-tex="\pi^e">\pi^e</span>).</li><li><strong>Se tromper de transposée</strong> : x*y ne compile pas, x'*y n'est pas un scalaire, .* n'est pas *.</li><li><strong>Ne pas tester les cas limites</strong> (vecteur vide, tailles inégales, <span class="km" data-tex="n=2">n=2</span> pour magic, entrée non entière pour pair) : c'est la moitié des exigences de l'énoncé 9.</li><li><strong>Faire grandir un vecteur dans une boucle</strong> sans préallocation ; et tracer une courbe non fonctionnelle sans la paramétrer correctement (artefact de sqrt(abs(x))).</li></ol>
+<h3 id="s11-recapitulatif-a-connaitre-pour-les-travaux-ecrits" class="sous-titre">À connaître pour les travaux écrits</h3>
+<p>Deux TE de 60 minutes ; « une solution non développée sera considérée comme fausse » et le barème distingue méthode <em>et</em> valeur numérique (2 points = tout juste, 1 point = plusieurs erreurs d'importance). Chaque réponse doit donc montrer : la formule ou la commande employée, le calcul intermédiaire, puis le résultat arrondi correctement.</p></div></section>
+    <footer class="pied">
+      <p>Converti depuis <code>Semestre-3/E2-MATNUM/Fiches-Revision/corrige-serie-1-matlab.tex</code> · <a href="../../../assets/pdf/e2-matnum/corrige-serie-1-matlab.pdf" target="_blank" rel="noopener">version imprimable (PDF)</a></p>
+    </footer>
+  </main>
+</div>
+<dialog id="formulaire" class="dialogue" aria-labelledby="formulaire-titre">
+  <header class="dialogue-tete"><h2 id="formulaire-titre"><span class="btn-sigma" aria-hidden="true">Σ</span> Formulaire — Série 1 — MATLAB</h2>
+  <button type="button" class="btn-icone" data-fermer aria-label="Fermer">✕</button></header>
+  <div class="dialogue-corps"><p>Aucune tuile formule dans ce résumé.</p></div>
+</dialog>
+<dialog id="loupe" class="dialogue loupe" aria-label="Figure agrandie">
+  <button type="button" class="btn-icone loupe-fermer" data-fermer aria-label="Fermer">✕</button>
+  <img alt="">
+</dialog>
+
+</body>
+</html>

@@ -27,6 +27,8 @@
     "\\symbf": "\\boldsymbol{#1}", "\\symbfit": "\\boldsymbol{#1}", "\\symit": "\\mathit{#1}",
     "\\symup": "\\mathrm{#1}", "\\symrm": "\\mathrm{#1}", "\\symsf": "\\mathsf{#1}", "\\symcal": "\\mathcal{#1}",
     "\\symbb": "\\mathbb{#1}", "\\symtt": "\\mathtt{#1}",
+    "\\ensuremath": "#1",  /* déjà en mode math : sans effet */
+    "\\textsuperscript": "\\raisebox{0.45em}{\\scriptsize #1}",  /* « 2\textsuperscript{e} » dans un \text{} */
   };
   function rendreMaths(zone) {
     if (!window.katex) return;
@@ -48,7 +50,7 @@
 
   /* Formules display trop larges : réduites (jusqu'à 72 %) plutôt que tronquées. */
   function ajusterFormules() {
-    document.querySelectorAll(".km-d").forEach((el) => {
+    document.querySelectorAll(".km-d, .km-large").forEach((el) => {
       el.style.fontSize = "";
       const debord = el.scrollWidth / Math.max(1, el.clientWidth);
       if (debord > 1.01) el.style.fontSize = `${Math.max(0.72, 1 / debord).toFixed(3)}em`;

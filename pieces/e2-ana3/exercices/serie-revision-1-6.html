@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Analyse 3 · Corrigé · Série de révision — exercices 1 à 6</title>
+<meta name="description" content="Analyse 3 — Série de révision — exercices 1 à 6 (Corrigé)">
+<link rel="icon" href="../../../assets/favicon.svg?v=012e46bcde" type="image/svg+xml">
+<script>try{var t=localStorage.getItem("maison:theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+
+<link rel="stylesheet" href="../../../assets/styles.css?v=012e46bcde">
+<style>:root{}@media (prefers-color-scheme:dark){:root:not([data-theme=light]){}}:root[data-theme=dark]{}</style>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+
+<script defer src="../../../assets/maison.js?v=012e46bcde"></script>
+</head>
+<body class="page-resume" style="--piece:#4338CA" data-cle="E2-ANA3/exercices/serie-revision-1-6" data-sections='["exercice-1-derivees", "exercice-2-rectangle-d-aire-maximale", "exercice-3-planche-tangente-au-socle", "exercice-4-primitives", "exercice-5-courbe-implicite", "exercice-6-distance-entre-les-deux-voitures"]' data-url-racine="pieces/e2-ana3/exercices/serie-revision-1-6.html" data-titre="Analyse 3 · Corrigé · Série de révision — exercices 1 à 6">
+<a class="evitement" href="#contenu">Aller au contenu</a>
+
+<header class="barre">
+  <nav class="ariane" aria-label="Fil d'Ariane">
+    <a href="../../../index.html"><svg class="icone-ariane" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 12 4l9 7"/><path d="M5 9.5V20h14V9.5"/><path d="M10 20v-6h4v6"/></svg><span>Maison</span></a><span class="sep" aria-hidden="true">›</span>
+    <a href="../index.html">Analyse 3</a><span class="sep" aria-hidden="true">›</span>
+    <span aria-current="page">Corrigé · Série de révision — exercices 1 à 6</span>
+  </nav>
+  <div class="barre-actions">
+    
+    <a class="btn btn-discret" href="../../../assets/pdf/e2-ana3/corrige_serie_revision_exercices_1_6.pdf" target="_blank" rel="noopener">PDF</a>
+    <button type="button" class="btn-icone" data-theme-bascule aria-label="Basculer clair / sombre"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 4a8 8 0 0 1 0 16z" fill="currentColor"/></svg></button>
+  </div>
+</header>
+<div class="cadre">
+  <aside class="sommaire" aria-label="Sommaire">
+    <details class="sommaire-details" open>
+      <summary><span>Sommaire</span><span class="sommaire-prog" data-progression-texte>0 / 6</span></summary>
+      <ol class="sommaire-liste"><li data-cible="exercice-1-derivees"><div class="sommaire-ligne"><a href="#exercice-1-derivees"><span class="num num-vide">·</span>Exercice 1 – Dérivées</a><label class="revise-mini" title="Marquer « Exercice 1 – Dérivées » comme révisé"><input type="checkbox" data-section="exercice-1-derivees" aria-label="Révisé : Exercice 1 – Dérivées"><span class="revise-coche" aria-hidden="true"></span></label></div></li><li data-cible="exercice-2-rectangle-d-aire-maximale"><div class="sommaire-ligne"><a href="#exercice-2-rectangle-d-aire-maximale"><span class="num num-vide">·</span>Exercice 2 – Rectangle d'aire maximale</a><label class="revise-mini" title="Marquer « Exercice 2 – Rectangle d&#x27;aire maximale » comme révisé"><input type="checkbox" data-section="exercice-2-rectangle-d-aire-maximale" aria-label="Révisé : Exercice 2 – Rectangle d&#x27;aire maximale"><span class="revise-coche" aria-hidden="true"></span></label></div></li><li data-cible="exercice-3-planche-tangente-au-socle"><div class="sommaire-ligne"><a href="#exercice-3-planche-tangente-au-socle"><span class="num num-vide">·</span>Exercice 3 – Planche tangente au socle</a><label class="revise-mini" title="Marquer « Exercice 3 – Planche tangente au socle » comme révisé"><input type="checkbox" data-section="exercice-3-planche-tangente-au-socle" aria-label="Révisé : Exercice 3 – Planche tangente au socle"><span class="revise-coche" aria-hidden="true"></span></label></div></li><li data-cible="exercice-4-primitives"><div class="sommaire-ligne"><a href="#exercice-4-primitives"><span class="num num-vide">·</span>Exercice 4 – Primitives</a><label class="revise-mini" title="Marquer « Exercice 4 – Primitives » comme révisé"><input type="checkbox" data-section="exercice-4-primitives" aria-label="Révisé : Exercice 4 – Primitives"><span class="revise-coche" aria-hidden="true"></span></label></div></li><li data-cible="exercice-5-courbe-implicite"><div class="sommaire-ligne"><a href="#exercice-5-courbe-implicite"><span class="num num-vide">·</span>Exercice 5 – Courbe implicite</a><label class="revise-mini" title="Marquer « Exercice 5 – Courbe implicite » comme révisé"><input type="checkbox" data-section="exercice-5-courbe-implicite" aria-label="Révisé : Exercice 5 – Courbe implicite"><span class="revise-coche" aria-hidden="true"></span></label></div></li><li data-cible="exercice-6-distance-entre-les-deux-voitures"><div class="sommaire-ligne"><a href="#exercice-6-distance-entre-les-deux-voitures"><span class="num num-vide">·</span>Exercice 6 – Distance entre les deux voitures</a><label class="revise-mini" title="Marquer « Exercice 6 – Distance entre les deux voitures » comme révisé"><input type="checkbox" data-section="exercice-6-distance-entre-les-deux-voitures" aria-label="Révisé : Exercice 6 – Distance entre les deux voitures"><span class="revise-coche" aria-hidden="true"></span></label></div></li></ol>
+    </details>
+  </aside>
+  <main id="contenu">
+    <section class="hero">
+      <div class="hero-papier" aria-hidden="true"></div>
+      <div class="hero-tete">
+        <a class="hero-piece" href="../index.html"><svg class="icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3c-2 0-3 1-3 3v12c0 2-1 3-3 3"/><path d="M15 9h5M17.5 6.5v5"/></svg><span>Analyse 3</span><span class="hero-aile">Aile Sciences</span></a>
+        <div class="anneau" data-anneau role="img" aria-label="Progression"><span data-progression-pourcent>0 %</span></div>
+      </div>
+      
+      <h1 class="visuellement-cache">Analyse 3 · Corrigé · Série de révision — exercices 1 à 6</h1>
+      <div class="hero-intro"><div class="centre"><span class="t-titre">Analyse 3 – Série de révision<br>Corrigé détaillé des exercices 1 à 6</span><br><span class="t-grand">Philippe – HEIA-FR, Génie électrique</span><br><span class="t-petit">Automne 2026</span></div>
+<p><em>Les résultats ont été vérifiés symboliquement avec SymPy.</em></p></div>
+      <div class="hero-puces"><span class="puce puce-te puce-attente">Date du TE : pas encore annoncée</span><span class="puce puce-corrige">Corrigé</span><span class="puce">6 sections</span></div>
+    </section>
+    <section class="station station-normale" id="exercice-1-derivees" aria-labelledby="exercice-1-derivees-t"><header class="station-tete"><span class="station-num station-num-vide" aria-hidden="true">✦</span><h2 id="exercice-1-derivees-t">Exercice 1 – Dérivées</h2><label class="revise"><input type="checkbox" data-section="exercice-1-derivees"><span class="revise-coche" aria-hidden="true"></span><span class="revise-texte">Révisé</span></label></header><div class="station-corps"><ol><li><p><span class="km" data-tex="y=x^4+x^2+3">y=x^4+x^2+3</span>. Par linéarité et règle de puissance :</p>
+<div class="km km-d" data-tex="y&#x27;=4x^3+2x.">y&#x27;=4x^3+2x.</div></li><li><p><span class="km" data-tex="y=e^x">y=e^x</span>. La dérivée de l'exponentielle est elle-même :</p>
+<div class="km km-d" data-tex="y&#x27;=e^x.">y&#x27;=e^x.</div></li><li><p><span class="km" data-tex="y=\cos(2x+\pi)">y=\cos(2x+\pi)</span>. Avec la règle de la chaîne :</p>
+<div class="km km-d" data-tex="y&#x27;=-\sin(2x+\pi)\cdot 2=-2\sin(2x+\pi).">y&#x27;=-\sin(2x+\pi)\cdot 2=-2\sin(2x+\pi).</div></li><li><p><span class="km" data-tex="y=x\cos(2x+\pi)">y=x\cos(2x+\pi)</span>. Avec la règle du produit :</p>
+<div class="km km-d" data-tex="y&#x27;=1\cdot\cos(2x+\pi)+x\bigl[-2\sin(2x+\pi)\bigr]
+        =\cos(2x+\pi)-2x\sin(2x+\pi).">y&#x27;=1\cdot\cos(2x+\pi)+x\bigl[-2\sin(2x+\pi)\bigr]
+        =\cos(2x+\pi)-2x\sin(2x+\pi).</div></li><li><p><span class="km" data-tex="y=\dfrac{2x+1}{x^2+2}">y=\dfrac{2x+1}{x^2+2}</span>. Avec <span class="km" data-tex="u=2x+1">u=2x+1</span> et <span class="km" data-tex="v=x^2+2">v=x^2+2</span> :</p>
+<div class="km km-d" data-tex="\begin{align*}
+        y&#x27;&amp;=\frac{u&#x27;v-uv&#x27;}{v^2}\\
+          &amp;=\frac{2(x^2+2)-(2x+1)(2x)}{(x^2+2)^2}\\
+          &amp;=\frac{-2x^2-2x+4}{(x^2+2)^2}
+          =\boxed{\frac{-2(x+2)(x-1)}{(x^2+2)^2}}.
+    \end{align*}">\begin{align*}
+        y&#x27;&amp;=\frac{u&#x27;v-uv&#x27;}{v^2}\\
+          &amp;=\frac{2(x^2+2)-(2x+1)(2x)}{(x^2+2)^2}\\
+          &amp;=\frac{-2x^2-2x+4}{(x^2+2)^2}
+          =\boxed{\frac{-2(x+2)(x-1)}{(x^2+2)^2}}.
+    \end{align*}</div></li><li><p><span class="km" data-tex="y=\ln(ax^2)">y=\ln(ax^2)</span>, sur le domaine où <span class="km" data-tex="ax^2&gt;0">ax^2&gt;0</span>. Avec <span class="km" data-tex="u=ax^2">u=ax^2</span> :</p>
+<div class="km km-d" data-tex="y&#x27;=\frac{u&#x27;}{u}=\frac{2ax}{ax^2}=\boxed{\frac{2}{x}}.">y&#x27;=\frac{u&#x27;}{u}=\frac{2ax}{ax^2}=\boxed{\frac{2}{x}}.</div></li></ol></div></section><section class="station station-normale" id="exercice-2-rectangle-d-aire-maximale" aria-labelledby="exercice-2-rectangle-d-aire-maximale-t"><header class="station-tete"><span class="station-num station-num-vide" aria-hidden="true">✦</span><h2 id="exercice-2-rectangle-d-aire-maximale-t">Exercice 2 – Rectangle d'aire maximale</h2><label class="revise"><input type="checkbox" data-section="exercice-2-rectangle-d-aire-maximale"><span class="revise-coche" aria-hidden="true"></span><span class="revise-texte">Révisé</span></label></header><div class="station-corps"><p>Soient <span class="km" data-tex="x">x</span> et <span class="km" data-tex="y">y</span> les longueurs des côtés. Le périmètre vaut <span class="km" data-tex="100">100</span> m, donc</p>
+<div class="km km-d" data-tex="2x+2y=100\quad\Longrightarrow\quad y=50-x.">2x+2y=100\quad\Longrightarrow\quad y=50-x.</div>
+<p>L'aire est donc une fonction d'une seule variable :</p>
+<div class="km km-d" data-tex="A(x)=x(50-x)=50x-x^2, \qquad 0&lt;x&lt;50.">A(x)=x(50-x)=50x-x^2, \qquad 0&lt;x&lt;50.</div>
+<p>Sa dérivée est <span class="km" data-tex="A&#x27;(x)=50-2x">A&#x27;(x)=50-2x</span>. Le point critique vérifie</p>
+<div class="km km-d" data-tex="50-2x=0\quad\Longrightarrow\quad x=25.">50-2x=0\quad\Longrightarrow\quad x=25.</div>
+<p>De plus, <span class="km" data-tex="A&#x27;&#x27;(x)=-2&lt;0">A&#x27;&#x27;(x)=-2&lt;0</span> : il s'agit bien d'un maximum. Alors <span class="km" data-tex="y=50-25=25">y=50-25=25</span>.</p>
+<div class="km km-d" data-tex="\boxed{\text{Le rectangle optimal est un carré de }25\ \text{m par }25\ \text{m.}}">\boxed{\text{Le rectangle optimal est un carré de }25\ \text{m par }25\ \text{m.}}</div></div></section><section class="station station-normale" id="exercice-3-planche-tangente-au-socle" aria-labelledby="exercice-3-planche-tangente-au-socle-t"><header class="station-tete"><span class="station-num station-num-vide" aria-hidden="true">✦</span><h2 id="exercice-3-planche-tangente-au-socle-t">Exercice 3 – Planche tangente au socle</h2><label class="revise"><input type="checkbox" data-section="exercice-3-planche-tangente-au-socle"><span class="revise-coche" aria-hidden="true"></span><span class="revise-texte">Révisé</span></label></header><div class="station-corps"><p>La base du socle est l'origine, donc le point de contact de la planche avec le sol est <span class="km" data-tex="P=(-3,0)">P=(-3,0)</span>. La planche est tangente à la courbe</p>
+<div class="km km-d" data-tex="f(x)=\sqrt{x}, \qquad f&#x27;(x)=\frac{1}{2\sqrt{x}}.">f(x)=\sqrt{x}, \qquad f&#x27;(x)=\frac{1}{2\sqrt{x}}.</div>
+<p>Supposons que le point de tangence soit <span class="km" data-tex="T=(u,\sqrt{u})">T=(u,\sqrt{u})</span>, avec <span class="km" data-tex="u&gt;0">u&gt;0</span>. La pente de la droite <span class="km" data-tex="PT">PT</span> doit être égale à la pente de la tangente en <span class="km" data-tex="T">T</span> :</p>
+<div class="km km-d" data-tex="\frac{\sqrt{u}-0}{u-(-3)}=\frac{1}{2\sqrt{u}}.">\frac{\sqrt{u}-0}{u-(-3)}=\frac{1}{2\sqrt{u}}.</div>
+<p>Donc</p>
+<div class="km km-d" data-tex="\frac{\sqrt{u}}{u+3}=\frac{1}{2\sqrt{u}}
+    \quad\Longrightarrow\quad 2u=u+3
+    \quad\Longrightarrow\quad u=3.">\frac{\sqrt{u}}{u+3}=\frac{1}{2\sqrt{u}}
+    \quad\Longrightarrow\quad 2u=u+3
+    \quad\Longrightarrow\quad u=3.</div>
+<p>La pente de la planche est alors</p>
+<div class="km km-d" data-tex="m=\frac{1}{2\sqrt{3}}=\frac{\sqrt{3}}{6}.">m=\frac{1}{2\sqrt{3}}=\frac{\sqrt{3}}{6}.</div>
+<p>L'angle aigu <span class="km" data-tex="\theta">\theta</span> avec le sol vérifie <span class="km" data-tex="\tan\theta=m">\tan\theta=m</span> :</p>
+<div class="km km-d" data-tex="\theta=\arctan\left(\frac{\sqrt{3}}{6}\right)
+    \approx\boxed{0.281\ \text{rad}}\approx\boxed{16.1^\circ}.">\theta=\arctan\left(\frac{\sqrt{3}}{6}\right)
+    \approx\boxed{0.281\ \text{rad}}\approx\boxed{16.1^\circ}.</div></div></section><section class="station station-normale" id="exercice-4-primitives" aria-labelledby="exercice-4-primitives-t"><header class="station-tete"><span class="station-num station-num-vide" aria-hidden="true">✦</span><h2 id="exercice-4-primitives-t">Exercice 4 – Primitives</h2><label class="revise"><input type="checkbox" data-section="exercice-4-primitives"><span class="revise-coche" aria-hidden="true"></span><span class="revise-texte">Révisé</span></label></header><div class="station-corps"><p>Dans chaque cas, <span class="km" data-tex="C\in\mathbb{R}">C\in\mathbb{R}</span> est une constante.</p>
+<ol><li><div class="km km-d" data-tex="\int(x^4+x^2+3)\,dx
+        =\boxed{\frac{x^5}{5}+\frac{x^3}{3}+3x+C}.">\int(x^4+x^2+3)\,dx
+        =\boxed{\frac{x^5}{5}+\frac{x^3}{3}+3x+C}.</div></li><li><div class="km km-d" data-tex="\int(e^{2x}+1)\,dx
+        =\boxed{\frac12e^{2x}+x+C}.">\int(e^{2x}+1)\,dx
+        =\boxed{\frac12e^{2x}+x+C}.</div></li><li><p>Posons <span class="km" data-tex="u=\sin x">u=\sin x</span>, alors <span class="km" data-tex="du=\cos x\,dx">du=\cos x\,dx</span> :</p>
+<div class="km km-d" data-tex="\int\sin^2(x)\cos(x)\,dx
+        =\int u^2\,du
+        =\boxed{\frac{\sin^3(x)}{3}+C}.">\int\sin^2(x)\cos(x)\,dx
+        =\int u^2\,du
+        =\boxed{\frac{\sin^3(x)}{3}+C}.</div></li><li><p>Posons <span class="km" data-tex="u=1+x^3">u=1+x^3</span>, alors <span class="km" data-tex="du=3x^2\,dx">du=3x^2\,dx</span> :</p>
+<div class="km km-d" data-tex="\int\frac{x^2}{\sqrt{1+x^3}}\,dx
+        =\frac13\int u^{-1/2}\,du
+        =\boxed{\frac23\sqrt{1+x^3}+C}.">\int\frac{x^2}{\sqrt{1+x^3}}\,dx
+        =\frac13\int u^{-1/2}\,du
+        =\boxed{\frac23\sqrt{1+x^3}+C}.</div></li><li><p>Intégration par parties : <span class="km" data-tex="u=x">u=x</span>, <span class="km" data-tex="dv=e^x\,dx">dv=e^x\,dx</span>, donc <span class="km" data-tex="du=dx">du=dx</span> et <span class="km" data-tex="v=e^x">v=e^x</span>.</p>
+<div class="km km-d" data-tex="\int xe^x\,dx=xe^x-\int e^x\,dx
+        =\boxed{xe^x-e^x+C}.">\int xe^x\,dx=xe^x-\int e^x\,dx
+        =\boxed{xe^x-e^x+C}.</div></li><li><p>Posons <span class="km" data-tex="u=x-2">u=x-2</span>, donc <span class="km" data-tex="x=u+2">x=u+2</span>. L'intégrande devient</p>
+<div class="km km-d" data-tex="\frac{x^2-6x+3}{(x-2)^3}
+        =\frac{u^2-2u-5}{u^3}
+        =\frac1u-\frac2{u^2}-\frac5{u^3}.">\frac{x^2-6x+3}{(x-2)^3}
+        =\frac{u^2-2u-5}{u^3}
+        =\frac1u-\frac2{u^2}-\frac5{u^3}.</div>
+<p>Ainsi,</p>
+<div class="km km-d" data-tex="\int\frac{x^2-6x+3}{(x-2)^3}\,dx
+        =\boxed{\ln|x-2|+\frac{2}{x-2}+\frac{5}{2(x-2)^2}+C}.">\int\frac{x^2-6x+3}{(x-2)^3}\,dx
+        =\boxed{\ln|x-2|+\frac{2}{x-2}+\frac{5}{2(x-2)^2}+C}.</div></li></ol></div></section><section class="station station-normale" id="exercice-5-courbe-implicite" aria-labelledby="exercice-5-courbe-implicite-t"><header class="station-tete"><span class="station-num station-num-vide" aria-hidden="true">✦</span><h2 id="exercice-5-courbe-implicite-t">Exercice 5 – Courbe implicite</h2><label class="revise"><input type="checkbox" data-section="exercice-5-courbe-implicite"><span class="revise-coche" aria-hidden="true"></span><span class="revise-texte">Révisé</span></label></header><div class="station-corps"><p>La courbe est définie par</p>
+<div class="km km-d" data-tex="y^2+2y=x^3-2x-1.">y^2+2y=x^3-2x-1.</div>
+<ol><li><p>Pour <span class="km" data-tex="x=-1">x=-1</span> :</p>
+<div class="km km-d" data-tex="y^2+2y=(-1)^3-2(-1)-1=0
+        \quad\Longrightarrow\quad y(y+2)=0.">y^2+2y=(-1)^3-2(-1)-1=0
+        \quad\Longrightarrow\quad y(y+2)=0.</div>
+<p>Les points sont donc</p>
+<div class="km km-d" data-tex="\boxed{(-1,0)\ \text{et}\ (-1,-2).}">\boxed{(-1,0)\ \text{et}\ (-1,-2).}</div></li><li><p>Pour <span class="km" data-tex="x=1">x=1</span> :</p>
+<div class="km km-d" data-tex="y^2+2y=1-2-1=-2
+        \quad\Longrightarrow\quad y^2+2y+2=0.">y^2+2y=1-2-1=-2
+        \quad\Longrightarrow\quad y^2+2y+2=0.</div>
+<p>Le discriminant vaut <span class="km" data-tex="\Delta=2^2-4\cdot1\cdot2=-4&lt;0">\Delta=2^2-4\cdot1\cdot2=-4&lt;0</span>. Il n'y a donc</p>
+<div class="km km-d" data-tex="\boxed{\text{aucun point réel.}}">\boxed{\text{aucun point réel.}}</div></li><li><p>Pour <span class="km" data-tex="x=0">x=0</span> :</p>
+<div class="km km-d" data-tex="y^2+2y=-1
+        \quad\Longrightarrow\quad (y+1)^2=0.">y^2+2y=-1
+        \quad\Longrightarrow\quad (y+1)^2=0.</div>
+<p>Le seul point est</p>
+<div class="km km-d" data-tex="\boxed{(0,-1).}">\boxed{(0,-1).}</div></li><li><p>On dérive implicitement par rapport à <span class="km" data-tex="x">x</span> :</p>
+<div class="km km-d" data-tex="2yy&#x27;+2y&#x27;=3x^2-2.">2yy&#x27;+2y&#x27;=3x^2-2.</div>
+<p>Ainsi,</p>
+<div class="km km-d" data-tex="y&#x27;=\frac{3x^2-2}{2(y+1)}.">y&#x27;=\frac{3x^2-2}{2(y+1)}.</div>
+<p>Au point <span class="km" data-tex="(2,1)">(2,1)</span> :</p>
+<div class="km km-d" data-tex="y&#x27;(2,1)=\frac{3\cdot2^2-2}{2(1+1)}=\frac{10}{4}=\boxed{\frac52}.">y&#x27;(2,1)=\frac{3\cdot2^2-2}{2(1+1)}=\frac{10}{4}=\boxed{\frac52}.</div></li></ol></div></section><section class="station station-normale" id="exercice-6-distance-entre-les-deux-voitures" aria-labelledby="exercice-6-distance-entre-les-deux-voitures-t"><header class="station-tete"><span class="station-num station-num-vide" aria-hidden="true">✦</span><h2 id="exercice-6-distance-entre-les-deux-voitures-t">Exercice 6 – Distance entre les deux voitures</h2><label class="revise"><input type="checkbox" data-section="exercice-6-distance-entre-les-deux-voitures"><span class="revise-coche" aria-hidden="true"></span><span class="revise-texte">Révisé</span></label></header><div class="station-corps"><p>On utilise <span class="km" data-tex="v_1(t)=\sqrt{2t}">v_1(t)=\sqrt{2t}</span> et <span class="km" data-tex="v_2(t)=\dfrac{t}{2}">v_2(t)=\dfrac{t}{2}</span>. Elles ont la même vitesse lorsque</p>
+<div class="km km-d" data-tex="\sqrt{2t}=\frac{t}{2}.">\sqrt{2t}=\frac{t}{2}.</div>
+<p>Pour <span class="km" data-tex="t&gt;0">t&gt;0</span>, on peut élever au carré :</p>
+<div class="km km-d" data-tex="2t=\frac{t^2}{4}
+    \quad\Longrightarrow\quad t(t-8)=0
+    \quad\Longrightarrow\quad t=8\ \text{s}.">2t=\frac{t^2}{4}
+    \quad\Longrightarrow\quad t(t-8)=0
+    \quad\Longrightarrow\quad t=8\ \text{s}.</div>
+<p>Les deux voitures partant du même point à <span class="km" data-tex="t=0">t=0</span>, leurs distances parcourues à cet instant sont</p>
+<div class="km km-d" data-tex="\begin{align*}
+    s_1(8)&amp;=\int_0^8\sqrt{2t}\,dt
+    =\sqrt{2}\left[\frac23t^{3/2}\right]_0^8
+    =\frac{64}{3}\ \text{m},\\
+    s_2(8)&amp;=\int_0^8\frac{t}{2}\,dt
+    =\left[\frac{t^2}{4}\right]_0^8
+    =16\ \text{m}.
+\end{align*}">\begin{align*}
+    s_1(8)&amp;=\int_0^8\sqrt{2t}\,dt
+    =\sqrt{2}\left[\frac23t^{3/2}\right]_0^8
+    =\frac{64}{3}\ \text{m},\\
+    s_2(8)&amp;=\int_0^8\frac{t}{2}\,dt
+    =\left[\frac{t^2}{4}\right]_0^8
+    =16\ \text{m}.
+\end{align*}</div>
+<p>Elles se déplacent dans le même sens, donc la distance qui les sépare vaut</p>
+<div class="km km-d" data-tex="\left|s_1(8)-s_2(8)\right|
+    =\left|\frac{64}{3}-16\right|
+    =\boxed{\frac{16}{3}\ \text{m}}\approx\boxed{5.33\ \text{m}}.">\left|s_1(8)-s_2(8)\right|
+    =\left|\frac{64}{3}-16\right|
+    =\boxed{\frac{16}{3}\ \text{m}}\approx\boxed{5.33\ \text{m}}.</div>
+<p><em>Vérification reproductible : <code>Semestre-3/E2-ANA3/scripts/verifier_serie_revision_1_6.py</code>.</em></p></div></section>
+    <footer class="pied">
+      <p>Converti depuis <code>Semestre-3/E2-ANA3/Fiches-Revision/corrige_serie_revision_exercices_1_6.tex</code> · <a href="../../../assets/pdf/e2-ana3/corrige_serie_revision_exercices_1_6.pdf" target="_blank" rel="noopener">version imprimable (PDF)</a></p>
+    </footer>
+  </main>
+</div>
+<dialog id="formulaire" class="dialogue" aria-labelledby="formulaire-titre">
+  <header class="dialogue-tete"><h2 id="formulaire-titre"><span class="btn-sigma" aria-hidden="true">Σ</span> Formulaire — Série de révision — exercices 1 à 6</h2>
+  <button type="button" class="btn-icone" data-fermer aria-label="Fermer">✕</button></header>
+  <div class="dialogue-corps"><p>Aucune tuile formule dans ce résumé.</p></div>
+</dialog>
+<dialog id="loupe" class="dialogue loupe" aria-label="Figure agrandie">
+  <button type="button" class="btn-icone loupe-fermer" data-fermer aria-label="Fermer">✕</button>
+  <img alt="">
+</dialog>
+
+</body>
+</html>

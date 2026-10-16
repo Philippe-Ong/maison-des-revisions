@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Analyse 3 · Corrigé · Devoir — lac et exercices 15 à 21</title>
+<meta name="description" content="Analyse 3 — Devoir — lac et exercices 15 à 21 (Modélisation et équations différentielles)">
+<link rel="icon" href="../../../assets/favicon.svg?v=012e46bcde" type="image/svg+xml">
+<script>try{var t=localStorage.getItem("maison:theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+
+<link rel="stylesheet" href="../../../assets/styles.css?v=012e46bcde">
+<style>:root{--c-heia:#00548C;--c-okgreen:#00783C;--c-warnred:#B00020}@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--c-heia:color-mix(in srgb,#00548C 50%,#fff);--c-okgreen:color-mix(in srgb,#00783C 50%,#fff);--c-warnred:color-mix(in srgb,#B00020 50%,#fff)}}:root[data-theme=dark]{--c-heia:color-mix(in srgb,#00548C 50%,#fff);--c-okgreen:color-mix(in srgb,#00783C 50%,#fff);--c-warnred:color-mix(in srgb,#B00020 50%,#fff)}</style>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+
+<script defer src="../../../assets/maison.js?v=012e46bcde"></script>
+</head>
+<body class="page-resume" style="--piece:#4338CA" data-cle="E2-ANA3/exercices/devoir-lac-15-21" data-sections='["1-exemple-lac-exemple-n-circ-2-du-script", "2-exercice-15-detritus-en-foret", "3-exercice-16-croissance-de-von-bertalanffy", "4-exercice-17-balle-dans-un-banc-de-sable", "5-exercice-18-propagation-d-une-rumeur", "6-exercice-21-solution-generale", "7-recapitulatif"]' data-url-racine="pieces/e2-ana3/exercices/devoir-lac-15-21.html" data-titre="Analyse 3 · Corrigé · Devoir — lac et exercices 15 à 21">
+<a class="evitement" href="#contenu">Aller au contenu</a>
+
+<header class="barre">
+  <nav class="ariane" aria-label="Fil d'Ariane">
+    <a href="../../../index.html"><svg class="icone-ariane" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 12 4l9 7"/><path d="M5 9.5V20h14V9.5"/><path d="M10 20v-6h4v6"/></svg><span>Maison</span></a><span class="sep" aria-hidden="true">›</span>
+    <a href="../index.html">Analyse 3</a><span class="sep" aria-hidden="true">›</span>
+    <span aria-current="page">Corrigé · Devoir — lac et exercices 15 à 21</span>
+  </nav>
+  <div class="barre-actions">
+    
+    <a class="btn btn-discret" href="../../../assets/pdf/e2-ana3/devoir-analyse3-lac-et-exercices-15-21.pdf" target="_blank" rel="noopener">PDF</a>
+    <button type="button" class="btn-icone" data-theme-bascule aria-label="Basculer clair / sombre"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 4a8 8 0 0 1 0 16z" fill="currentColor"/></svg></button>
+  </div>
+</header>
+<div class="cadre">
+  <aside class="sommaire" aria-label="Sommaire">
+    <details class="sommaire-details" open>
+      <summary><span>Sommaire</span><span class="sommaire-prog" data-progression-texte>0 / 7</span></summary>
+      <ol class="sommaire-liste"><li data-cible="1-exemple-lac-exemple-n-circ-2-du-script"><div class="sommaire-ligne"><a href="#1-exemple-lac-exemple-n-circ-2-du-script"><span class="num num-vide">·</span>1. Exemple « Lac » (exemple <span class="km" data-tex="n^\circ 2">n^\circ 2</span> du script)</a><label class="revise-mini" title="Marquer « 1. Exemple « Lac » (exemple n^\circ 2 du script) » comme révisé"><input type="checkbox" data-section="1-exemple-lac-exemple-n-circ-2-du-script" aria-label="Révisé : 1. Exemple « Lac » (exemple n^\circ 2 du script)"><span class="revise-coche" aria-hidden="true"></span></label></div><ol><li><a href="#1-exemple-lac-exemple-n-circ-2-du-script-1-1-enonce"><span class="num"></span>1.1 Énoncé</a></li><li><a href="#1-exemple-lac-exemple-n-circ-2-du-script-1-2-notations"><span class="num"></span>1.2 Notations</a></li><li><a href="#1-exemple-lac-exemple-n-circ-2-du-script-1-3-volume-du-lac"><span class="num"></span>1.3 Volume du lac</a></li><li><a href="#1-exemple-lac-exemple-n-circ-2-du-script-1-4-bilan-de-matiere-sur-le-polluant"><span class="num"></span>1.4 Bilan de matière sur le polluant</a></li><li><a href="#1-exemple-lac-exemple-n-circ-2-du-script-1-5-resolution-par-facteur-integrant"><span class="num"></span>1.5 Résolution par facteur intégrant</a></li><li><a href="#1-exemple-lac-exemple-n-circ-2-du-script-1-6-condition-initiale-c-0-0"><span class="num"></span>1.6 Condition initiale <span class="km" data-tex="c(0)=0">c(0)=0</span></a></li><li><a href="#1-exemple-lac-exemple-n-circ-2-du-script-1-7-etude-du-regime-permanent-t-to-infty"><span class="num"></span>1.7 Étude du régime permanent — <span class="km" data-tex="t\to\infty">t\to\infty</span></a></li><li><a href="#1-exemple-lac-exemple-n-circ-2-du-script-1-8-verification-numerique"><span class="num"></span>1.8 Vérification numérique</a></li></ol></li><li data-cible="2-exercice-15-detritus-en-foret"><div class="sommaire-ligne"><a href="#2-exercice-15-detritus-en-foret"><span class="num num-vide">·</span>2. Exercice 15 — Détritus en forêt</a><label class="revise-mini" title="Marquer « 2. Exercice 15 — Détritus en forêt » comme révisé"><input type="checkbox" data-section="2-exercice-15-detritus-en-foret" aria-label="Révisé : 2. Exercice 15 — Détritus en forêt"><span class="revise-coche" aria-hidden="true"></span></label></div><ol><li><a href="#2-exercice-15-detritus-en-foret-2-1-enonce"><span class="num"></span>2.1 Énoncé</a></li><li><a href="#2-exercice-15-detritus-en-foret-2-2-mise-en-equation-a"><span class="num"></span>2.2 Mise en équation (a)</a></li><li><a href="#2-exercice-15-detritus-en-foret-2-3-solution-generale-b"><span class="num"></span>2.3 Solution générale (b)</a></li><li><a href="#2-exercice-15-detritus-en-foret-2-4-solution-particuliere-c"><span class="num"></span>2.4 Solution particulière (c)</a></li></ol></li><li data-cible="3-exercice-16-croissance-de-von-bertalanffy"><div class="sommaire-ligne"><a href="#3-exercice-16-croissance-de-von-bertalanffy"><span class="num num-vide">·</span>3. Exercice 16 — Croissance de von Bertalanffy</a><label class="revise-mini" title="Marquer « 3. Exercice 16 — Croissance de von Bertalanffy » comme révisé"><input type="checkbox" data-section="3-exercice-16-croissance-de-von-bertalanffy" aria-label="Révisé : 3. Exercice 16 — Croissance de von Bertalanffy"><span class="revise-coche" aria-hidden="true"></span></label></div><ol><li><a href="#3-exercice-16-croissance-de-von-bertalanffy-3-1-enonce"><span class="num"></span>3.1 Énoncé</a></li><li><a href="#3-exercice-16-croissance-de-von-bertalanffy-3-2-equation-a"><span class="num"></span>3.2 Équation (a)</a></li><li><a href="#3-exercice-16-croissance-de-von-bertalanffy-3-3-application-a-l-aiglefin-b"><span class="num"></span>3.3 Application à l'aiglefin (b)</a></li></ol></li><li data-cible="4-exercice-17-balle-dans-un-banc-de-sable"><div class="sommaire-ligne"><a href="#4-exercice-17-balle-dans-un-banc-de-sable"><span class="num num-vide">·</span>4. Exercice 17 — Balle dans un banc de sable</a><label class="revise-mini" title="Marquer « 4. Exercice 17 — Balle dans un banc de sable » comme révisé"><input type="checkbox" data-section="4-exercice-17-balle-dans-un-banc-de-sable" aria-label="Révisé : 4. Exercice 17 — Balle dans un banc de sable"><span class="revise-coche" aria-hidden="true"></span></label></div><ol><li><a href="#4-exercice-17-balle-dans-un-banc-de-sable-4-1-enonce"><span class="num"></span>4.1 Énoncé</a></li><li><a href="#4-exercice-17-balle-dans-un-banc-de-sable-4-2-mise-en-equation-a"><span class="num"></span>4.2 Mise en équation (a)</a></li><li><a href="#4-exercice-17-balle-dans-un-banc-de-sable-4-3-temps-d-arret-b"><span class="num"></span>4.3 Temps d'arrêt (b)</a></li></ol></li><li data-cible="5-exercice-18-propagation-d-une-rumeur"><div class="sommaire-ligne"><a href="#5-exercice-18-propagation-d-une-rumeur"><span class="num num-vide">·</span>5. Exercice 18 — Propagation d'une rumeur</a><label class="revise-mini" title="Marquer « 5. Exercice 18 — Propagation d&#x27;une rumeur » comme révisé"><input type="checkbox" data-section="5-exercice-18-propagation-d-une-rumeur" aria-label="Révisé : 5. Exercice 18 — Propagation d&#x27;une rumeur"><span class="revise-coche" aria-hidden="true"></span></label></div><ol><li><a href="#5-exercice-18-propagation-d-une-rumeur-5-1-enonce"><span class="num"></span>5.1 Énoncé</a></li><li><a href="#5-exercice-18-propagation-d-une-rumeur-5-2-mise-en-equation-a"><span class="num"></span>5.2 Mise en équation (a)</a></li><li><a href="#5-exercice-18-propagation-d-une-rumeur-5-3-temps-pour-atteindre-50-b"><span class="num"></span>5.3 Temps pour atteindre 50% (b)</a></li></ol></li><li data-cible="6-exercice-21-solution-generale"><div class="sommaire-ligne"><a href="#6-exercice-21-solution-generale"><span class="num num-vide">·</span>6. Exercice 21 — Solution générale</a><label class="revise-mini" title="Marquer « 6. Exercice 21 — Solution générale » comme révisé"><input type="checkbox" data-section="6-exercice-21-solution-generale" aria-label="Révisé : 6. Exercice 21 — Solution générale"><span class="revise-coche" aria-hidden="true"></span></label></div><ol><li><a href="#6-exercice-21-solution-generale-6-1-a-y-dfrac-2-x-y-dfrac-1-2x-2"><span class="num"></span>6.1 a) <span class="km" data-tex="y&#x27;-\dfrac{2}{x}\,y=\dfrac{1}{2x^2}">y&#x27;-\dfrac{2}{x}\,y=\dfrac{1}{2x^2}</span></a></li><li><a href="#6-exercice-21-solution-generale-6-2-b-y-left-dfrac-2x-1-x-2-right-y-dfrac-1-x-4"><span class="num"></span>6.2 b) <span class="km" data-tex="y&#x27;+\left(\dfrac{2x-1}{x^2}\right)y=\dfrac{1}{x^4}">y&#x27;+\left(\dfrac{2x-1}{x^2}\right)y=\dfrac{1}{x^4}</span></a></li><li><a href="#6-exercice-21-solution-generale-6-3-c-x-2y-y-x-cos-2x-sin-2x-y-pi-1"><span class="num"></span>6.3 c) <span class="km" data-tex="x^2y&#x27;+y=x\cos(2x)+\sin(2x)">x^2y&#x27;+y=x\cos(2x)+\sin(2x)</span>,  <span class="km" data-tex="y(\pi)=1">y(\pi)=1</span></a></li><li><a href="#6-exercice-21-solution-generale-6-4-d-y-y-cot-x-tan-2-x-y-left-frac-pi-4-right-0"><span class="num"></span>6.4 d) <span class="km" data-tex="y&#x27;-y\cot x=\tan^2 x">y&#x27;-y\cot x=\tan^2 x</span>,  <span class="km" data-tex="y\!\left(\frac{\pi}{4}\right)=0">y\!\left(\frac{\pi}{4}\right)=0</span></a></li></ol></li><li data-cible="7-recapitulatif"><div class="sommaire-ligne"><a href="#7-recapitulatif"><span class="num num-vide">·</span>7. Récapitulatif</a><label class="revise-mini" title="Marquer « 7. Récapitulatif » comme révisé"><input type="checkbox" data-section="7-recapitulatif" aria-label="Révisé : 7. Récapitulatif"><span class="revise-coche" aria-hidden="true"></span></label></div></li></ol>
+    </details>
+  </aside>
+  <main id="contenu">
+    <section class="hero">
+      <div class="hero-papier" aria-hidden="true"></div>
+      <div class="hero-tete">
+        <a class="hero-piece" href="../index.html"><svg class="icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3c-2 0-3 1-3 3v12c0 2-1 3-3 3"/><path d="M15 9h5M17.5 6.5v5"/></svg><span>Analyse 3</span><span class="hero-aile">Aile Sciences</span></a>
+        <div class="anneau" data-anneau role="img" aria-label="Progression"><span data-progression-pourcent>0 %</span></div>
+      </div>
+      
+      <h1 class="visuellement-cache">Analyse 3 · Corrigé · Devoir — lac et exercices 15 à 21</h1>
+      <div class="hero-intro"><div class="centre"><span class="t-titre"><strong><span style="color:var(--c-heia)">Analyse 3 — Devoir</span></strong><br> <span class="t-grand">Lac Énergie <span class="km" data-tex="\cdot">\cdot</span> Exercices 15 à 18 <span class="km" data-tex="\cdot">\cdot</span> Exercice 21</span></span><br><span class="t-grand">HEIA-FR — E2-ANA3 — Semestre 3, automne 2026</span></div>
+<div class="encadre-bloc"><strong>Objet.</strong> Ce document traite : (1) l'exemple « Lac » du script d'EDO ; (2) les exercices 15, 16, 17 et 18 de la série <em>Équations différentielles</em> ; (3) l'exercice 21 de la même série.<br> <strong>Règle de rédaction :</strong> le détail des calculs est exigé — une réponse non développée est considérée comme fausse. Tous les résultats ci-dessous sont vérifiés (<code>SymPy</code> + intégration numérique).</div></div>
+      <div class="hero-puces"><span class="puce puce-te puce-attente">Date du TE : pas encore annoncée</span><span class="puce puce-corrige">Corrigé</span><span class="puce">7 sections</span></div>
+    </section>
+    <section class="station station-normale" id="1-exemple-lac-exemple-n-circ-2-du-script" aria-labelledby="1-exemple-lac-exemple-n-circ-2-du-script-t"><header class="station-tete"><span class="station-num station-num-vide" aria-hidden="true">✦</span><h2 id="1-exemple-lac-exemple-n-circ-2-du-script-t">1. Exemple « Lac » (exemple <span class="km" data-tex="n^\circ 2">n^\circ 2</span> du script)</h2><label class="revise"><input type="checkbox" data-section="1-exemple-lac-exemple-n-circ-2-du-script"><span class="revise-coche" aria-hidden="true"></span><span class="revise-texte">Révisé</span></label></header><div class="station-corps"><h3 id="1-exemple-lac-exemple-n-circ-2-du-script-1-1-enonce" class="sous-titre">1.1 Énoncé</h3>
+<p>Un ruisseau se déverse à raison de <span class="km" data-tex="500\ \mathrm{m^3/jour}">500\ \mathrm{m^3/jour}</span> dans un lac dont le volume est de <span class="km" data-tex="10^7\ \mathrm{m^3}">10^7\ \mathrm{m^3}</span>. Le débit de décharge du lac est de <span class="km" data-tex="480\ \mathrm{m^3/jour}">480\ \mathrm{m^3/jour}</span>.</p>
+<p>Le ruisseau est contaminé par un polluant dont la concentration est de <span class="km" data-tex="3\ \mathrm{g/m^3}">3\ \mathrm{g/m^3}</span>. Au moment de la contamination, le lac ne contenait aucune trace de ce polluant (mais <em>il est plein</em> : son volume vaut déjà <span class="km" data-tex="10^7\ \mathrm{m^3}">10^7\ \mathrm{m^3}</span>).</p>
+<p>Déterminer la concentration du polluant dans le lac en fonction du temps écoulé depuis le moment de la contamination.</p>
+<h3 id="1-exemple-lac-exemple-n-circ-2-du-script-1-2-notations" class="sous-titre">1.2 Notations</h3>
+<div class="tableau"><table><tbody><tr><td><span class="km" data-tex="q(t)">q(t)</span></td><td>quantité de polluant (g)</td><td><span class="km" data-tex="c(t)=\dfrac{q(t)}{V(t)}">c(t)=\dfrac{q(t)}{V(t)}</span> sa concentration (g/m<span class="km" data-tex="^3">^3</span>)</td></tr><tr><td><span class="km" data-tex="V(t)">V(t)</span></td><td>volume du lac (m<span class="km" data-tex="^3">^3</span>)</td><td><span class="km" data-tex="a=500">a=500</span> : débit entrant (m<span class="km" data-tex="^3">^3</span>/j)</td></tr><tr><td><span class="km" data-tex="c_{\text{ent}}=3">c_{\text{ent}}=3</span></td><td>concentration entrante (g/m<span class="km" data-tex="^3">^3</span>)</td><td><span class="km" data-tex="b=480">b=480</span> : débit sortant (m<span class="km" data-tex="^3">^3</span>/j)</td></tr></tbody></table></div>
+<h3 id="1-exemple-lac-exemple-n-circ-2-du-script-1-3-volume-du-lac" class="sous-titre">1.3 Volume du lac</h3>
+<p>Solde des volumes : <span class="km" data-tex="\dfrac{dV}{dt}=a-b=500-480=20\ \mathrm{m^3/jour}">\dfrac{dV}{dt}=a-b=500-480=20\ \mathrm{m^3/jour}</span>. Avec <span class="km" data-tex="V(0)=10^7\ \mathrm{m^3}">V(0)=10^7\ \mathrm{m^3}</span> :</p>
+<div class="km km-d" data-tex="\boxed{\;V(t)=10^7+20t\qquad(t\ \text{en jours})\;}">\boxed{\;V(t)=10^7+20t\qquad(t\ \text{en jours})\;}</div>
+<h3 id="1-exemple-lac-exemple-n-circ-2-du-script-1-4-bilan-de-matiere-sur-le-polluant" class="sous-titre">1.4 Bilan de matière sur le polluant</h3>
+<p>Sur un intervalle <span class="km" data-tex="\Delta t">\Delta t</span>, la quantité de polluant varie de</p>
+<div class="km km-d" data-tex="\Delta q=\underbrace{c_{\text{ent}}\,a\,\Delta t}_{\text{entrant}}
+-\underbrace{c(t)\,b\,\Delta t}_{\text{sortant}}
+=1500\,\Delta t-480\,c(t)\,\Delta t .">\Delta q=\underbrace{c_{\text{ent}}\,a\,\Delta t}_{\text{entrant}}
+-\underbrace{c(t)\,b\,\Delta t}_{\text{sortant}}
+=1500\,\Delta t-480\,c(t)\,\Delta t .</div>
+<p>En divisant par <span class="km" data-tex="\Delta t">\Delta t</span> et en passant à la limite <span class="km" data-tex="\Delta t\to 0">\Delta t\to 0</span> :</p>
+<div class="km km-d" data-tex="q&#x27;(t)=1500-480\,c(t).">q&#x27;(t)=1500-480\,c(t).</div>
+<p>Or <span class="km" data-tex="q=cV">q=cV</span> donc, par dérivation d'un produit,</p>
+<div class="km km-d" data-tex="q&#x27;=c&#x27;V+cV&#x27;\qquad\text{avec } V&#x27;=20 .">q&#x27;=c&#x27;V+cV&#x27;\qquad\text{avec } V&#x27;=20 .</div>
+<p>En égalant les deux expressions de <span class="km" data-tex="q&#x27;">q&#x27;</span> :</p>
+<div class="km km-d" data-tex="c&#x27;V+20c=1500-480c
+\quad\Longrightarrow\quad
+c&#x27;=\frac{1500-500\,c}{V(t)}=\frac{1500-500\,c(t)}{10^7+20t}.">c&#x27;V+20c=1500-480c
+\quad\Longrightarrow\quad
+c&#x27;=\frac{1500-500\,c}{V(t)}=\frac{1500-500\,c(t)}{10^7+20t}.</div>
+<aside class="carte carte-intuition"><div class="carte-tete"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2.1h5c0-.9.4-1.6 1-2.1A6 6 0 0 0 12 3z"/></svg><span class="carte-type">Résultat</span></div><div class="carte-corps"><p><strong>Équation différentielle du modèle</strong></p>
+<div class="km km-d" data-tex="\boxed{\;\frac{dc}{dt}=\frac{1500-500\,c}{10^7+20t}=\frac{500\,(3-c)}{10^7+20t},
+\qquad c(0)=0\;}">\boxed{\;\frac{dc}{dt}=\frac{1500-500\,c}{10^7+20t}=\frac{500\,(3-c)}{10^7+20t},
+\qquad c(0)=0\;}</div>
+<p>Équation différentielle <strong>linéaire d'ordre 1</strong>, à coefficients variables, avec condition initiale.</p></div></aside>
+<h3 id="1-exemple-lac-exemple-n-circ-2-du-script-1-5-resolution-par-facteur-integrant" class="sous-titre">1.5 Résolution par facteur intégrant</h3>
+<p>Mise sous forme normale <span class="km" data-tex="\displaystyle c&#x27;+\frac{500}{10^7+20t}\,c=\frac{1500}{10^7+20t}">\displaystyle c&#x27;+\frac{500}{10^7+20t}\,c=\frac{1500}{10^7+20t}</span>. On remarque que <span class="km" data-tex="\dfrac{500}{10^7+20t}=\dfrac{25}{5\cdot10^5+t}">\dfrac{500}{10^7+20t}=\dfrac{25}{5\cdot10^5+t}</span> (en divisant numérateur et dénominateur par 20). Le facteur intégrant est</p>
+<div class="km km-d" data-tex="\mu(t)=\exp\!\left(\int \frac{500}{10^7+20t}\,dt\right)
+=\exp\!\left(\tfrac{25}{1}\cdot\ln\frac{5\cdot10^5+t}{5\cdot10^5}\right)
+=\left(1+\frac{t}{5\cdot10^5}\right)^{25}.">\mu(t)=\exp\!\left(\int \frac{500}{10^7+20t}\,dt\right)
+=\exp\!\left(\tfrac{25}{1}\cdot\ln\frac{5\cdot10^5+t}{5\cdot10^5}\right)
+=\left(1+\frac{t}{5\cdot10^5}\right)^{25}.</div>
+<p>Vérification du coefficient : <span class="km" data-tex="\dfrac{d}{dt}\ln\mu=\dfrac{25}{5\cdot10^5+t} =\dfrac{500}{10^7+20t}">\dfrac{d}{dt}\ln\mu=\dfrac{25}{5\cdot10^5+t} =\dfrac{500}{10^7+20t}</span>. <span class="km" data-tex="\checkmark">\checkmark</span></p>
+<p>Donc <span class="km" data-tex="\bigl(\mu\,c\bigr)&#x27;=\mu\cdot\dfrac{1500}{10^7+20t}">\bigl(\mu\,c\bigr)&#x27;=\mu\cdot\dfrac{1500}{10^7+20t}</span>, c'est-à-dire</p>
+<div class="km km-d" data-tex="\frac{d}{dt}\!\left[\left(1+\frac{t}{5\cdot10^5}\right)^{25} c\right]
+=1500\left(1+\frac{t}{5\cdot10^5}\right)^{24}\cdot\frac{1}{5\cdot10^5}">\frac{d}{dt}\!\left[\left(1+\frac{t}{5\cdot10^5}\right)^{25} c\right]
+=1500\left(1+\frac{t}{5\cdot10^5}\right)^{24}\cdot\frac{1}{5\cdot10^5}</div>
+<p>car <span class="km" data-tex="\dfrac{1500}{10^7+20t}=\dfrac{1}{5\cdot10^5}\left(1+\dfrac{t}{5\cdot10^5}\right)^{-1}">\dfrac{1500}{10^7+20t}=\dfrac{1}{5\cdot10^5}\left(1+\dfrac{t}{5\cdot10^5}\right)^{-1}</span>.</p>
+<p>Puisque <span class="km" data-tex="\displaystyle\int \left(1+\frac{t}{5\cdot10^5}\right)^{24}\frac{dt}{5\cdot10^5} =\frac{1}{25}\left(1+\frac{t}{5\cdot10^5}\right)^{25}">\displaystyle\int \left(1+\frac{t}{5\cdot10^5}\right)^{24}\frac{dt}{5\cdot10^5} =\frac{1}{25}\left(1+\frac{t}{5\cdot10^5}\right)^{25}</span> :</p>
+<div class="km km-d" data-tex="\left(1+\frac{t}{5\cdot10^5}\right)^{25} c
+=1500\cdot\frac{1}{25}\left(1+\frac{t}{5\cdot10^5}\right)^{25}+K
+=60\left(1+\frac{t}{5\cdot10^5}\right)^{25}+K .">\left(1+\frac{t}{5\cdot10^5}\right)^{25} c
+=1500\cdot\frac{1}{25}\left(1+\frac{t}{5\cdot10^5}\right)^{25}+K
+=60\left(1+\frac{t}{5\cdot10^5}\right)^{25}+K .</div>
+<p>D'où la solution générale</p>
+<div class="km km-d" data-tex="c(t)=60+K\left(1+\frac{t}{5\cdot10^5}\right)^{-25}.">c(t)=60+K\left(1+\frac{t}{5\cdot10^5}\right)^{-25}.</div>
+<h3 id="1-exemple-lac-exemple-n-circ-2-du-script-1-6-condition-initiale-c-0-0" class="sous-titre">1.6 Condition initiale <span class="km" data-tex="c(0)=0">c(0)=0</span></h3>
+<div class="km km-d" data-tex="c(0)=60+K=0\ \Longrightarrow\ K=-60 .">c(0)=60+K=0\ \Longrightarrow\ K=-60 .</div>
+<aside class="carte carte-intuition"><div class="carte-tete"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2.1h5c0-.9.4-1.6 1-2.1A6 6 0 0 0 12 3z"/></svg><span class="carte-type">Résultat</span></div><div class="carte-corps"><p><strong>Réponse</strong></p>
+<div class="km km-d" data-tex="\boxed{\;c(t)=60\left[1-\left(1+\frac{t}{5\cdot10^5}\right)^{-25}\right]
+=3\left[1-\left(\frac{5\cdot10^5}{5\cdot10^5+t}\right)^{25}\right]\ \mathrm{g/m^3}\;}">\boxed{\;c(t)=60\left[1-\left(1+\frac{t}{5\cdot10^5}\right)^{-25}\right]
+=3\left[1-\left(\frac{5\cdot10^5}{5\cdot10^5+t}\right)^{25}\right]\ \mathrm{g/m^3}\;}</div>
+<p>(formes équivalentes ; <span class="km" data-tex="t">t</span> en jours).</p></div></aside>
+<h3 id="1-exemple-lac-exemple-n-circ-2-du-script-1-7-etude-du-regime-permanent-t-to-infty" class="sous-titre">1.7 Étude du régime permanent — <span class="km" data-tex="t\to\infty">t\to\infty</span></h3>
+<div class="km km-d" data-tex="\left(1+\frac{t}{5\cdot10^5}\right)^{-25}\xrightarrow[t\to\infty]{}0
+\quad\Longrightarrow\quad
+\boxed{\;c_\infty=\lim_{t\to\infty}c(t)=3\left[1-0\right]=3\ \mathrm{g/m^3}\;}">\left(1+\frac{t}{5\cdot10^5}\right)^{-25}\xrightarrow[t\to\infty]{}0
+\quad\Longrightarrow\quad
+\boxed{\;c_\infty=\lim_{t\to\infty}c(t)=3\left[1-0\right]=3\ \mathrm{g/m^3}\;}</div>
+<aside class="carte carte-piege"><div class="carte-tete"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 2.5 20h19z"/><path d="M12 10v4.5M12 17.2v.3"/></svg><span class="carte-type">Piège</span></div><div class="carte-corps"><strong>Ne pas appliquer la « formule du débit » sans réfléchir.</strong> Le réflexe <span class="km" data-tex="c_\infty=\dfrac{c_{\text{ent}}\,a}{b}=\dfrac{3\times500}{480}=3{,}125">c_\infty=\dfrac{c_{\text{ent}}\,a}{b}=\dfrac{3\times500}{480}=3{,}125</span> est <em>faux ici</em> : il suppose que le volume du lac est constant. Or ici <span class="km" data-tex="dV/dt=a-b=+20\ \mathrm{m^3/jour}">dV/dt=a-b=+20\ \mathrm{m^3/jour}</span>, donc le lac se remplit et <em>déborde</em>. Le modèle « concentration = débit entrant / débit sortant » ne s'applique donc pas tel quel : c'est le bilan de matière couplé à <span class="km" data-tex="V(t)">V(t)</span> qui fixe la limite, et celle-ci vaut exactement <span class="km" data-tex="3\ \mathrm{g/m^3}">3\ \mathrm{g/m^3}</span>. Vérifié par intégration numérique (voir §1.8).</div></aside>
+<h3 id="1-exemple-lac-exemple-n-circ-2-du-script-1-8-verification-numerique" class="sous-titre">1.8 Vérification numérique</h3>
+<p>Résolution numérique de <span class="km" data-tex="c&#x27;=\dfrac{1500-500c}{10^7+20t}">c&#x27;=\dfrac{1500-500c}{10^7+20t}</span>, <span class="km" data-tex="c(0)=0">c(0)=0</span> :</p>
+<div class="tableau"><table><thead><tr><th class="a-droite"><span class="km" data-tex="t">t</span> (jours)</th><th class="a-droite">num. (<code>solve_ivp</code>)</th><th class="a-droite">formule <span class="km" data-tex="3-3(1+t/5{\cdot}10^5)^{-25}">3-3(1+t/5{\cdot}10^5)^{-25}</span></th><th class="a-droite">écart</th></tr></thead><tbody><tr><td class="a-droite"><span class="km" data-tex="10^3">10^3</span></td><td class="a-droite"><span class="km" data-tex="0{,}1461692285">0{,}1461692285</span></td><td class="a-droite"><span class="km" data-tex="0{,}1461692285">0{,}1461692285</span></td><td class="a-droite"><span class="km" data-tex="0">0</span></td></tr><tr><td class="a-droite"><span class="km" data-tex="10^5">10^5</span></td><td class="a-droite"><span class="km" data-tex="2{,}9685522121">2{,}9685522121</span></td><td class="a-droite"><span class="km" data-tex="2{,}9685522120">2{,}9685522120</span></td><td class="a-droite"><span class="km" data-tex="10^{-10}">10^{-10}</span></td></tr><tr><td class="a-droite"><span class="km" data-tex="10^6">10^6</span></td><td class="a-droite"><span class="km" data-tex="3{,}0000000000">3{,}0000000000</span></td><td class="a-droite"><span class="km" data-tex="3{,}0000000000">3{,}0000000000</span></td><td class="a-droite"><span class="km" data-tex="0">0</span></td></tr><tr><td class="a-droite"><span class="km" data-tex="10^8">10^8</span></td><td class="a-droite"><span class="km" data-tex="3{,}0000000000">3{,}0000000000</span></td><td class="a-droite"><span class="km" data-tex="3{,}0000000000">3{,}0000000000</span></td><td class="a-droite"><span class="km" data-tex="0">0</span></td></tr></tbody></table></div>
+<p>Conclusion : la formule fermée est exacte et <span class="km" data-tex="c(t)\to 3\ \mathrm{g/m^3}">c(t)\to 3\ \mathrm{g/m^3}</span>. Physiquement, tout le polluant qui entre finit par ressortir à la même concentration, le lac étant <em>plein et débordant</em> : la concentration du lac converge vers celle du ruisseau.</p></div></section><section class="station station-normale" id="2-exercice-15-detritus-en-foret" aria-labelledby="2-exercice-15-detritus-en-foret-t"><header class="station-tete"><span class="station-num station-num-vide" aria-hidden="true">✦</span><h2 id="2-exercice-15-detritus-en-foret-t">2. Exercice 15 — Détritus en forêt</h2><label class="revise"><input type="checkbox" data-section="2-exercice-15-detritus-en-foret"><span class="revise-coche" aria-hidden="true"></span><span class="revise-texte">Révisé</span></label></header><div class="station-corps"><h3 id="2-exercice-15-detritus-en-foret-2-1-enonce" class="sous-titre">2.1 Énoncé</h3>
+<p>Les détritus tombent au sol au taux constant de <span class="km" data-tex="200\ \mathrm{g/m^2}">200\ \mathrm{g/m^2}</span> par an et se décomposent au taux de <span class="km" data-tex="50\%">50\%</span> de la quantité présente.</p>
+<h3 id="2-exercice-15-detritus-en-foret-2-2-mise-en-equation-a" class="sous-titre">2.2 Mise en équation (a)</h3>
+<p>Taux de variation = entrée <span class="km" data-tex="-">-</span> sortie :</p>
+<div class="km km-d" data-tex="\boxed{\;\frac{dQ}{dt}=200-0{,}5\,Q\;}
+\qquad Q(0)=50\ \mathrm{g/m^2}.">\boxed{\;\frac{dQ}{dt}=200-0{,}5\,Q\;}
+\qquad Q(0)=50\ \mathrm{g/m^2}.</div>
+<h3 id="2-exercice-15-detritus-en-foret-2-3-solution-generale-b" class="sous-titre">2.3 Solution générale (b)</h3>
+<p>EDO linéaire d'ordre 1 à coefficients constants. Solution particulière constante <span class="km" data-tex="Q_p">Q_p</span> : <span class="km" data-tex="0=200-0{,}5Q_p\Rightarrow Q_p=400">0=200-0{,}5Q_p\Rightarrow Q_p=400</span>. Solution homogène : <span class="km" data-tex="Q_h=Ce^{-t/2}">Q_h=Ce^{-t/2}</span>.</p>
+<div class="km km-d" data-tex="\boxed{\;Q(t)=400+Ce^{-t/2}\;}">\boxed{\;Q(t)=400+Ce^{-t/2}\;}</div>
+<h3 id="2-exercice-15-detritus-en-foret-2-4-solution-particuliere-c" class="sous-titre">2.4 Solution particulière (c)</h3>
+<p><span class="km" data-tex="Q(0)=400+C=50\Rightarrow C=-350">Q(0)=400+C=50\Rightarrow C=-350</span> :</p>
+<aside class="carte carte-intuition"><div class="carte-tete"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2.1h5c0-.9.4-1.6 1-2.1A6 6 0 0 0 12 3z"/></svg><span class="carte-type">Résultat</span></div><div class="carte-corps"><span class="km km-large" data-tex="\boxed{\displaystyle \;Q(t)=400-350\,e^{-t/2}\;}">\boxed{\displaystyle \;Q(t)=400-350\,e^{-t/2}\;}</span>  <span class="km" data-tex="\displaystyle\lim_{t\to\infty}Q(t)=400\ \mathrm{g/m^2}">\displaystyle\lim_{t\to\infty}Q(t)=400\ \mathrm{g/m^2}</span>.</div></aside>
+<p>Interprétation : l'équilibre correspond au régime où l'apport (<span class="km" data-tex="200">200</span>) équilibre exactement la décomposition (<span class="km" data-tex="0{,}5\times 400">0{,}5\times 400</span>).</p></div></section><section class="station station-normale" id="3-exercice-16-croissance-de-von-bertalanffy" aria-labelledby="3-exercice-16-croissance-de-von-bertalanffy-t"><header class="station-tete"><span class="station-num station-num-vide" aria-hidden="true">✦</span><h2 id="3-exercice-16-croissance-de-von-bertalanffy-t">3. Exercice 16 — Croissance de von Bertalanffy</h2><label class="revise"><input type="checkbox" data-section="3-exercice-16-croissance-de-von-bertalanffy"><span class="revise-coche" aria-hidden="true"></span><span class="revise-texte">Révisé</span></label></header><div class="station-corps"><h3 id="3-exercice-16-croissance-de-von-bertalanffy-3-1-enonce" class="sous-titre">3.1 Énoncé</h3>
+<p><span class="km" data-tex="\dfrac{dL}{dt}">\dfrac{dL}{dt}</span> proportionnelle à l'écart entre la longueur maximale <span class="km" data-tex="L_\infty">L_\infty</span> et la longueur courante.</p>
+<h3 id="3-exercice-16-croissance-de-von-bertalanffy-3-2-equation-a" class="sous-titre">3.2 Équation (a)</h3>
+<div class="km km-d" data-tex="\boxed{\;\frac{dL}{dt}=k\,(L_\infty-L)\;}\qquad k&gt;0.">\boxed{\;\frac{dL}{dt}=k\,(L_\infty-L)\;}\qquad k&gt;0.</div>
+<h3 id="3-exercice-16-croissance-de-von-bertalanffy-3-3-application-a-l-aiglefin-b" class="sous-titre">3.3 Application à l'aiglefin (b)</h3>
+<p>Données : <span class="km" data-tex="L_\infty=50">L_\infty=50</span> cm ; <span class="km" data-tex="k=0{,}2">k=0{,}2</span> ; <span class="km" data-tex="L(1)=20">L(1)=20</span> cm.</p>
+<p>Séparation des variables :</p>
+<div class="km km-d" data-tex="\int\frac{dL}{L_\infty-L}=\int k\,dt
+\;\Longrightarrow\;
+-\ln|L_\infty-L|=kt+K
+\;\Longrightarrow\;
+L(t)=L_\infty-Ce^{-kt}.">\int\frac{dL}{L_\infty-L}=\int k\,dt
+\;\Longrightarrow\;
+-\ln|L_\infty-L|=kt+K
+\;\Longrightarrow\;
+L(t)=L_\infty-Ce^{-kt}.</div>
+<p>Condition initiale en <span class="km" data-tex="t=1">t=1</span> (l'âge de référence est 1 an) :</p>
+<div class="km km-d" data-tex="20=50-Ce^{-0{,}2}\;\Longrightarrow\; Ce^{-0{,}2}=30
+\;\Longrightarrow\;C=30e^{0{,}2}.">20=50-Ce^{-0{,}2}\;\Longrightarrow\; Ce^{-0{,}2}=30
+\;\Longrightarrow\;C=30e^{0{,}2}.</div>
+<div class="km km-d" data-tex="L(t)=50-30e^{0{,}2}e^{-0{,}2t}">L(t)=50-30e^{0{,}2}e^{-0{,}2t}</div>
+<aside class="carte carte-intuition"><div class="carte-tete"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2.1h5c0-.9.4-1.6 1-2.1A6 6 0 0 0 12 3z"/></svg><span class="carte-type">Résultat</span></div><div class="carte-corps"><span class="km km-large" data-tex="\boxed{\displaystyle \;L(t)=50-30\,e^{-0{,}2\,(t-1)}\ \mathrm{cm}\;}">\boxed{\displaystyle \;L(t)=50-30\,e^{-0{,}2\,(t-1)}\ \mathrm{cm}\;}</span>  (t en années).</div></aside></div></section><section class="station station-normale" id="4-exercice-17-balle-dans-un-banc-de-sable" aria-labelledby="4-exercice-17-balle-dans-un-banc-de-sable-t"><header class="station-tete"><span class="station-num station-num-vide" aria-hidden="true">✦</span><h2 id="4-exercice-17-balle-dans-un-banc-de-sable-t">4. Exercice 17 — Balle dans un banc de sable</h2><label class="revise"><input type="checkbox" data-section="4-exercice-17-balle-dans-un-banc-de-sable"><span class="revise-coche" aria-hidden="true"></span><span class="revise-texte">Révisé</span></label></header><div class="station-corps"><h3 id="4-exercice-17-balle-dans-un-banc-de-sable-4-1-enonce" class="sous-titre">4.1 Énoncé</h3>
+<p>Décélération proportionnelle à la racine carrée de la vitesse ; vitesse d'impact <span class="km" data-tex="v(0)=36">v(0)=36</span> m/s.</p>
+<h3 id="4-exercice-17-balle-dans-un-banc-de-sable-4-2-mise-en-equation-a" class="sous-titre">4.2 Mise en équation (a)</h3>
+<p>La décélération est <span class="km" data-tex="-\dfrac{dv}{dt}">-\dfrac{dv}{dt}</span>, opposée à la vitesse :</p>
+<div class="km km-d" data-tex="\boxed{\;\frac{dv}{dt}=-k\sqrt{v}\;}\qquad k&gt;0,\ v(t)\ge 0.">\boxed{\;\frac{dv}{dt}=-k\sqrt{v}\;}\qquad k&gt;0,\ v(t)\ge 0.</div>
+<h3 id="4-exercice-17-balle-dans-un-banc-de-sable-4-3-temps-d-arret-b" class="sous-titre">4.3 Temps d'arrêt (b)</h3>
+<p>Séparation des variables (<span class="km" data-tex="v&gt;0">v&gt;0</span>) :</p>
+<div class="km km-d" data-tex="\frac{dv}{\sqrt v}=-k\,dt
+\;\Longrightarrow\;
+2\sqrt v=-kt+K .">\frac{dv}{\sqrt v}=-k\,dt
+\;\Longrightarrow\;
+2\sqrt v=-kt+K .</div>
+<p>À <span class="km" data-tex="t=0">t=0</span> : <span class="km" data-tex="2\sqrt{36}=12=K">2\sqrt{36}=12=K</span>, donc</p>
+<div class="km km-d" data-tex="2\sqrt v=12-kt\;\Longrightarrow\;\sqrt v=6-\frac{kt}{2}.">2\sqrt v=12-kt\;\Longrightarrow\;\sqrt v=6-\frac{kt}{2}.</div>
+<p>L'immobilisation a lieu lorsque <span class="km" data-tex="v=0">v=0</span>, soit <span class="km" data-tex="6-\frac{kt}{2}=0">6-\frac{kt}{2}=0</span> :</p>
+<aside class="carte carte-intuition"><div class="carte-tete"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2.1h5c0-.9.4-1.6 1-2.1A6 6 0 0 0 12 3z"/></svg><span class="carte-type">Résultat</span></div><div class="carte-corps"><span class="km km-large" data-tex="\boxed{\displaystyle \;t_{\text{arrêt}}=\frac{12}{k}\ \text{secondes}\;}">\boxed{\displaystyle \;t_{\text{arrêt}}=\frac{12}{k}\ \text{secondes}\;}</span>  (dépend de la constante k).</div></aside>
+<p>Application numérique : si <span class="km" data-tex="k=1\ \mathrm{m^{1/2}\,s^{-3/2}}">k=1\ \mathrm{m^{1/2}\,s^{-3/2}}</span> alors <span class="km" data-tex="t_{\text{arrêt}}=12">t_{\text{arrêt}}=12</span> s ; la distance parcourue vaut alors <span class="km" data-tex="\frac{144}{k}">\frac{144}{k}</span> m.</p></div></section><section class="station station-normale" id="5-exercice-18-propagation-d-une-rumeur" aria-labelledby="5-exercice-18-propagation-d-une-rumeur-t"><header class="station-tete"><span class="station-num station-num-vide" aria-hidden="true">✦</span><h2 id="5-exercice-18-propagation-d-une-rumeur-t">5. Exercice 18 — Propagation d'une rumeur</h2><label class="revise"><input type="checkbox" data-section="5-exercice-18-propagation-d-une-rumeur"><span class="revise-coche" aria-hidden="true"></span><span class="revise-texte">Révisé</span></label></header><div class="station-corps"><h3 id="5-exercice-18-propagation-d-une-rumeur-5-1-enonce" class="sous-titre">5.1 Énoncé</h3>
+<p>Population <span class="km" data-tex="P=40000">P=40000</span> habitants. Le taux de variation du nombre de personnes informées est proportionnel au nombre de personnes <em>non informées</em>.</p>
+<h3 id="5-exercice-18-propagation-d-une-rumeur-5-2-mise-en-equation-a" class="sous-titre">5.2 Mise en équation (a)</h3>
+<p>Soit <span class="km" data-tex="N(t)">N(t)</span> le nombre de personnes au courant ; <span class="km" data-tex="P-N">P-N</span> est le nombre de personnes non informées.</p>
+<div class="km km-d" data-tex="\boxed{\;\frac{dN}{dt}=k\,(40000-N)\;}">\boxed{\;\frac{dN}{dt}=k\,(40000-N)\;}</div>
+<h3 id="5-exercice-18-propagation-d-une-rumeur-5-3-temps-pour-atteindre-50-b" class="sous-titre">5.3 Temps pour atteindre 50% (b)</h3>
+<p>Données : <span class="km" data-tex="N(0)=0">N(0)=0</span> et <span class="km" data-tex="N(2)=0{,}25\times 40000=10000">N(2)=0{,}25\times 40000=10000</span>.</p>
+<p>Résolution (même structure qu'à l'exercice 16) :</p>
+<div class="km km-d" data-tex="N(t)=40000\left(1-e^{-kt}\right).">N(t)=40000\left(1-e^{-kt}\right).</div>
+<p>En <span class="km" data-tex="t=0">t=0</span> : <span class="km" data-tex="N(0)=40000(1-1)=0">N(0)=40000(1-1)=0</span> <span class="km" data-tex="\checkmark">\checkmark</span></p>
+<p>En <span class="km" data-tex="t=2">t=2</span> :</p>
+<div class="km km-d" data-tex="10000=40000\left(1-e^{-2k}\right)
+\Longrightarrow 1-e^{-2k}=\tfrac14
+\Longrightarrow e^{-2k}=\tfrac34
+\Longrightarrow k=\tfrac12\ln\tfrac43 .">10000=40000\left(1-e^{-2k}\right)
+\Longrightarrow 1-e^{-2k}=\tfrac14
+\Longrightarrow e^{-2k}=\tfrac34
+\Longrightarrow k=\tfrac12\ln\tfrac43 .</div>
+<p>On cherche <span class="km" data-tex="t_{50}">t_{50}</span> tel que <span class="km" data-tex="N(t_{50})=20000">N(t_{50})=20000</span> :</p>
+<div class="km km-d" data-tex="20000=40000\left(1-e^{-k t_{50}}\right)\Longrightarrow e^{-k t_{50}}=\tfrac12 .">20000=40000\left(1-e^{-k t_{50}}\right)\Longrightarrow e^{-k t_{50}}=\tfrac12 .</div>
+<p>En prenant le logarithme et en utilisant <span class="km" data-tex="k=\frac12\ln\frac43">k=\frac12\ln\frac43</span> :</p>
+<div class="km km-d" data-tex="t_{50}=\frac{\ln 2}{k}=\frac{2\ln 2}{\ln(4/3)}
+=\frac{1{,}38629}{0{,}28768}\approx 4{,}82\ \text{jours}.">t_{50}=\frac{\ln 2}{k}=\frac{2\ln 2}{\ln(4/3)}
+=\frac{1{,}38629}{0{,}28768}\approx 4{,}82\ \text{jours}.</div>
+<aside class="carte carte-intuition"><div class="carte-tete"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2.1h5c0-.9.4-1.6 1-2.1A6 6 0 0 0 12 3z"/></svg><span class="carte-type">Résultat</span></div><div class="carte-corps"><span class="km km-large" data-tex="\boxed{\displaystyle \;t_{50}\approx 4{,}8\ \text{jours}\;}">\boxed{\displaystyle \;t_{50}\approx 4{,}8\ \text{jours}\;}</span> (environ 4 jours et 20 heures). Le modèle prévoit une croissance qui ralentit à mesure que la population s'informe : il faut 2 jours pour 25 % mais environ 4,8 jours pour 50 %.</div></aside></div></section><section class="station station-normale" id="6-exercice-21-solution-generale" aria-labelledby="6-exercice-21-solution-generale-t"><header class="station-tete"><span class="station-num station-num-vide" aria-hidden="true">✦</span><h2 id="6-exercice-21-solution-generale-t">6. Exercice 21 — Solution générale</h2><label class="revise"><input type="checkbox" data-section="6-exercice-21-solution-generale"><span class="revise-coche" aria-hidden="true"></span><span class="revise-texte">Révisé</span></label></header><div class="station-corps"><aside class="carte carte-retenir"><div class="carte-tete"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></svg><span class="carte-type">À retenir</span></div><div class="carte-corps"><p><strong>Méthode employée</strong> (EDO linéaire d'ordre 1 <span class="km" data-tex="y&#x27;+P(x)y=Q(x)">y&#x27;+P(x)y=Q(x)</span>) :</p>
+<div class="km km-d" data-tex="\mu(x)=e^{\int P(x)\,dx},\qquad
+y(x)=\frac{1}{\mu(x)}\left[\int \mu(x)\,Q(x)\,dx+C\right].">\mu(x)=e^{\int P(x)\,dx},\qquad
+y(x)=\frac{1}{\mu(x)}\left[\int \mu(x)\,Q(x)\,dx+C\right].</div></div></aside>
+<h3 id="6-exercice-21-solution-generale-6-1-a-y-dfrac-2-x-y-dfrac-1-2x-2" class="sous-titre">6.1 a) <span class="km" data-tex="y&#x27;-\dfrac{2}{x}\,y=\dfrac{1}{2x^2}">y&#x27;-\dfrac{2}{x}\,y=\dfrac{1}{2x^2}</span></h3>
+<p>Ici <span class="km" data-tex="P(x)=-\dfrac2x">P(x)=-\dfrac2x</span> et <span class="km" data-tex="Q(x)=\dfrac{1}{2x^2}">Q(x)=\dfrac{1}{2x^2}</span>, sur <span class="km" data-tex="x&gt;0">x&gt;0</span>.</p>
+<div class="km km-d" data-tex="\mu(x)=e^{-2\ln x}=\frac{1}{x^2},\qquad
+\mu Q=\frac{1}{x^2}\cdot\frac{1}{2x^2}=\frac{1}{2x^4}.">\mu(x)=e^{-2\ln x}=\frac{1}{x^2},\qquad
+\mu Q=\frac{1}{x^2}\cdot\frac{1}{2x^2}=\frac{1}{2x^4}.</div>
+<div class="km km-d" data-tex="\int\frac{dx}{2x^4}=-\frac{1}{6x^3}
+\;\Longrightarrow\;
+\frac{y}{x^2}=-\frac{1}{6x^3}+C .">\int\frac{dx}{2x^4}=-\frac{1}{6x^3}
+\;\Longrightarrow\;
+\frac{y}{x^2}=-\frac{1}{6x^3}+C .</div>
+<aside class="carte carte-intuition"><div class="carte-tete"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2.1h5c0-.9.4-1.6 1-2.1A6 6 0 0 0 12 3z"/></svg><span class="carte-type">Résultat</span></div><div class="carte-corps"><span class="km km-large" data-tex="\boxed{\displaystyle \;y(x)=C\,x^2-\frac{1}{6x}\;}">\boxed{\displaystyle \;y(x)=C\,x^2-\frac{1}{6x}\;}</span>  (x&gt;0).</div></aside>
+<p><em>Vérification :</em> <span class="km" data-tex="y&#x27;=2Cx+\dfrac{1}{6x^2}">y&#x27;=2Cx+\dfrac{1}{6x^2}</span> et <span class="km" data-tex="-\dfrac{2}{x}y=-2Cx+\dfrac{1}{3x^2}">-\dfrac{2}{x}y=-2Cx+\dfrac{1}{3x^2}</span>, somme <span class="km" data-tex="=\dfrac{1}{2x^2}">=\dfrac{1}{2x^2}</span> <span class="km" data-tex="\checkmark">\checkmark</span></p>
+<h3 id="6-exercice-21-solution-generale-6-2-b-y-left-dfrac-2x-1-x-2-right-y-dfrac-1-x-4" class="sous-titre">6.2 b) <span class="km" data-tex="y&#x27;+\left(\dfrac{2x-1}{x^2}\right)y=\dfrac{1}{x^4}">y&#x27;+\left(\dfrac{2x-1}{x^2}\right)y=\dfrac{1}{x^4}</span></h3>
+<p>On écrit <span class="km" data-tex="P(x)=\dfrac{2x-1}{x^2}=\dfrac{2}{x}-\dfrac{1}{x^2}">P(x)=\dfrac{2x-1}{x^2}=\dfrac{2}{x}-\dfrac{1}{x^2}</span>, donc</p>
+<div class="km km-d" data-tex="\int P\,dx=2\ln x+\frac{1}{x}
+\;\Longrightarrow\;
+\mu(x)=x^2e^{1/x}.">\int P\,dx=2\ln x+\frac{1}{x}
+\;\Longrightarrow\;
+\mu(x)=x^2e^{1/x}.</div>
+<p>Vérification : <span class="km" data-tex="\mu&#x27;=2xe^{1/x}+x^2e^{1/x}\left(-\frac{1}{x^2}\right) =(2x-1)e^{1/x}=\mu P">\mu&#x27;=2xe^{1/x}+x^2e^{1/x}\left(-\frac{1}{x^2}\right) =(2x-1)e^{1/x}=\mu P</span> <span class="km" data-tex="\checkmark">\checkmark</span></p>
+<p>Le second membre devient</p>
+<div class="km km-d" data-tex="\mu Q=x^2e^{1/x}\cdot\frac{1}{x^4}=\frac{e^{1/x}}{x^2},
+\qquad
+\int\frac{e^{1/x}}{x^2}\,dx=-e^{1/x}">\mu Q=x^2e^{1/x}\cdot\frac{1}{x^4}=\frac{e^{1/x}}{x^2},
+\qquad
+\int\frac{e^{1/x}}{x^2}\,dx=-e^{1/x}</div>
+<p>(substitution <span class="km" data-tex="u=1/x">u=1/x</span>, <span class="km" data-tex="du=-dx/x^2">du=-dx/x^2</span>).</p>
+<p>Donc <span class="km" data-tex="x^2e^{1/x}y=-e^{1/x}+C">x^2e^{1/x}y=-e^{1/x}+C</span>, soit <span class="km" data-tex="y=\dfrac{C-e^{1/x}}{x^2\,e^{1/x}}">y=\dfrac{C-e^{1/x}}{x^2\,e^{1/x}}</span> :</p>
+<aside class="carte carte-intuition"><div class="carte-tete"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2.1h5c0-.9.4-1.6 1-2.1A6 6 0 0 0 12 3z"/></svg><span class="carte-type">Résultat</span></div><div class="carte-corps"><span class="km km-large" data-tex="\boxed{\displaystyle \;y(x)=\frac{C\,e^{-1/x}-1}{x^2} =\frac{C}{x^2}e^{-1/x}-\frac{1}{x^2}\;}">\boxed{\displaystyle \;y(x)=\frac{C\,e^{-1/x}-1}{x^2} =\frac{C}{x^2}e^{-1/x}-\frac{1}{x^2}\;}</span>  (x&gt;0).</div></aside>
+<p><strong>Remarque de lecture :</strong> l'exposant est bien <span class="km" data-tex="-\dfrac1x">-\dfrac1x</span> (et non <span class="km" data-tex="+\dfrac1x">+\dfrac1x</span>) ; le facteur <span class="km" data-tex="e^{-1/x}">e^{-1/x}</span> provient de la division par <span class="km" data-tex="\mu=x^2e^{1/x}">\mu=x^2e^{1/x}</span>. Le corrigé officiel donne la même structure, à la coquille de signe près.</p>
+<h3 id="6-exercice-21-solution-generale-6-3-c-x-2y-y-x-cos-2x-sin-2x-y-pi-1" class="sous-titre">6.3 c) <span class="km" data-tex="x^2y&#x27;+y=x\cos(2x)+\sin(2x)">x^2y&#x27;+y=x\cos(2x)+\sin(2x)</span>,  <span class="km" data-tex="y(\pi)=1">y(\pi)=1</span></h3>
+<p>Mise sous forme normale (<span class="km" data-tex="x\neq 0">x\neq 0</span>) :</p>
+<div class="km km-d" data-tex="y&#x27;+\frac{1}{x^2}\,y=\frac{x\cos 2x+\sin 2x}{x^2},
+\qquad P(x)=\frac{1}{x^2},\quad
+\mu(x)=e^{\int x^{-2}dx}=e^{-1/x}.">y&#x27;+\frac{1}{x^2}\,y=\frac{x\cos 2x+\sin 2x}{x^2},
+\qquad P(x)=\frac{1}{x^2},\quad
+\mu(x)=e^{\int x^{-2}dx}=e^{-1/x}.</div>
+<p>D'où</p>
+<div class="km km-d" data-tex="\frac{y}{e^{-1/x}}=\left(e^{-1/x}y\right)&#x27;=e^{-1/x}\,\frac{x\cos 2x+\sin 2x}{x^2}">\frac{y}{e^{-1/x}}=\left(e^{-1/x}y\right)&#x27;=e^{-1/x}\,\frac{x\cos 2x+\sin 2x}{x^2}</div>
+<div class="km km-d" data-tex="\Longrightarrow\quad
+e^{-1/x}y(x)=K+\int_{\pi}^{x}e^{-1/s}\,\frac{s\cos 2s+\sin 2s}{s^2}\,ds .">\Longrightarrow\quad
+e^{-1/x}y(x)=K+\int_{\pi}^{x}e^{-1/s}\,\frac{s\cos 2s+\sin 2s}{s^2}\,ds .</div>
+<p>La primitive <span class="km" data-tex="\displaystyle\int e^{-1/s}\frac{s\cos 2s+\sin 2s}{s^2}\,ds">\displaystyle\int e^{-1/s}\frac{s\cos 2s+\sin 2s}{s^2}\,ds</span> <strong>n'est pas exprimable à l'aide de fonctions élémentaires</strong> (elle fait intervenir l'exponentielle intégrale <span class="km" data-tex="\mathrm{Ei}">\mathrm{Ei}</span>). La solution s'écrit donc sous forme intégrale ; la condition <span class="km" data-tex="y(\pi)=1">y(\pi)=1</span> impose <span class="km" data-tex="e^{-1/\pi}\cdot 1=K">e^{-1/\pi}\cdot 1=K</span>, soit <span class="km" data-tex="K=e^{-1/\pi}">K=e^{-1/\pi}</span> :</p>
+<aside class="carte carte-intuition"><div class="carte-tete"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2.1h5c0-.9.4-1.6 1-2.1A6 6 0 0 0 12 3z"/></svg><span class="carte-type">Résultat</span></div><div class="carte-corps"><span class="km km-large" data-tex="\boxed{\displaystyle \;y(x)=e^{1/x}\left[e^{-1/\pi} +\displaystyle\int_{\pi}^{x}\frac{e^{-1/s}\left(s\cos 2s+\sin 2s\right)}{s^{2}}\,ds\right]\;}">\boxed{\displaystyle \;y(x)=e^{1/x}\left[e^{-1/\pi} +\displaystyle\int_{\pi}^{x}\frac{e^{-1/s}\left(s\cos 2s+\sin 2s\right)}{s^{2}}\,ds\right]\;}</span></div></aside>
+<aside class="carte carte-piege"><div class="carte-tete"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 2.5 20h19z"/><path d="M12 10v4.5M12 17.2v.3"/></svg><span class="carte-type">Piège</span></div><div class="carte-corps"><p><strong>Le corrigé officiel est FAUX sur ce point.</strong> Il propose <span class="km" data-tex="y(x)=\dfrac{\sin 2x+\pi^2}{x^2}">y(x)=\dfrac{\sin 2x+\pi^2}{x^2}</span>. Or pour cette fonction :</p>
+<div class="km km-d" data-tex="x^2y&#x27;+y=\frac{2x^2\cos 2x-2x(\sin 2x+\pi^2)+\sin 2x+\pi^2}{x^2}
+\;\neq\;x\cos 2x+\sin 2x .">x^2y&#x27;+y=\frac{2x^2\cos 2x-2x(\sin 2x+\pi^2)+\sin 2x+\pi^2}{x^2}
+\;\neq\;x\cos 2x+\sin 2x .</div>
+<p>Test numérique en <span class="km" data-tex="x=\pi/4">x=\pi/4</span> : l'équation exige <span class="km" data-tex="\frac{\pi}{4}\cos\frac{\pi}{2}+\sin\frac{\pi}{2}=1">\frac{\pi}{4}\cos\frac{\pi}{2}+\sin\frac{\pi}{2}=1</span>, tandis que la fonction du corrigé donne <span class="km" data-tex="-11{,}06">-11{,}06</span>. Ce n'est donc pas une solution.</p></div></aside>
+<p><em>Remarque.</em> Une coquille est probable dans l'énoncé : sous la forme <span class="km" data-tex="x^2y&#x27;+y=\ldots">x^2y&#x27;+y=\ldots</span> l'équation n'a pas de solution élémentaire. Si l'énoncé était <span class="km" data-tex="x\,y&#x27;+y=x\cos 2x+\sin 2x">x\,y&#x27;+y=x\cos 2x+\sin 2x</span> (c'est-à-dire <span class="km" data-tex="(xy)&#x27;=x\cos 2x+\sin 2x">(xy)&#x27;=x\cos 2x+\sin 2x</span>), alors <span class="km" data-tex="y=\dfrac{\sin 2x}{2x}+\dfrac{C}{x}">y=\dfrac{\sin 2x}{2x}+\dfrac{C}{x}</span> et la condition <span class="km" data-tex="y(\pi)=1">y(\pi)=1</span> donne <span class="km" data-tex="C=\pi">C=\pi</span>. Ce point est à confirmer auprès de l'enseignante.</p>
+<h3 id="6-exercice-21-solution-generale-6-4-d-y-y-cot-x-tan-2-x-y-left-frac-pi-4-right-0" class="sous-titre">6.4 d) <span class="km" data-tex="y&#x27;-y\cot x=\tan^2 x">y&#x27;-y\cot x=\tan^2 x</span>,  <span class="km" data-tex="y\!\left(\frac{\pi}{4}\right)=0">y\!\left(\frac{\pi}{4}\right)=0</span></h3>
+<p>Ici <span class="km" data-tex="P(x)=-\cot x">P(x)=-\cot x</span>, donc</p>
+<div class="km km-d" data-tex="\int P\,dx=-\ln|\sin x|
+\;\Longrightarrow\;
+\mu(x)=e^{-\ln|\sin x|}=\frac{1}{\sin x}.">\int P\,dx=-\ln|\sin x|
+\;\Longrightarrow\;
+\mu(x)=e^{-\ln|\sin x|}=\frac{1}{\sin x}.</div>
+<p>L'équation devient</p>
+<div class="km km-d" data-tex="\left(\frac{y}{\sin x}\right)&#x27;=\frac{1}{\sin x}\tan^2 x=\frac{\sin x}{\cos^2 x}.">\left(\frac{y}{\sin x}\right)&#x27;=\frac{1}{\sin x}\tan^2 x=\frac{\sin x}{\cos^2 x}.</div>
+<p>Or <span class="km" data-tex="\displaystyle\int\frac{\sin x}{\cos^2 x}\,dx=\frac{1}{\cos x}=\sec x">\displaystyle\int\frac{\sin x}{\cos^2 x}\,dx=\frac{1}{\cos x}=\sec x</span> (substitution <span class="km" data-tex="u=\cos x">u=\cos x</span>). Donc</p>
+<div class="km km-d" data-tex="\frac{y}{\sin x}=\sec x+C
+\;\Longrightarrow\;
+y(x)=C\sin x+\tan x .">\frac{y}{\sin x}=\sec x+C
+\;\Longrightarrow\;
+y(x)=C\sin x+\tan x .</div>
+<p>Condition initiale : <span class="km" data-tex="y\!\left(\frac{\pi}{4}\right)=\dfrac{C\sqrt2}{2}+1=0 \Rightarrow C=-\sqrt2">y\!\left(\frac{\pi}{4}\right)=\dfrac{C\sqrt2}{2}+1=0 \Rightarrow C=-\sqrt2</span>.</p>
+<aside class="carte carte-intuition"><div class="carte-tete"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2.1h5c0-.9.4-1.6 1-2.1A6 6 0 0 0 12 3z"/></svg><span class="carte-type">Résultat</span></div><div class="carte-corps"><span class="km km-large" data-tex="\boxed{\displaystyle \;y(x)=\tan x-\sqrt2\,\sin x=\sin x\left(\sec x-\sqrt2\right)\;}">\boxed{\displaystyle \;y(x)=\tan x-\sqrt2\,\sin x=\sin x\left(\sec x-\sqrt2\right)\;}</span>   (conforme au corrigé officiel).</div></aside>
+<p><em>Domaine :</em> <span class="km" data-tex="x\in\left]0,\frac{\pi}{2}\right[">x\in\left]0,\frac{\pi}{2}\right[</span> (singularité de <span class="km" data-tex="\tan">\tan</span> en <span class="km" data-tex="\pi/2">\pi/2</span>).</p></div></section><section class="station station-normale" id="7-recapitulatif" aria-labelledby="7-recapitulatif-t"><header class="station-tete"><span class="station-num station-num-vide" aria-hidden="true">✦</span><h2 id="7-recapitulatif-t">7. Récapitulatif</h2><label class="revise"><input type="checkbox" data-section="7-recapitulatif"><span class="revise-coche" aria-hidden="true"></span><span class="revise-texte">Révisé</span></label></header><div class="station-corps"><div class="tableau"><table><thead><tr><th><strong>Ex.</strong></th><th><strong>Sujet</strong></th><th><strong>Résultat</strong></th></tr></thead><tbody><tr><td>Lac</td><td>Pollution d'un lac (débits)</td><td><span class="km" data-tex="c(t)=3\left[1-\left(1+\frac{t}{5\cdot10^5}\right)^{-25}\right]">c(t)=3\left[1-\left(1+\frac{t}{5\cdot10^5}\right)^{-25}\right]</span> ; <span class="km" data-tex="c\to 3">c\to 3</span></td></tr><tr><td>15</td><td>Détritus</td><td><span class="km" data-tex="Q(t)=400-350e^{-t/2}\to 400">Q(t)=400-350e^{-t/2}\to 400</span></td></tr><tr><td>16</td><td>Von Bertalanffy</td><td><span class="km" data-tex="L(t)=50-30e^{-0{,}2(t-1)}">L(t)=50-30e^{-0{,}2(t-1)}</span> cm</td></tr><tr><td>17</td><td>Balle / sable</td><td><span class="km" data-tex="t_{\text{arrêt}}=\frac{12}{k}">t_{\text{arrêt}}=\frac{12}{k}</span> s</td></tr><tr><td>18</td><td>Rumeur</td><td><span class="km" data-tex="t_{50}=\frac{2\ln 2}{\ln(4/3)}\approx 4{,}8">t_{50}=\frac{2\ln 2}{\ln(4/3)}\approx 4{,}8</span> j</td></tr><tr><td>21.a</td><td>Linéaire ordre 1</td><td><span class="km" data-tex="y=Cx^2-\frac{1}{6x}">y=Cx^2-\frac{1}{6x}</span></td></tr><tr><td>21.b</td><td>Linéaire ordre 1</td><td><span class="km" data-tex="y=\frac{C}{x^2}e^{-1/x}-\frac{1}{x^2}">y=\frac{C}{x^2}e^{-1/x}-\frac{1}{x^2}</span></td></tr><tr><td>21.c</td><td>Linéaire ordre 1</td><td>forme intégrale (non élémentaire) ; <strong>corrigé officiel faux</strong></td></tr><tr><td>21.d</td><td>Linéaire ordre 1</td><td><span class="km" data-tex="y=\tan x-\sqrt2\sin x">y=\tan x-\sqrt2\sin x</span></td></tr></tbody></table></div>
+<aside class="carte carte-piege"><div class="carte-tete"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 2.5 20h19z"/><path d="M12 10v4.5M12 17.2v.3"/></svg><span class="carte-type">Piège</span></div><div class="carte-corps"><strong>À retenir pour le travail écrit.</strong> Deux familles de pièges rencontrées ici : (1) la <em>limite</em> d'une solution se lit sur l'EDO (<span class="km" data-tex="c&#x27;=0">c&#x27;=0</span>) et non naïvement sur la forme algébrique ; (2) un corrigé peut contenir une erreur — <em>toujours</em> revérifier une solution proposée en la réinjectant dans l'EDO. C'est exactement la question posée aux exercices 5 et 6.</div></aside>
+<div class="centre"><span class="t-petit">Vérifications symboliques et numériques : <code>Semestre-3/E2-ANA3/scripts/verifier_devoir_lac_ex15_21.py</code><br> Source : <code>devoir-analyse3-lac-et-exercices-15-21.tex</code> </span></div></div></section>
+    <footer class="pied">
+      <p>Converti depuis <code>Semestre-3/E2-ANA3/Fiches-Revision/devoir-analyse3-lac-et-exercices-15-21.tex</code> · <a href="../../../assets/pdf/e2-ana3/devoir-analyse3-lac-et-exercices-15-21.pdf" target="_blank" rel="noopener">version imprimable (PDF)</a></p>
+    </footer>
+  </main>
+</div>
+<dialog id="formulaire" class="dialogue" aria-labelledby="formulaire-titre">
+  <header class="dialogue-tete"><h2 id="formulaire-titre"><span class="btn-sigma" aria-hidden="true">Σ</span> Formulaire — Devoir — lac et exercices 15 à 21</h2>
+  <button type="button" class="btn-icone" data-fermer aria-label="Fermer">✕</button></header>
+  <div class="dialogue-corps"><p>Aucune tuile formule dans ce résumé.</p></div>
+</dialog>
+<dialog id="loupe" class="dialogue loupe" aria-label="Figure agrandie">
+  <button type="button" class="btn-icone loupe-fermer" data-fermer aria-label="Fermer">✕</button>
+  <img alt="">
+</dialog>
+
+</body>
+</html>

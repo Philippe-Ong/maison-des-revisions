@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Algorithmes · Corrigé · Exercice 1.7 — structure</title>
+<meta name="description" content="Algorithmes — Exercice 1.7 — structure (Structure de gestion du temps)">
+<link rel="icon" href="../../../assets/favicon.svg?v=012e46bcde" type="image/svg+xml">
+<script>try{var t=localStorage.getItem("maison:theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css"><script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script><script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/c.min.js"></script>
+<link rel="stylesheet" href="../../../assets/styles.css?v=012e46bcde">
+<style>:root{}@media (prefers-color-scheme:dark){:root:not([data-theme=light]){}}:root[data-theme=dark]{}</style>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+
+<script defer src="../../../assets/maison.js?v=012e46bcde"></script>
+</head>
+<body class="page-resume" style="--piece:#475569" data-cle="E2-ALGO/exercices/ex1-7-structure" data-sections='["concept-de-base", "a-date-et-heure-actuelles", "b-le-depassement-overflow-de-time-t", "c-fonction-d-affichage", "d-nom-du-jour-de-la-semaine", "les-pointeurs-focus", "recapitulatif", "compilation"]' data-url-racine="pieces/e2-algo/exercices/ex1-7-structure.html" data-titre="Algorithmes · Corrigé · Exercice 1.7 — structure">
+<a class="evitement" href="#contenu">Aller au contenu</a>
+
+<header class="barre">
+  <nav class="ariane" aria-label="Fil d'Ariane">
+    <a href="../../../index.html"><svg class="icone-ariane" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 12 4l9 7"/><path d="M5 9.5V20h14V9.5"/><path d="M10 20v-6h4v6"/></svg><span>Maison</span></a><span class="sep" aria-hidden="true">›</span>
+    <a href="../index.html">Algorithmes</a><span class="sep" aria-hidden="true">›</span>
+    <span aria-current="page">Corrigé · Exercice 1.7 — structure</span>
+  </nav>
+  <div class="barre-actions">
+    
+    
+    <button type="button" class="btn-icone" data-theme-bascule aria-label="Basculer clair / sombre"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 4a8 8 0 0 1 0 16z" fill="currentColor"/></svg></button>
+  </div>
+</header>
+<div class="cadre">
+  <aside class="sommaire" aria-label="Sommaire">
+    <details class="sommaire-details" open>
+      <summary><span>Sommaire</span><span class="sommaire-prog" data-progression-texte>0 / 8</span></summary>
+      <ol class="sommaire-liste"><li data-cible="concept-de-base"><div class="sommaire-ligne"><a href="#concept-de-base"><span class="num num-vide">·</span>Concept de base</a><label class="revise-mini" title="Marquer « Concept de base » comme révisé"><input type="checkbox" data-section="concept-de-base" aria-label="Révisé : Concept de base"><span class="revise-coche" aria-hidden="true"></span></label></div></li><li data-cible="a-date-et-heure-actuelles"><div class="sommaire-ligne"><a href="#a-date-et-heure-actuelles"><span class="num num-vide">·</span>a) Date et heure actuelles</a><label class="revise-mini" title="Marquer « a) Date et heure actuelles » comme révisé"><input type="checkbox" data-section="a-date-et-heure-actuelles" aria-label="Révisé : a) Date et heure actuelles"><span class="revise-coche" aria-hidden="true"></span></label></div></li><li data-cible="b-le-depassement-overflow-de-time-t"><div class="sommaire-ligne"><a href="#b-le-depassement-overflow-de-time-t"><span class="num num-vide">·</span>b) Le dépassement (overflow) de <code>time_t</code></a><label class="revise-mini" title="Marquer « b) Le dépassement (overflow) de time_t » comme révisé"><input type="checkbox" data-section="b-le-depassement-overflow-de-time-t" aria-label="Révisé : b) Le dépassement (overflow) de time_t"><span class="revise-coche" aria-hidden="true"></span></label></div></li><li data-cible="c-fonction-d-affichage"><div class="sommaire-ligne"><a href="#c-fonction-d-affichage"><span class="num num-vide">·</span>c) Fonction d'affichage</a><label class="revise-mini" title="Marquer « c) Fonction d&#x27;affichage » comme révisé"><input type="checkbox" data-section="c-fonction-d-affichage" aria-label="Révisé : c) Fonction d&#x27;affichage"><span class="revise-coche" aria-hidden="true"></span></label></div></li><li data-cible="d-nom-du-jour-de-la-semaine"><div class="sommaire-ligne"><a href="#d-nom-du-jour-de-la-semaine"><span class="num num-vide">·</span>d) Nom du jour de la semaine</a><label class="revise-mini" title="Marquer « d) Nom du jour de la semaine » comme révisé"><input type="checkbox" data-section="d-nom-du-jour-de-la-semaine" aria-label="Révisé : d) Nom du jour de la semaine"><span class="revise-coche" aria-hidden="true"></span></label></div></li><li data-cible="les-pointeurs-focus"><div class="sommaire-ligne"><a href="#les-pointeurs-focus"><span class="num num-vide">·</span>Les pointeurs (focus)</a><label class="revise-mini" title="Marquer « Les pointeurs (focus) » comme révisé"><input type="checkbox" data-section="les-pointeurs-focus" aria-label="Révisé : Les pointeurs (focus)"><span class="revise-coche" aria-hidden="true"></span></label></div><ol><li><a href="#les-pointeurs-focus-1-idee-de-base"><span class="num"></span>1. Idée de base</a></li><li><a href="#les-pointeurs-focus-2-pourquoi-localtime-renvoie-t-elle-une-structure-et-pas-une"><span class="num"></span>2. Pourquoi <code>localtime()</code> renvoie-t-elle une structure et pas une adresse ?</a></li><li><a href="#les-pointeurs-focus-3-passer-une-structure-a-une-fonction-par-valeur-ou-par-adre"><span class="num"></span>3. Passer une structure à une fonction : par valeur ou par adresse ?</a></li><li><a href="#les-pointeurs-focus-4-const-char-texte-que-signifie-cette-ligne-de-types"><span class="num"></span>4. <code>const char *texte</code> : que signifie cette ligne de types ?</a></li><li><a href="#les-pointeurs-focus-5-const-char-const-noms-double-protection"><span class="num"></span>5. <code>const char *const noms[]</code> : double protection</a></li><li><a href="#les-pointeurs-focus-6-nomdelsemaine-renvoie-un-pointeur"><span class="num"></span>6. <code>NomDelSemaine</code> renvoie un pointeur</a></li><li><a href="#les-pointeurs-focus-recapitulatif-des-pointeurs-dans-le-fichier"><span class="num"></span>Récapitulatif des pointeurs dans le fichier</a></li></ol></li><li data-cible="recapitulatif"><div class="sommaire-ligne"><a href="#recapitulatif"><span class="num num-vide">·</span>Récapitulatif</a><label class="revise-mini" title="Marquer « Récapitulatif » comme révisé"><input type="checkbox" data-section="recapitulatif" aria-label="Révisé : Récapitulatif"><span class="revise-coche" aria-hidden="true"></span></label></div></li><li data-cible="compilation"><div class="sommaire-ligne"><a href="#compilation"><span class="num num-vide">·</span>Compilation</a><label class="revise-mini" title="Marquer « Compilation » comme révisé"><input type="checkbox" data-section="compilation" aria-label="Révisé : Compilation"><span class="revise-coche" aria-hidden="true"></span></label></div><ol><li><a href="#compilation-sortie-attendue"><span class="num"></span>Sortie attendue</a></li></ol></li></ol>
+    </details>
+  </aside>
+  <main id="contenu">
+    <section class="hero">
+      <div class="hero-papier" aria-hidden="true"></div>
+      <div class="hero-tete">
+        <a class="hero-piece" href="../index.html"><svg class="icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3c-2 0-3 1-3 3v3c0 1.5-1 3-2.5 3C4 12 5 13.5 5 15v3c0 2 1 3 3 3M16 3c2 0 3 1 3 3v3c0 1.5 1 3 2.5 3-1.5 0-2.5 1.5-2.5 3v3c0 2-1 3-3 3"/></svg><span>Algorithmes</span><span class="hero-aile">Atelier &amp; société</span></a>
+        <div class="anneau" data-anneau role="img" aria-label="Progression"><span data-progression-pourcent>0 %</span></div>
+      </div>
+      
+      <h1 class="visuellement-cache">Algorithmes · Corrigé · Exercice 1.7 — structure</h1>
+      <div class="hero-intro"><span class="t-titre">Algo 1.7 — Structure de gestion du temps</span><ul>
+<li><strong>Module :</strong> E2-ALGO (Systèmes Embarqués et Algorithmes) — HEIA-FR, Automne 2026</li>
+<li><strong>Sujet :</strong> <code>Consignes/sources/algo-01-ex1-7-structure.pdf</code> (Prof. Dominique Bullot)</li>
+<li><strong>Code source :</strong> <code>Code/ex1-7_structure.c</code></li>
+</ul>
+</div>
+      <div class="hero-puces"><span class="puce puce-te puce-attente">Date du TE : pas encore annoncée</span><span class="puce puce-corrige">Corrigé</span><span class="puce">8 sections</span></div>
+    </section>
+    <section class="station station-normale" id="concept-de-base" aria-labelledby="concept-de-base-t"><header class="station-tete"><span class="station-num station-num-vide" aria-hidden="true">✦</span><h2 id="concept-de-base-t">Concept de base</h2><label class="revise"><input type="checkbox" data-section="concept-de-base"><span class="revise-coche" aria-hidden="true"></span><span class="revise-texte">Révisé</span></label></header><div class="station-corps"><p>L'exercice repose sur la <strong>structure <code>tm</code></strong> du fichier <code>&lt;time.h&gt;</code>, qui décompose
+le temps en composants lisibles :</p>
+<pre class="code"><code class="language-c">struct tm {
+    int tm_sec;   /* secondes : 0-59 */
+    int tm_min;   /* minutes : 0-59 */
+    int tm_hour;  /* heures : 0-23 */
+    int tm_mday;  /* jour du mois : 1-31 */
+    int tm_mon;   /* mois : 0-11   ← 0 = janvier */
+    int tm_year;  /* années depuis 1900 ← 2026 = 126 */
+    int tm_wday;  /* jour de la semaine : 0=dimanche ... 6=samedi */
+    int tm_yday;  /* jour depuis le 1er janvier : 0-365 */
+};
+</code></pre>
+<p>Deux fonctions pour remplir cette structure :</p>
+<ul>
+<li><code>time(NULL)</code> → retourne le <strong>temps actuel</strong> sous forme d'un <code>time_t</code>
+(nombre de secondes depuis 1970).</li>
+<li><code>localtime(&amp;variable)</code> → transforme ce <code>time_t</code> en une structure <code>tm</code>.</li>
+</ul>
+<hr />
+</div></section><section class="station station-normale" id="a-date-et-heure-actuelles" aria-labelledby="a-date-et-heure-actuelles-t"><header class="station-tete"><span class="station-num station-num-vide" aria-hidden="true">✦</span><h2 id="a-date-et-heure-actuelles-t">a) Date et heure actuelles</h2><label class="revise"><input type="checkbox" data-section="a-date-et-heure-actuelles"><span class="revise-coche" aria-hidden="true"></span><span class="revise-texte">Révisé</span></label></header><div class="station-corps"><pre class="code"><code class="language-c">time_t maintenant = time(NULL);          /* on récupère le temps actuel */
+struct tm temps_actuel = *localtime(&amp;maintenant); /* on le décompose */
+
+printf(&quot;Current date and time is : &quot;);
+printf(&quot;%02d.%02d.%04d %02d:%02d:%02d\n&quot;,
+       temps_actuel.tm_mday, temps_actuel.tm_mon + 1, temps_actuel.tm_year + 1900,
+       temps_actuel.tm_hour, temps_actuel.tm_min, temps_actuel.tm_sec);
+</code></pre>
+<p>On demande l'heure au système puis on la &quot;découpe&quot; avec <code>localtime()</code>. Ici
+l'affichage est <strong>direct avec <code>printf</code></strong> (la fonction <code>AfficherTemps()</code> ne
+sera utilisée qu'à partir de c).</p>
+<aside class="carte carte-retenir"><div class="carte-tete"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></svg><span class="carte-type">À retenir</span></div><div class="carte-corps"><p><strong>À retenir :</strong> <code>tm_mon</code> commence à 0 (janvier = 0) → <code>tm_mon + 1</code>.
+<code>tm_year</code> est compté depuis 1900 → <code>tm_year + 1900</code>.</p></div></aside>
+<hr />
+</div></section><section class="station station-normale" id="b-le-depassement-overflow-de-time-t" aria-labelledby="b-le-depassement-overflow-de-time-t-t"><header class="station-tete"><span class="station-num station-num-vide" aria-hidden="true">✦</span><h2 id="b-le-depassement-overflow-de-time-t-t">b) Le dépassement (overflow) de <code>time_t</code></h2><label class="revise"><input type="checkbox" data-section="b-le-depassement-overflow-de-time-t"><span class="revise-coche" aria-hidden="true"></span><span class="revise-texte">Révisé</span></label></header><div class="station-corps"><p>Cœur théorique de l'exercice. Le type <code>time_t</code> est une variable <strong>32 bits
+signée</strong>. Sa valeur maximale est :</p>
+<pre class="code"><code>INT_MAX = 2 147 483 647
+</code></pre>
+<p>Au-delà, la variable <strong>déborde</strong> (devient négative) : c'est l'<strong>overflow du
+siècle</strong> (le « Y2038 problem »). On calcule la date correspondante :</p>
+<pre class="code"><code class="language-c">time_t max_time_t = (time_t)INT_MAX;   /* plus grande valeur possible */
+struct tm temps_overflow = *localtime(&amp;max_time_t);
+
+printf(&quot;Overflow will occur 1s after: &quot;);
+printf(&quot;%02d.%02d.%04d %02d:%02d:%02d\n&quot;,
+       temps_overflow.tm_mday, temps_overflow.tm_mon + 1, temps_overflow.tm_year + 1900,
+       temps_overflow.tm_hour, temps_overflow.tm_min, temps_overflow.tm_sec);
+</code></pre>
+<p>On utilise la constante <code>INT_MAX</code> de <code>&lt;limits.h&gt;</code>. L'affichage est là aussi
+<strong>direct avec <code>printf</code></strong>. Résultat :
+<strong>19.01.2038 04:14:07</strong>.</p>
+<hr />
+</div></section><section class="station station-normale" id="c-fonction-d-affichage" aria-labelledby="c-fonction-d-affichage-t"><header class="station-tete"><span class="station-num station-num-vide" aria-hidden="true">✦</span><h2 id="c-fonction-d-affichage-t">c) Fonction d'affichage</h2><label class="revise"><input type="checkbox" data-section="c-fonction-d-affichage"><span class="revise-coche" aria-hidden="true"></span><span class="revise-texte">Révisé</span></label></header><div class="station-corps"><p>Au lieu de mettre <code>printf</code> partout dans <code>main()</code>, on centralise l'affichage
+dans une fonction :</p>
+<pre class="code"><code class="language-c">void AfficherTemps(const char *texte, struct tm temps)
+{
+    printf(&quot;%s&quot; DATE_FORMAT &quot;\n&quot;,
+           texte,
+           temps.tm_mday, temps.tm_mon + 1, temps.tm_year + 1900,
+           temps.tm_hour, temps.tm_min, temps.tm_sec);
+}
+</code></pre>
+<ul>
+<li><code>texte</code> = le préfixe (ex. « Current date and time is : »), passé en <strong>%s</strong></li>
+<li><code>temps</code> = la structure <code>tm</code> à afficher (transmise <strong>par valeur</strong>)</li>
+</ul>
+<aside class="carte carte-piege"><div class="carte-tete"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 2.5 20h19z"/><path d="M12 10v4.5M12 17.2v.3"/></svg><span class="carte-type">Piège</span></div><div class="carte-corps"><p><strong>Piège à éviter :</strong> <code>DATE_FORMAT</code> commence par <code>%02d</code> (des <code>int</code>). Il ne
+faut <strong>jamais</strong> passer <code>texte</code> (un <code>char *</code>) à une conversion <code>%d</code>. On
+ajoute donc un <code>%s</code> devant : <code>&quot;%s&quot; DATE_FORMAT</code>. La macro <code>DATE_FORMAT</code>
+(<code>%02d.%02d.%04d %02d:%02d:%02d</code>) centralise le format des date/heure.</p></div></aside>
+<p>Cela rend <code>main()</code> plus lisible et permet de réutiliser la même chose à
+plusieurs endroits. Bonne pratique : <strong>une tâche = une fonction</strong>.</p>
+<hr />
+</div></section><section class="station station-normale" id="d-nom-du-jour-de-la-semaine" aria-labelledby="d-nom-du-jour-de-la-semaine-t"><header class="station-tete"><span class="station-num station-num-vide" aria-hidden="true">✦</span><h2 id="d-nom-du-jour-de-la-semaine-t">d) Nom du jour de la semaine</h2><label class="revise"><input type="checkbox" data-section="d-nom-du-jour-de-la-semaine"><span class="revise-coche" aria-hidden="true"></span><span class="revise-texte">Révisé</span></label></header><div class="station-corps"><p>La structure ne donne qu'<strong>un nombre</strong> (<code>tm_wday</code>) : 0 = dimanche, 1 = lundi…
+Il faut le <strong>traduire</strong> en mot. Un tableau de noms fait office de table de
+correspondance :</p>
+<pre class="code"><code class="language-c">const char *NomDelSemaine(int jour_semaine)
+{
+    static const char *const noms[] = {
+        &quot;Sunday&quot;, &quot;Monday&quot;, &quot;Tuesday&quot;, &quot;Wednesday&quot;,
+        &quot;Thursday&quot;, &quot;Friday&quot;, &quot;Saturday&quot;
+    };
+    return noms[jour_semaine];
+}
+</code></pre>
+<p>L'index du tableau correspond au numéro du jour (0 → dimanche, …, 6 → samedi).
+<code>main()</code> appelle donc <code>NomDelSemaine(temps_actuel.tm_wday)</code> pour afficher le
+mot correspondant.</p>
+<hr />
+</div></section><section class="station station-normale" id="les-pointeurs-focus" aria-labelledby="les-pointeurs-focus-t"><header class="station-tete"><span class="station-num station-num-vide" aria-hidden="true">✦</span><h2 id="les-pointeurs-focus-t">Les pointeurs (focus)</h2><label class="revise"><input type="checkbox" data-section="les-pointeurs-focus"><span class="revise-coche" aria-hidden="true"></span><span class="revise-texte">Révisé</span></label></header><div class="station-corps"><p>L'exercice est <strong>riche en pointeurs</strong> alors qu'il semble simple. C'est le
+bon moment pour bien comprendre ce que veut dire « passer une adresse ».</p>
+<h3 id="les-pointeurs-focus-1-idee-de-base" class="sous-titre">1. Idée de base</h3>
+<p>Un <strong>pointeur</strong> est une variable qui contient l'<strong>adresse</strong> d'une autre
+variable en mémoire. En C, on écrit le type suivi d'<em><code>*</code></em> :</p>
+<pre class="code"><code class="language-c">int nombre = 42;
+int *ptr = &amp;nombre;   /* ptr contient l'adresse de nombre */
+
+*ptr        /* contient la valeur pointée → 42          */
+&amp;nombre     /* l'adresse de nombre   (= ptr)                */
+</code></pre>
+<ul>
+<li><code>&amp;</code> = « adresse de » (récupère l'adresse).</li>
+<li><code>*</code> devant un <strong>type</strong> = « pointeur vers » (<code>int *</code>).</li>
+<li><code>*</code> devant une <strong>variable</strong> = « valeur pointée » (déréférencement).</li>
+</ul>
+<p>Rappel visuel :</p>
+<pre class="code"><code>        +---------+              +--------+--------+
+nombre  |  42     |   ptr ────►  | adresse | valeur |
+        +---------+              +--------+--------+
+</code></pre>
+<h3 id="les-pointeurs-focus-2-pourquoi-localtime-renvoie-t-elle-une-structure-et-pas-une" class="sous-titre">2. Pourquoi <code>localtime()</code> renvoie-t-elle une structure et pas une adresse ?</h3>
+<pre class="code"><code class="language-c">time_t maintenant = time(NULL);
+struct tm temps_actuel = *localtime(&amp;maintenant);
+</code></pre>
+<ul>
+<li><code>time(NULL)</code> : le <code>NULL</code> (pointeur nul) dit « je n'ai pas de fichier à
+ouvrir », c'est juste un signal. La fonction renvoie le temps <strong>par
+valeur</strong>.</li>
+<li><code>localtime(&amp;maintenant)</code> : on passe <strong>l'adresse</strong> de <code>maintenant</code>
+(<code>&amp;maintenant</code>). <code>localtime</code> lit cette adresse et <strong>remplit la structure
+<code>tm</code></strong> qu'elle renvoie.</li>
+<li><code>*localtime(...)</code> : <code>localtime</code> renvoie un <strong>pointeur</strong> vers une structure
+interne. Le <code>*</code> (déréférencement) récupère <strong>la structure elle-même</strong>, qu'on
+stocke dans <code>temps_actuel</code>.</li>
+</ul>
+<aside class="carte carte-retenir"><div class="carte-tete"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></svg><span class="carte-type">À retenir</span></div><div class="carte-corps"><p><strong>À retenir :</strong> <code>&amp;</code> place une adresse <em>dans</em> un appel, <code>*</code> récupère la
+valeur pointée <em>à</em> un retour. Ici : <code>localtime(&amp;x)</code> puis <code>*localtime(&amp;x)</code>.</p></div></aside>
+<h3 id="les-pointeurs-focus-3-passer-une-structure-a-une-fonction-par-valeur-ou-par-adre" class="sous-titre">3. Passer une structure à une fonction : par valeur ou par adresse ?</h3>
+<p>Deux manières légales d'écrire <code>AfficherTemps</code> :</p>
+<pre class="code"><code class="language-c">/* (i) par valeur — COPIE la structure */
+void AfficherTemps(const char *texte, struct tm temps) { ... }
+AfficherTemps(&quot;&quot;, temps_actuel);
+
+/* (ii) par adresse — pas de copie, on pointe */
+void AfficherTemps(const char *texte, const struct tm *pts) { ... }
+AfficherTemps(&quot;&quot;, &amp;temps_actuel);
+</code></pre>
+<ul>
+<li><strong>Par valeur</strong> (choix du code) : <code>main</code> copie <code>temps_actuel</code> dans la
+fonction. Simple, mais la structure est <strong>copiée à chaque appel</strong>.</li>
+<li><strong>Par adresse</strong> (<code>struct tm *pts</code>) : on passe l'adresse, la fonction lit
+les champs avec <code>pts-&gt;tm_mday</code> (ou <code>(*pts).tm_mday</code>). Plus rapide, et on
+peut modifier la structure si on le souhaite.</li>
+</ul>
+<p>Le code utilise la version <strong>par valeur</strong> : plus lisible pour un petit
+exemple, au prix d'une copie.</p>
+<h3 id="les-pointeurs-focus-4-const-char-texte-que-signifie-cette-ligne-de-types" class="sous-titre">4. <code>const char *texte</code> : que signifie cette ligne de types ?</h3>
+<p>Lisez toujours de <strong>droite à gauche</strong> :</p>
+<pre class="code"><code class="language-c">const char *texte;
+</code></pre>
+<ul>
+<li><code>*texte</code> : <code>texte</code> est un <strong>pointeur</strong>.</li>
+<li><code>const char</code> : il pointe vers des <code>char</code> <strong>constants</strong> (qu'on ne peut pas
+modifier).</li>
+<li>Donc : « <code>texte</code> pointe vers des caractères <strong>en lecture seule</strong> ».</li>
+</ul>
+<aside class="carte carte-retenir"><div class="carte-tete"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></svg><span class="carte-type">À retenir</span></div><div class="carte-corps"><p><strong>Pourquoi <code>const</code> ?</strong> <code>AfficherTemps</code> n'a qu'<strong>à afficher</strong> le texte, pas
+à le changer. On le précise avec <code>const</code> pour interdire la modification et
+accepter aussi bien une variable qu'une chaîne littérale (<code>&quot;&quot;</code>, « Monday »).</p></div></aside>
+<p>Astuce de lecture : le <code>const</code> modifie ce qui est <strong>juste à sa gauche</strong>,
+mais s'il est en tout premier, il modifie ce qui est à sa <strong>droite</strong>.
+<code>const char *</code> et <code>char *const</code> ne sont <strong>pas</strong> pareils :</p>
+<pre class="code"><code class="language-c">const char *p;   /* pointeur vers char constant → on ne modifie PAS le texte */
+char *const p;   /* pointeur constant → on ne modifie PAS l'adresse */
+</code></pre>
+<h3 id="les-pointeurs-focus-5-const-char-const-noms-double-protection" class="sous-titre">5. <code>const char *const noms[]</code> : double protection</h3>
+<pre class="code"><code class="language-c">static const char *const noms[] = { &quot;Sunday&quot;, &quot;Monday&quot;, ... };
+</code></pre>
+<ul>
+<li><code>noms[]</code> : un <strong>tableau</strong> de pointeurs.</li>
+<li><code>const char *</code> : chaque élément pointe vers un <code>char</code> constant (les noms ne
+sont pas modifiables).</li>
+<li><code>... *const noms</code> : le <strong>tableau lui-même</strong> est constant (on ne peut ni
+changer un nom, ni réaffecter le tableau).</li>
+<li><code>static</code> : le tableau est créé <strong>une seule fois</strong> et reste valide même
+après le retour de la fonction (contrairement à un tableau local normal).</li>
+</ul>
+<aside class="carte carte-retenir"><div class="carte-tete"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></svg><span class="carte-type">À retenir</span></div><div class="carte-corps"><p>C'est pourquoi <code>NomDelSemaine</code> peut <strong>renvoyer un pointeur</strong> vers un de ces
+noms : ils restent en mémoire. Sans <code>static</code>, les noms auraient été
+détruits à la fin de la fonction → <strong>fuite / comportement indéfini</strong>.</p></div></aside>
+<h3 id="les-pointeurs-focus-6-nomdelsemaine-renvoie-un-pointeur" class="sous-titre">6. <code>NomDelSemaine</code> renvoie un pointeur</h3>
+<pre class="code"><code class="language-c">const char *NomDelSemaine(int jour_semaine) {
+    static const char *const noms[] = { ... };
+    return noms[jour_semaine];   /* renvoie l'ADRESSE du nom */
+}
+</code></pre>
+<ul>
+<li>Le type de retour est <code>const char *</code> : la fonction renvoie <strong>l'adresse</strong>
+d'un nom, pas le nom lui-même.</li>
+<li><code>printf(&quot;%s&quot;, NomDelSemaine(...))</code> lit le texte <strong>à cette adresse</strong>.</li>
+<li><code>static</code> + <code>const</code> garantissent que l'adresse renvoyée <strong>reste valide</strong>.</li>
+</ul>
+<h3 id="les-pointeurs-focus-recapitulatif-des-pointeurs-dans-le-fichier" class="sous-titre">Récapitulatif des pointeurs dans le fichier</h3>
+<div class="tableau"><table>
+<thead>
+<tr>
+<th>Élément</th>
+<th>Rôle du pointeur</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>time(NULL)</code></td>
+<td><code>NULL</code> = signal « aucun fichier »</td>
+</tr>
+<tr>
+<td><code>localtime(&amp;maintenant)</code></td>
+<td><code>&amp;</code> → donne l'adresse à remplir</td>
+</tr>
+<tr>
+<td><code>*localtime(...)</code></td>
+<td><code>*</code> → récupère la structure pointée</td>
+</tr>
+<tr>
+<td><code>struct tm temps</code> (c)</td>
+<td>structure passée <strong>par valeur</strong> (copie)</td>
+</tr>
+<tr>
+<td><code>const char *texte</code></td>
+<td>pointeur vers texte en <strong>lecture seule</strong></td>
+</tr>
+<tr>
+<td><code>static const char *const noms[]</code></td>
+<td>tableau de noms <strong>constants et persistants</strong></td>
+</tr>
+<tr>
+<td><code>return noms[...])</code></td>
+<td>renvoie l'<strong>adresse</strong> d'un nom valide</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+</div></section><section class="station station-normale" id="recapitulatif" aria-labelledby="recapitulatif-t"><header class="station-tete"><span class="station-num station-num-vide" aria-hidden="true">✦</span><h2 id="recapitulatif-t">Récapitulatif</h2><label class="revise"><input type="checkbox" data-section="recapitulatif"><span class="revise-coche" aria-hidden="true"></span><span class="revise-texte">Révisé</span></label></header><div class="station-corps"><div class="tableau"><table>
+<thead>
+<tr>
+<th>Point</th>
+<th>Notion clé</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>a) Lire l'heure</td>
+<td><code>time()</code> + <code>localtime()</code></td>
+</tr>
+<tr>
+<td>b) Overflow</td>
+<td><code>time_t</code> 32 bits → limite <code>INT_MAX</code></td>
+</tr>
+<tr>
+<td>c) Fonction d'affichage</td>
+<td>centraliser le <code>printf</code></td>
+</tr>
+<tr>
+<td>d) Conversion jour</td>
+<td>tableau de noms + index</td>
+</tr>
+</tbody>
+</table></div>
+</div></section><section class="station station-normale" id="compilation" aria-labelledby="compilation-t"><header class="station-tete"><span class="station-num station-num-vide" aria-hidden="true">✦</span><h2 id="compilation-t">Compilation</h2><label class="revise"><input type="checkbox" data-section="compilation"><span class="revise-coche" aria-hidden="true"></span><span class="revise-texte">Révisé</span></label></header><div class="station-corps"><pre class="code"><code class="language-bash">gcc -Wall -Wextra ex1-7_structure.c -o ex1-7_structure
+./ex1-7_structure
+</code></pre>
+<h3 id="compilation-sortie-attendue" class="sous-titre">Sortie attendue</h3>
+<pre class="code"><code>Programm &quot;Algo-Ex_1_7-Structure&quot;
+a) Current date and time is : 29.09.2026 11:25:48
+b) Overflow will occur 1s after: 19.01.2038 04:14:07
+c) Current date and time is : 29.09.2026 11:25:48
+   Overflow will occur 1s after: 19.01.2038 04:14:07
+d) Current week day is : &quot;Tuesday&quot;
+</code></pre>
+<aside class="carte carte-retenir"><div class="carte-tete"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></svg><span class="carte-type">À retenir</span></div><div class="carte-corps"><p>Les components date/heure de la section a) et c) varient à chaque
+exécution (heure réelle du système). Seules les date/heure de
+l'overflow (b) et le format general sont stables.</p></div></aside>
+</div></section>
+    <footer class="pied">
+      <p>Converti depuis <code>Semestre-3/E2-ALGO/Fiches-Revision/algo-01-ex1-7-structure.md</code></p>
+    </footer>
+  </main>
+</div>
+<dialog id="formulaire" class="dialogue" aria-labelledby="formulaire-titre">
+  <header class="dialogue-tete"><h2 id="formulaire-titre"><span class="btn-sigma" aria-hidden="true">Σ</span> Formulaire — Exercice 1.7 — structure</h2>
+  <button type="button" class="btn-icone" data-fermer aria-label="Fermer">✕</button></header>
+  <div class="dialogue-corps"><p>Aucune tuile formule dans ce résumé.</p></div>
+</dialog>
+<dialog id="loupe" class="dialogue loupe" aria-label="Figure agrandie">
+  <button type="button" class="btn-icone loupe-fermer" data-fermer aria-label="Fermer">✕</button>
+  <img alt="">
+</dialog>
+
+</body>
+</html>

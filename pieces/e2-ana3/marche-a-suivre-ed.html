@@ -6,18 +6,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Analyse 3 · Marche à suivre — résolution des ED</title>
 <meta name="description" content="Analyse 3 — Marche à suivre — résolution des ED (Bernoulli, changement affine, Laplace, modélisation)">
-<link rel="icon" href="../../assets/favicon.svg?v=89b4d880d3" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon.svg?v=012e46bcde" type="image/svg+xml">
 <script>try{var t=localStorage.getItem("maison:theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
 
-<link rel="stylesheet" href="../../assets/styles.css?v=89b4d880d3">
+<link rel="stylesheet" href="../../assets/styles.css?v=012e46bcde">
 <style>:root{--c-accent:#17605D;--c-ink:#243038;--c-light:#EDF4F3;--c-warning:#984436}@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--c-accent:color-mix(in srgb,#17605D 50%,#fff);--c-ink:color-mix(in srgb,#243038 50%,#fff);--c-light:color-mix(in srgb,#EDF4F3 50%,#fff);--c-warning:color-mix(in srgb,#984436 50%,#fff)}}:root[data-theme=dark]{--c-accent:color-mix(in srgb,#17605D 50%,#fff);--c-ink:color-mix(in srgb,#243038 50%,#fff);--c-light:color-mix(in srgb,#EDF4F3 50%,#fff);--c-warning:color-mix(in srgb,#984436 50%,#fff)}</style>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
 
-<script defer src="../../assets/maison.js?v=89b4d880d3"></script>
+<script defer src="../../assets/maison.js?v=012e46bcde"></script>
 </head>
 <body class="page-resume" style="--piece:#4338CA" data-cle="E2-ANA3/marche-a-suivre-ed" data-sections='["s1-choisir-la-methode", "s2-variables-separables", "s3-lineaire-du-premier-ordre", "s4-homogene-de-degre-zero", "s5-changement-de-variable-affine", "s6-bernoulli", "s7-bernoulli-reconnaitre-la-forme-cachee", "s8-trajectoires-orthogonales", "s9-ordre-2-lineaire-homogene", "s10-ordre-2-avec-second-membre", "s11-trouver-une-particuliere-par-variation", "s12-integrations-successives", "s13-reduction-d-ordre", "s14-resoudre-par-transformee-de-laplace", "s15-complement-ed-exacte", "s16-mise-en-equation-lacs-et-circuits", "s17-euler-et-fin-de-resolution"]' data-url-racine="pieces/e2-ana3/marche-a-suivre-ed.html" data-titre="Analyse 3 · Marche à suivre — résolution des ED">
 <a class="evitement" href="#contenu">Aller au contenu</a>
@@ -96,15 +96,15 @@
 <p>Diviser par <span class="km" data-tex="a(x)">a(x)</span> seulement sur un intervalle où <span class="km" data-tex="a(x)\ne0">a(x)\ne0</span>. <span class="km" data-tex="y">y</span> et <span class="km" data-tex="y&#x27;">y&#x27;</span> apparaissent à la puissance <span class="km" data-tex="1">1</span>, sans produit entre eux.</p>
 <h4 class="paragraphe-titre">Marche à suivre : variation de la constante</h4>
 <ol><li><strong>Normaliser</strong> et identifier <span class="km" data-tex="P">P</span> et <span class="km" data-tex="Q">Q</span>.</li><li><p><strong>Résoudre l'ED linéaire homogène par séparation :</strong></p>
-<div class="km km-d" data-tex="\begin{aligned}
+<div class="km km-d" data-tex="\begin{align*}
  y&#x27;+Py=0&amp;\ \Longrightarrow\ \frac{\mathrm dy}{y}=-P(x)\,\mathrm dx,\\
  \ln|y|&amp;=-J(x)+K\ \Longrightarrow\ y=Ah,
  \qquad J&#x27;=P,\ h=e^{-J}.
-\end{aligned}">\begin{aligned}
+\end{align*}">\begin{align*}
  y&#x27;+Py=0&amp;\ \Longrightarrow\ \frac{\mathrm dy}{y}=-P(x)\,\mathrm dx,\\
  \ln|y|&amp;=-J(x)+K\ \Longrightarrow\ y=Ah,
  \qquad J&#x27;=P,\ h=e^{-J}.
-\end{aligned}</div>
+\end{align*}</div>
 <p>La solution <span class="km" data-tex="y=0">y=0</span> est réintégrée en autorisant <span class="km" data-tex="A=0">A=0</span>.</p></li><li><p><strong>Remplacer <span class="km" data-tex="A">A</span> par une fonction :</strong> <span class="km" data-tex="y=A(x)h(x)">y=A(x)h(x)</span>. Dériver le produit et substituer :</p>
 <div class="km km-d" data-tex="y&#x27;=A&#x27;h+Ah&#x27;,\qquad y&#x27;+Py=A&#x27;h=Q.">y&#x27;=A&#x27;h+Ah&#x27;,\qquad y&#x27;+Py=A&#x27;h=Q.</div>
 <p>Les termes en <span class="km" data-tex="A">A</span> s'annulent car <span class="km" data-tex="h&#x27;+Ph=0">h&#x27;+Ph=0</span>.</p></li><li><strong>Calculer <span class="km" data-tex="A">A</span> :</strong> <span class="km" data-tex="A&#x27;=Q/h">A&#x27;=Q/h</span>, puis <span class="km" data-tex="A=\int(Q/h)\,\mathrm dx+C">A=\int(Q/h)\,\mathrm dx+C</span>.</li><li><strong>Revenir à <span class="km" data-tex="y">y</span>, fixer <span class="km" data-tex="C">C</span>, donner le domaine et vérifier.</strong></li></ol>
@@ -196,15 +196,15 @@
 <p><strong>3. Homogène et variation.</strong></p>
 <div class="km km-d" data-tex="u=Ae^{-3x},\qquad u_I=A(x)e^{-3x},\qquad A&#x27;e^{-3x}=-3x.">u=Ae^{-3x},\qquad u_I=A(x)e^{-3x},\qquad A&#x27;e^{-3x}=-3x.</div>
 <p><strong>4. Intégrer <span class="km" data-tex="A&#x27;=-3xe^{3x}">A&#x27;=-3xe^{3x}</span> par parties.</strong></p>
-<div class="km km-d" data-tex="\begin{aligned}
+<div class="km km-d" data-tex="\begin{align*}
  A&amp;=-3\left(\frac{xe^{3x}}3-\int\frac{e^{3x}}3\,\mathrm dx\right)+C
    =-xe^{3x}+\frac{e^{3x}}3+C,\\
  u&amp;=\frac13-x+Ce^{-3x}.
-\end{aligned}">\begin{aligned}
+\end{align*}">\begin{align*}
  A&amp;=-3\left(\frac{xe^{3x}}3-\int\frac{e^{3x}}3\,\mathrm dx\right)+C
    =-xe^{3x}+\frac{e^{3x}}3+C,\\
  u&amp;=\frac13-x+Ce^{-3x}.
-\end{aligned}</div>
+\end{align*}</div>
 <p><strong>5. Retour et vérification.</strong></p>
 <aside class="carte carte-retenir"><div class="carte-tete"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></svg><span class="carte-type">Résultat</span></div><div class="carte-corps"><p><span class="km" data-tex="\displaystyle y(x)=\frac1{\sqrt[3]{\frac13-x+Ce^{-3x}}},\qquad\text{ainsi que }y=0.">\displaystyle y(x)=\frac1{\sqrt[3]{\frac13-x+Ce^{-3x}}},\qquad\text{ainsi que }y=0.</span></p>
 <p>La racine cubique est réelle ; la famille non nulle exige <span class="km" data-tex="u\ne0">u\ne0</span>.</p></div></aside>
@@ -306,15 +306,15 @@
 <p><span class="ital">Série ED, exercice 24j : <span class="km" data-tex="y&#x27;&#x27;+y=\cos x">y&#x27;&#x27;+y=\cos x</span>.</span></p>
 <p><strong>1. Homogène.</strong> <span class="km" data-tex="r^2+1=0">r^2+1=0</span> donne <span class="km" data-tex="y_h=C_1\cos x+C_2\sin x">y_h=C_1\cos x+C_2\sin x</span>.</p>
 <p><strong>2. Essai.</strong> <span class="km" data-tex="i">i</span> est racine simple : <span class="km" data-tex="y_p=x(a\cos x+b\sin x)">y_p=x(a\cos x+b\sin x)</span>.</p>
-<div class="km km-d" data-tex="\begin{aligned}
+<div class="km km-d" data-tex="\begin{align*}
  y_p&#x27;&amp;=a\cos x+b\sin x+x(-a\sin x+b\cos x),\\
  y_p&#x27;&#x27;&amp;=2(-a\sin x+b\cos x)-x(a\cos x+b\sin x),\\
  y_p&#x27;&#x27;+y_p&amp;=-2a\sin x+2b\cos x.
-\end{aligned}">\begin{aligned}
+\end{align*}">\begin{align*}
  y_p&#x27;&amp;=a\cos x+b\sin x+x(-a\sin x+b\cos x),\\
  y_p&#x27;&#x27;&amp;=2(-a\sin x+b\cos x)-x(a\cos x+b\sin x),\\
  y_p&#x27;&#x27;+y_p&amp;=-2a\sin x+2b\cos x.
-\end{aligned}</div>
+\end{align*}</div>
 <p><strong>3. Identifier.</strong> <span class="km" data-tex="-2a=0">-2a=0</span>, <span class="km" data-tex="2b=1">2b=1</span> donnent <span class="km" data-tex="a=0">a=0</span>, <span class="km" data-tex="b=1/2">b=1/2</span>.</p>
 <aside class="carte carte-retenir"><div class="carte-tete"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></svg><span class="carte-type">Résultat</span></div><div class="carte-corps"><span class="km" data-tex="\displaystyle y=C_1\cos x+C_2\sin x+\frac x2\sin x,\qquad x\in\mathbb R.">\displaystyle y=C_1\cos x+C_2\sin x+\frac x2\sin x,\qquad x\in\mathbb R.</span></div></aside>
 <aside class="carte carte-piege"><div class="carte-tete"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 2.5 20h19z"/><path d="M12 10v4.5M12 17.2v.3"/></svg><span class="carte-type">À surveiller</span></div><div class="carte-corps">Un essai déjà contenu dans <span class="km" data-tex="y_h">y_h</span> donne zéro dans l'ED homogène : il faut corriger la résonance. Si le second membre ne se prête pas à ce tableau, utiliser la page suivante.</div></aside></div></section><section class="station station-normale" id="s11-trouver-une-particuliere-par-variation" aria-labelledby="s11-trouver-une-particuliere-par-variation-t"><header class="station-tete"><span class="station-num">11</span><h2 id="s11-trouver-une-particuliere-par-variation-t">Trouver une particulière par variation</h2><label class="revise"><input type="checkbox" data-section="s11-trouver-une-particuliere-par-variation"><span class="revise-coche" aria-hidden="true"></span><span class="revise-texte">Révisé</span></label></header><div class="station-corps"><p><span class="ancre" id="lbl-variation"></span></p>
@@ -344,17 +344,17 @@
 <p><strong>3. Primitives.</strong> Utiliser <span class="km" data-tex="\cos^2x=(1+\cos2x)/2">\cos^2x=(1+\cos2x)/2</span> :</p>
 <div class="km km-d" data-tex="A=-\frac12\sin^2x,\qquad B=\frac x2+\frac14\sin2x.">A=-\frac12\sin^2x,\qquad B=\frac x2+\frac14\sin2x.</div>
 <p><strong>4. Construire et simplifier.</strong></p>
-<div class="km km-d" data-tex="\begin{aligned}
+<div class="km km-d" data-tex="\begin{align*}
  y_p&amp;=-\tfrac12\sin^2x\cos x
  +\left(\tfrac x2+\tfrac14\sin2x\right)\sin x\\
  &amp;=\frac x2\sin x,
  \qquad\text{car }\sin2x=2\sin x\cos x.
-\end{aligned}">\begin{aligned}
+\end{align*}">\begin{align*}
  y_p&amp;=-\tfrac12\sin^2x\cos x
  +\left(\tfrac x2+\tfrac14\sin2x\right)\sin x\\
  &amp;=\frac x2\sin x,
  \qquad\text{car }\sin2x=2\sin x\cos x.
-\end{aligned}</div>
+\end{align*}</div>
 <aside class="carte carte-retenir"><div class="carte-tete"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></svg><span class="carte-type">Résultat</span></div><div class="carte-corps"><span class="km" data-tex="\displaystyle y=C_1\cos x+C_2\sin x+\frac x2\sin x.">\displaystyle y=C_1\cos x+C_2\sin x+\frac x2\sin x.</span></div></aside>
 <p><strong>5. Vérifier.</strong> Pour <span class="km" data-tex="y_p=(x/2)\sin x">y_p=(x/2)\sin x</span>, <span class="km" data-tex="y_p&#x27;&#x27;=\cos x-(x/2)\sin x">y_p&#x27;&#x27;=\cos x-(x/2)\sin x</span> ; ainsi <span class="km" data-tex="y_p&#x27;&#x27;+y_p=\cos x">y_p&#x27;&#x27;+y_p=\cos x</span>.</p>
 <aside class="carte carte-piege"><div class="carte-tete"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 2.5 20h19z"/><path d="M12 10v4.5M12 17.2v.3"/></svg><span class="carte-type">À surveiller</span></div><div class="carte-corps">Après normalisation, le système utilise <span class="km" data-tex="r=f/a">r=f/a</span>, et non <span class="km" data-tex="f">f</span>. Ne pas ajouter de constantes libres dans <span class="km" data-tex="y_p">y_p</span> puis les compter une seconde fois dans <span class="km" data-tex="y_h">y_h</span>.</div></aside></div></section><section class="station station-normale" id="s12-integrations-successives" aria-labelledby="s12-integrations-successives-t"><header class="station-tete"><span class="station-num">12</span><h2 id="s12-integrations-successives-t">Intégrations successives</h2><label class="revise"><input type="checkbox" data-section="s12-integrations-successives"><span class="revise-coche" aria-hidden="true"></span><span class="revise-texte">Révisé</span></label></header><div class="station-corps"><p><span class="ancre" id="lbl-integ"></span></p>
@@ -384,19 +384,19 @@
 <div class="km km-d" data-tex="y&#x27;&#x27;=f(x,y&#x27;).">y&#x27;&#x27;=f(x,y&#x27;).</div>
 <ol><li><strong>Poser <span class="km" data-tex="p(x)=y&#x27;(x)">p(x)=y&#x27;(x)</span>,</strong> donc <span class="km" data-tex="y&#x27;&#x27;=p&#x27;">y&#x27;&#x27;=p&#x27;</span>.</li><li><strong>Résoudre l'ordre 1 :</strong> <span class="km" data-tex="p&#x27;=f(x,p)">p&#x27;=f(x,p)</span>, avec la méthode adaptée.</li><li><strong>Intégrer <span class="km" data-tex="y&#x27;=p(x)">y&#x27;=p(x)</span></strong> pour obtenir <span class="km" data-tex="y">y</span> et une seconde constante.</li><li><strong>Appliquer les données :</strong> <span class="km" data-tex="y&#x27;(x_0)">y&#x27;(x_0)</span> donne <span class="km" data-tex="p(x_0)">p(x_0)</span> ; <span class="km" data-tex="y(x_0)">y(x_0)</span> fixe ensuite la seconde constante.</li></ol>
 <p><span class="ital">Exemple : chaînette, série ED, ex. 27. <span class="km" data-tex="y&#x27;&#x27;=c\sqrt{1+(y&#x27;)^2}">y&#x27;&#x27;=c\sqrt{1+(y&#x27;)^2}</span>, <span class="km" data-tex="y(0)=b">y(0)=b</span>, <span class="km" data-tex="y&#x27;(0)=0">y&#x27;(0)=0</span>, <span class="km" data-tex="c\ne0">c\ne0</span>.</span></p>
-<div class="km km-d" data-tex="\begin{aligned}
+<div class="km km-d" data-tex="\begin{align*}
  p&#x27;&amp;=c\sqrt{1+p^2},\qquad
  \int\frac{\mathrm dp}{\sqrt{1+p^2}}=cx+C_1,\\
  \operatorname{arsinh}p&amp;=cx+C_1,\qquad p(0)=0\Longrightarrow C_1=0,\\
  p&amp;=\sinh(cx),\qquad
  y=\frac{\cosh(cx)}c+C_2,\qquad C_2=b-\frac1c.
-\end{aligned}">\begin{aligned}
+\end{align*}">\begin{align*}
  p&#x27;&amp;=c\sqrt{1+p^2},\qquad
  \int\frac{\mathrm dp}{\sqrt{1+p^2}}=cx+C_1,\\
  \operatorname{arsinh}p&amp;=cx+C_1,\qquad p(0)=0\Longrightarrow C_1=0,\\
  p&amp;=\sinh(cx),\qquad
  y=\frac{\cosh(cx)}c+C_2,\qquad C_2=b-\frac1c.
-\end{aligned}</div>
+\end{align*}</div>
 <aside class="carte carte-retenir"><div class="carte-tete"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></svg><span class="carte-type">Résultat</span></div><div class="carte-corps"><span class="km" data-tex="\displaystyle y=b+\frac{\cosh(cx)-1}{c}.">\displaystyle y=b+\frac{\cosh(cx)-1}{c}.</span></div></aside>
 <p>Vérifier : <span class="km" data-tex="y&#x27;=\sinh(cx)">y&#x27;=\sinh(cx)</span>, <span class="km" data-tex="y&#x27;&#x27;=c\cosh(cx)=c\sqrt{1+(y&#x27;)^2}">y&#x27;&#x27;=c\cosh(cx)=c\sqrt{1+(y&#x27;)^2}</span>. Si <span class="km" data-tex="c=0">c=0</span>, les mêmes données donnent <span class="km" data-tex="y=b">y=b</span>.</p>
 <h4 class="paragraphe-titre">Cas B : l'équation ne contient pas <span class="km" data-tex="x">x</span></h4>
@@ -416,15 +416,15 @@
 <p>Les données sont posées en <span class="km" data-tex="x=0">x=0</span> ; transformer remplace l'ED par une équation algébrique. Si les données sont en <span class="km" data-tex="x_0">x_0</span>, commencer par déplacer l'origine : <span class="km" data-tex="\tau=x-x_0">\tau=x-x_0</span> et transformer l'équation réécrite.</p>
 <h4 class="paragraphe-titre">Marche à suivre</h4>
 <ol><li><p><strong>Noter <span class="km" data-tex="F(s)=\mathcal L[y(x)]">F(s)=\mathcal L[y(x)]</span></strong> (notation du polycopié) et transformer chaque terme :</p>
-<div class="km km-d" data-tex="\begin{aligned}
+<div class="km km-d" data-tex="\begin{align*}
  \mathcal L[y&#x27;]&amp;=sF(s)-y(0),\\
  \mathcal L[y&#x27;&#x27;]&amp;=s^2F(s)-sy(0)-y&#x27;(0),\\
  \mathcal L[y^{(n)}]&amp;=s^nF(s)-\sum_{k=0}^{n-1}s^{n-1-k}y^{(k)}(0).
-\end{aligned}">\begin{aligned}
+\end{align*}">\begin{align*}
  \mathcal L[y&#x27;]&amp;=sF(s)-y(0),\\
  \mathcal L[y&#x27;&#x27;]&amp;=s^2F(s)-sy(0)-y&#x27;(0),\\
  \mathcal L[y^{(n)}]&amp;=s^nF(s)-\sum_{k=0}^{n-1}s^{n-1-k}y^{(k)}(0).
-\end{aligned}</div></li><li><strong>Remplacer les conditions initiales immédiatement.</strong> Regrouper les termes en <span class="km" data-tex="F(s)">F(s)</span> et l'isoler.</li><li><strong>Préparer l'inversion :</strong> décomposer en fractions partielles, compléter un carré ou reconnaître une translation.</li><li><strong>Appliquer la table des transformées inverses</strong> terme par terme.</li><li><strong>Vérifier la solution dans l'ED et les conditions initiales.</strong></li></ol>
+\end{align*}</div></li><li><strong>Remplacer les conditions initiales immédiatement.</strong> Regrouper les termes en <span class="km" data-tex="F(s)">F(s)</span> et l'isoler.</li><li><strong>Préparer l'inversion :</strong> décomposer en fractions partielles, compléter un carré ou reconnaître une translation.</li><li><strong>Appliquer la table des transformées inverses</strong> terme par terme.</li><li><strong>Vérifier la solution dans l'ED et les conditions initiales.</strong></li></ol>
 <h4 class="paragraphe-titre">Exemple suivi</h4>
 <p><span class="ital">Polycopié, exemple 25.1 : <span class="km" data-tex="y&#x27;-y=4">y&#x27;-y=4</span>, <span class="km" data-tex="y(0)=0">y(0)=0</span>.</span></p>
 <p><strong>1. Transformer, puis isoler <span class="km" data-tex="F">F</span>.</strong></p>
@@ -487,19 +487,19 @@
  458c&#x27;=0{,}0175-175c.">c_e=0{,}0001,\quad c(0)=0{,}0005,\qquad
  458c&#x27;=0{,}0175-175c.</div>
 <p><strong>2. Séparer comme la prof.</strong> La solution constante <span class="km" data-tex="c=0{,}0001">c=0{,}0001</span> est testée à part. Sinon :</p>
-<div class="km km-d" data-tex="\begin{aligned}
+<div class="km km-d" data-tex="\begin{align*}
  \int\frac{\mathrm dc}{0{,}0175-175c}&amp;=\int\frac{\mathrm dt}{458},\\
  -\frac1{175}\ln|0{,}0175-175c|&amp;=\frac t{458}+K,\\
  \ln|0{,}0175-175c|&amp;=-\frac{175}{458}t+\widetilde K,\\
  0{,}0175-175c&amp;=Ae^{-175t/458},\\
  c(t)&amp;=0{,}0001+\widehat A e^{-175t/458}.
-\end{aligned}">\begin{aligned}
+\end{align*}">\begin{align*}
  \int\frac{\mathrm dc}{0{,}0175-175c}&amp;=\int\frac{\mathrm dt}{458},\\
  -\frac1{175}\ln|0{,}0175-175c|&amp;=\frac t{458}+K,\\
  \ln|0{,}0175-175c|&amp;=-\frac{175}{458}t+\widetilde K,\\
  0{,}0175-175c&amp;=Ae^{-175t/458},\\
  c(t)&amp;=0{,}0001+\widehat A e^{-175t/458}.
-\end{aligned}</div>
+\end{align*}</div>
 <p>Ici <span class="km" data-tex="\widetilde K=-175K">\widetilde K=-175K</span> ; <span class="km" data-tex="A">A</span> absorbe le signe et l'exponentielle de la constante, puis <span class="km" data-tex="\widehat A=-A/175">\widehat A=-A/175</span>. <strong>3. Condition initiale et seuil.</strong> <span class="km" data-tex="\widehat A=0{,}0005-0{,}0001=0{,}0004">\widehat A=0{,}0005-0{,}0001=0{,}0004</span> :</p>
 <aside class="carte carte-retenir"><div class="carte-tete"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></svg><span class="carte-type">Résultat</span></div><div class="carte-corps"><p><span class="km" data-tex="\displaystyle c(t)=0{,}0001+0{,}0004e^{-175t/458},\qquad t\ge0.">\displaystyle c(t)=0{,}0001+0{,}0004e^{-175t/458},\qquad t\ge0.</span></p>
 <p>Pour <span class="km" data-tex="c(t)=0{,}02\,\%=0{,}0002">c(t)=0{,}02\,\%=0{,}0002</span> : <span class="km" data-tex="e^{-175t/458}=1/4">e^{-175t/458}=1/4</span>, donc <span class="km" data-tex="\displaystyle t=\frac{458}{175}\ln4\simeq3{,}628">\displaystyle t=\frac{458}{175}\ln4\simeq3{,}628</span> ans.</p></div></aside>

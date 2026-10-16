@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Électromécanique 1 · Corrigé · Chapitre 1 — exercice 1</title>
+<meta name="description" content="Électromécanique 1 — Chapitre 1 — exercice 1 (Généralités : zones de la machine, questions de cours)">
+<link rel="icon" href="../../../assets/favicon.svg?v=012e46bcde" type="image/svg+xml">
+<script>try{var t=localStorage.getItem("maison:theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+
+<link rel="stylesheet" href="../../../assets/styles.css?v=012e46bcde">
+<style>:root{--c-heia:#0E5A8A;--c-orangeheia:#E67E22;--c-ink:#1D2A35;--c-pale:#EEF5FB;--c-palewarm:#FBF3E8}@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--c-heia:color-mix(in srgb,#0E5A8A 50%,#fff);--c-orangeheia:color-mix(in srgb,#E67E22 50%,#fff);--c-ink:color-mix(in srgb,#1D2A35 50%,#fff);--c-pale:color-mix(in srgb,#EEF5FB 50%,#fff);--c-palewarm:color-mix(in srgb,#FBF3E8 50%,#fff)}}:root[data-theme=dark]{--c-heia:color-mix(in srgb,#0E5A8A 50%,#fff);--c-orangeheia:color-mix(in srgb,#E67E22 50%,#fff);--c-ink:color-mix(in srgb,#1D2A35 50%,#fff);--c-pale:color-mix(in srgb,#EEF5FB 50%,#fff);--c-palewarm:color-mix(in srgb,#FBF3E8 50%,#fff)}</style>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+
+<script defer src="../../../assets/maison.js?v=012e46bcde"></script>
+</head>
+<body class="page-resume" style="--piece:#7C3AED" data-cle="E2-ELMEC1/exercices/ch1-ex1" data-sections='["s1-zones-de-la-machine-electrique-tournante", "s2-questions-de-cours", "s3-choix-du-modele-electromecanique"]' data-url-racine="pieces/e2-elmec1/exercices/ch1-ex1.html" data-titre="Électromécanique 1 · Corrigé · Chapitre 1 — exercice 1">
+<a class="evitement" href="#contenu">Aller au contenu</a>
+
+<header class="barre">
+  <nav class="ariane" aria-label="Fil d'Ariane">
+    <a href="../../../index.html"><svg class="icone-ariane" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 12 4l9 7"/><path d="M5 9.5V20h14V9.5"/><path d="M10 20v-6h4v6"/></svg><span>Maison</span></a><span class="sep" aria-hidden="true">›</span>
+    <a href="../index.html">Électromécanique 1</a><span class="sep" aria-hidden="true">›</span>
+    <span aria-current="page">Corrigé · Chapitre 1 — exercice 1</span>
+  </nav>
+  <div class="barre-actions">
+    <button type="button" class="btn" data-ouvrir="formulaire"><span class="btn-sigma" aria-hidden="true">Σ</span> Formulaire</button>
+    <a class="btn btn-discret" href="../../../assets/pdf/e2-elmec1/elmec1-ch1-ex1-corrige.pdf" target="_blank" rel="noopener">PDF</a>
+    <button type="button" class="btn-icone" data-theme-bascule aria-label="Basculer clair / sombre"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 4a8 8 0 0 1 0 16z" fill="currentColor"/></svg></button>
+  </div>
+</header>
+<div class="cadre">
+  <aside class="sommaire" aria-label="Sommaire">
+    <details class="sommaire-details" open>
+      <summary><span>Sommaire</span><span class="sommaire-prog" data-progression-texte>0 / 3</span></summary>
+      <ol class="sommaire-liste"><li data-cible="s1-zones-de-la-machine-electrique-tournante"><div class="sommaire-ligne"><a href="#s1-zones-de-la-machine-electrique-tournante"><span class="num">1</span>Zones de la machine électrique tournante</a><label class="revise-mini" title="Marquer « Zones de la machine électrique tournante » comme révisé"><input type="checkbox" data-section="s1-zones-de-la-machine-electrique-tournante" aria-label="Révisé : Zones de la machine électrique tournante"><span class="revise-coche" aria-hidden="true"></span></label></div></li><li data-cible="s2-questions-de-cours"><div class="sommaire-ligne"><a href="#s2-questions-de-cours"><span class="num">2</span>Questions de cours</a><label class="revise-mini" title="Marquer « Questions de cours » comme révisé"><input type="checkbox" data-section="s2-questions-de-cours" aria-label="Révisé : Questions de cours"><span class="revise-coche" aria-hidden="true"></span></label></div><ol><li><a href="#s2-questions-de-cours-a-deux-moyens-de-varier-la-vitesse-d-une-machine-asynchrone"><span class="num"></span>a. Deux moyens de varier la vitesse d'une machine asynchrone</a></li><li><a href="#s2-questions-de-cours-b-elements-actifs-d-un-convertisseur-electromecanique"><span class="num"></span>b. Éléments actifs d'un convertisseur électromécanique</a></li><li><a href="#s2-questions-de-cours-c-pourquoi-un-circuit-magnetique-feuillete"><span class="num"></span>c. Pourquoi un circuit magnétique feuilleté ?</a></li><li><a href="#s2-questions-de-cours-d-role-des-isolants-dans-une-machine-electrique"><span class="num"></span>d. Rôle des isolants dans une machine électrique</a></li></ol></li><li data-cible="s3-choix-du-modele-electromecanique"><div class="sommaire-ligne"><a href="#s3-choix-du-modele-electromecanique"><span class="num">3</span>Choix du modèle électromécanique</a><label class="revise-mini" title="Marquer « Choix du modèle électromécanique » comme révisé"><input type="checkbox" data-section="s3-choix-du-modele-electromecanique" aria-label="Révisé : Choix du modèle électromécanique"><span class="revise-coche" aria-hidden="true"></span></label></div><ol><li><a href="#s3-choix-du-modele-electromecanique-a-structure-de-commande-d-une-mcc-a-aimants-permanents-regul"><span class="num"></span>a. Structure de commande d'une MCC à aimants permanents régulée en vitesse</a></li><li><a href="#s3-choix-du-modele-electromecanique-b-resistances-des-enroulements-et-reactances-de-fuite-a-part"><span class="num"></span>b. Résistances des enroulements et réactances de fuite à partir d'essais à vide et en court-circuit</a></li><li><a href="#s3-choix-du-modele-electromecanique-c-repartition-du-champ-dans-un-moteur-brushless-pour-amelior"><span class="num"></span>c. Répartition du champ dans un moteur brushless pour améliorer le bobinage</a></li><li><a href="#s3-choix-du-modele-electromecanique-d-evolution-de-la-vitesse-d-une-mcc-quand-le-couple-de-charg"><span class="num"></span>d. Évolution de la vitesse d'une MCC quand le couple de charge varie de 1 à 15 N m</a></li><li><a href="#s3-choix-du-modele-electromecanique-sources-locales"><span class="num"></span>Sources locales</a></li></ol></li></ol>
+    </details>
+  </aside>
+  <main id="contenu">
+    <section class="hero">
+      <div class="hero-papier" aria-hidden="true"></div>
+      <div class="hero-tete">
+        <a class="hero-piece" href="../index.html"><svg class="icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3v9a6 6 0 0 0 12 0V3h-4v9a2 2 0 0 1-4 0V3z"/><path d="M6 7h4M14 7h4"/></svg><span>Électromécanique 1</span><span class="hero-aile">Aile Électricité</span></a>
+        <div class="anneau" data-anneau role="img" aria-label="Progression"><span data-progression-pourcent>0 %</span></div>
+      </div>
+      <p class="hero-entete">E2-ELMEC1 — Électromécanique 1 · Chapitre 1 — Exercice 1 : corrigé expliqué</p>
+      <h1 class="visuellement-cache">Électromécanique 1 · Corrigé · Chapitre 1 — exercice 1</h1>
+      <div class="hero-intro"><div class="centre"><span class="t-titre"><span class="gras"><span style="color:var(--c-heia)">Électromécanique 1 — Chapitre 1</span></span></span><br> <span class="t-grand"><span class="gras">Exercice 1 : généralités, questions de cours, choix des modèles</span></span><br> Énoncé : <code>Consignes/sources/elmec1-ch1-generalites-ex1.pdf</code> (feuille du professeur). Réponses fondées sur le polycopié CH1.<br> <strong>Corrigé proposé, non officiel.</strong></div></div>
+      <div class="hero-puces"><span class="puce puce-te puce-attente">Date du TE : pas encore annoncée</span><span class="puce puce-corrige">Corrigé</span><span class="puce">3 sections</span><span class="puce">1 formule</span></div>
+    </section>
+    <section class="station station-normale" id="s1-zones-de-la-machine-electrique-tournante" aria-labelledby="s1-zones-de-la-machine-electrique-tournante-t"><header class="station-tete"><span class="station-num">1</span><h2 id="s1-zones-de-la-machine-electrique-tournante-t">Zones de la machine électrique tournante</h2><label class="revise"><input type="checkbox" data-section="s1-zones-de-la-machine-electrique-tournante"><span class="revise-coche" aria-hidden="true"></span><span class="revise-texte">Révisé</span></label></header><div class="station-corps"><figure class="figure"><button type="button" class="loupe-ouvrir" aria-label="Agrandir la figure"><img src="../../../assets/figures/e2-elmec1/elmec1_ch1_ex1_machine.png" alt="Figure 1 – Schéma de l&#x27;énoncé (exercice 1, question 1) : cinq traits de repérage." loading="lazy"></button><figcaption><strong>Figure 1</strong> – Schéma de l'énoncé (exercice 1, question 1) : cinq traits de repérage.</figcaption></figure>
+<div class="tableau"><table><tbody><tr><td class="a-centre"><strong>Repère</strong></td><td><strong>Nom</strong></td><td><strong>Rôle</strong></td></tr><tr><td class="a-centre">1</td><td>Stator — circuit magnétique statorique</td><td>Partie fixe, anneau extérieur qui canalise le flux magnétique.</td></tr><tr><td class="a-centre">2</td><td>Enroulement rotorique</td><td>Conducteurs du rotor, représentés en coupe par les points noirs.</td></tr><tr><td class="a-centre">3</td><td>Arbre</td><td>Transmet le mouvement et le couple mécaniques.</td></tr><tr><td class="a-centre">4</td><td>Rotor — circuit magnétique rotorique</td><td>Partie intérieure tournante qui canalise le flux magnétique.</td></tr><tr><td class="a-centre">5</td><td>Entrefer</td><td>Espace d'air séparant le rotor du stator, permettant leur mouvement relatif.</td></tr></tbody></table></div>
+<aside class="carte carte-piege"><div class="carte-tete"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 2.5 20h19z"/><path d="M12 10v4.5M12 17.2v.3"/></svg><span class="carte-type">Piège</span></div><p class="carte-titre">Attention au sens des traits</p><div class="carte-corps">Les noms suivent les <em>extrémités</em> des traits de l'énoncé, et non simplement la position des traits à gauche. Le deuxième trait vise un point noir, donc un conducteur, et non le circuit magnétique.</div></aside></div></section><section class="station station-normale" id="s2-questions-de-cours" aria-labelledby="s2-questions-de-cours-t"><header class="station-tete"><span class="station-num">2</span><h2 id="s2-questions-de-cours-t">Questions de cours</h2><label class="revise"><input type="checkbox" data-section="s2-questions-de-cours"><span class="revise-coche" aria-hidden="true"></span><span class="revise-texte">Révisé</span></label></header><div class="station-corps"><h3 id="s2-questions-de-cours-a-deux-moyens-de-varier-la-vitesse-d-une-machine-asynchrone" class="sous-titre">a. Deux moyens de varier la vitesse d'une machine asynchrone</h3>
+<ol><li>Faire varier la <strong>fréquence d'alimentation</strong>, au moyen d'un <em>variateur de fréquence</em>.</li><li>Changer le <strong>nombre de paires de pôles</strong>, avec une machine dont les enroulements permettent cette commutation : on obtient alors des vitesses distinctes, et non un réglage continu.</li></ol>
+<div class="formule"><span class="formule-etiquette">Formule</span><span class="km" data-tex="n_s=\dfrac{60\,f}{p}">n_s=\dfrac{60\,f}{p}</span>,   <span class="km" data-tex="n=(1-g)\,n_s">n=(1-g)\,n_s</span></div>
+<p>avec <span class="km" data-tex="n_s">n_s</span> et <span class="km" data-tex="n">n</span> en tr/min, <span class="km" data-tex="f">f</span> la fréquence en Hz, <span class="km" data-tex="p">p</span> le nombre de <strong>paires de pôles</strong> et <span class="km" data-tex="g">g</span> le glissement. À glissement donné, la vitesse augmente avec la fréquence et diminue lorsque le nombre de paires de pôles augmente.</p>
+<p>Référence complémentaire : ABB, <em>Motor Guide</em>, § 9.3 « Speed » — le guide utilise le nombre de pôles, donc <span class="km" data-tex="n_s=120f/N">n_s=120f/N</span> avec <span class="km" data-tex="N=2p">N=2p</span>.</p>
+<h3 id="s2-questions-de-cours-b-elements-actifs-d-un-convertisseur-electromecanique" class="sous-titre">b. Éléments actifs d'un convertisseur électromécanique</h3>
+<ul><li>le <strong>circuit magnétique</strong>, en matériaux ferromagnétiques doux : il canalise le flux magnétique ;</li><li>les <strong>enroulements électriques</strong>, en cuivre ou en aluminium : ils conduisent les courants ;</li><li>les <strong>aimants permanents</strong>, lorsqu'ils sont présents : ils créent le champ sans courant d'excitation.</li></ul>
+<p>La carcasse, l'arbre et les paliers sont, dans la classification du cours, des <strong>éléments passifs</strong>.</p>
+<h3 id="s2-questions-de-cours-c-pourquoi-un-circuit-magnetique-feuillete" class="sous-titre">c. Pourquoi un circuit magnétique feuilleté ?</h3>
+<p>Pour <strong>limiter les courants de Foucault</strong> induits par un flux magnétique variable, et donc réduire les pertes et l'échauffement. Le circuit est constitué de tôles minces isolées électriquement les unes des autres : cette subdivision limite la circulation des courants induits dans la masse du fer.</p>
+<aside class="carte carte-piege"><div class="carte-tete"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 2.5 20h19z"/><path d="M12 10v4.5M12 17.2v.3"/></svg><span class="carte-type">Piège</span></div><p class="carte-titre">Ne pas confondre</p><div class="carte-corps">Ce rôle n'est pas celui des pertes par hystérésis, qui dépendent du matériau et de son cycle d'aimantation.</div></aside>
+<h3 id="s2-questions-de-cours-d-role-des-isolants-dans-une-machine-electrique" class="sous-titre">d. Rôle des isolants dans une machine électrique</h3>
+<p>Ils assurent l'<strong>isolation électrique</strong> entre les conducteurs, entre les enroulements, ainsi qu'entre les conducteurs et la masse métallique : ils empêchent les contacts électriques indésirables et les courts-circuits. Ils doivent aussi résister aux contraintes électriques, thermiques et mécaniques de la machine.</p>
+<p>Sources : polycopié CH1, p. 9–11 ; énoncé, p. 1.</p></div></section><section class="station station-normale" id="s3-choix-du-modele-electromecanique" aria-labelledby="s3-choix-du-modele-electromecanique-t"><header class="station-tete"><span class="station-num">3</span><h2 id="s3-choix-du-modele-electromecanique-t">Choix du modèle électromécanique</h2><label class="revise"><input type="checkbox" data-section="s3-choix-du-modele-electromecanique"><span class="revise-coche" aria-hidden="true"></span><span class="revise-texte">Révisé</span></label></header><div class="station-corps"><p>La classification ci-dessous reprend les quatre niveaux du polycopié CH1, p. 12–14.</p>
+<h3 id="s3-choix-du-modele-electromecanique-a-structure-de-commande-d-une-mcc-a-aimants-permanents-regul" class="sous-titre">a. Structure de commande d'une MCC à aimants permanents régulée en vitesse</h3>
+<p><strong>Niveau 4 — modèle « systèmes ».</strong> Il faut choisir l'organisation de l'entraînement complet : consigne, régulateur de vitesse, alimentation (convertisseur de puissance), moteur, charge et mesure de vitesse. L'objectif est la structure globale de la commande, pas encore le détail interne de chaque bloc. Un modèle de niveau 3 pourra ensuite servir à régler la dynamique de cette commande.</p>
+<h3 id="s3-choix-du-modele-electromecanique-b-resistances-des-enroulements-et-reactances-de-fuite-a-part" class="sous-titre">b. Résistances des enroulements et réactances de fuite à partir d'essais à vide et en court-circuit</h3>
+<p><strong>Niveau 2 — modèle à éléments localisés (Kirchhoff).</strong> On identifie les paramètres du schéma électrique équivalent : résistances et inductances/réactances. Il n'est pas nécessaire de calculer la répartition spatiale du champ magnétique.</p>
+<h3 id="s3-choix-du-modele-electromecanique-c-repartition-du-champ-dans-un-moteur-brushless-pour-amelior" class="sous-titre">c. Répartition du champ dans un moteur brushless pour améliorer le bobinage</h3>
+<p><strong>Niveau 1 — modèle continu (Maxwell).</strong> La question porte sur la distribution du champ dans l'espace, en fonction de la géométrie et des matériaux : c'est le rôle du modèle de champs, souvent résolu par éléments finis.</p>
+<h3 id="s3-choix-du-modele-electromecanique-d-evolution-de-la-vitesse-d-une-mcc-quand-le-couple-de-charg" class="sous-titre">d. Évolution de la vitesse d'une MCC quand le couple de charge varie de 1 à 15 N m</h3>
+<p><strong>Niveau 3 — schémas fonctionnels.</strong> On étudie la relation entre une <strong>entrée</strong>, le couple de charge, et une <strong>sortie</strong>, la vitesse. Les blocs fonctionnels décrivent le comportement électrique et mécanique du moteur et leurs interactions.</p>
+<p>Sources des quatre réponses : polycopié CH1, p. 12–14, notamment figures 4, 5 et 6.</p>
+<aside class="carte carte-retenir"><div class="carte-tete"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></svg><span class="carte-type">À retenir</span></div><p class="carte-titre">À retenir</p><div class="carte-corps"><span class="km" data-tex="3a \rightarrow">3a \rightarrow</span> niveau 4  ;  <span class="km" data-tex="3b \rightarrow">3b \rightarrow</span> niveau 2  ;  <span class="km" data-tex="3c \rightarrow">3c \rightarrow</span> niveau 1  ;  <span class="km" data-tex="3d \rightarrow">3d \rightarrow</span> niveau 3.<br> <strong>Niveau 1 :</strong> où se trouve le champ ?  <strong>Niveau 2 :</strong> quels éléments du circuit équivalent ?<br> <strong>Niveau 3 :</strong> comment évoluent les entrées et les sorties ?  <strong>Niveau 4 :</strong> comment organiser le système complet ?</div></aside>
+<h3 id="s3-choix-du-modele-electromecanique-sources-locales" class="sous-titre">Sources locales</h3>
+<p><code>Consignes/sources/elmec1-ch1-generalites-ex1.pdf</code> — énoncé du professeur.<br> <code>Consignes/sources/elmec1-ch1-generalites-theorie.pdf</code> — polycopié CH1, p. 9–14 (constituants, modèles), figures 4 à 6.</p></div></section>
+    <footer class="pied">
+      <p>Converti depuis <code>Semestre-3/_commun/sandbox/elmec1-ch1-ex1-latex/elmec1-ch1-ex1-corrige.tex</code> · <a href="../../../assets/pdf/e2-elmec1/elmec1-ch1-ex1-corrige.pdf" target="_blank" rel="noopener">version imprimable (PDF)</a></p>
+    </footer>
+  </main>
+</div>
+<dialog id="formulaire" class="dialogue" aria-labelledby="formulaire-titre">
+  <header class="dialogue-tete"><h2 id="formulaire-titre"><span class="btn-sigma" aria-hidden="true">Σ</span> Formulaire — Chapitre 1 — exercice 1</h2>
+  <button type="button" class="btn-icone" data-fermer aria-label="Fermer">✕</button></header>
+  <div class="dialogue-corps"><section class="formulaire-groupe"><h3><a href="#s2-questions-de-cours" data-fermer>§ 2 — Questions de cours</a></h3><div class="formule"><span class="km" data-tex="n_s=\dfrac{60\,f}{p}">n_s=\dfrac{60\,f}{p}</span>,   <span class="km" data-tex="n=(1-g)\,n_s">n=(1-g)\,n_s</span></div></section></div>
+</dialog>
+<dialog id="loupe" class="dialogue loupe" aria-label="Figure agrandie">
+  <button type="button" class="btn-icone loupe-fermer" data-fermer aria-label="Fermer">✕</button>
+  <img alt="">
+</dialog>
+
+</body>
+</html>

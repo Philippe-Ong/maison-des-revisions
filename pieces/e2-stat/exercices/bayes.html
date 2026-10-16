@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Statistiques · Corrigé · Probabilités conditionnelles et Bayes</title>
+<meta name="description" content="Statistiques — Probabilités conditionnelles et Bayes (Corrigé des exemples)">
+<link rel="icon" href="../../../assets/favicon.svg?v=012e46bcde" type="image/svg+xml">
+<script>try{var t=localStorage.getItem("maison:theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+
+<link rel="stylesheet" href="../../../assets/styles.css?v=012e46bcde">
+<style>:root{--c-heia:#0E5A8A;--c-pale:#EEF5FB;--c-orangeheia:#B86518;--c-palewarm:#FBF3E8}@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--c-heia:color-mix(in srgb,#0E5A8A 50%,#fff);--c-pale:color-mix(in srgb,#EEF5FB 50%,#fff);--c-orangeheia:color-mix(in srgb,#B86518 50%,#fff);--c-palewarm:color-mix(in srgb,#FBF3E8 50%,#fff)}}:root[data-theme=dark]{--c-heia:color-mix(in srgb,#0E5A8A 50%,#fff);--c-pale:color-mix(in srgb,#EEF5FB 50%,#fff);--c-orangeheia:color-mix(in srgb,#B86518 50%,#fff);--c-palewarm:color-mix(in srgb,#FBF3E8 50%,#fff)}</style>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+
+<script defer src="../../../assets/maison.js?v=012e46bcde"></script>
+</head>
+<body class="page-resume" style="--piece:#4D7C0F" data-cle="E2-STAT/exercices/bayes" data-sections='["exemple-14-test-diagnostique-et-formule-de-bayes", "exemple-15-trois-tiroirs-pieces-d-argent-et-d-or", "exemple-crm-1-marques-de-biberons-et-formule-de-bayes", "exemple-crm-2-test-sanguin-et-formule-de-bayes", "exemple-serie1-5-machine-manipulee-correctement-ou-non-proba", "exemple-serie1-7-test-binaire-et-formule-de-bayes", "exemple-39-chien-depisteur-de-drogue-poisson-et-bayes"]' data-url-racine="pieces/e2-stat/exercices/bayes.html" data-titre="Statistiques · Corrigé · Probabilités conditionnelles et Bayes">
+<a class="evitement" href="#contenu">Aller au contenu</a>
+
+<header class="barre">
+  <nav class="ariane" aria-label="Fil d'Ariane">
+    <a href="../../../index.html"><svg class="icone-ariane" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 12 4l9 7"/><path d="M5 9.5V20h14V9.5"/><path d="M10 20v-6h4v6"/></svg><span>Maison</span></a><span class="sep" aria-hidden="true">›</span>
+    <a href="../index.html">Statistiques</a><span class="sep" aria-hidden="true">›</span>
+    <span aria-current="page">Corrigé · Probabilités conditionnelles et Bayes</span>
+  </nav>
+  <div class="barre-actions">
+    
+    <a class="btn btn-discret" href="../../../assets/pdf/e2-stat/stat-bayes-corrige.pdf" target="_blank" rel="noopener">PDF</a>
+    <button type="button" class="btn-icone" data-theme-bascule aria-label="Basculer clair / sombre"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 4a8 8 0 0 1 0 16z" fill="currentColor"/></svg></button>
+  </div>
+</header>
+<div class="cadre">
+  <aside class="sommaire" aria-label="Sommaire">
+    <details class="sommaire-details" open>
+      <summary><span>Sommaire</span><span class="sommaire-prog" data-progression-texte>0 / 7</span></summary>
+      <ol class="sommaire-liste"><li data-cible="exemple-14-test-diagnostique-et-formule-de-bayes"><div class="sommaire-ligne"><a href="#exemple-14-test-diagnostique-et-formule-de-bayes"><span class="num num-vide">·</span>Exemple 14 — Test diagnostique et formule de Bayes</a><label class="revise-mini" title="Marquer « Exemple 14 — Test diagnostique et formule de Bayes » comme révisé"><input type="checkbox" data-section="exemple-14-test-diagnostique-et-formule-de-bayes" aria-label="Révisé : Exemple 14 — Test diagnostique et formule de Bayes"><span class="revise-coche" aria-hidden="true"></span></label></div><ol><li><a href="#exemple-14-test-diagnostique-et-formule-de-bayes-evenements-et-donnees"><span class="num"></span>Événements et données</a></li><li><a href="#exemple-14-test-diagnostique-et-formule-de-bayes-probabilites-totales"><span class="num"></span>Probabilités totales</a></li><li><a href="#exemple-14-test-diagnostique-et-formule-de-bayes-substitution-dans-la-formule-de-bayes"><span class="num"></span>Substitution dans la formule de Bayes</a></li><li><a href="#exemple-14-test-diagnostique-et-formule-de-bayes-controle-par-une-population-entiere"><span class="num"></span>Contrôle par une population entière</a></li></ol></li><li data-cible="exemple-15-trois-tiroirs-pieces-d-argent-et-d-or"><div class="sommaire-ligne"><a href="#exemple-15-trois-tiroirs-pieces-d-argent-et-d-or"><span class="num num-vide">·</span>Exemple 15 — Trois tiroirs, pièces d'argent et d'or</a><label class="revise-mini" title="Marquer « Exemple 15 — Trois tiroirs, pièces d&#x27;argent et d&#x27;or » comme révisé"><input type="checkbox" data-section="exemple-15-trois-tiroirs-pieces-d-argent-et-d-or" aria-label="Révisé : Exemple 15 — Trois tiroirs, pièces d&#x27;argent et d&#x27;or"><span class="revise-coche" aria-hidden="true"></span></label></div><ol><li><a href="#exemple-15-trois-tiroirs-pieces-d-argent-et-d-or-modele-et-evenements"><span class="num"></span>Modèle et événements</a></li><li><a href="#exemple-15-trois-tiroirs-pieces-d-argent-et-d-or-question-a-probabilite-de-tirer-une-piece-d-argent"><span class="num"></span>Question (a) : probabilité de tirer une pièce d'argent</a></li><li><a href="#exemple-15-trois-tiroirs-pieces-d-argent-et-d-or-question-b-probabilite-conditionnelle-inverse"><span class="num"></span>Question (b) : probabilité conditionnelle inverse</a></li><li><a href="#exemple-15-trois-tiroirs-pieces-d-argent-et-d-or-controle-et-interpretation"><span class="num"></span>Contrôle et interprétation</a></li></ol></li><li data-cible="exemple-crm-1-marques-de-biberons-et-formule-de-bayes"><div class="sommaire-ligne"><a href="#exemple-crm-1-marques-de-biberons-et-formule-de-bayes"><span class="num num-vide">·</span>Exemple crm-1 — Marques de biberons et formule de Bayes</a><label class="revise-mini" title="Marquer « Exemple crm-1 — Marques de biberons et formule de Bayes » comme révisé"><input type="checkbox" data-section="exemple-crm-1-marques-de-biberons-et-formule-de-bayes" aria-label="Révisé : Exemple crm-1 — Marques de biberons et formule de Bayes"><span class="revise-coche" aria-hidden="true"></span></label></div><ol><li><a href="#exemple-crm-1-marques-de-biberons-et-formule-de-bayes-evenements-et-donnees"><span class="num"></span>Événements et données</a></li><li><a href="#exemple-crm-1-marques-de-biberons-et-formule-de-bayes-probabilites-totales"><span class="num"></span>Probabilités totales</a></li><li><a href="#exemple-crm-1-marques-de-biberons-et-formule-de-bayes-substitution-dans-la-formule-de-bayes"><span class="num"></span>Substitution dans la formule de Bayes</a></li><li><a href="#exemple-crm-1-marques-de-biberons-et-formule-de-bayes-controle-par-enumeration"><span class="num"></span>Contrôle par énumération</a></li><li><a href="#exemple-crm-1-marques-de-biberons-et-formule-de-bayes-interpretation-et-piege"><span class="num"></span>Interprétation et piège</a></li></ol></li><li data-cible="exemple-crm-2-test-sanguin-et-formule-de-bayes"><div class="sommaire-ligne"><a href="#exemple-crm-2-test-sanguin-et-formule-de-bayes"><span class="num num-vide">·</span>Exemple crm-2 — Test sanguin et formule de Bayes</a><label class="revise-mini" title="Marquer « Exemple crm-2 — Test sanguin et formule de Bayes » comme révisé"><input type="checkbox" data-section="exemple-crm-2-test-sanguin-et-formule-de-bayes" aria-label="Révisé : Exemple crm-2 — Test sanguin et formule de Bayes"><span class="revise-coche" aria-hidden="true"></span></label></div></li><li data-cible="exemple-serie1-5-machine-manipulee-correctement-ou-non-proba"><div class="sommaire-ligne"><a href="#exemple-serie1-5-machine-manipulee-correctement-ou-non-proba"><span class="num num-vide">·</span>Exemple serie1-5 — Machine manipulée correctement ou non (probabilités totales et Bayes)</a><label class="revise-mini" title="Marquer « Exemple serie1-5 — Machine manipulée correctement ou non (probabilités totales et Bayes) » comme révisé"><input type="checkbox" data-section="exemple-serie1-5-machine-manipulee-correctement-ou-non-proba" aria-label="Révisé : Exemple serie1-5 — Machine manipulée correctement ou non (probabilités totales et Bayes)"><span class="revise-coche" aria-hidden="true"></span></label></div></li><li data-cible="exemple-serie1-7-test-binaire-et-formule-de-bayes"><div class="sommaire-ligne"><a href="#exemple-serie1-7-test-binaire-et-formule-de-bayes"><span class="num num-vide">·</span>Exemple serie1-7 — test binaire et formule de Bayes</a><label class="revise-mini" title="Marquer « Exemple serie1-7 — test binaire et formule de Bayes » comme révisé"><input type="checkbox" data-section="exemple-serie1-7-test-binaire-et-formule-de-bayes" aria-label="Révisé : Exemple serie1-7 — test binaire et formule de Bayes"><span class="revise-coche" aria-hidden="true"></span></label></div></li><li data-cible="exemple-39-chien-depisteur-de-drogue-poisson-et-bayes"><div class="sommaire-ligne"><a href="#exemple-39-chien-depisteur-de-drogue-poisson-et-bayes"><span class="num num-vide">·</span>Exemple 39 — Chien dépisteur de drogue : Poisson et Bayes</a><label class="revise-mini" title="Marquer « Exemple 39 — Chien dépisteur de drogue : Poisson et Bayes » comme révisé"><input type="checkbox" data-section="exemple-39-chien-depisteur-de-drogue-poisson-et-bayes" aria-label="Révisé : Exemple 39 — Chien dépisteur de drogue : Poisson et Bayes"><span class="revise-coche" aria-hidden="true"></span></label></div><ol><li><a href="#exemple-39-chien-depisteur-de-drogue-poisson-et-bayes-notations"><span class="num"></span>Notations</a></li><li><a href="#exemple-39-chien-depisteur-de-drogue-poisson-et-bayes-question-1-plus-de-5-cas-en-2-semaines-a-geneve"><span class="num"></span>Question 1 — plus de <span class="km" data-tex="5">5</span> cas en <span class="km" data-tex="2">2</span> semaines à Genève</a></li><li><a href="#exemple-39-chien-depisteur-de-drogue-poisson-et-bayes-question-2-l-observation-vient-elle-de-geneve"><span class="num"></span>Question 2 — l'observation vient-elle de Genève ?</a></li><li><a href="#exemple-39-chien-depisteur-de-drogue-poisson-et-bayes-controle-et-interpretation"><span class="num"></span>Contrôle et interprétation</a></li></ol></li></ol>
+    </details>
+  </aside>
+  <main id="contenu">
+    <section class="hero">
+      <div class="hero-papier" aria-hidden="true"></div>
+      <div class="hero-tete">
+        <a class="hero-piece" href="../index.html"><svg class="icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18"/><rect x="5" y="11" width="3" height="10"/><rect x="10.5" y="5" width="3" height="16"/><rect x="16" y="14" width="3" height="7"/></svg><span>Statistiques</span><span class="hero-aile">Aile Sciences</span></a>
+        <div class="anneau" data-anneau role="img" aria-label="Progression"><span data-progression-pourcent>0 %</span></div>
+      </div>
+      <p class="hero-entete">E2-STAT — Statistique · Formule de Bayes — corrigé</p>
+      <h1 class="visuellement-cache">Statistiques · Corrigé · Probabilités conditionnelles et Bayes</h1>
+      <div class="hero-intro"><p><span class="gras"><span class="t-titre"><span style="color:var(--c-heia)">Formule de Bayes — exercices corrigés</span></span></span></p>
+<p>Sept exercices : script (14, 15, 39), CRM (1, 2), Série 1 (5, 7). Toutes les sous-questions sont traitées.</p></div>
+      <div class="hero-puces"><span class="puce puce-te"><svg class="icone-puce" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 21V4M4 4h11l-2 3.5L15 11H4"/><path d="M18 21v-6M14 21h8"/></svg>TE1 · jeu. 12.11 · <span data-compte-a-rebours="2026-11-12">J-27</span></span><span class="puce puce-corrige">Corrigé</span><span class="puce">7 sections</span></div>
+    </section>
+    <section class="station station-normale" id="exemple-14-test-diagnostique-et-formule-de-bayes" aria-labelledby="exemple-14-test-diagnostique-et-formule-de-bayes-t"><header class="station-tete"><span class="station-num station-num-vide" aria-hidden="true">✦</span><h2 id="exemple-14-test-diagnostique-et-formule-de-bayes-t">Exemple 14 — Test diagnostique et formule de Bayes</h2><label class="revise"><input type="checkbox" data-section="exemple-14-test-diagnostique-et-formule-de-bayes"><span class="revise-coche" aria-hidden="true"></span><span class="revise-texte">Révisé</span></label></header><div class="station-corps"><p>Un test diagnostique une maladie avec les proportions suivantes : <span class="km" data-tex="95\,\%">95\,\%</span> des personnes malades réagissent positivement au test, et <span class="km" data-tex="93\,\%">93\,\%</span> des personnes en bonne santé réagissent négativement. On admet que <span class="km" data-tex="5">5</span> personnes sur mille sont atteintes de cette maladie. Après un test positif, quelle est la probabilité d'être réellement malade ?</p>
+<h3 id="exemple-14-test-diagnostique-et-formule-de-bayes-evenements-et-donnees" class="sous-titre">Événements et données</h3>
+<p>Notons <span class="km" data-tex="M">M</span> l'événement <em>« être malade »</em> et <span class="km" data-tex="T">T</span> l'événement <em>« le test est positif »</em>. Les événements <span class="km" data-tex="M">M</span> et <span class="km" data-tex="M^{\mathrm{c}}">M^{\mathrm{c}}</span> forment une partition de <span class="km" data-tex="\Omega">\Omega</span>, et les données de l'énoncé s'écrivent</p>
+<div class="km km-d" data-tex="P(M) = \frac{5}{1000} = \frac{1}{200}, \qquad
+P(T \mid M) = \frac{95}{100} = \frac{19}{20}, \qquad
+P(T^{\mathrm{c}} \mid M^{\mathrm{c}}) = \frac{93}{100}.">P(M) = \frac{5}{1000} = \frac{1}{200}, \qquad
+P(T \mid M) = \frac{95}{100} = \frac{19}{20}, \qquad
+P(T^{\mathrm{c}} \mid M^{\mathrm{c}}) = \frac{93}{100}.</div>
+<p>La troisième donnée est la <em>spécificité</em> : elle porte sur <span class="km" data-tex="P(T^{\mathrm{c}} \mid M^{\mathrm{c}})">P(T^{\mathrm{c}} \mid M^{\mathrm{c}})</span>. Le complément dans la population conditionnelle donne</p>
+<div class="km km-d" data-tex="P(M^{\mathrm{c}}) = 1 - P(M) = \frac{199}{200}, \qquad
+P(T \mid M^{\mathrm{c}}) = 1 - P(T^{\mathrm{c}} \mid M^{\mathrm{c}}) = \frac{7}{100}.">P(M^{\mathrm{c}}) = 1 - P(M) = \frac{199}{200}, \qquad
+P(T \mid M^{\mathrm{c}}) = 1 - P(T^{\mathrm{c}} \mid M^{\mathrm{c}}) = \frac{7}{100}.</div>
+<p>On cherche <span class="km" data-tex="P(M \mid T)">P(M \mid T)</span>, probabilité conditionnelle <em>inverse</em> de la sensibilité.</p>
+<h3 id="exemple-14-test-diagnostique-et-formule-de-bayes-probabilites-totales" class="sous-titre">Probabilités totales</h3>
+<p>Le théorème des probabilités totales appliqué à <span class="km" data-tex="T">T</span> avec la partition <span class="km" data-tex="(M, M^{\mathrm{c}})">(M, M^{\mathrm{c}})</span> s'écrit en trois lignes :</p>
+<div class="km km-d" data-tex="\begin{aligned}
+P(T) &amp;= P(T \mid M)\,P(M) + P(T \mid M^{\mathrm{c}})\,P(M^{\mathrm{c}})\\
+     &amp;= \frac{19}{20}\cdot\frac{1}{200} + \frac{7}{100}\cdot\frac{199}{200}
+      = \frac{19}{4000} + \frac{1393}{20000}\\
+     &amp;= \frac{93}{1250} = 0{,}0744 .
+\end{aligned}">\begin{aligned}
+P(T) &amp;= P(T \mid M)\,P(M) + P(T \mid M^{\mathrm{c}})\,P(M^{\mathrm{c}})\\
+     &amp;= \frac{19}{20}\cdot\frac{1}{200} + \frac{7}{100}\cdot\frac{199}{200}
+      = \frac{19}{4000} + \frac{1393}{20000}\\
+     &amp;= \frac{93}{1250} = 0{,}0744 .
+\end{aligned}</div>
+<p>Environ <span class="km" data-tex="7{,}44\,\%">7{,}44\,\%</span> de la population est positive, bien plus que la prévalence : les faux positifs dominent.</p>
+<h3 id="exemple-14-test-diagnostique-et-formule-de-bayes-substitution-dans-la-formule-de-bayes" class="sous-titre">Substitution dans la formule de Bayes</h3>
+<div class="km km-d" data-tex="\begin{aligned}
+P(M \mid T) &amp;= \frac{P(T \mid M)\,P(M)}{P(T)}
+             = \frac{\dfrac{19}{20}\cdot\dfrac{1}{200}}{\dfrac{93}{1250}}\\
+            &amp;= \frac{19}{4000}\cdot\frac{1250}{93}
+             = \frac{95}{1488} \approx 0{,}063844 \approx 0{,}0638 .
+\end{aligned}">\begin{aligned}
+P(M \mid T) &amp;= \frac{P(T \mid M)\,P(M)}{P(T)}
+             = \frac{\dfrac{19}{20}\cdot\dfrac{1}{200}}{\dfrac{93}{1250}}\\
+            &amp;= \frac{19}{4000}\cdot\frac{1250}{93}
+             = \frac{95}{1488} \approx 0{,}063844 \approx 0{,}0638 .
+\end{aligned}</div>
+<aside class="carte carte-retenir"><div class="carte-tete"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></svg><span class="carte-type">À retenir</span></div><p class="carte-titre">Résultat</p><div class="carte-corps">Une personne testée positive n'est malade qu'avec la probabilité <span class="km" data-tex="P(M \mid T) = \dfrac{95}{1488} \approx 6{,}38\,\%">P(M \mid T) = \dfrac{95}{1488} \approx 6{,}38\,\%</span> ; son complément est <span class="km" data-tex="P(M^{\mathrm{c}} \mid T) = \dfrac{1393}{1488} \approx 0{,}9362">P(M^{\mathrm{c}} \mid T) = \dfrac{1393}{1488} \approx 0{,}9362</span>.</div></aside>
+<h3 id="exemple-14-test-diagnostique-et-formule-de-bayes-controle-par-une-population-entiere" class="sous-titre">Contrôle par une population entière</h3>
+<p>Prenons <span class="km" data-tex="N = 20000">N = 20000</span> personnes, plus petite population donnant des effectifs entiers pour toutes les cellules.</p>
+<div class="tableau"><table><tbody><tr><td></td><td class="a-droite">Test positif <span class="km" data-tex="(T)">(T)</span></td><td class="a-droite">Test négatif <span class="km" data-tex="(T^{\mathrm{c}})">(T^{\mathrm{c}})</span></td><td class="a-droite">Total</td></tr><tr><td>Malades <span class="km" data-tex="(M)">(M)</span></td><td class="a-droite"><span class="km" data-tex="95">95</span></td><td class="a-droite"><span class="km" data-tex="5">5</span></td><td class="a-droite"><span class="km" data-tex="100">100</span></td></tr><tr><td>En bonne santé <span class="km" data-tex="(M^{\mathrm{c}})">(M^{\mathrm{c}})</span></td><td class="a-droite"><span class="km" data-tex="1393">1393</span></td><td class="a-droite"><span class="km" data-tex="18507">18507</span></td><td class="a-droite"><span class="km" data-tex="19900">19900</span></td></tr><tr><td>Total</td><td class="a-droite"><span class="km" data-tex="1488">1488</span></td><td class="a-droite"><span class="km" data-tex="18512">18512</span></td><td class="a-droite"><span class="km" data-tex="20000">20000</span></td></tr></tbody></table></div>
+<p>Parmi les <span class="km" data-tex="1488">1488</span> personnes positives, <span class="km" data-tex="95">95</span> seulement sont réellement malades :</p>
+<div class="km km-d" data-tex="\frac{95}{1488} \approx 0{,}063844,">\frac{95}{1488} \approx 0{,}063844,</div>
+<p>identique à la fraction exacte de Bayes. Ce comptage par effectifs entiers ne suppose aucune simulation.</p>
+<aside class="carte carte-piege"><div class="carte-tete"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 2.5 20h19z"/><path d="M12 10v4.5M12 17.2v.3"/></svg><span class="carte-type">Piège</span></div><p class="carte-titre">Piège</p><div class="carte-corps">Ne pas confondre la sensibilité <span class="km" data-tex="P(T \mid M) = 0{,}95">P(T \mid M) = 0{,}95</span> et la probabilité cherchée <span class="km" data-tex="P(M \mid T) \approx 0{,}0638">P(M \mid T) \approx 0{,}0638</span> : la seconde dépend fortement de l'a priori <span class="km" data-tex="P(M)">P(M)</span>. De plus <span class="km" data-tex="93\,\%">93\,\%</span> est une spécificité <span class="km" data-tex="P(T^{\mathrm{c}} \mid M^{\mathrm{c}})">P(T^{\mathrm{c}} \mid M^{\mathrm{c}})</span> ; l'utiliser comme <span class="km" data-tex="P(T^{\mathrm{c}} \mid M)">P(T^{\mathrm{c}} \mid M)</span> serait faux, le complément correct étant <span class="km" data-tex="P(T \mid M^{\mathrm{c}}) = 7\,\%">P(T \mid M^{\mathrm{c}}) = 7\,\%</span>.</div></aside>
+<p><span class="t-petit"><span style="color:var(--c-gray, gray)">Source : script Hager Jörin, folios 6–7 (PDF p. 8–9).</span></span></p></div></section><section class="station station-normale" id="exemple-15-trois-tiroirs-pieces-d-argent-et-d-or" aria-labelledby="exemple-15-trois-tiroirs-pieces-d-argent-et-d-or-t"><header class="station-tete"><span class="station-num station-num-vide" aria-hidden="true">✦</span><h2 id="exemple-15-trois-tiroirs-pieces-d-argent-et-d-or-t">Exemple 15 — Trois tiroirs, pièces d'argent et d'or</h2><label class="revise"><input type="checkbox" data-section="exemple-15-trois-tiroirs-pieces-d-argent-et-d-or"><span class="revise-coche" aria-hidden="true"></span><span class="revise-texte">Révisé</span></label></header><div class="station-corps"><p>Énoncé. Trois tiroirs d'une commode contiennent : <span class="km" data-tex="T_1">T_1</span> : <span class="km" data-tex="5">5</span> pièces d'argent ; <span class="km" data-tex="T_2">T_2</span> : <span class="km" data-tex="1">1</span> pièce d'argent et <span class="km" data-tex="1">1</span> pièce d'or ; <span class="km" data-tex="T_3">T_3</span> : <span class="km" data-tex="2">2</span> pièces d'or. On choisit au hasard un tiroir, puis une pièce dans ce tiroir. (a) Quelle est la probabilité de sélectionner une pièce d'argent ? (b) La pièce tirée étant en argent, quelle est la probabilité qu'elle provienne du tiroir <span class="km" data-tex="1">1</span> ?</p>
+<h3 id="exemple-15-trois-tiroirs-pieces-d-argent-et-d-or-modele-et-evenements" class="sous-titre">Modèle et événements</h3>
+<p>On note <span class="km" data-tex="S">S</span> l'événement « la pièce sélectionnée est en argent ». Le choix est hiérarchique : le tiroir d'abord, la pièce ensuite. Les trois tiroirs sont équiprobables, puis chacune des pièces du tiroir retenu est équiprobable, de sorte que <span class="km" data-tex="P(S \mid T_i)">P(S \mid T_i)</span> est la proportion de pièces d'argent dans le tiroir <span class="km" data-tex="T_i">T_i</span>.</p>
+<div class="tableau"><table><thead><tr><th>Tiroir</th><th class="a-centre">Pièces</th><th class="a-centre"><span class="km" data-tex="P(T_i)">P(T_i)</span></th><th class="a-centre"><span class="km" data-tex="P(S \mid T_i)">P(S \mid T_i)</span></th></tr></thead><tbody><tr><td><span class="km" data-tex="T_1">T_1</span></td><td class="a-centre"><span class="km" data-tex="5">5</span> argent</td><td class="a-centre"><span class="km" data-tex="1/3">1/3</span></td><td class="a-centre"><span class="km" data-tex="5/5 = 1">5/5 = 1</span></td></tr><tr><td><span class="km" data-tex="T_2">T_2</span></td><td class="a-centre"><span class="km" data-tex="1">1</span> argent, <span class="km" data-tex="1">1</span> or</td><td class="a-centre"><span class="km" data-tex="1/3">1/3</span></td><td class="a-centre"><span class="km" data-tex="1/2">1/2</span></td></tr><tr><td><span class="km" data-tex="T_3">T_3</span></td><td class="a-centre"><span class="km" data-tex="2">2</span> or</td><td class="a-centre"><span class="km" data-tex="1/3">1/3</span></td><td class="a-centre"><span class="km" data-tex="0/2 = 0">0/2 = 0</span></td></tr></tbody></table></div>
+<h3 id="exemple-15-trois-tiroirs-pieces-d-argent-et-d-or-question-a-probabilite-de-tirer-une-piece-d-argent" class="sous-titre">Question (a) : probabilité de tirer une pièce d'argent</h3>
+<p>Les événements <span class="km" data-tex="T_1, T_2, T_3">T_1, T_2, T_3</span> forment une partition de <span class="km" data-tex="\Omega">\Omega</span> ; le théorème des probabilités totales donne</p>
+<div class="km km-d" data-tex="P(S) = \sum_{i=1}^{3} P(S \mid T_i)\,P(T_i)
+      = 1 \cdot \tfrac{1}{3} + \tfrac{1}{2} \cdot \tfrac{1}{3} + 0 \cdot \tfrac{1}{3}
+      = \tfrac{1}{3} + \tfrac{1}{6} = \tfrac{1}{2}.">P(S) = \sum_{i=1}^{3} P(S \mid T_i)\,P(T_i)
+      = 1 \cdot \tfrac{1}{3} + \tfrac{1}{2} \cdot \tfrac{1}{3} + 0 \cdot \tfrac{1}{3}
+      = \tfrac{1}{3} + \tfrac{1}{6} = \tfrac{1}{2}.</div>
+<h3 id="exemple-15-trois-tiroirs-pieces-d-argent-et-d-or-question-b-probabilite-conditionnelle-inverse" class="sous-titre">Question (b) : probabilité conditionnelle inverse</h3>
+<p>La question conditionne la même expérience : le tirage a eu lieu une seule fois et la pièce obtenue est en argent. La formule de Bayes s'écrit</p>
+<div class="km km-d" data-tex="P(T_1 \mid S) = \frac{P(S \mid T_1)\,P(T_1)}{P(S)}
+             = \frac{1 \cdot \tfrac{1}{3}}{\tfrac{1}{2}}
+             = \frac{1/3}{1/2} = \frac{2}{3}.">P(T_1 \mid S) = \frac{P(S \mid T_1)\,P(T_1)}{P(S)}
+             = \frac{1 \cdot \tfrac{1}{3}}{\tfrac{1}{2}}
+             = \frac{1/3}{1/2} = \frac{2}{3}.</div>
+<aside class="carte carte-retenir"><div class="carte-tete"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></svg><span class="carte-type">À retenir</span></div><p class="carte-titre">Résultats</p><div class="carte-corps"><div class="km km-d" data-tex="P(S) = \frac{1}{2} = 0{,}5
+\qquad\text{et}\qquad
+P(T_1 \mid S) = \frac{2}{3} \approx 0{,}666\,7.">P(S) = \frac{1}{2} = 0{,}5
+\qquad\text{et}\qquad
+P(T_1 \mid S) = \frac{2}{3} \approx 0{,}666\,7.</div></div></aside>
+<h3 id="exemple-15-trois-tiroirs-pieces-d-argent-et-d-or-controle-et-interpretation" class="sous-titre">Contrôle et interprétation</h3>
+<p>On énumère les <span class="km" data-tex="9">9</span> pièces étiquetées et on attribue à chaque pièce du tiroir <span class="km" data-tex="T_i">T_i</span> le poids <span class="km" data-tex="P(T_i)/n_i">P(T_i)/n_i</span>. Chaque pièce de <span class="km" data-tex="T_1">T_1</span> pèse <span class="km" data-tex="1/15">1/15</span>, chaque pièce de <span class="km" data-tex="T_2">T_2</span> et de <span class="km" data-tex="T_3">T_3</span> pèse <span class="km" data-tex="1/6">1/6</span>. Le poids total vaut <span class="km" data-tex="5 \cdot \tfrac{1}{15} + 2 \cdot \tfrac{1}{6} + 2 \cdot \tfrac{1}{6} = 1">5 \cdot \tfrac{1}{15} + 2 \cdot \tfrac{1}{6} + 2 \cdot \tfrac{1}{6} = 1</span>, ce qui confirme la normalisation. Le poids des pièces d'argent vaut <span class="km" data-tex="5 \cdot \tfrac{1}{15} + 1 \cdot \tfrac{1}{6} = \tfrac{1}{2} = P(S)">5 \cdot \tfrac{1}{15} + 1 \cdot \tfrac{1}{6} = \tfrac{1}{2} = P(S)</span>, et la part provenant de <span class="km" data-tex="T_1">T_1</span> vaut <span class="km" data-tex="\tfrac{1}{3}">\tfrac{1}{3}</span>, d'où <span class="km" data-tex="P(T_1 \mid S) = \tfrac{1/3}{1/2} = \tfrac{2}{3}">P(T_1 \mid S) = \tfrac{1/3}{1/2} = \tfrac{2}{3}</span>. Sur les deux tiroirs pouvant fournir de l'argent, on retrouve <span class="km" data-tex="P(T_2 \mid S) = \tfrac{1/6}{1/2} = \tfrac{1}{3}">P(T_2 \mid S) = \tfrac{1/6}{1/2} = \tfrac{1}{3}</span> et <span class="km" data-tex="P(T_1 \mid S) + P(T_2 \mid S) + P(T_3 \mid S) = 1">P(T_1 \mid S) + P(T_2 \mid S) + P(T_3 \mid S) = 1</span>. Le rapport des a priori reste <span class="km" data-tex="1:1">1:1</span>, mais le tiroir <span class="km" data-tex="T_1">T_1</span> double sa chance relative, car il ne contient que de l'argent alors que <span class="km" data-tex="T_2">T_2</span> n'en contient que la moitié.</p>
+<aside class="carte carte-piege"><div class="carte-tete"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 2.5 20h19z"/><path d="M12 10v4.5M12 17.2v.3"/></svg><span class="carte-type">Piège</span></div><p class="carte-titre">Tirage uniforme d'une pièce au lieu d'un tiroir</p><div class="carte-corps">Confondre le protocole avec un tirage uniforme d'une pièce parmi les <span class="km" data-tex="9">9</span> de la commode donnerait <span class="km" data-tex="P(S) = 6/9 = 2/3">P(S) = 6/9 = 2/3</span> et <span class="km" data-tex="P(T_1 \mid S) = 5/6">P(T_1 \mid S) = 5/6</span>, valeurs fausses. Ce modèle alternatif sur-représente les pièces de <span class="km" data-tex="T_1">T_1</span> (le tiroir le mieux fourni), alors que l'énoncé impose un tirage de tiroir équiprobable. C'est le choix uniforme du tiroir, et non la proportion globale de pièces d'argent, qui définit l'expérience.</div></aside>
+<p><span class="t-petit"><span style="color:var(--c-gray, gray)">Source : script Hager Jörin, folio 7 (PDF p. 9).</span></span></p>
+<aside class="carte carte-retenir"><div class="carte-tete"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></svg><span class="carte-type">À retenir</span></div><p class="carte-titre">Méthode commune : probabilités totales, puis Bayes</p><div class="carte-corps"><p>Pour une partition <span class="km" data-tex="(E_i)">(E_i)</span> et <span class="km" data-tex="P(F)&gt;0">P(F)&gt;0</span> :</p>
+<div class="km km-d" data-tex="P(F)=\sum_i P(F\mid E_i)P(E_i),\qquad
+ P(E_k\mid F)=\frac{P(F\mid E_k)P(E_k)}{\sum_i P(F\mid E_i)P(E_i)}.">P(F)=\sum_i P(F\mid E_i)P(E_i),\qquad
+ P(E_k\mid F)=\frac{P(F\mid E_k)P(E_k)}{\sum_i P(F\mid E_i)P(E_i)}.</div>
+<p>Ne pas confondre <span class="km" data-tex="P(F\mid E_k)">P(F\mid E_k)</span> et <span class="km" data-tex="P(E_k\mid F)">P(E_k\mid F)</span>.</p></div></aside></div></section><section class="station station-normale" id="exemple-crm-1-marques-de-biberons-et-formule-de-bayes" aria-labelledby="exemple-crm-1-marques-de-biberons-et-formule-de-bayes-t"><header class="station-tete"><span class="station-num station-num-vide" aria-hidden="true">✦</span><h2 id="exemple-crm-1-marques-de-biberons-et-formule-de-bayes-t">Exemple crm-1 — Marques de biberons et formule de Bayes</h2><label class="revise"><input type="checkbox" data-section="exemple-crm-1-marques-de-biberons-et-formule-de-bayes"><span class="revise-coche" aria-hidden="true"></span><span class="revise-texte">Révisé</span></label></header><div class="station-corps"><p>Trois marques <span class="km" data-tex="A">A</span>, <span class="km" data-tex="B">B</span> et <span class="km" data-tex="C">C</span> de biberons se partagent le marché avec des parts respectives de <span class="km" data-tex="43\,\%">43\,\%</span>, <span class="km" data-tex="34\,\%">34\,\%</span> et <span class="km" data-tex="23\,\%">23\,\%</span>. Chaque marque propose des modèles à <em>tétine simple</em> <span class="km" data-tex="S">S</span> ou à <em>trois vitesses</em> <span class="km" data-tex="V">V</span> : <span class="km" data-tex="35\,\%">35\,\%</span> des tétines de la marque <span class="km" data-tex="A">A</span> sont simples, ainsi que <span class="km" data-tex="25\,\%">25\,\%</span> de <span class="km" data-tex="B">B</span> et <span class="km" data-tex="47\,\%">47\,\%</span> de <span class="km" data-tex="C">C</span>. Une jeune mère achète au hasard un biberon ; on constate qu'il a une tétine simple. Quelle est la probabilité qu'il soit de marque <span class="km" data-tex="C">C</span> ?</p>
+<aside class="carte carte-retenir"><div class="carte-tete"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></svg><span class="carte-type">À retenir</span></div><p class="carte-titre">Résultat</p><div class="carte-corps"><span class="km" data-tex="P(C \mid S) = \dfrac{1081}{3436} \approx 0{,}3146">P(C \mid S) = \dfrac{1081}{3436} \approx 0{,}3146</span>, soit environ <span class="km" data-tex="31{,}5\,\%">31{,}5\,\%</span>. Obtenu par les probabilités totales puis Bayes, et recoupé en fin de page par énumération de <span class="km" data-tex="10\,000">10\,000</span> produits étiquetés.</div></aside>
+<h3 id="exemple-crm-1-marques-de-biberons-et-formule-de-bayes-evenements-et-donnees" class="sous-titre">Événements et données</h3>
+<p>Les marques forment une partition de <span class="km" data-tex="\Omega">\Omega</span> ; les parts de marché sont les probabilités a priori, et non des poids égaux :</p>
+<div class="km km-d" data-tex="P(A) = \frac{43}{100}, \qquad P(B) = \frac{34}{100}, \qquad
+P(C) = \frac{23}{100},">P(A) = \frac{43}{100}, \qquad P(B) = \frac{34}{100}, \qquad
+P(C) = \frac{23}{100},</div>
+<div class="km km-d" data-tex="P(S \mid A) = \frac{35}{100}, \qquad P(S \mid B) = \frac{25}{100}, \qquad
+P(S \mid C) = \frac{47}{100}.">P(S \mid A) = \frac{35}{100}, \qquad P(S \mid B) = \frac{25}{100}, \qquad
+P(S \mid C) = \frac{47}{100}.</div>
+<p>On cherche <span class="km" data-tex="P(C \mid S)">P(C \mid S)</span> : la probabilité conditionnelle <em>inverse</em> de la vraisemblance <span class="km" data-tex="P(S \mid C)">P(S \mid C)</span>.</p>
+<h3 id="exemple-crm-1-marques-de-biberons-et-formule-de-bayes-probabilites-totales" class="sous-titre">Probabilités totales</h3>
+<div class="km km-d" data-tex="\begin{align*}
+P(S) &amp;= P(S \mid A)\,P(A) + P(S \mid B)\,P(B) + P(S \mid C)\,P(C) \\
+     &amp;= \frac{1505}{10\,000} + \frac{850}{10\,000} + \frac{1081}{10\,000} \\
+     &amp;= \frac{3436}{10\,000} = \frac{859}{2500} = 0{,}3436 .
+\end{align*}">\begin{align*}
+P(S) &amp;= P(S \mid A)\,P(A) + P(S \mid B)\,P(B) + P(S \mid C)\,P(C) \\
+     &amp;= \frac{1505}{10\,000} + \frac{850}{10\,000} + \frac{1081}{10\,000} \\
+     &amp;= \frac{3436}{10\,000} = \frac{859}{2500} = 0{,}3436 .
+\end{align*}</div>
+<p>Environ <span class="km" data-tex="34{,}36\,\%">34{,}36\,\%</span> des biberons vendus ont une tétine simple.</p>
+<h3 id="exemple-crm-1-marques-de-biberons-et-formule-de-bayes-substitution-dans-la-formule-de-bayes" class="sous-titre">Substitution dans la formule de Bayes</h3>
+<div class="km km-d" data-tex="\begin{align*}
+P(C \mid S)
+&amp;= \frac{P(S \mid C)\,P(C)}
+        {P(S \mid A)\,P(A) + P(S \mid B)\,P(B) + P(S \mid C)\,P(C)} \\
+&amp;= \frac{\dfrac{47}{100}\cdot\dfrac{23}{100}}
+        {\dfrac{35}{100}\cdot\dfrac{43}{100}
+       + \dfrac{25}{100}\cdot\dfrac{34}{100}
+       + \dfrac{47}{100}\cdot\dfrac{23}{100}} \\
+&amp;= \frac{\dfrac{1081}{10\,000}}{\dfrac{3436}{10\,000}}
+ = \frac{1081}{3436} \approx 0{,}3146 .
+\end{align*}">\begin{align*}
+P(C \mid S)
+&amp;= \frac{P(S \mid C)\,P(C)}
+        {P(S \mid A)\,P(A) + P(S \mid B)\,P(B) + P(S \mid C)\,P(C)} \\
+&amp;= \frac{\dfrac{47}{100}\cdot\dfrac{23}{100}}
+        {\dfrac{35}{100}\cdot\dfrac{43}{100}
+       + \dfrac{25}{100}\cdot\dfrac{34}{100}
+       + \dfrac{47}{100}\cdot\dfrac{23}{100}} \\
+&amp;= \frac{\dfrac{1081}{10\,000}}{\dfrac{3436}{10\,000}}
+ = \frac{1081}{3436} \approx 0{,}3146 .
+\end{align*}</div>
+<h3 id="exemple-crm-1-marques-de-biberons-et-formule-de-bayes-controle-par-enumeration" class="sous-titre">Contrôle par énumération</h3>
+<p>Sur <span class="km" data-tex="10\,000">10\,000</span> produits étiquetés, compatibles avec toutes les proportions (<span class="km" data-tex="4300">4300</span> de marque <span class="km" data-tex="A">A</span>, <span class="km" data-tex="3400">3400</span> de <span class="km" data-tex="B">B</span>, <span class="km" data-tex="2300">2300</span> de <span class="km" data-tex="C">C</span>), les tétines simples se répartissent ainsi :</p>
+<div class="tableau"><table><tbody><tr><td></td><td class="a-droite">Tétine simple <span class="km" data-tex="S">S</span></td><td class="a-droite">Trois vitesses <span class="km" data-tex="V">V</span></td><td class="a-droite">Total</td></tr><tr><td>Marque <span class="km" data-tex="A">A</span></td><td class="a-droite"><span class="km" data-tex="1505">1505</span></td><td class="a-droite"><span class="km" data-tex="2795">2795</span></td><td class="a-droite"><span class="km" data-tex="4300">4300</span></td></tr><tr><td>Marque <span class="km" data-tex="B">B</span></td><td class="a-droite"><span class="km" data-tex="850">850</span></td><td class="a-droite"><span class="km" data-tex="2550">2550</span></td><td class="a-droite"><span class="km" data-tex="3400">3400</span></td></tr><tr><td>Marque <span class="km" data-tex="C">C</span></td><td class="a-droite"><span class="km" data-tex="1081">1081</span></td><td class="a-droite"><span class="km" data-tex="1219">1219</span></td><td class="a-droite"><span class="km" data-tex="2300">2300</span></td></tr><tr><td>Total</td><td class="a-droite"><span class="km" data-tex="3436">3436</span></td><td class="a-droite"><span class="km" data-tex="6564">6564</span></td><td class="a-droite"><span class="km" data-tex="10\,000">10\,000</span></td></tr></tbody></table></div>
+<p>Parmi les <span class="km" data-tex="3436">3436</span> biberons à tétine simple, <span class="km" data-tex="1081">1081</span> sont de marque <span class="km" data-tex="C">C</span> : <span class="km" data-tex="P(C \mid S) = 1081/3436 \approx 0{,}3146">P(C \mid S) = 1081/3436 \approx 0{,}3146</span>, identique au résultat de Bayes. Avec les fractions exactes, <span class="km" data-tex="P(A \mid S) = 1505/3436">P(A \mid S) = 1505/3436</span>, <span class="km" data-tex="P(B \mid S) = 850/3436">P(B \mid S) = 850/3436</span> et <span class="km" data-tex="P(C \mid S) = 1081/3436">P(C \mid S) = 1081/3436</span> : leur somme vaut <span class="km" data-tex="3436/3436 = 1">3436/3436 = 1</span>.</p>
+<h3 id="exemple-crm-1-marques-de-biberons-et-formule-de-bayes-interpretation-et-piege" class="sous-titre">Interprétation et piège</h3>
+<p><span class="km" data-tex="C">C</span> est la marque la moins vendue (<span class="km" data-tex="23\,\%">23\,\%</span>), mais celle qui propose le plus de tétines simples (<span class="km" data-tex="47\,\%">47\,\%</span>) : l'observation « tétine simple » fait monter sa probabilité de <span class="km" data-tex="0{,}23">0{,}23</span> à environ <span class="km" data-tex="0{,}3146">0{,}3146</span>, sans pour autant en faire la marque dominante, car son a priori reste le plus faible des trois.</p>
+<aside class="carte carte-piege"><div class="carte-tete"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 2.5 20h19z"/><path d="M12 10v4.5M12 17.2v.3"/></svg><span class="carte-type">Piège</span></div><p class="carte-titre">Piège</p><div class="carte-corps">Ne pas répondre <span class="km" data-tex="P(S \mid C) = 0{,}47">P(S \mid C) = 0{,}47</span> : c'est la vraisemblance, pas la probabilité cherchée. Des a priori uniformes <span class="km" data-tex="1/3">1/3</span> donneraient <span class="km" data-tex="\frac{47}{107} \approx 0{,}4393">\frac{47}{107} \approx 0{,}4393</span>, résultat faux : les parts de marché ne sont pas égales.</div></aside>
+<p><span class="t-petit"><span style="color:var(--c-gray, gray)">Source : CRM, <em>Probabilités</em>, §3.3, exemple 1, p. 50–51.</span></span></p></div></section><section class="station station-normale" id="exemple-crm-2-test-sanguin-et-formule-de-bayes" aria-labelledby="exemple-crm-2-test-sanguin-et-formule-de-bayes-t"><header class="station-tete"><span class="station-num station-num-vide" aria-hidden="true">✦</span><h2 id="exemple-crm-2-test-sanguin-et-formule-de-bayes-t">Exemple crm-2 — Test sanguin et formule de Bayes</h2><label class="revise"><input type="checkbox" data-section="exemple-crm-2-test-sanguin-et-formule-de-bayes"><span class="revise-coche" aria-hidden="true"></span><span class="revise-texte">Révisé</span></label></header><div class="station-corps"><p>Un test sanguin détecte une maladie avec une fiabilité de <span class="km" data-tex="95\,\%">95\,\%</span> lorsqu'elle est réellement présente, mais il est positif chez <span class="km" data-tex="1\,\%">1\,\%</span> des personnes saines. Sachant que <span class="km" data-tex="0{,}5\,\%">0{,}5\,\%</span> de la population est effectivement malade, quelle est la probabilité qu'une personne soit malade lorsque son test est positif ?</p>
+<p>On note <span class="km" data-tex="M">M</span> « la personne est malade », <span class="km" data-tex="S=\overline{M}">S=\overline{M}</span> « la personne est saine » et <span class="km" data-tex="T">T</span> « le test est positif ». Les données de l'énoncé s'écrivent</p>
+<div class="km km-d" data-tex="P(M)=\frac{1}{200}=0{,}005,\qquad
+    P(T\mid M)=\frac{19}{20}=0{,}95,\qquad
+    P(T\mid S)=\frac{1}{100}=0{,}01 .">P(M)=\frac{1}{200}=0{,}005,\qquad
+    P(T\mid M)=\frac{19}{20}=0{,}95,\qquad
+    P(T\mid S)=\frac{1}{100}=0{,}01 .</div>
+<p>Les événements <span class="km" data-tex="M">M</span> et <span class="km" data-tex="S">S</span> forment une partition de la population testée, donc <span class="km" data-tex="P(S)=1-P(M)=\frac{199}{200}=0{,}995">P(S)=1-P(M)=\frac{199}{200}=0{,}995</span>.</p>
+<aside class="carte carte-retenir"><div class="carte-tete"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></svg><span class="carte-type">À retenir</span></div><p class="carte-titre">Résultat</p><div class="carte-corps"><span class="km" data-tex="P(M\mid T)=\dfrac{95}{294}\approx 0{,}3231">P(M\mid T)=\dfrac{95}{294}\approx 0{,}3231</span>, soit environ <span class="km" data-tex="32{,}3\,\%">32{,}3\,\%</span> : un test positif n'annonce la maladie que dans un cas sur trois environ.</div></aside>
+<p>Le théorème des probabilités totales donne d'abord la probabilité d'un test positif :</p>
+<div class="km km-d" data-tex="\begin{align*}
+    P(T) &amp;= P(T\mid M)\,P(M)+P(T\mid S)\,P(S) \\
+         &amp;= \frac{19}{20}\cdot\frac{1}{200}+\frac{1}{100}\cdot\frac{199}{200}
+          = \frac{19}{4000}+\frac{199}{20\,000} \\
+         &amp;= \frac{95}{20\,000}+\frac{199}{20\,000}=\frac{294}{20\,000}=\frac{147}{10\,000}
+          \approx 0{,}0147 .
+\end{align*}">\begin{align*}
+    P(T) &amp;= P(T\mid M)\,P(M)+P(T\mid S)\,P(S) \\
+         &amp;= \frac{19}{20}\cdot\frac{1}{200}+\frac{1}{100}\cdot\frac{199}{200}
+          = \frac{19}{4000}+\frac{199}{20\,000} \\
+         &amp;= \frac{95}{20\,000}+\frac{199}{20\,000}=\frac{294}{20\,000}=\frac{147}{10\,000}
+          \approx 0{,}0147 .
+\end{align*}</div>
+<p>La formule de Bayes fournit alors le résultat cherché :</p>
+<div class="km km-d" data-tex="\begin{align*}
+    P(M\mid T) &amp;= \frac{P(T\mid M)\,P(M)}{P(T)}
+                = \frac{\frac{19}{20}\cdot\frac{1}{200}}{\frac{147}{10\,000}} \\
+               &amp;= \frac{19}{4000}\cdot\frac{10\,000}{147}
+                = \frac{190\,000}{588\,000}
+                = \frac{95}{294}\approx 0{,}3231 .
+\end{align*}">\begin{align*}
+    P(M\mid T) &amp;= \frac{P(T\mid M)\,P(M)}{P(T)}
+                = \frac{\frac{19}{20}\cdot\frac{1}{200}}{\frac{147}{10\,000}} \\
+               &amp;= \frac{19}{4000}\cdot\frac{10\,000}{147}
+                = \frac{190\,000}{588\,000}
+                = \frac{95}{294}\approx 0{,}3231 .
+\end{align*}</div>
+<p>Le dénominateur <span class="km" data-tex="147/10\,000">147/10\,000</span> regroupe les <span class="km" data-tex="95/20\,000">95/20\,000</span> de vrais positifs et les <span class="km" data-tex="199/20\,000">199/20\,000</span> de faux positifs, qui dominent largement.</p>
+<p><strong>Contrôle par une population entière.</strong> Sur <span class="km" data-tex="200\,000">200\,000</span> personnes testées, <span class="km" data-tex="1000">1000</span> sont malades et <span class="km" data-tex="199\,000">199\,000</span> sont saines. Le test donne <span class="km" data-tex="1000\cdot 0{,}95=950">1000\cdot 0{,}95=950</span> vrais positifs et <span class="km" data-tex="199\,000\cdot 0{,}01=1990">199\,000\cdot 0{,}01=1990</span> faux positifs, soit <span class="km" data-tex="2940">2940</span> tests positifs. La proportion attendue est donc <span class="km" data-tex="950/2940=95/294\approx 0{,}3231">950/2940=95/294\approx 0{,}3231</span>, en accord exact avec le calcul fractionnaire.</p>
+<aside class="carte carte-piege"><div class="carte-tete"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 2.5 20h19z"/><path d="M12 10v4.5M12 17.2v.3"/></svg><span class="carte-type">Piège</span></div><p class="carte-titre">Piège à éviter</p><div class="carte-corps">L'erreur classique consiste à répondre <span class="km" data-tex="95\,\%">95\,\%</span> en confondant <span class="km" data-tex="P(T\mid M)">P(T\mid M)</span> avec <span class="km" data-tex="P(M\mid T)">P(M\mid T)</span>. Ici la maladie est rare : les faux positifs (<span class="km" data-tex="1990">1990</span>) sont environ deux fois plus nombreux que les vrais positifs (<span class="km" data-tex="950">950</span>), ce qui écrase la probabilité a posteriori. Ce résultat ne doit pas non plus être confondu avec celui de l'exemple 14 du script, qui utilise <span class="km" data-tex="7\,\%">7\,\%</span> de faux positifs au lieu de <span class="km" data-tex="1\,\%">1\,\%</span> : les données de l'énoncé doivent être reprises telles quelles. Modèle purement pédagogique, sans portée médicale.</div></aside>
+<p><span class="t-petit"><span style="color:var(--c-gray, gray)">Source : CRM, <em>Probabilités</em>, §3.3, exemple 2, p. 51.</span></span></p></div></section><section class="station station-normale" id="exemple-serie1-5-machine-manipulee-correctement-ou-non-proba" aria-labelledby="exemple-serie1-5-machine-manipulee-correctement-ou-non-proba-t"><header class="station-tete"><span class="station-num station-num-vide" aria-hidden="true">✦</span><h2 id="exemple-serie1-5-machine-manipulee-correctement-ou-non-proba-t">Exemple serie1-5 — Machine manipulée correctement ou non (probabilités totales et Bayes)</h2><label class="revise"><input type="checkbox" data-section="exemple-serie1-5-machine-manipulee-correctement-ou-non-proba"><span class="revise-coche" aria-hidden="true"></span><span class="revise-texte">Révisé</span></label></header><div class="station-corps"><p><em>Questions reconstituées à partir du corrigé manuscrit (énoncé original absent).</em></p>
+<p><strong>Énoncé.</strong> Une machine est manipulée correctement dans <span class="km" data-tex="90\,\%">90\,\%</span> des cas et incorrectement dans <span class="km" data-tex="10\,\%">10\,\%</span> des cas. Un objet est défectueux avec probabilité <span class="km" data-tex="0{,}01">0{,}01</span> si la manipulation est correcte, et <span class="km" data-tex="0{,}03">0{,}03</span> sinon.</p>
+<ol><li><span class="marque">(a)</span> Calculer la probabilité qu'un objet soit défectueux.</li><li><span class="marque">(b)</span> Sachant que l'objet est défectueux, calculer la probabilité que la machine ait été utilisée incorrectement.</li></ol>
+<p><strong>Événements et données.</strong> <span class="km" data-tex="C">C</span> : « manipulation correcte », <span class="km" data-tex="I=\bar C">I=\bar C</span> : « manipulation incorrecte », <span class="km" data-tex="D">D</span> : « objet défectueux ». La manipulation forme une partition de <span class="km" data-tex="\Omega">\Omega</span>. Données :</p>
+<div class="km km-d" data-tex="P(C)=0{,}9=\tfrac{9}{10},\qquad P(I)=0{,}1=\tfrac{1}{10},\qquad
+  P(D\mid C)=0{,}01=\tfrac{1}{100},\qquad P(D\mid I)=0{,}03=\tfrac{3}{100}.">P(C)=0{,}9=\tfrac{9}{10},\qquad P(I)=0{,}1=\tfrac{1}{10},\qquad
+  P(D\mid C)=0{,}01=\tfrac{1}{100},\qquad P(D\mid I)=0{,}03=\tfrac{3}{100}.</div>
+<aside class="carte carte-retenir"><div class="carte-tete"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></svg><span class="carte-type">À retenir</span></div><p class="carte-titre">Résultat</p><div class="carte-corps">(a) <span class="km" data-tex="P(D)=\tfrac{3}{250}=0{,}012=1{,}2\,\%">P(D)=\tfrac{3}{250}=0{,}012=1{,}2\,\%</span>  ;   (b) <span class="km" data-tex="P(I\mid D)=\tfrac14=0{,}25=25\,\%">P(I\mid D)=\tfrac14=0{,}25=25\,\%</span>.</div></aside>
+<p><strong>(a) Probabilités totales.</strong> <span class="km" data-tex="C">C</span> et <span class="km" data-tex="I">I</span> forment une partition de <span class="km" data-tex="\Omega">\Omega</span>, donc</p>
+<div class="km km-d" data-tex="\begin{aligned}
+    P(D) &amp;= P(D\mid C)\,P(C)+P(D\mid I)\,P(I) \\
+         &amp;= \tfrac{1}{100}\cdot\tfrac{9}{10}+\tfrac{3}{100}\cdot\tfrac{1}{10}
+          = \tfrac{9}{1000}+\tfrac{3}{1000}
+          = \tfrac{12}{1000}=\tfrac{3}{250}=0{,}012 .
+  \end{aligned}">\begin{aligned}
+    P(D) &amp;= P(D\mid C)\,P(C)+P(D\mid I)\,P(I) \\
+         &amp;= \tfrac{1}{100}\cdot\tfrac{9}{10}+\tfrac{3}{100}\cdot\tfrac{1}{10}
+          = \tfrac{9}{1000}+\tfrac{3}{1000}
+          = \tfrac{12}{1000}=\tfrac{3}{250}=0{,}012 .
+  \end{aligned}</div>
+<p><strong>(b) Formule de Bayes.</strong> Comme <span class="km" data-tex="P(D)&gt;0">P(D)&gt;0</span>, la définition de la probabilité conditionnelle donne</p>
+<div class="km km-d" data-tex="\begin{aligned}
+    P(I\mid D) &amp;= \frac{P(D\mid I)\,P(I)}{P(D)}
+      = \frac{\tfrac{3}{100}\cdot\tfrac{1}{10}}{\tfrac{12}{1000}} \\
+      &amp;= \frac{3/1000}{12/1000}=\frac{3}{12}=\frac14=0{,}25 .
+  \end{aligned}">\begin{aligned}
+    P(I\mid D) &amp;= \frac{P(D\mid I)\,P(I)}{P(D)}
+      = \frac{\tfrac{3}{100}\cdot\tfrac{1}{10}}{\tfrac{12}{1000}} \\
+      &amp;= \frac{3/1000}{12/1000}=\frac{3}{12}=\frac14=0{,}25 .
+  \end{aligned}</div>
+<p><strong>Contrôle par population théorique.</strong> Sur <span class="km" data-tex="10\,000">10\,000</span> objets, <span class="km" data-tex="9\,000">9\,000</span> sont manipulés correctement et <span class="km" data-tex="1\,000">1\,000</span> incorrectement. Les défectueux sont <span class="km" data-tex="9\,000\cdot0{,}01=90">9\,000\cdot0{,}01=90</span> (manipulation correcte) plus <span class="km" data-tex="1\,000\cdot0{,}03=30">1\,000\cdot0{,}03=30</span> (incorrecte), soit <span class="km" data-tex="120">120</span> au total. Alors <span class="km" data-tex="\tfrac{120}{10\,000}=0{,}012">\tfrac{120}{10\,000}=0{,}012</span> et <span class="km" data-tex="\tfrac{30}{120}=\tfrac14">\tfrac{30}{120}=\tfrac14</span> : les deux réponses sont confirmées. De plus <span class="km" data-tex="P(C\mid D)=\tfrac{90}{120}=0{,}75">P(C\mid D)=\tfrac{90}{120}=0{,}75</span> et <span class="km" data-tex="0{,}75+0{,}25=1">0{,}75+0{,}25=1</span>.</p>
+<aside class="carte carte-piege"><div class="carte-tete"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 2.5 20h19z"/><path d="M12 10v4.5M12 17.2v.3"/></svg><span class="carte-type">Piège</span></div><p class="carte-titre">Piège à éviter</p><div class="carte-corps">Ne pas confondre <span class="km" data-tex="P(D\mid I)=0{,}03">P(D\mid I)=0{,}03</span> et <span class="km" data-tex="P(I\mid D)=0{,}25">P(I\mid D)=0{,}25</span>. Le taux de défaut d'une manipulation incorrecte (<span class="km" data-tex="3\,\%">3\,\%</span>) est bien plus petit que la probabilité qu'un objet défectueux provienne d'une manipulation incorrecte (<span class="km" data-tex="25\,\%">25\,\%</span>), car <span class="km" data-tex="90\,\%">90\,\%</span> des manipulations sont correctes. L'ordre du conditionnement est l'information essentielle : sans lui, on confondrait <span class="km" data-tex="P(D\mid I)">P(D\mid I)</span> et <span class="km" data-tex="P(I\mid D)">P(I\mid D)</span>.</div></aside>
+<p><span class="t-petit"><span style="color:var(--c-gray, gray)">Source : corrigé manuscrit Série 1, exercice 5, PDF p. 4–5 ; énoncé original absent.</span></span></p></div></section><section class="station station-normale" id="exemple-serie1-7-test-binaire-et-formule-de-bayes" aria-labelledby="exemple-serie1-7-test-binaire-et-formule-de-bayes-t"><header class="station-tete"><span class="station-num station-num-vide" aria-hidden="true">✦</span><h2 id="exemple-serie1-7-test-binaire-et-formule-de-bayes-t">Exemple serie1-7 — test binaire et formule de Bayes</h2><label class="revise"><input type="checkbox" data-section="exemple-serie1-7-test-binaire-et-formule-de-bayes"><span class="revise-coche" aria-hidden="true"></span><span class="revise-texte">Révisé</span></label></header><div class="station-corps"><aside class="carte carte-retenir"><div class="carte-tete"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></svg><span class="carte-type">À retenir</span></div><p class="carte-titre">Résultat</p><div class="carte-corps"><span class="km" data-tex="P(C\mid T^{+}) = \dfrac{90}{1087} \approx 0{,}0828">P(C\mid T^{+}) = \dfrac{90}{1087} \approx 0{,}0828</span>, soit environ <span class="km" data-tex="8{,}28\,\%">8{,}28\,\%</span>.</div></aside>
+<p><strong>Énoncé.</strong> Un test délivre un résultat positif <span class="km" data-tex="T^{+}">T^{+}</span> ou négatif <span class="km" data-tex="T^{-}">T^{-}</span> pour un événement <span class="km" data-tex="C">C</span> de probabilités <span class="km" data-tex="P(C) = 0{,}003">P(C) = 0{,}003</span> et <span class="km" data-tex="P(\overline{C}) = 0{,}997">P(\overline{C}) = 0{,}997</span>. Il est positif chez <span class="km" data-tex="90\,\%">90\,\%</span> des sujets réalisant <span class="km" data-tex="C">C</span> et chez <span class="km" data-tex="3\,\%">3\,\%</span> de ceux qui ne le réalisent pas. Calculer <span class="km" data-tex="P(C\mid T^{+})">P(C\mid T^{+})</span>.</p>
+<p>Données et question reconstituées à partir du corrigé manuscrit ; la signification de <span class="km" data-tex="C">C</span> n'y est pas précisée.</p>
+<div class="tableau"><table><thead><tr><th>Grandeur</th><th>Valeur</th></tr></thead><tbody><tr><td><span class="km" data-tex="P(C)">P(C)</span></td><td><span class="km" data-tex="0{,}003">0{,}003</span></td></tr><tr><td><span class="km" data-tex="P(\overline{C})">P(\overline{C})</span></td><td><span class="km" data-tex="0{,}997">0{,}997</span></td></tr><tr><td><span class="km" data-tex="P(T^{+}\mid C)">P(T^{+}\mid C)</span></td><td><span class="km" data-tex="0{,}90">0{,}90</span></td></tr><tr><td><span class="km" data-tex="P(T^{+}\mid \overline{C})">P(T^{+}\mid \overline{C})</span></td><td><span class="km" data-tex="0{,}03">0{,}03</span></td></tr></tbody></table></div>
+<p><strong>Probabilités totales.</strong> Les événements <span class="km" data-tex="C">C</span> et <span class="km" data-tex="\overline{C}">\overline{C}</span> forment une partition de <span class="km" data-tex="\Omega">\Omega</span>, donc</p>
+<div class="km km-d" data-tex="\begin{aligned}
+P(T^{+}) &amp;= P(T^{+}\mid C)\,P(C) + P(T^{+}\mid \overline{C})\,P(\overline{C})\\
+&amp;= 0{,}90 \cdot 0{,}003 + 0{,}03 \cdot 0{,}997\\
+&amp;= 0{,}002\,7 + 0{,}029\,91 = 0{,}032\,61 = \frac{3261}{100\,000}.
+\end{aligned}">\begin{aligned}
+P(T^{+}) &amp;= P(T^{+}\mid C)\,P(C) + P(T^{+}\mid \overline{C})\,P(\overline{C})\\
+&amp;= 0{,}90 \cdot 0{,}003 + 0{,}03 \cdot 0{,}997\\
+&amp;= 0{,}002\,7 + 0{,}029\,91 = 0{,}032\,61 = \frac{3261}{100\,000}.
+\end{aligned}</div>
+<p><strong>Formule de Bayes.</strong></p>
+<div class="km km-d" data-tex="\begin{aligned}
+P(C\mid T^{+}) &amp;= \frac{P(T^{+}\mid C)\,P(C)}{P(T^{+})}
+ = \frac{0{,}002\,7}{0{,}032\,61}\\
+&amp;= \frac{270}{3261} = \frac{90}{1087} \approx 0{,}0828.
+\end{aligned}">\begin{aligned}
+P(C\mid T^{+}) &amp;= \frac{P(T^{+}\mid C)\,P(C)}{P(T^{+})}
+ = \frac{0{,}002\,7}{0{,}032\,61}\\
+&amp;= \frac{270}{3261} = \frac{90}{1087} \approx 0{,}0828.
+\end{aligned}</div>
+<p><strong>Contrôle par effectifs entiers.</strong> Sur <span class="km" data-tex="100\,000">100\,000</span> sujets : <span class="km" data-tex="300">300</span> réalisent <span class="km" data-tex="C">C</span>, dont <span class="km" data-tex="0{,}90 \cdot 300 = 270">0{,}90 \cdot 300 = 270</span> donnent <span class="km" data-tex="T^{+}">T^{+}</span> ; <span class="km" data-tex="99\,700">99\,700</span> ne réalisent pas <span class="km" data-tex="C">C</span>, dont <span class="km" data-tex="0{,}03 \cdot 99\,700 = 2991">0{,}03 \cdot 99\,700 = 2991</span> donnent <span class="km" data-tex="T^{+}">T^{+}</span>. Au total <span class="km" data-tex="270 + 2991 = 3261">270 + 2991 = 3261</span> positifs, d'où <span class="km" data-tex="P(C\mid T^{+}) = 270/3261 = 90/1087">P(C\mid T^{+}) = 270/3261 = 90/1087</span> : même fraction irréductible que par Bayes, et <span class="km" data-tex="\tfrac{90}{1087} + \tfrac{997}{1087} = 1">\tfrac{90}{1087} + \tfrac{997}{1087} = 1</span>.</p>
+<p><strong>Interprétation.</strong> La probabilité demandée vaut <span class="km" data-tex="\approx 0{,}0828">\approx 0{,}0828</span>, contre <span class="km" data-tex="P(C) = 0{,}003">P(C) = 0{,}003</span> : le test positif multiplie la probabilité par</p>
+<div class="km km-d" data-tex="\begin{aligned}
+\frac{P(C\mid T^{+})}{P(C)}
+&amp;= \frac{90/1087}{3/1000} = \frac{90}{1087}\cdot\frac{1000}{3}
+= \frac{30\,000}{1087} \approx 27{,}60.
+\end{aligned}">\begin{aligned}
+\frac{P(C\mid T^{+})}{P(C)}
+&amp;= \frac{90/1087}{3/1000} = \frac{90}{1087}\cdot\frac{1000}{3}
+= \frac{30\,000}{1087} \approx 27{,}60.
+\end{aligned}</div>
+<p>Mais <span class="km" data-tex="997/1087 \approx 91{,}7\,\%">997/1087 \approx 91{,}7\,\%</span> des positifs proviennent de sujets ne réalisant pas <span class="km" data-tex="C">C</span> : l'événement est si rare que les faux positifs dominent.</p>
+<aside class="carte carte-piege"><div class="carte-tete"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 2.5 20h19z"/><path d="M12 10v4.5M12 17.2v.3"/></svg><span class="carte-type">Piège</span></div><p class="carte-titre">Piège</p><div class="carte-corps">Les <span class="km" data-tex="3\,\%">3\,\%</span> sont un taux de faux positifs <em>conditionnel</em>, <span class="km" data-tex="P(T^{+}\mid \overline{C})">P(T^{+}\mid \overline{C})</span>, et non <span class="km" data-tex="P(C)">P(C)</span> ni <span class="km" data-tex="P(\overline{C}\mid T^{+})">P(\overline{C}\mid T^{+})</span>. Confondre <span class="km" data-tex="P(C\mid T^{+})">P(C\mid T^{+})</span> avec <span class="km" data-tex="P(T^{+}\mid C) = 0{,}90">P(T^{+}\mid C) = 0{,}90</span> est l'erreur classique du taux de base. Le corrigé manuscrit arrondit à <span class="km" data-tex="8{,}3\,\%">8{,}3\,\%</span>, alors que la valeur exacte <span class="km" data-tex="P(C\mid T^{+}) = 90/1087 \approx 0{,}082\,797">P(C\mid T^{+}) = 90/1087 \approx 0{,}082\,797</span>, soit <span class="km" data-tex="100\times 90/1087\,\% \approx 8{,}2797\,\%">100\times 90/1087\,\% \approx 8{,}2797\,\%</span>, justifie plutôt <span class="km" data-tex="8{,}28\,\%">8{,}28\,\%</span>.</div></aside>
+<p><span class="t-petit"><span style="color:var(--c-gray, gray)">Source : corrigé manuscrit Série 1, exercice 7, PDF p. 5 ; énoncé original absent.</span></span></p></div></section><section class="station station-normale" id="exemple-39-chien-depisteur-de-drogue-poisson-et-bayes" aria-labelledby="exemple-39-chien-depisteur-de-drogue-poisson-et-bayes-t"><header class="station-tete"><span class="station-num station-num-vide" aria-hidden="true">✦</span><h2 id="exemple-39-chien-depisteur-de-drogue-poisson-et-bayes-t">Exemple 39 — Chien dépisteur de drogue : Poisson et Bayes</h2><label class="revise"><input type="checkbox" data-section="exemple-39-chien-depisteur-de-drogue-poisson-et-bayes"><span class="revise-coche" aria-hidden="true"></span><span class="revise-texte">Révisé</span></label></header><div class="station-corps"><p><strong>Énoncé.</strong> Un chien dépisteur de drogue a été entraîné selon une nouvelle méthode. À l'aéroport de Genève, il détecte en moyenne <span class="km" data-tex="1{,}7">1{,}7</span> cas de passation de drogue par semaine, et à Zürich <span class="km" data-tex="2{,}3">2{,}3</span> cas par semaine. Le nombre de cas par semaine suit une loi de Poisson, de paramètre respectif <span class="km" data-tex="1{,}7">1{,}7</span> et <span class="km" data-tex="2{,}3">2{,}3</span>.</p>
+<ol><li>Quelle est la probabilité que le chien détecte <em>plus de <span class="km" data-tex="5">5</span> cas en <span class="km" data-tex="2">2</span> semaines</em> à Genève ?</li><li>L'an dernier, à un des deux aéroports, le chien a détecté <span class="km" data-tex="5">5</span> cas en une semaine. Quelle est la probabilité que ce soit à Genève, sachant que le chien a été utilisé <span class="km" data-tex="2">2</span> semaines sur <span class="km" data-tex="3">3</span> à Zürich ?</li></ol>
+<h3 id="exemple-39-chien-depisteur-de-drogue-poisson-et-bayes-notations" class="sous-titre">Notations</h3>
+<p>Soit <span class="km" data-tex="X">X</span> le nombre de cas détectés en une semaine à Genève et <span class="km" data-tex="Y">Y</span> en une semaine à Zürich :</p>
+<div class="km km-d" data-tex="X \sim \mathcal{P}(1{,}7), \qquad Y \sim \mathcal{P}(2{,}3), \qquad
+p_{\lambda}(k) = e^{-\lambda}\,\frac{\lambda^{k}}{k!}.">X \sim \mathcal{P}(1{,}7), \qquad Y \sim \mathcal{P}(2{,}3), \qquad
+p_{\lambda}(k) = e^{-\lambda}\,\frac{\lambda^{k}}{k!}.</div>
+<p>Le chien n'est utilisé que dans un seul des deux aéroports : <span class="km" data-tex="G">G</span> est l'événement « le chien est à Genève » et <span class="km" data-tex="Z">Z</span> l'événement « le chien est à Zürich ». Ces deux événements forment une partition de <span class="km" data-tex="\Omega">\Omega</span> ; la durée d'observation n'appartient pas à cette partition.</p>
+<aside class="carte carte-retenir"><div class="carte-tete"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></svg><span class="carte-type">À retenir</span></div><p class="carte-titre">Somme de lois de Poisson</p><div class="carte-corps">Si <span class="km" data-tex="X_1 \sim \mathcal{P}(\mu_1)">X_1 \sim \mathcal{P}(\mu_1)</span> et <span class="km" data-tex="X_2 \sim \mathcal{P}(\mu_2)">X_2 \sim \mathcal{P}(\mu_2)</span> sont indépendantes, alors <span class="km" data-tex="X_1 + X_2 \sim \mathcal{P}(\mu_1 + \mu_2)">X_1 + X_2 \sim \mathcal{P}(\mu_1 + \mu_2)</span>, ce qui autorise à additionner les taux sur une durée plus longue.</div></aside>
+<h3 id="exemple-39-chien-depisteur-de-drogue-poisson-et-bayes-question-1-plus-de-5-cas-en-2-semaines-a-geneve" class="sous-titre">Question 1 — plus de <span class="km" data-tex="5">5</span> cas en <span class="km" data-tex="2">2</span> semaines à Genève</h3>
+<p>Les cas hebdomadaires indépendants s'additionnent : <span class="km" data-tex="S \sim \mathcal{P}(2 \cdot 1{,}7) = \mathcal{P}(3{,}4)">S \sim \mathcal{P}(2 \cdot 1{,}7) = \mathcal{P}(3{,}4)</span>, d'où</p>
+<div class="km km-d" data-tex="\boxed{\,P(S &gt; 5) \approx 0{,}1295\,}">\boxed{\,P(S &gt; 5) \approx 0{,}1295\,}</div>
+<p>Par l'événement contraire, l'expression exacte est</p>
+<div class="km km-d" data-tex="P(S &gt; 5) = 1 - P(S \le 5) = 1 - \sum_{k=0}^{5} e^{-3{,}4}\,\frac{3{,}4^{k}}{k!},">P(S &gt; 5) = 1 - P(S \le 5) = 1 - \sum_{k=0}^{5} e^{-3{,}4}\,\frac{3{,}4^{k}}{k!},</div>
+<p>et le calcul terme à terme donne</p>
+<div class="km km-d" data-tex="\begin{aligned}
+P(S \le 5) &amp;= e^{-3{,}4}\left(1 + 3{,}4 + \frac{3{,}4^{2}}{2!} + \frac{3{,}4^{3}}{3!}\right. \\
+           &amp;\qquad \left. + \frac{3{,}4^{4}}{4!} + \frac{3{,}4^{5}}{5!}\right)
+           \approx 0{,}8705423699,
+\end{aligned}">\begin{aligned}
+P(S \le 5) &amp;= e^{-3{,}4}\left(1 + 3{,}4 + \frac{3{,}4^{2}}{2!} + \frac{3{,}4^{3}}{3!}\right. \\
+           &amp;\qquad \left. + \frac{3{,}4^{4}}{4!} + \frac{3{,}4^{5}}{5!}\right)
+           \approx 0{,}8705423699,
+\end{aligned}</div>
+<p>donc <span class="km" data-tex="P(S &gt; 5) \approx 0{,}1295">P(S &gt; 5) \approx 0{,}1295</span>, soit environ <span class="km" data-tex="13\,\%">13\,\%</span>.</p>
+<h3 id="exemple-39-chien-depisteur-de-drogue-poisson-et-bayes-question-2-l-observation-vient-elle-de-geneve" class="sous-titre">Question 2 — l'observation vient-elle de Genève ?</h3>
+<p>Soit <span class="km" data-tex="O">O</span> l'observation « <span class="km" data-tex="5">5</span> cas détectés en une semaine ». La proportion de semaines d'utilisation fournit l'a priori <span class="km" data-tex="P(G) = 1/3">P(G) = 1/3</span> et <span class="km" data-tex="P(Z) = 2/3">P(Z) = 2/3</span>, et la formule de Bayes donne</p>
+<div class="km km-d" data-tex="\boxed{\,P(G \mid O) \approx 0{,}1673\,}">\boxed{\,P(G \mid O) \approx 0{,}1673\,}</div>
+<p>L'observation ne porte que sur <em>une</em> semaine : les taux restent <span class="km" data-tex="1{,}7">1{,}7</span> et <span class="km" data-tex="2{,}3">2{,}3</span>, sans doublement. Les vraisemblances sont</p>
+<div class="km km-d" data-tex="\begin{aligned}
+P(O \mid G) &amp;= e^{-1{,}7}\,\frac{1{,}7^{5}}{5!} \approx 0{,}0216154, \\
+P(O \mid Z) &amp;= e^{-2{,}3}\,\frac{2{,}3^{5}}{5!} \approx 0{,}0537750.
+\end{aligned}">\begin{aligned}
+P(O \mid G) &amp;= e^{-1{,}7}\,\frac{1{,}7^{5}}{5!} \approx 0{,}0216154, \\
+P(O \mid Z) &amp;= e^{-2{,}3}\,\frac{2{,}3^{5}}{5!} \approx 0{,}0537750.
+\end{aligned}</div>
+<p>Théorème des probabilités totales (dénominateur de Bayes) :</p>
+<div class="km km-d" data-tex="\begin{aligned}
+P(O) &amp;= \tfrac{1}{3}\,P(O \mid G) + \tfrac{2}{3}\,P(O \mid Z) \\
+     &amp;\approx \tfrac{1}{3}(0{,}0216154) + \tfrac{2}{3}(0{,}0537750) \approx 0{,}0430551.
+\end{aligned}">\begin{aligned}
+P(O) &amp;= \tfrac{1}{3}\,P(O \mid G) + \tfrac{2}{3}\,P(O \mid Z) \\
+     &amp;\approx \tfrac{1}{3}(0{,}0216154) + \tfrac{2}{3}(0{,}0537750) \approx 0{,}0430551.
+\end{aligned}</div>
+<p>Substitution de Bayes :</p>
+<div class="km km-d" data-tex="\begin{aligned}
+P(G \mid O)
+&amp;= \frac{P(O \mid G)\,P(G)}{P(O \mid G)\,P(G) + P(O \mid Z)\,P(Z)} \\
+&amp;\approx \frac{\tfrac{1}{3}(0{,}0216154)}{\tfrac{1}{3}(0{,}0216154) + \tfrac{2}{3}(0{,}0537750)}
+\approx \frac{0{,}0072051}{0{,}0430551} \approx 0{,}1673.
+\end{aligned}">\begin{aligned}
+P(G \mid O)
+&amp;= \frac{P(O \mid G)\,P(G)}{P(O \mid G)\,P(G) + P(O \mid Z)\,P(Z)} \\
+&amp;\approx \frac{\tfrac{1}{3}(0{,}0216154)}{\tfrac{1}{3}(0{,}0216154) + \tfrac{2}{3}(0{,}0537750)}
+\approx \frac{0{,}0072051}{0{,}0430551} \approx 0{,}1673.
+\end{aligned}</div>
+<h3 id="exemple-39-chien-depisteur-de-drogue-poisson-et-bayes-controle-et-interpretation" class="sous-titre">Contrôle et interprétation</h3>
+<p>Le complément vaut <span class="km" data-tex="P(Z \mid O) \approx 0{,}8327">P(Z \mid O) \approx 0{,}8327</span>, et <span class="km" data-tex="0{,}1673 + 0{,}8327 = 1">0{,}1673 + 0{,}8327 = 1</span>. Les vraisemblances favorisent Zürich (rapport <span class="km" data-tex="\approx 2{,}49">\approx 2{,}49</span>) et l'a priori y place deux fois plus de semaines : Genève reste minoritaire, mais l'observation de <span class="km" data-tex="5">5</span> cas rend Zürich plus probable que son seul a priori, ce qui est cohérent avec <span class="km" data-tex="2{,}3 &gt; 1{,}7">2{,}3 &gt; 1{,}7</span>.</p>
+<aside class="carte carte-piege"><div class="carte-tete"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 2.5 20h19z"/><path d="M12 10v4.5M12 17.2v.3"/></svg><span class="carte-type">Piège</span></div><p class="carte-titre">Pièges écartés</p><div class="carte-corps">« Plus de <span class="km" data-tex="5">5</span> » se traduit par <span class="km" data-tex="P(S &gt; 5) = 1 - P(S \le 5)">P(S &gt; 5) = 1 - P(S \le 5)</span>, et non par <span class="km" data-tex="1 - P(S \le 4)">1 - P(S \le 4)</span>, qui donnerait <span class="km" data-tex="P(S \ge 5) \approx 0{,}2558">P(S \ge 5) \approx 0{,}2558</span> ; la loi porte de plus sur <span class="km" data-tex="2">2</span> semaines, <span class="km" data-tex="S \sim \mathcal{P}(3{,}4)">S \sim \mathcal{P}(3{,}4)</span>. À la question 2, l'observation dure une semaine : doubler les taux (<span class="km" data-tex="3{,}4">3{,}4</span> et <span class="km" data-tex="4{,}6">4{,}6</span>) conduirait à la valeur fausse <span class="km" data-tex="0{,}2680">0{,}2680</span>.</div></aside>
+<p><span class="t-petit"><span style="color:var(--c-gray, gray)">Source : script Hager Jörin, folio 19 (PDF p. 21).<br> Sept sessions Worker distinctes ; calculs revérifiés indépendamment et relecture séparée. Sources, scripts, polices et preuves sont conservés avec ce PDF.</span></span></p></div></section>
+    <footer class="pied">
+      <p>Converti depuis <code>Semestre-3/E2-STAT/Exercices/bayes/stat-bayes-corrige.tex</code> · <a href="../../../assets/pdf/e2-stat/stat-bayes-corrige.pdf" target="_blank" rel="noopener">version imprimable (PDF)</a></p>
+    </footer>
+  </main>
+</div>
+<dialog id="formulaire" class="dialogue" aria-labelledby="formulaire-titre">
+  <header class="dialogue-tete"><h2 id="formulaire-titre"><span class="btn-sigma" aria-hidden="true">Σ</span> Formulaire — Probabilités conditionnelles et Bayes</h2>
+  <button type="button" class="btn-icone" data-fermer aria-label="Fermer">✕</button></header>
+  <div class="dialogue-corps"><p>Aucune tuile formule dans ce résumé.</p></div>
+</dialog>
+<dialog id="loupe" class="dialogue loupe" aria-label="Figure agrandie">
+  <button type="button" class="btn-icone loupe-fermer" data-fermer aria-label="Fermer">✕</button>
+  <img alt="">
+</dialog>
+
+</body>
+</html>

@@ -1,0 +1,448 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Signaux &amp; systèmes 1 · Corrigé · Série 03 — exercices 8 à 15</title>
+<meta name="description" content="Signaux &amp; systèmes 1 — Série 03 — exercices 8 à 15 (Corrigé détaillé)">
+<link rel="icon" href="../../../assets/favicon.svg?v=012e46bcde" type="image/svg+xml">
+<script>try{var t=localStorage.getItem("maison:theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+
+<link rel="stylesheet" href="../../../assets/styles.css?v=012e46bcde">
+<style>:root{--c-heia:#0E5A8A;--c-orangeheia:#E67E22;--c-ink:#1D2A35;--c-pale:#EEF5FB;--c-palewarm:#FBF3E8;--c-palered:#FBEEED;--c-palegreen:#EDF7F1;--c-grid:#C7D3DE}@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--c-heia:color-mix(in srgb,#0E5A8A 50%,#fff);--c-orangeheia:color-mix(in srgb,#E67E22 50%,#fff);--c-ink:color-mix(in srgb,#1D2A35 50%,#fff);--c-pale:color-mix(in srgb,#EEF5FB 50%,#fff);--c-palewarm:color-mix(in srgb,#FBF3E8 50%,#fff);--c-palered:color-mix(in srgb,#FBEEED 50%,#fff);--c-palegreen:color-mix(in srgb,#EDF7F1 50%,#fff);--c-grid:color-mix(in srgb,#C7D3DE 50%,#fff)}}:root[data-theme=dark]{--c-heia:color-mix(in srgb,#0E5A8A 50%,#fff);--c-orangeheia:color-mix(in srgb,#E67E22 50%,#fff);--c-ink:color-mix(in srgb,#1D2A35 50%,#fff);--c-pale:color-mix(in srgb,#EEF5FB 50%,#fff);--c-palewarm:color-mix(in srgb,#FBF3E8 50%,#fff);--c-palered:color-mix(in srgb,#FBEEED 50%,#fff);--c-palegreen:color-mix(in srgb,#EDF7F1 50%,#fff);--c-grid:color-mix(in srgb,#C7D3DE 50%,#fff)}</style>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+
+<script defer src="../../../assets/maison.js?v=012e46bcde"></script>
+</head>
+<body class="page-resume" style="--piece:#1D4ED8" data-cle="E2-SIGSYS1/exercices/serie-03-exercices-8-15" data-sections='["exercice-8", "exercice-9", "exercice-10", "exercice-11", "exercice-12", "exercice-13", "exercice-14", "exercice-15"]' data-url-racine="pieces/e2-sigsys1/exercices/serie-03-exercices-8-15.html" data-titre="Signaux &amp; systèmes 1 · Corrigé · Série 03 — exercices 8 à 15">
+<a class="evitement" href="#contenu">Aller au contenu</a>
+
+<header class="barre">
+  <nav class="ariane" aria-label="Fil d'Ariane">
+    <a href="../../../index.html"><svg class="icone-ariane" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 12 4l9 7"/><path d="M5 9.5V20h14V9.5"/><path d="M10 20v-6h4v6"/></svg><span>Maison</span></a><span class="sep" aria-hidden="true">›</span>
+    <a href="../index.html">Signaux &amp; systèmes 1</a><span class="sep" aria-hidden="true">›</span>
+    <span aria-current="page">Corrigé · Série 03 — exercices 8 à 15</span>
+  </nav>
+  <div class="barre-actions">
+    <button type="button" class="btn" data-ouvrir="formulaire"><span class="btn-sigma" aria-hidden="true">Σ</span> Formulaire</button>
+    <a class="btn btn-discret" href="../../../assets/pdf/e2-sigsys1/sigsys1-serie-03-exercices-8-15-corrige.pdf" target="_blank" rel="noopener">PDF</a>
+    <button type="button" class="btn-icone" data-theme-bascule aria-label="Basculer clair / sombre"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 4a8 8 0 0 1 0 16z" fill="currentColor"/></svg></button>
+  </div>
+</header>
+<div class="cadre">
+  <aside class="sommaire" aria-label="Sommaire">
+    <details class="sommaire-details" open>
+      <summary><span>Sommaire</span><span class="sommaire-prog" data-progression-texte>0 / 8</span></summary>
+      <ol class="sommaire-liste"><li data-cible="exercice-8"><div class="sommaire-ligne"><a href="#exercice-8"><span class="num num-vide">·</span>Exercice 8</a><label class="revise-mini" title="Marquer « Exercice 8 » comme révisé"><input type="checkbox" data-section="exercice-8" aria-label="Révisé : Exercice 8"><span class="revise-coche" aria-hidden="true"></span></label></div><ol><li><a href="#exercice-8-enonce"><span class="num"></span>Énoncé</a></li><li><a href="#exercice-8-demarche"><span class="num"></span>Démarche</a></li></ol></li><li data-cible="exercice-9"><div class="sommaire-ligne"><a href="#exercice-9"><span class="num num-vide">·</span>Exercice 9</a><label class="revise-mini" title="Marquer « Exercice 9 » comme révisé"><input type="checkbox" data-section="exercice-9" aria-label="Révisé : Exercice 9"><span class="revise-coche" aria-hidden="true"></span></label></div></li><li data-cible="exercice-10"><div class="sommaire-ligne"><a href="#exercice-10"><span class="num num-vide">·</span>Exercice 10</a><label class="revise-mini" title="Marquer « Exercice 10 » comme révisé"><input type="checkbox" data-section="exercice-10" aria-label="Révisé : Exercice 10"><span class="revise-coche" aria-hidden="true"></span></label></div><ol><li><a href="#exercice-10-demarche"><span class="num"></span>Démarche</a></li></ol></li><li data-cible="exercice-11"><div class="sommaire-ligne"><a href="#exercice-11"><span class="num num-vide">·</span>Exercice 11</a><label class="revise-mini" title="Marquer « Exercice 11 » comme révisé"><input type="checkbox" data-section="exercice-11" aria-label="Révisé : Exercice 11"><span class="revise-coche" aria-hidden="true"></span></label></div><ol><li><a href="#exercice-11-demarche"><span class="num"></span>Démarche</a></li></ol></li><li data-cible="exercice-12"><div class="sommaire-ligne"><a href="#exercice-12"><span class="num num-vide">·</span>Exercice 12</a><label class="revise-mini" title="Marquer « Exercice 12 » comme révisé"><input type="checkbox" data-section="exercice-12" aria-label="Révisé : Exercice 12"><span class="revise-coche" aria-hidden="true"></span></label></div><ol><li><a href="#exercice-12-donnees-et-notation"><span class="num"></span>Données et notation</a></li><li><a href="#exercice-12-demarche"><span class="num"></span>Démarche</a></li></ol></li><li data-cible="exercice-13"><div class="sommaire-ligne"><a href="#exercice-13"><span class="num num-vide">·</span>Exercice 13</a><label class="revise-mini" title="Marquer « Exercice 13 » comme révisé"><input type="checkbox" data-section="exercice-13" aria-label="Révisé : Exercice 13"><span class="revise-coche" aria-hidden="true"></span></label></div><ol><li><a href="#exercice-13-demarche"><span class="num"></span>Démarche</a></li></ol></li><li data-cible="exercice-14"><div class="sommaire-ligne"><a href="#exercice-14"><span class="num num-vide">·</span>Exercice 14</a><label class="revise-mini" title="Marquer « Exercice 14 » comme révisé"><input type="checkbox" data-section="exercice-14" aria-label="Révisé : Exercice 14"><span class="revise-coche" aria-hidden="true"></span></label></div><ol><li><a href="#exercice-14-enonce"><span class="num"></span>Énoncé</a></li><li><a href="#exercice-14-demarche"><span class="num"></span>Démarche</a></li></ol></li><li data-cible="exercice-15"><div class="sommaire-ligne"><a href="#exercice-15"><span class="num num-vide">·</span>Exercice 15</a><label class="revise-mini" title="Marquer « Exercice 15 » comme révisé"><input type="checkbox" data-section="exercice-15" aria-label="Révisé : Exercice 15"><span class="revise-coche" aria-hidden="true"></span></label></div><ol><li><a href="#exercice-15-demarche"><span class="num"></span>Démarche</a></li></ol></li></ol>
+    </details>
+  </aside>
+  <main id="contenu">
+    <section class="hero">
+      <div class="hero-papier" aria-hidden="true"></div>
+      <div class="hero-tete">
+        <a class="hero-piece" href="../index.html"><svg class="icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12c2-6 4-6 6 0s4 6 6 0 4-6 6 0 2 3 2 3"/></svg><span>Signaux &amp; systèmes 1</span><span class="hero-aile">Aile Systèmes</span></a>
+        <div class="anneau" data-anneau role="img" aria-label="Progression"><span data-progression-pourcent>0 %</span></div>
+      </div>
+      <p class="hero-entete">E2-SIGSYS1 — Signaux et systèmes 1 · Devoir — fiche corrigée</p>
+      <h1 class="visuellement-cache">Signaux &amp; systèmes 1 · Corrigé · Série 03 — exercices 8 à 15</h1>
+      <div class="hero-intro"><div class="centre"><span class="t-titre"><span class="gras"><span style="color:var(--c-heia)"> Signaux et systèmes 1 — fiche corrigée</span></span></span><br> <span class="t-grand">Série 03 — exercices 8 à 15</span><br> HEIA-FR — classe E2 — corrigé proposé, non officiel</div>
+<aside class="carte carte-retenir"><div class="carte-tete"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></svg><span class="carte-type">À retenir</span></div><p class="carte-titre">Lecture</p><div class="carte-corps">Réponses puis calculs développés. 131 contrôles reproductibles dans les scripts joints. Les divergences de l’énoncé ou du corrigé officiel sont signalées dans les exercices concernés.</div></aside></div>
+      <div class="hero-puces"><span class="puce puce-te"><svg class="icone-puce" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 21V4M4 4h11l-2 3.5L15 11H4"/><path d="M18 21v-6M14 21h8"/></svg>TE1 · mar. 17.11 · <span data-compte-a-rebours="2026-11-17">J-32</span></span><span class="puce puce-corrige">Corrigé</span><span class="puce">8 sections</span><span class="puce">7 formules</span></div>
+    </section>
+    <section class="station station-normale" id="exercice-8" aria-labelledby="exercice-8-t"><header class="station-tete"><span class="station-num station-num-vide" aria-hidden="true">✦</span><h2 id="exercice-8-t">Exercice 8</h2><label class="revise"><input type="checkbox" data-section="exercice-8"><span class="revise-coche" aria-hidden="true"></span><span class="revise-texte">Révisé</span></label></header><div class="station-corps"><div class="formule"><span class="formule-etiquette">Formule</span><span class="km" data-tex="s_1=-0{,}5+j\,0{,}5">s_1=-0{,}5+j\,0{,}5</span> ;  <span class="km" data-tex="T=2">T=2</span> s ;  <span class="km" data-tex="\omega=0{,}5">\omega=0{,}5</span> rad/s ;   <span class="km" data-tex="y_1=\dfrac{2}{e}\,e^{\,j\,1}=0{,}736\,e^{\,j\,1}">y_1=\dfrac{2}{e}\,e^{\,j\,1}=0{,}736\,e^{\,j\,1}</span><span class="km" data-tex="\quad">\quad</span> (module <span class="km" data-tex="0{,}736">0{,}736</span>, phase <span class="km" data-tex="1">1</span> rad <span class="km" data-tex="\approx 57{,}3^{\circ}">\approx 57{,}3^{\circ}</span>).</div>
+<h3 id="exercice-8-enonce" class="sous-titre">Énoncé</h3>
+<p>Avec <span class="km" data-tex="s_1=-0{,}5+j\,0{,}5">s_1=-0{,}5+j\,0{,}5</span> et <span class="km" data-tex="\Re\!\left\{A\cdot\exp(s_1 t)\right\}=A\cdot\exp(-\tfrac{t}{T})\cdot\cos(\omega t)">\Re\!\left\{A\cdot\exp(s_1 t)\right\}=A\cdot\exp(-\tfrac{t}{T})\cdot\cos(\omega t)</span>, déterminer la valeur de <span class="km" data-tex="T">T</span> et de <span class="km" data-tex="\omega">\omega</span>, puis la valeur (module et phase) de</p>
+<div class="km km-d" data-tex="y_1=\int_{-\infty}^{+\infty}2\cdot\exp(s_1 t)\cdot\delta(t-2)\,dt .">y_1=\int_{-\infty}^{+\infty}2\cdot\exp(s_1 t)\cdot\delta(t-2)\,dt .</div>
+<h3 id="exercice-8-demarche" class="sous-titre">Démarche</h3>
+<h4 class="paragraphe-titre">1) Identification de <span class="km" data-tex="\sigma">\sigma</span> et <span class="km" data-tex="\omega">\omega</span>.</h4>
+<p>On écrit le complexe sous forme cartésienne <span class="km" data-tex="s_1=\sigma+j\omega">s_1=\sigma+j\omega</span>. Comme la partie réelle de <span class="km" data-tex="A\exp(s_1 t)">A\exp(s_1 t)</span> s'écrit, en développant <span class="km" data-tex="e^{s_1 t}=e^{\sigma t}\,e^{j\omega t}">e^{s_1 t}=e^{\sigma t}\,e^{j\omega t}</span>,</p>
+<div class="km km-d" data-tex="\Re\!\left\{A\,e^{\sigma t}e^{j\omega t}\right\}
+= A\,e^{\sigma t}\,\Re\!\left\{e^{j\omega t}\right\}
+= A\,e^{\sigma t}\cos(\omega t),">\Re\!\left\{A\,e^{\sigma t}e^{j\omega t}\right\}
+= A\,e^{\sigma t}\,\Re\!\left\{e^{j\omega t}\right\}
+= A\,e^{\sigma t}\cos(\omega t),</div>
+<p>l'identification terme à terme avec <span class="km" data-tex="A\,e^{-t/T}\cos(\omega t)">A\,e^{-t/T}\cos(\omega t)</span> donne</p>
+<div class="km km-d" data-tex="\sigma=-\frac{1}{T}\quad\text{et}\quad
+\omega=\text{pulsation du cosinus}.">\sigma=-\frac{1}{T}\quad\text{et}\quad
+\omega=\text{pulsation du cosinus}.</div>
+<h4 class="paragraphe-titre">2) Valeur de <span class="km" data-tex="T">T</span>.</h4>
+<p>De <span class="km" data-tex="s_1=-0{,}5+j\,0{,}5">s_1=-0{,}5+j\,0{,}5</span> on lit <span class="km" data-tex="\sigma=-0{,}5">\sigma=-0{,}5</span> et <span class="km" data-tex="\omega=0{,}5">\omega=0{,}5</span> rad/s. D'où</p>
+<div class="km km-d" data-tex="-\frac{1}{T}=-0{,}5\quad\Longrightarrow\quad T=\frac{1}{0{,}5}=2~\text{s}.">-\frac{1}{T}=-0{,}5\quad\Longrightarrow\quad T=\frac{1}{0{,}5}=2~\text{s}.</div>
+<h4 class="paragraphe-titre">3) Valeur de <span class="km" data-tex="y_1">y_1</span>.</h4>
+<p>Le Dirac <span class="km" data-tex="\delta(t-2)">\delta(t-2)</span> sélectionne l'instant <span class="km" data-tex="t=2">t=2</span> (propriété <span class="km" data-tex="\int x(t)\,\delta(t-t_0)\,dt=x(t_0)">\int x(t)\,\delta(t-t_0)\,dt=x(t_0)</span>), le facteur <span class="km" data-tex="2">2</span> étant constant :</p>
+<div class="km km-d" data-tex="y_1=2\,\exp(s_1\cdot 2)=2\,e^{-0{,}5\cdot 2}\,e^{\,j\,0{,}5\cdot 2}
+= 2\,e^{-1}e^{\,j\,1}=\frac{2}{e}\,e^{\,j\,1}.">y_1=2\,\exp(s_1\cdot 2)=2\,e^{-0{,}5\cdot 2}\,e^{\,j\,0{,}5\cdot 2}
+= 2\,e^{-1}e^{\,j\,1}=\frac{2}{e}\,e^{\,j\,1}.</div>
+<p>On obtient donc :</p>
+<div class="km km-d" data-tex="|y_1|=\frac{2}{e}\approx 0{,}7358
+\qquad\text{et}\qquad
+\arg(y_1)=1~\text{rad}\approx 57{,}30^{\circ}\ (\text{phase principale}).">|y_1|=\frac{2}{e}\approx 0{,}7358
+\qquad\text{et}\qquad
+\arg(y_1)=1~\text{rad}\approx 57{,}30^{\circ}\ (\text{phase principale}).</div>
+<aside class="carte carte-retenir"><div class="carte-tete"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></svg><span class="carte-type">À retenir</span></div><p class="carte-titre">Unités et conventions</p><div class="carte-corps"><span class="km" data-tex="\omega=0{,}5">\omega=0{,}5</span> rad/s (pulsation, notée <span class="km" data-tex="\omega">\omega</span> dans le cours) ; <span class="km" data-tex="T=2">T=2</span> s ; l'argument <span class="km" data-tex="1">1</span> rad est la phase principale du complexe <span class="km" data-tex="y_1">y_1</span>, situé dans le premier quadrant (parties réelle et imaginaire positives).</div></aside>
+<aside class="carte carte-piege"><div class="carte-tete"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 2.5 20h19z"/><path d="M12 10v4.5M12 17.2v.3"/></svg><span class="carte-type">Piège</span></div><p class="carte-titre">Piège</p><div class="carte-corps">Ne pas confondre <span class="km" data-tex="s_1=-0{,}5+j\,0{,}5">s_1=-0{,}5+j\,0{,}5</span> avec <span class="km" data-tex="T">T</span> : c'est la <em>partie réelle</em> <span class="km" data-tex="\sigma=-0{,}5">\sigma=-0{,}5</span> qui vaut <span class="km" data-tex="-1/T">-1/T</span> (constante d'amortissement), et la <em>partie imaginaire</em> qui donne la pulsation <span class="km" data-tex="\omega=0{,}5">\omega=0{,}5</span> rad/s. Le Dirac sélectionne <span class="km" data-tex="t=2">t=2</span> : l'exponentielle est évaluée en <span class="km" data-tex="t=2">t=2</span>, pas en <span class="km" data-tex="t=0">t=0</span>.</div></aside></div></section><section class="station station-normale" id="exercice-9" aria-labelledby="exercice-9-t"><header class="station-tete"><span class="station-num station-num-vide" aria-hidden="true">✦</span><h2 id="exercice-9-t">Exercice 9</h2><label class="revise"><input type="checkbox" data-section="exercice-9"><span class="revise-coche" aria-hidden="true"></span><span class="revise-texte">Révisé</span></label></header><div class="station-corps"><div class="formule"><span class="formule-etiquette">Formule</span><div class="km km-d" data-tex="y_1=\int_{-\infty}^{+\infty} x_1\,\delta(t-10)\,\mathrm{d}t
+      =x_1(10)=10\,e^{-1+2j}
+      =10\,e^{-1}e^{2j}
+      \;\approx\;3.68\,e^{\,j2},
+  \ensuremath{\qquad}
+  \boxed{\;|y_1|=10\,e^{-1}\approx 3.68\;}\;\text{et}\;
+  \boxed{\;\arg y_1=2\ \text{rad}\approx 114.59^{\circ}\;}">y_1=\int_{-\infty}^{+\infty} x_1\,\delta(t-10)\,\mathrm{d}t
+      =x_1(10)=10\,e^{-1+2j}
+      =10\,e^{-1}e^{2j}
+      \;\approx\;3.68\,e^{\,j2},
+  \ensuremath{\qquad}
+  \boxed{\;|y_1|=10\,e^{-1}\approx 3.68\;}\;\text{et}\;
+  \boxed{\;\arg y_1=2\ \text{rad}\approx 114.59^{\circ}\;}</div></div>
+<aside class="carte carte-retenir"><div class="carte-tete"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></svg><span class="carte-type">À retenir</span></div><p class="carte-titre">Énoncé</p><div class="carte-corps">Avec <span class="km" data-tex="x_1=A\,e^{s_1 t}">x_1=A\,e^{s_1 t}</span>, <span class="km" data-tex="A=10">A=10</span> et <span class="km" data-tex="s_1=-0.1+0.2j">s_1=-0.1+0.2j</span>, calculer (module et phase) la valeur de <span class="km" data-tex="y_1=\int_{-\infty}^{+\infty}x_1\,\delta(t-10)\,\mathrm{d}t">y_1=\int_{-\infty}^{+\infty}x_1\,\delta(t-10)\,\mathrm{d}t</span>.</div></aside>
+<h4 class="paragraphe-titre">Démarche.</h4>
+<p>La distribution de Dirac <span class="km" data-tex="\delta(t-t_0)">\delta(t-t_0)</span> est l'<em>impulsion unité</em> du cours : elle « sélectionne » la valeur du signal à l'instant <span class="km" data-tex="t_0">t_0</span>, c'est-à-dire</p>
+<div class="km km-d" data-tex="\int_{-\infty}^{+\infty} f(t)\,\delta(t-t_0)\,\mathrm{d}t=f(t_0).">\int_{-\infty}^{+\infty} f(t)\,\delta(t-t_0)\,\mathrm{d}t=f(t_0).</div>
+<p>Ici <span class="km" data-tex="t_0=10">t_0=10</span>, donc l'intégrale se réduit à une simple évaluation :</p>
+<div class="km km-d" data-tex="y_1=\int_{-\infty}^{+\infty} A\,e^{s_1 t}\,\delta(t-10)\,\mathrm{d}t
+   =A\,e^{s_1\cdot 10}.">y_1=\int_{-\infty}^{+\infty} A\,e^{s_1 t}\,\delta(t-10)\,\mathrm{d}t
+   =A\,e^{s_1\cdot 10}.</div>
+<h4 class="paragraphe-titre">Calcul.</h4>
+<p>On écrit d'abord l'exposant sous forme cartésienne :</p>
+<div class="km km-d" data-tex="s_1\cdot 10=(-0.1+0.2j)\cdot 10=-1+2j,">s_1\cdot 10=(-0.1+0.2j)\cdot 10=-1+2j,</div>
+<p>d'où, en séparant module et argument à l'aide de <span class="km" data-tex="e^{a+jb}=e^{a}e^{jb}">e^{a+jb}=e^{a}e^{jb}</span> :</p>
+<div class="km km-d" data-tex="A\,e^{s_1\cdot 10}=10\,e^{-1+2j}=10\,e^{-1}\,e^{2j}.">A\,e^{s_1\cdot 10}=10\,e^{-1+2j}=10\,e^{-1}\,e^{2j}.</div>
+<h4 class="paragraphe-titre">Module et phase.</h4>
+<div class="km km-d" data-tex="|y_1|=\bigl|10\,e^{-1}\bigr|\cdot\bigl|e^{2j}\bigr|
+     =10\,e^{-1}\cdot 1=10\,e^{-1}\approx 3.6788,">|y_1|=\bigl|10\,e^{-1}\bigr|\cdot\bigl|e^{2j}\bigr|
+     =10\,e^{-1}\cdot 1=10\,e^{-1}\approx 3.6788,</div>
+<div class="km km-d" data-tex="\arg y_1=\arg\bigl(10\,e^{-1}\bigr)+\arg\bigl(e^{2j}\bigr)=0+2=2\ \text{rad}.">\arg y_1=\arg\bigl(10\,e^{-1}\bigr)+\arg\bigl(e^{2j}\bigr)=0+2=2\ \text{rad}.</div>
+<p>La phase principale vaut donc <span class="km" data-tex="\varphi=2">\varphi=2</span> rad (soit <span class="km" data-tex="2\cdot 180/\pi\approx 114.59^{\circ}">2\cdot 180/\pi\approx 114.59^{\circ}</span>), valeur déjà comprise dans <span class="km" data-tex="]-\pi,\pi]">]-\pi,\pi]</span> : aucune branche à lever.</p>
+<aside class="carte carte-piege"><div class="carte-tete"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 2.5 20h19z"/><path d="M12 10v4.5M12 17.2v.3"/></svg><span class="carte-type">Piège</span></div><p class="carte-titre">Unités et signe</p><div class="carte-corps"><span class="km" data-tex="s_1">s_1</span> s'exprime en <span class="km" data-tex="\text{rad/s}">\text{rad/s}</span> et <span class="km" data-tex="t">t</span> en <span class="km" data-tex="\text{s}">\text{s}</span>, donc l'exposant <span class="km" data-tex="s_1 t">s_1 t</span> et la phase <span class="km" data-tex="\arg y_1">\arg y_1</span> sont en <strong>radians</strong> (sans dimension). <span class="km" data-tex="A=10">A=10</span> porte l'unité du signal <span class="km" data-tex="x_1">x_1</span>, reprise par <span class="km" data-tex="|y_1|">|y_1|</span> (l'impulsion <span class="km" data-tex="\delta">\delta</span> a pour unité l'inverse de celle de <span class="km" data-tex="t">t</span>). La phase est <em>positive</em> : le signal est en avance de phase de <span class="km" data-tex="2">2</span> rad, ce qui correspond à <span class="km" data-tex="2/(2\pi) \approx 0.318">2/(2\pi) \approx 0.318</span> période.</div></aside>
+<h4 class="paragraphe-titre">Comparaison au corrigé.</h4>
+<p>Le corrigé officiel donne <span class="km" data-tex="y_1=3.68\,e^{j2}">y_1=3.68\,e^{j2}</span>, en accord exact avec le calcul ci-dessus (<span class="km" data-tex="10\,e^{-1}=3.6788\approx 3.68">10\,e^{-1}=3.6788\approx 3.68</span> et <span class="km" data-tex="\arg=2">\arg=2</span> rad).</p></div></section><section class="station station-normale" id="exercice-10" aria-labelledby="exercice-10-t"><header class="station-tete"><span class="station-num station-num-vide" aria-hidden="true">✦</span><h2 id="exercice-10-t">Exercice 10</h2><label class="revise"><input type="checkbox" data-section="exercice-10"><span class="revise-coche" aria-hidden="true"></span><span class="revise-texte">Révisé</span></label></header><div class="station-corps"><div class="formule"><span class="formule-etiquette">Formule</span><div class="km km-d" data-tex="\boxed{\,A_2 = 5\,}\qquad
+  \boxed{\,\sigma_2 = -10\ \text{s}^{-1}\,}\qquad
+  \boxed{\,\omega_2 = 100\ \text{rad/s}\,}">\boxed{\,A_2 = 5\,}\qquad
+  \boxed{\,\sigma_2 = -10\ \text{s}^{-1}\,}\qquad
+  \boxed{\,\omega_2 = 100\ \text{rad/s}\,}</div></div>
+<aside class="carte carte-retenir"><div class="carte-tete"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></svg><span class="carte-type">À retenir</span></div><p class="carte-titre">Réponse</p><div class="carte-corps">Le signal imposé <span class="km" data-tex="x_2(t)=A_2\,e^{s_2 t}+A_2\,e^{s_2^{*}t}">x_2(t)=A_2\,e^{s_2 t}+A_2\,e^{s_2^{*}t}</span>, avec <span class="km" data-tex="s_2=\sigma_2+j\omega_2">s_2=\sigma_2+j\omega_2</span>, a pour partie réelle <span class="km" data-tex="\Re\{x_2\}=2A_2\,e^{\sigma_2 t}\cos(\omega_2 t)">\Re\{x_2\}=2A_2\,e^{\sigma_2 t}\cos(\omega_2 t)</span>. En l'identifiant à <span class="km" data-tex="10\,e^{-t/0.1}\cos(100\,t)">10\,e^{-t/0.1}\cos(100\,t)</span> on lit <span class="km" data-tex="A_2=5">A_2=5</span>, <span class="km" data-tex="\sigma_2=-10\ \text{s}^{-1}">\sigma_2=-10\ \text{s}^{-1}</span>, <span class="km" data-tex="\omega_2=100\ \text{rad/s}">\omega_2=100\ \text{rad/s}</span>, soit <span class="km" data-tex="s_2=-10+100j">s_2=-10+100j</span> (pulsation propre amortie de constante de temps <span class="km" data-tex="\tau=0{,}1\ \text{s}">\tau=0{,}1\ \text{s}</span>).</div></aside>
+<h3 id="exercice-10-demarche" class="sous-titre">Démarche</h3>
+<h4 class="paragraphe-titre">Mise sous forme réelle.</h4>
+<p>On remplace <span class="km" data-tex="s_2=\sigma_2+j\omega_2">s_2=\sigma_2+j\omega_2</span> et <span class="km" data-tex="s_2^{*}=\sigma_2-j\omega_2">s_2^{*}=\sigma_2-j\omega_2</span> :</p>
+<div class="km km-d" data-tex="\begin{align*}
+  x_2(t)
+  &amp;= A_2\,e^{(\sigma_2+j\omega_2)t}+A_2\,e^{(\sigma_2-j\omega_2)t}\\
+  &amp;= A_2\,e^{\sigma_2 t}\bigl(e^{j\omega_2 t}+e^{-j\omega_2 t}\bigr).
+\end{align*}">\begin{align*}
+  x_2(t)
+  &amp;= A_2\,e^{(\sigma_2+j\omega_2)t}+A_2\,e^{(\sigma_2-j\omega_2)t}\\
+  &amp;= A_2\,e^{\sigma_2 t}\bigl(e^{j\omega_2 t}+e^{-j\omega_2 t}\bigr).
+\end{align*}</div>
+<p>Avec la formule d'Euler <span class="km" data-tex="e^{j\theta}+e^{-j\theta}=2\cos\theta">e^{j\theta}+e^{-j\theta}=2\cos\theta</span>, et en supposant <span class="km" data-tex="A_2">A_2</span> <em>réel</em> (convention du cours : l'énoncé ne place aucune phase à l'origine, les deux exponentielles sont donc conjuguées) :</p>
+<div class="km km-d" data-tex="\begin{equation*}
+  x_2(t)=2A_2\,e^{\sigma_2 t}\cos(\omega_2 t)
+  \quad\Longrightarrow\quad \Re\{x_2\}=x_2\ \text{(signal réel)}.
+\end{equation*}">\begin{equation*}
+  x_2(t)=2A_2\,e^{\sigma_2 t}\cos(\omega_2 t)
+  \quad\Longrightarrow\quad \Re\{x_2\}=x_2\ \text{(signal réel)}.
+\end{equation*}</div>
+<p><em>Vérification pas à pas du passage en cosinus :</em> <span class="km" data-tex="e^{j\omega_2 t}+e^{-j\omega_2 t} = [\cos(\omega_2 t)+j\sin(\omega_2 t)]+[\cos(\omega_2 t)-j\sin(\omega_2 t)] =2\cos(\omega_2 t)">e^{j\omega_2 t}+e^{-j\omega_2 t} = [\cos(\omega_2 t)+j\sin(\omega_2 t)]+[\cos(\omega_2 t)-j\sin(\omega_2 t)] =2\cos(\omega_2 t)</span> : les parties imaginaires s'annulent, la partie réelle vaut bien <span class="km" data-tex="2A_2 e^{\sigma_2 t}\cos(\omega_2 t)">2A_2 e^{\sigma_2 t}\cos(\omega_2 t)</span>.</p>
+<h4 class="paragraphe-titre">Identification terme à terme.</h4>
+<p>On égale la forme obtenue à la donnée de l'énoncé :</p>
+<div class="km km-d" data-tex="\begin{equation*}
+  2A_2\,e^{\sigma_2 t}\cos(\omega_2 t)=10\,e^{-t/0.1}\cos(100\,t).
+\end{equation*}">\begin{equation*}
+  2A_2\,e^{\sigma_2 t}\cos(\omega_2 t)=10\,e^{-t/0.1}\cos(100\,t).
+\end{equation*}</div>
+<p>Trois facteurs, trois inconnues :</p>
+<ul><li><strong>Amplitude :</strong> <span class="km" data-tex="2A_2=10\Rightarrow A_2=\dfrac{10}{2}=5">2A_2=10\Rightarrow A_2=\dfrac{10}{2}=5</span>.</li><li><strong>Amortissement (enveloppe) :</strong> <span class="km" data-tex="\sigma_2=-\dfrac{1}{0{,}1}=-10\ \text{s}^{-1}">\sigma_2=-\dfrac{1}{0{,}1}=-10\ \text{s}^{-1}</span> (constante de temps <span class="km" data-tex="\tau=0{,}1\ \text{s}">\tau=0{,}1\ \text{s}</span>).</li><li><strong>Pulsation (facteur oscillant) :</strong> <span class="km" data-tex="\omega_2=100\ \text{rad/s}">\omega_2=100\ \text{rad/s}</span> (fréquence <span class="km" data-tex="f_2=\omega_2/2\pi\approx15{,}9\ \text{Hz}">f_2=\omega_2/2\pi\approx15{,}9\ \text{Hz}</span>, avec <span class="km" data-tex="\omega_2&gt;0">\omega_2&gt;0</span>).</li></ul>
+<aside class="carte carte-retenir"><div class="carte-tete"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></svg><span class="carte-type">À retenir</span></div><p class="carte-titre">Contrôle</p><div class="carte-corps"><span class="km" data-tex="\Re\{x_2\}">\Re\{x_2\}</span> étant <span class="km" data-tex="\sigma_2">\sigma_2</span>-amorti <em>et</em> oscillant de pulsation <span class="km" data-tex="\omega_2">\omega_2</span>, les trois paramètres se lisent : amplitude <span class="km" data-tex="\times2">\times2</span> donne <span class="km" data-tex="A_2">A_2</span>, l'exposant de l'enveloppe donne <span class="km" data-tex="\sigma_2">\sigma_2</span>, l'argument du cosinus donne <span class="km" data-tex="\omega_2">\omega_2</span>. On retrouve bien <span class="km" data-tex="s_2=-10+100j">s_2=-10+100j</span>.</div></aside>
+<aside class="carte carte-piege"><div class="carte-tete"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 2.5 20h19z"/><path d="M12 10v4.5M12 17.2v.3"/></svg><span class="carte-type">Piège</span></div><p class="carte-titre">Hypothèses et branches</p><div class="carte-corps"><ul><li><strong><span class="km" data-tex="A_2">A_2</span> réel.</strong> L'énoncé fait apparaître <span class="km" data-tex="A_2">A_2</span> devant les deux exponentielles conjuguées <em>sans</em> phase : <span class="km" data-tex="A_2">A_2</span> est donc réel. Si <span class="km" data-tex="A_2">A_2</span> était complexe, seul le produit <span class="km" data-tex="A_2 e^{j\varphi}">A_2 e^{j\varphi}</span> serait contraint par <span class="km" data-tex="\Re\{x_2\}\,">\Re\{x_2\}\,</span>; on ne pourrait pas séparer module et phase de <span class="km" data-tex="A_2">A_2</span>. On peut donc noter <span class="km" data-tex="A_2=5">A_2=5</span> (module) et <span class="km" data-tex="\varphi=0">\varphi=0</span>.</li><li><strong>Signe de <span class="km" data-tex="\omega_2">\omega_2</span>.</strong> Le cosinus est pair : il ne distingue pas <span class="km" data-tex="+100">+100</span> et <span class="km" data-tex="-100\ \text{rad/s}">-100\ \text{rad/s}</span>. On retient la convention <span class="km" data-tex="\omega_2&gt;0">\omega_2&gt;0</span> (branche principale) ; la branche <span class="km" data-tex="\omega_2=-100">\omega_2=-100</span> correspond à un signal conjugué global et donne le même <span class="km" data-tex="\Re\{x_2\}">\Re\{x_2\}</span>.</li><li><strong>Unités.</strong> <span class="km" data-tex="\sigma_2">\sigma_2</span> en <span class="km" data-tex="\text{s}^{-1}">\text{s}^{-1}</span> (taux d'amortissement), <span class="km" data-tex="\omega_2">\omega_2</span> en <span class="km" data-tex="\text{rad/s}">\text{rad/s}</span> (pulsation), <span class="km" data-tex="A_2">A_2</span> dans l'unité de <span class="km" data-tex="x_2">x_2</span>.</li></ul></div></aside></div></section><section class="station station-normale" id="exercice-11" aria-labelledby="exercice-11-t"><header class="station-tete"><span class="station-num station-num-vide" aria-hidden="true">✦</span><h2 id="exercice-11-t">Exercice 11</h2><label class="revise"><input type="checkbox" data-section="exercice-11"><span class="revise-coche" aria-hidden="true"></span><span class="revise-texte">Révisé</span></label></header><div class="station-corps"><div class="formule"><span class="formule-etiquette">Formule</span><div class="km km-d" data-tex="C = 4,\ensuremath{\qquad} r = \sqrt{0.5} = \frac{1}{\sqrt{2}} \approx 0{,}707,
+    \ensuremath{\qquad} \Omega = \frac{\pi}{4}\ \text{rad} = 45^{\circ},\ensuremath{\qquad} \varphi = 0.">C = 4,\ensuremath{\qquad} r = \sqrt{0.5} = \frac{1}{\sqrt{2}} \approx 0{,}707,
+    \ensuremath{\qquad} \Omega = \frac{\pi}{4}\ \text{rad} = 45^{\circ},\ensuremath{\qquad} \varphi = 0.</div></div>
+<aside class="carte carte-retenir"><div class="carte-tete"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></svg><span class="carte-type">À retenir</span></div><p class="carte-titre">Forme finale</p><div class="carte-corps"><div class="km km-d" data-tex="\underline{x}_1[n] = 4\cdot\left(\tfrac{1}{\sqrt{2}}\right)^{n}
+    \cos\!\left(\frac{\pi}{4}\,n\right).">\underline{x}_1[n] = 4\cdot\left(\tfrac{1}{\sqrt{2}}\right)^{n}
+    \cos\!\left(\frac{\pi}{4}\,n\right).</div></div></aside>
+<h3 id="exercice-11-demarche" class="sous-titre">Démarche</h3>
+<p>Le signal est la somme de deux exponentielles complexes conjuguées :</p>
+<div class="km km-d" data-tex="\underline{x}_1[n] = C_1\,\underline{r}_1^{\,n} + C_2\,\underline{r}_2^{\,n},
+  \qquad C_1 = C_2 = 2,
+  \qquad \underline{r}_2 = \underline{r}_1^{\,*}.">\underline{x}_1[n] = C_1\,\underline{r}_1^{\,n} + C_2\,\underline{r}_2^{\,n},
+  \qquad C_1 = C_2 = 2,
+  \qquad \underline{r}_2 = \underline{r}_1^{\,*}.</div>
+<h4 class="paragraphe-titre">Étape 1 — module et argument de <span class="km" data-tex="\underline{r}_1">\underline{r}_1</span>.</h4>
+<div class="km km-d" data-tex="\underline{r}_1 = 0{,}5 + j\,0{,}5,\qquad
+  \lvert\underline{r}_1\rvert = \sqrt{0{,}5^{2}+0{,}5^{2}} = \sqrt{0{,}5}
+  = \frac{1}{\sqrt{2}} \approx 0{,}707,">\underline{r}_1 = 0{,}5 + j\,0{,}5,\qquad
+  \lvert\underline{r}_1\rvert = \sqrt{0{,}5^{2}+0{,}5^{2}} = \sqrt{0{,}5}
+  = \frac{1}{\sqrt{2}} \approx 0{,}707,</div>
+<div class="km km-d" data-tex="\arg(\underline{r}_1) = \arctan\!\left(\frac{0{,}5}{0{,}5}\right)
+  = \arctan(1) = \frac{\pi}{4}.">\arg(\underline{r}_1) = \arctan\!\left(\frac{0{,}5}{0{,}5}\right)
+  = \arctan(1) = \frac{\pi}{4}.</div>
+<p>Donc</p>
+<div class="km km-d" data-tex="\underline{r}_1 = r\,e^{\,j\Omega},\qquad
+  r = \sqrt{0{,}5},\qquad \Omega = \frac{\pi}{4}.">\underline{r}_1 = r\,e^{\,j\Omega},\qquad
+  r = \sqrt{0{,}5},\qquad \Omega = \frac{\pi}{4}.</div>
+<h4 class="paragraphe-titre">Étape 2 — somme des deux exponentielles conjuguées.</h4>
+<p>Comme <span class="km" data-tex="C_1 = C_2 = 2">C_1 = C_2 = 2</span> sont réels,</p>
+<div class="km km-d" data-tex="\underline{x}_1[n] = 2\,\underline{r}_1^{\,n} + 2\,\underline{r}_1^{\,*,n}
+  = 2\left(\underline{r}_1^{\,n} + \overline{\underline{r}_1^{\,n}}\right)
+  = 4\,\Re\!\left\{\underline{r}_1^{\,n}\right\}.">\underline{x}_1[n] = 2\,\underline{r}_1^{\,n} + 2\,\underline{r}_1^{\,*,n}
+  = 2\left(\underline{r}_1^{\,n} + \overline{\underline{r}_1^{\,n}}\right)
+  = 4\,\Re\!\left\{\underline{r}_1^{\,n}\right\}.</div>
+<h4 class="paragraphe-titre">Étape 3 — forme polaire.</h4>
+<p>Avec <span class="km" data-tex="\underline{r}_1^{\,n} = r^{\,n} e^{\,j\Omega n} = r^{\,n}\bigl(\cos(\Omega n) + j\sin(\Omega n)\bigr)">\underline{r}_1^{\,n} = r^{\,n} e^{\,j\Omega n} = r^{\,n}\bigl(\cos(\Omega n) + j\sin(\Omega n)\bigr)</span>, il vient</p>
+<div class="km km-d" data-tex="\Re\!\left\{\underline{r}_1^{\,n}\right\} = r^{\,n}\cos(\Omega n),
+  \quad\text{d&#x27;où}\quad
+  \underline{x}_1[n] = 4\,r^{\,n}\cos(\Omega n).">\Re\!\left\{\underline{r}_1^{\,n}\right\} = r^{\,n}\cos(\Omega n),
+  \quad\text{d&#x27;où}\quad
+  \underline{x}_1[n] = 4\,r^{\,n}\cos(\Omega n).</div>
+<h4 class="paragraphe-titre">Étape 4 — identification.</h4>
+<p>On compare à la forme du cours <span class="km" data-tex="\underline{x}_1[n] = C\,r^{\,n}\cos(\Omega\,n + \varphi)">\underline{x}_1[n] = C\,r^{\,n}\cos(\Omega\,n + \varphi)</span> :</p>
+<div class="km km-d" data-tex="\boxed{\;C = 4,\qquad \varphi = 0,\qquad r = \sqrt{0{,}5}\approx 0{,}707,\qquad
+  \Omega = \frac{\pi}{4}\ \text{rad} = 45^{\circ}.\;}">\boxed{\;C = 4,\qquad \varphi = 0,\qquad r = \sqrt{0{,}5}\approx 0{,}707,\qquad
+  \Omega = \frac{\pi}{4}\ \text{rad} = 45^{\circ}.\;}</div>
+<aside class="carte carte-retenir"><div class="carte-tete"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></svg><span class="carte-type">À retenir</span></div><p class="carte-titre">Contrôle</p><div class="carte-corps">Pour <span class="km" data-tex="n=0">n=0</span> : <span class="km" data-tex="\underline{x}_1[0] = C_1 + C_2 = 4">\underline{x}_1[0] = C_1 + C_2 = 4</span>, cohérent avec <span class="km" data-tex="4\cos(0) = 4">4\cos(0) = 4</span>. Pour <span class="km" data-tex="n=1">n=1</span> : <span class="km" data-tex="\underline{r}_1 = 0{,}5+j0{,}5">\underline{r}_1 = 0{,}5+j0{,}5</span> donne <span class="km" data-tex="\underline{x}_1[1] = 2(0{,}5+j0{,}5)+2(0{,}5-j0{,}5) = 2 = 4\sqrt{0{,}5}\cos(\pi/4)">\underline{x}_1[1] = 2(0{,}5+j0{,}5)+2(0{,}5-j0{,}5) = 2 = 4\sqrt{0{,}5}\cos(\pi/4)</span>. Vérifié par <span class="km" data-tex="54">54</span> contrôles numériques et symboliques (<code>verifier.py</code>).</div></aside>
+<aside class="carte carte-piege"><div class="carte-tete"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 2.5 20h19z"/><path d="M12 10v4.5M12 17.2v.3"/></svg><span class="carte-type">Piège</span></div><p class="carte-titre">Point de vigilance</p><div class="carte-corps"><span class="km" data-tex="r">r</span> est le <em>module</em> de <span class="km" data-tex="\underline{r}_1">\underline{r}_1</span> : la phase de <span class="km" data-tex="\underline{r}_1">\underline{r}_1</span> n'apparaît pas dans <span class="km" data-tex="r">r</span>, elle passe dans <span class="km" data-tex="\Omega">\Omega</span>. La phase globale vaut <span class="km" data-tex="\varphi = 0">\varphi = 0</span> parce que les deux coefficients <span class="km" data-tex="C_1 = C_2 = 2">C_1 = C_2 = 2</span> sont réels : l'égalité <span class="km" data-tex="\underline{r}_2 = \underline{r}_1^{\,*}">\underline{r}_2 = \underline{r}_1^{\,*}</span> fait que les deux termes de <span class="km" data-tex="C_1\underline{r}_1^{\,n}">C_1\underline{r}_1^{\,n}</span> et <span class="km" data-tex="C_2\underline{r}_2^{\,n}">C_2\underline{r}_2^{\,n}</span> se répliquent exactement, sans déphasage résiduel.</div></aside></div></section><section class="station station-normale" id="exercice-12" aria-labelledby="exercice-12-t"><header class="station-tete"><span class="station-num station-num-vide" aria-hidden="true">✦</span><h2 id="exercice-12-t">Exercice 12</h2><label class="revise"><input type="checkbox" data-section="exercice-12"><span class="revise-coche" aria-hidden="true"></span><span class="revise-texte">Révisé</span></label></header><div class="station-corps"><aside class="carte carte-retenir"><div class="carte-tete"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></svg><span class="carte-type">À retenir</span></div><p class="carte-titre">Réponse (encadrée) — valeurs demandées</p><div class="carte-corps"><div class="km km-d" data-tex="C = 2,
+\qquad
+\underline{r} = e^{\pm j\frac{\pi}{3}}
+= 0{,}5 \pm j\,\frac{\sqrt{3}}{2}
+\approx 0{,}5 \pm j\,0{,}866 .">C = 2,
+\qquad
+\underline{r} = e^{\pm j\frac{\pi}{3}}
+= 0{,}5 \pm j\,\frac{\sqrt{3}}{2}
+\approx 0{,}5 \pm j\,0{,}866 .</div>
+<p><em>Convention officielle du corrigé : on retient la branche positive</em> <span class="km" data-tex="\underline{r}=e^{+j\pi/3}=0{,}5+j0{,}866">\underline{r}=e^{+j\pi/3}=0{,}5+j0{,}866</span> ; sa conjuguée donne exactement le même signal (voir l'encadré « ambiguïté » plus bas).</p></div></aside>
+<h3 id="exercice-12-donnees-et-notation" class="sous-titre">Données et notation</h3>
+<p>On cherche <span class="km" data-tex="C">C</span> réel et <span class="km" data-tex="\underline{r}">\underline{r}</span> complexe tels que, pour tout entier <span class="km" data-tex="n">n</span>,</p>
+<div class="km km-d" data-tex="\underline{x_1}[n] = C\cdot\Re\{\underline{r}^{\,n}\}
+= 2\cos\!\Big(\frac{\pi}{3}\,n\Big).">\underline{x_1}[n] = C\cdot\Re\{\underline{r}^{\,n}\}
+= 2\cos\!\Big(\frac{\pi}{3}\,n\Big).</div>
+<p>Notation du cours : la partie réelle est notée <span class="km" data-tex="\Re\{\cdot\}">\Re\{\cdot\}</span>, <span class="km" data-tex="\underline{r}">\underline{r}</span> est complexe, <span class="km" data-tex="j^2=-1">j^2=-1</span>, et la pulsation discrète est notée <span class="km" data-tex="\Omega">\Omega</span> [rad/échantillon] (cf. <code>notations-sigsys1.md</code>, §4).</p>
+<h3 id="exercice-12-demarche" class="sous-titre">Démarche</h3>
+<p><strong>1. Forme polaire de <span class="km" data-tex="\underline{r}">\underline{r}</span>.</strong> On écrit</p>
+<div class="km km-d" data-tex="\underline{r} = \rho\,e^{j\Omega}, \qquad \rho = |\underline{r}| \ge 0,\quad \Omega \in \mathbb{R}.">\underline{r} = \rho\,e^{j\Omega}, \qquad \rho = |\underline{r}| \ge 0,\quad \Omega \in \mathbb{R}.</div>
+<p>La puissance est alors</p>
+<div class="km km-d" data-tex="\underline{r}^{\,n} = \rho^{\,n}\,e^{j\Omega n}
+\quad\Longrightarrow\quad
+\Re\{\underline{r}^{\,n}\} = \rho^{\,n}\cos(\Omega n).">\underline{r}^{\,n} = \rho^{\,n}\,e^{j\Omega n}
+\quad\Longrightarrow\quad
+\Re\{\underline{r}^{\,n}\} = \rho^{\,n}\cos(\Omega n).</div>
+<p>Le signal s'écrit donc</p>
+<div class="km km-d" data-tex="\underline{x_1}[n] = C\,\rho^{\,n}\cos(\Omega n).
+\tag{1}">\underline{x_1}[n] = C\,\rho^{\,n}\cos(\Omega n).
+\tag{1}</div>
+<p><strong>2. Détermination de <span class="km" data-tex="C">C</span> (valeur en <span class="km" data-tex="n=0">n=0</span>).</strong> En <span class="km" data-tex="n=0">n=0</span>, <span class="km" data-tex="\rho^0=1">\rho^0=1</span> et <span class="km" data-tex="\cos 0 = 1">\cos 0 = 1</span>, d'où</p>
+<div class="km km-d" data-tex="\underline{x_1}[0] = C = 2\cos 0 = 2 \quad\Longrightarrow\quad \boxed{C = 2}.">\underline{x_1}[0] = C = 2\cos 0 = 2 \quad\Longrightarrow\quad \boxed{C = 2}.</div>
+<p><strong>3. Détermination de <span class="km" data-tex="\rho">\rho</span> et <span class="km" data-tex="\Omega">\Omega</span>.</strong> Avec <span class="km" data-tex="C=2">C=2</span>, l'égalité (1) devient</p>
+<div class="km km-d" data-tex="2\,\rho^{\,n}\cos(\Omega n) = 2\cos\!\Big(\frac{\pi}{3}n\Big)
+\quad\Longleftrightarrow\quad
+\rho^{\,n}\cos(\Omega n) = \cos\!\Big(\frac{\pi}{3}n\Big)
+\qquad \forall n.">2\,\rho^{\,n}\cos(\Omega n) = 2\cos\!\Big(\frac{\pi}{3}n\Big)
+\quad\Longleftrightarrow\quad
+\rho^{\,n}\cos(\Omega n) = \cos\!\Big(\frac{\pi}{3}n\Big)
+\qquad \forall n.</div>
+<p>On identifie pour quelques valeurs de <span class="km" data-tex="n">n</span> (ce qui suffit, <span class="km" data-tex="n">n</span> étant entier) :</p>
+<div class="km km-d" data-tex="\begin{aligned}
+n = 1 &amp;: \quad \rho\cos\Omega = \cos\frac{\pi}{3} = \frac{1}{2}, \\[2mm]
+n = 2 &amp;: \quad \rho^{2}\cos(2\Omega) = \cos\frac{2\pi}{3} = -\frac{1}{2}.
+\end{aligned}">\begin{aligned}
+n = 1 &amp;: \quad \rho\cos\Omega = \cos\frac{\pi}{3} = \frac{1}{2}, \\[2mm]
+n = 2 &amp;: \quad \rho^{2}\cos(2\Omega) = \cos\frac{2\pi}{3} = -\frac{1}{2}.
+\end{aligned}</div>
+<p>On pose <span class="km" data-tex="c=\cos\Omega">c=\cos\Omega</span> et on élimine <span class="km" data-tex="\rho">\rho</span> : de la première équation <span class="km" data-tex="\rho = \dfrac{1}{2c}">\rho = \dfrac{1}{2c}</span>, que l'on reporte dans la seconde avec <span class="km" data-tex="\cos 2\Omega = 2c^2-1">\cos 2\Omega = 2c^2-1</span> :</p>
+<div class="km km-d" data-tex="\frac{1}{4c^{2}}\,(2c^{2}-1) = -\frac{1}{2}
+\;\Longrightarrow\;
+2c^{2}-1 = -2c^{2}
+\;\Longrightarrow\;
+4c^{2}=1
+\;\Longrightarrow\;
+c = \pm\frac{1}{2}.">\frac{1}{4c^{2}}\,(2c^{2}-1) = -\frac{1}{2}
+\;\Longrightarrow\;
+2c^{2}-1 = -2c^{2}
+\;\Longrightarrow\;
+4c^{2}=1
+\;\Longrightarrow\;
+c = \pm\frac{1}{2}.</div>
+<ul><li><strong>Cas <span class="km" data-tex="c=\cos\Omega=+\tfrac{1}{2}">c=\cos\Omega=+\tfrac{1}{2}</span></strong> : alors <span class="km" data-tex="\rho=\dfrac{1}{2\cdot\frac12}=1">\rho=\dfrac{1}{2\cdot\frac12}=1</span> et <span class="km" data-tex="\Omega=\pm\dfrac{\pi}{3}">\Omega=\pm\dfrac{\pi}{3}</span>. C'est le cas admissible (<span class="km" data-tex="\rho\ge 0">\rho\ge 0</span>).</li><li><strong>Cas <span class="km" data-tex="c=\cos\Omega=-\tfrac{1}{2}">c=\cos\Omega=-\tfrac{1}{2}</span></strong> : alors <span class="km" data-tex="\rho=\dfrac{1}{2\cdot(-\frac12)}=-1">\rho=\dfrac{1}{2\cdot(-\frac12)}=-1</span>, <em>refusé</em> car un module est positif. Cette situation décrit en réalité le même <span class="km" data-tex="\underline{r}">\underline{r}</span> sous une autre forme d'argument (voir encadré), pas une solution nouvelle.</li></ul>
+<p>On conclut</p>
+<div class="km km-d" data-tex="|\underline{r}|=\rho=1, \qquad \arg \underline{r} = \Omega = \pm\frac{\pi}{3}
+\;\Rightarrow\;
+\boxed{\underline{r} = e^{\pm j\frac{\pi}{3}} = 0{,}5 \pm j\frac{\sqrt{3}}{2} \approx 0{,}5 \pm j\,0{,}866.}">|\underline{r}|=\rho=1, \qquad \arg \underline{r} = \Omega = \pm\frac{\pi}{3}
+\;\Rightarrow\;
+\boxed{\underline{r} = e^{\pm j\frac{\pi}{3}} = 0{,}5 \pm j\frac{\sqrt{3}}{2} \approx 0{,}5 \pm j\,0{,}866.}</div>
+<p><strong>4. Contrôle par valeurs.</strong> Avec <span class="km" data-tex="C=2">C=2</span> et <span class="km" data-tex="\underline{r}=e^{j\pi/3}">\underline{r}=e^{j\pi/3}</span> :</p>
+<div class="km km-d" data-tex="\begin{aligned}
+n=0 &amp;: \; 2\cos 0 = 2 = \underline{x_1}[0] \quad\text{(vérifié)}\\
+n=1 &amp;: \; 2\cos\frac{\pi}{3} = 2\cdot\tfrac12 = 1 \quad\text{(vérifié)}\\
+n=2 &amp;: \; 2\cos\frac{2\pi}{3} = 2\cdot(-\tfrac12) = -1 \quad\text{(vérifié)}\\
+n=3 &amp;: \; 2\cos\pi = -2 \quad\text{(vérifié)}
+\end{aligned}">\begin{aligned}
+n=0 &amp;: \; 2\cos 0 = 2 = \underline{x_1}[0] \quad\text{(vérifié)}\\
+n=1 &amp;: \; 2\cos\frac{\pi}{3} = 2\cdot\tfrac12 = 1 \quad\text{(vérifié)}\\
+n=2 &amp;: \; 2\cos\frac{2\pi}{3} = 2\cdot(-\tfrac12) = -1 \quad\text{(vérifié)}\\
+n=3 &amp;: \; 2\cos\pi = -2 \quad\text{(vérifié)}
+\end{aligned}</div>
+<p>Ces valeurs coïncident avec <span class="km" data-tex="C\,\Re\{\underline{r}^{\,n}\}">C\,\Re\{\underline{r}^{\,n}\}</span> car <span class="km" data-tex="\Re\{e^{j\pi n/3}\}=\cos(\pi n/3)">\Re\{e^{j\pi n/3}\}=\cos(\pi n/3)</span> (contrôle exécuté dans <code>verifier.py</code>).</p>
+<aside class="carte carte-piege"><div class="carte-tete"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 2.5 20h19z"/><path d="M12 10v4.5M12 17.2v.3"/></svg><span class="carte-type">Piège</span></div><p class="carte-titre">Ambiguïté du signe (branche conjuguée)</p><div class="carte-corps"><p>La fonction <span class="km" data-tex="\cos">\cos</span> ne distingue pas <span class="km" data-tex="+\Omega">+\Omega</span> et <span class="km" data-tex="-\Omega">-\Omega</span> : pour tout entier <span class="km" data-tex="n">n</span>, <span class="km" data-tex="\cos(-\Omega n)=\cos(\Omega n)">\cos(-\Omega n)=\cos(\Omega n)</span>. Les <em>deux</em> nombres <span class="km" data-tex="\underline{r}=e^{+j\pi/3}">\underline{r}=e^{+j\pi/3}</span> et <span class="km" data-tex="\underline{r}^{*}=e^{-j\pi/3}">\underline{r}^{*}=e^{-j\pi/3}</span> (partie imaginaire de signe opposé) fournissent donc exactement le <em>même</em> signal réel <span class="km" data-tex="\underline{x_1}[n]">\underline{x_1}[n]</span>. La donnée <span class="km" data-tex="\Re\{\cdot\}">\Re\{\cdot\}</span> ne permet pas de trancher : la partie imaginaire de <span class="km" data-tex="\underline{r}">\underline{r}</span> est définie au signe près.</p>
+<ul><li><strong>Convention officielle du corrigé</strong> (p. 6) : <span class="km" data-tex="\underline{r}=e^{+j\frac{\pi}{3}}=0{,}5+j0{,}866">\underline{r}=e^{+j\frac{\pi}{3}}=0{,}5+j0{,}866</span>, <span class="km" data-tex="\Omega=+\frac{\pi}{3}">\Omega=+\frac{\pi}{3}</span>.</li><li><strong>Autre branche valable</strong> : <span class="km" data-tex="\underline{r}=e^{-j\frac{\pi}{3}}=0{,}5-j0{,}866">\underline{r}=e^{-j\frac{\pi}{3}}=0{,}5-j0{,}866</span>, <span class="km" data-tex="\Omega=-\frac{\pi}{3}">\Omega=-\frac{\pi}{3}</span>.</li></ul>
+<p>De même, l'argument n'est défini que modulo <span class="km" data-tex="2\pi">2\pi</span> : <span class="km" data-tex="\Omega=\pm\frac{\pi}{3}+2k\pi">\Omega=\pm\frac{\pi}{3}+2k\pi</span>, <span class="km" data-tex="k\in\mathbb{Z}">k\in\mathbb{Z}</span>, donnent le même <span class="km" data-tex="\underline{r}">\underline{r}</span> (car <span class="km" data-tex="e^{j2k\pi n}=1">e^{j2k\pi n}=1</span> pour <span class="km" data-tex="n">n</span> entier). On donne la valeur principale <span class="km" data-tex="\Omega=\pm\frac{\pi}{3}">\Omega=\pm\frac{\pi}{3}</span>, soit <span class="km" data-tex="\pm 60^\circ">\pm 60^\circ</span>.</p></div></aside>
+<aside class="carte carte-retenir"><div class="carte-tete"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></svg><span class="carte-type">À retenir</span></div><p class="carte-titre">Synthèse</p><div class="carte-corps"><div class="km km-d" data-tex="C = 2, \qquad
+\underline{r} = e^{\pm j\frac{\pi}{3}} = 0{,}5 \pm j\frac{\sqrt{3}}{2},
+\qquad
+\Re\{\underline{r}\} = 0{,}5, \quad
+\Im\{\underline{r}\} = \pm\frac{\sqrt{3}}{2}\approx \pm 0{,}866,
+\qquad
+|\underline{r}| = 1, \quad \arg\underline{r} = \pm 60^\circ.">C = 2, \qquad
+\underline{r} = e^{\pm j\frac{\pi}{3}} = 0{,}5 \pm j\frac{\sqrt{3}}{2},
+\qquad
+\Re\{\underline{r}\} = 0{,}5, \quad
+\Im\{\underline{r}\} = \pm\frac{\sqrt{3}}{2}\approx \pm 0{,}866,
+\qquad
+|\underline{r}| = 1, \quad \arg\underline{r} = \pm 60^\circ.</div></div></aside></div></section><section class="station station-normale" id="exercice-13" aria-labelledby="exercice-13-t"><header class="station-tete"><span class="station-num station-num-vide" aria-hidden="true">✦</span><h2 id="exercice-13-t">Exercice 13</h2><label class="revise"><input type="checkbox" data-section="exercice-13"><span class="revise-coche" aria-hidden="true"></span><span class="revise-texte">Révisé</span></label></header><div class="station-corps"><div class="formule"><span class="formule-etiquette">Formule</span><div class="km km-d" data-tex="x_2=\sum_{n=-\infty}^{+\infty} r^{\,n}\,\bigl(\delta[n]-\delta[n-2]\bigr)
+= r^{0}-r^{2}=1-0{,}64=\boxed{0{,}36}">x_2=\sum_{n=-\infty}^{+\infty} r^{\,n}\,\bigl(\delta[n]-\delta[n-2]\bigr)
+= r^{0}-r^{2}=1-0{,}64=\boxed{0{,}36}</div></div>
+<aside class="carte carte-retenir"><div class="carte-tete"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></svg><span class="carte-type">À retenir</span></div><p class="carte-titre">Réponse (module et phase)</p><div class="carte-corps"><span class="km" data-tex="x_2 = 0{,}36">x_2 = 0{,}36</span> : c'est un réel <em>positif</em>, donc son <strong>module vaut</strong> <span class="km" data-tex="0{,}36">0{,}36</span> et sa <strong>phase vaut</strong> <span class="km" data-tex="0">0</span> (soit <span class="km" data-tex="0">0</span> rad et <span class="km" data-tex="0^\circ">0^\circ</span>). L'argument n'a pas de branche ambiguë puisque le module est strictement positif.</div></aside>
+<h3 id="exercice-13-demarche" class="sous-titre">Démarche</h3>
+<p><strong>Donnée.</strong> <span class="km" data-tex="r=0{,}8">r=0{,}8</span>. Le signal discret est</p>
+<div class="km km-d" data-tex="x_2=\sum_{n=-\infty}^{+\infty} r^{\,n}\bigl(\delta[n]-\delta[n-2]\bigr).">x_2=\sum_{n=-\infty}^{+\infty} r^{\,n}\bigl(\delta[n]-\delta[n-2]\bigr).</div>
+<p><strong>1. Nature du delta.</strong> En discret, <span class="km" data-tex="\delta[\cdot]">\delta[\cdot]</span> est le delta de <strong>Kronecker</strong>, qui <em>sélectionne</em> un seul indice :</p>
+<div class="km km-d" data-tex="\delta[n-n_0]=
+\begin{cases}
+1 &amp; \text{si } n=n_0,\\[2pt]
+0 &amp; \text{sinon.}
+\end{cases}">\delta[n-n_0]=
+\begin{cases}
+1 &amp; \text{si } n=n_0,\\[2pt]
+0 &amp; \text{sinon.}
+\end{cases}</div>
+<p>Dans la somme, un seul terme de chaque delta survit (la somme est donc finie, pas de convergence à discuter).</p>
+<p><strong>2. Sélection des indices.</strong></p>
+<div class="km km-d" data-tex="\begin{aligned}
+\delta[n] &amp;\Rightarrow n=0 &amp;&amp;\Rightarrow \text{terme } r^{0}=1,\\
+\delta[n-2] &amp;\Rightarrow n=2 &amp;&amp;\Rightarrow \text{terme } r^{2}=0{,}8^{2}=0{,}64.
+\end{aligned}">\begin{aligned}
+\delta[n] &amp;\Rightarrow n=0 &amp;&amp;\Rightarrow \text{terme } r^{0}=1,\\
+\delta[n-2] &amp;\Rightarrow n=2 &amp;&amp;\Rightarrow \text{terme } r^{2}=0{,}8^{2}=0{,}64.
+\end{aligned}</div>
+<p><strong>3. Somme.</strong></p>
+<div class="km km-d" data-tex="x_2 = r^{0}-r^{2} = 1-0{,}64 = 0{,}36 .">x_2 = r^{0}-r^{2} = 1-0{,}64 = 0{,}36 .</div>
+<p><strong>4. Module et phase.</strong> <span class="km" data-tex="x_2=0{,}36\in\mathbb{R}">x_2=0{,}36\in\mathbb{R}</span>, <span class="km" data-tex="0{,}36&gt;0">0{,}36&gt;0</span>, d'où</p>
+<div class="km km-d" data-tex="|x_2| = 0{,}36, \qquad \arg(x_2)=0 .">|x_2| = 0{,}36, \qquad \arg(x_2)=0 .</div>
+<aside class="carte carte-piege"><div class="carte-tete"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 2.5 20h19z"/><path d="M12 10v4.5M12 17.2v.3"/></svg><span class="carte-type">Piège</span></div><p class="carte-titre">Confusion à éviter</p><div class="carte-corps">Ne pas confondre avec le <em>Dirac</em> du cas continu <span class="km" data-tex="\delta(t)">\delta(t)</span>, qui sélectionne un <em>instant</em> dans une intégrale <span class="km" data-tex="\int x(t)\,\delta(t-t_0)\,dt=x(t_0)">\int x(t)\,\delta(t-t_0)\,dt=x(t_0)</span>. Ici, comme <span class="km" data-tex="n">n</span> est entier, on utilise le delta de <strong>Kronecker</strong> <span class="km" data-tex="\delta[n]">\delta[n]</span>, qui sélectionne un <em>indice</em> dans une somme.</div></aside></div></section><section class="station station-normale" id="exercice-14" aria-labelledby="exercice-14-t"><header class="station-tete"><span class="station-num station-num-vide" aria-hidden="true">✦</span><h2 id="exercice-14-t">Exercice 14</h2><label class="revise"><input type="checkbox" data-section="exercice-14"><span class="revise-coche" aria-hidden="true"></span><span class="revise-texte">Révisé</span></label></header><div class="station-corps"><div class="formule"><span class="formule-etiquette">Formule</span>Avec la convention officielle du cours <span class="km" data-tex="r=e^{\,j\pi/6}">r=e^{\,j\pi/6}</span> (pulsation <span class="km" data-tex="\Omega=+\pi/6">\Omega=+\pi/6</span> rad/échantillon, <span class="km" data-tex="|r|=1">|r|=1</span>) :  <span class="km" data-tex="y_2=r^{-1}=e^{-j\pi/6}">y_2=r^{-1}=e^{-j\pi/6}</span><span class="km" data-tex="\quad">\quad</span> soit <strong>module <span class="km" data-tex="|y_2|=1">|y_2|=1</span></strong> et <strong>phase <span class="km" data-tex="\arg(y_2)=-\pi/6~\text{rad}=-30^{\circ}">\arg(y_2)=-\pi/6~\text{rad}=-30^{\circ}</span></strong>.</div>
+<h3 id="exercice-14-enonce" class="sous-titre">Énoncé</h3>
+<p>Si <span class="km" data-tex="\Re\{A\cdot r^{\,n}\}=A\cdot\cos\!\left(\dfrac{\pi}{6}\,n\right)">\Re\{A\cdot r^{\,n}\}=A\cdot\cos\!\left(\dfrac{\pi}{6}\,n\right)</span>, calculer (module et phase) la valeur de</p>
+<div class="km km-d" data-tex="y_2=\sum_{n=-\infty}^{+\infty} r^{\,n}\cdot\delta[n+1].">y_2=\sum_{n=-\infty}^{+\infty} r^{\,n}\cdot\delta[n+1].</div>
+<h3 id="exercice-14-demarche" class="sous-titre">Démarche</h3>
+<h4 class="paragraphe-titre">1) Identifier <span class="km" data-tex="r">r</span> à partir de la contrainte.</h4>
+<p>On pose <span class="km" data-tex="r=|r|\,e^{\,j\Omega}">r=|r|\,e^{\,j\Omega}</span> et l'amplitude <span class="km" data-tex="A">A</span> réelle (convention du cours : <span class="km" data-tex="A">A</span> est l'amplitude positive du signal). Alors</p>
+<div class="km km-d" data-tex="A\,r^{\,n}=A\,|r|^{\,n}\,e^{\,j\Omega n}
+\quad\Longrightarrow\quad
+\Re\{A\,r^{\,n}\}=A\,|r|^{\,n}\cos(\Omega\,n).">A\,r^{\,n}=A\,|r|^{\,n}\,e^{\,j\Omega n}
+\quad\Longrightarrow\quad
+\Re\{A\,r^{\,n}\}=A\,|r|^{\,n}\cos(\Omega\,n).</div>
+<p>L'énoncé impose <span class="km" data-tex="\Re\{A\,r^{\,n}\}=A\cos\!\left(\tfrac{\pi}{6}n\right)">\Re\{A\,r^{\,n}\}=A\cos\!\left(\tfrac{\pi}{6}n\right)</span> pour tout <span class="km" data-tex="n">n</span>. La comparaison, valable en particulier en <span class="km" data-tex="n=0">n=0</span> (<span class="km" data-tex="\Re\{A\}=A">\Re\{A\}=A</span>, donc <span class="km" data-tex="A&gt;0">A&gt;0</span>) et pour <span class="km" data-tex="|n|\ge 1">|n|\ge 1</span>, impose</p>
+<div class="km km-d" data-tex="|r|=1 \qquad\text{et}\qquad \cos(\Omega\,n)=\cos\!\left(\tfrac{\pi}{6}\,n\right).">|r|=1 \qquad\text{et}\qquad \cos(\Omega\,n)=\cos\!\left(\tfrac{\pi}{6}\,n\right).</div>
+<p>Le module vaut donc <span class="km" data-tex="1">1</span>, et la pulsation est <span class="km" data-tex="\Omega=\pi/6">\Omega=\pi/6</span> rad/échantillon :</p>
+<div class="km km-d" data-tex="r=e^{\,j\pi/6}=\cos\!\left(\tfrac{\pi}{6}\right)+j\sin\!\left(\tfrac{\pi}{6}\right)
+=\frac{\sqrt{3}}{2}+j\,\frac{1}{2}.">r=e^{\,j\pi/6}=\cos\!\left(\tfrac{\pi}{6}\right)+j\sin\!\left(\tfrac{\pi}{6}\right)
+=\frac{\sqrt{3}}{2}+j\,\frac{1}{2}.</div>
+<p>C'est la valeur retenue par le corrigé officiel.</p>
+<h4 class="paragraphe-titre">2) Propriété de sélection du Kronecker.</h4>
+<p>Le peigne discret <span class="km" data-tex="\delta[n+1]">\delta[n+1]</span> est nul partout sauf en <span class="km" data-tex="n=-1">n=-1</span>, où il vaut <span class="km" data-tex="1">1</span> (propriété <span class="km" data-tex="\sum_n f[n]\,\delta[n-n_0]=f[n_0]">\sum_n f[n]\,\delta[n-n_0]=f[n_0]</span>). Tous les termes de la somme disparaissent donc sauf celui d'indice <span class="km" data-tex="n=-1">n=-1</span> :</p>
+<div class="km km-d" data-tex="y_2=\sum_{n=-\infty}^{+\infty} r^{\,n}\,\delta[n+1]=r^{-1}=\frac{1}{r}.">y_2=\sum_{n=-\infty}^{+\infty} r^{\,n}\,\delta[n+1]=r^{-1}=\frac{1}{r}.</div>
+<h4 class="paragraphe-titre">3) Valeur de <span class="km" data-tex="y_2">y_2</span> (module et phase).</h4>
+<p>Comme <span class="km" data-tex="|r|=1">|r|=1</span>, l'inverse est le conjugué :</p>
+<div class="km km-d" data-tex="y_2=r^{-1}=e^{-j\pi/6}=\cos\!\left(\tfrac{\pi}{6}\right)-j\sin\!\left(\tfrac{\pi}{6}\right)
+=\frac{\sqrt{3}}{2}-j\,\frac{1}{2}.">y_2=r^{-1}=e^{-j\pi/6}=\cos\!\left(\tfrac{\pi}{6}\right)-j\sin\!\left(\tfrac{\pi}{6}\right)
+=\frac{\sqrt{3}}{2}-j\,\frac{1}{2}.</div>
+<p>On en déduit</p>
+<div class="km km-d" data-tex="|y_2|=\frac{1}{|r|}=1
+\qquad\text{et}\qquad
+\arg(y_2)=-\frac{\pi}{6}~\text{rad}=-30^{\circ}\quad(\text{phase principale}).">|y_2|=\frac{1}{|r|}=1
+\qquad\text{et}\qquad
+\arg(y_2)=-\frac{\pi}{6}~\text{rad}=-30^{\circ}\quad(\text{phase principale}).</div>
+<aside class="carte carte-retenir"><div class="carte-tete"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></svg><span class="carte-type">À retenir</span></div><p class="carte-titre">Unités et conventions</p><div class="carte-corps"><span class="km" data-tex="\Omega=\pi/6">\Omega=\pi/6</span> rad/échantillon est la <em>pulsation discrète</em> (fréquence angulaire) ; <span class="km" data-tex="|r|=1">|r|=1</span> place <span class="km" data-tex="r">r</span> sur le cercle unité. <span class="km" data-tex="y_2">y_2</span> est d'argument <span class="km" data-tex="-\pi/6">-\pi/6</span>, dans le quatrième quadrant (partie réelle <span class="km" data-tex="&gt;0">&gt;0</span>, partie imaginaire <span class="km" data-tex="&lt;0">&lt;0</span>) : la phase principale est bien <span class="km" data-tex="-30^{\circ}">-30^{\circ}</span>. Le Dirac de Kronecker <span class="km" data-tex="\delta[n+1]">\delta[n+1]</span> <em>sélectionne l'indice</em> <span class="km" data-tex="n=-1">n=-1</span> (il n'y a pas d'intégrale : le résultat est une simple valeur de suite, sans dimension).</div></aside>
+<aside class="carte carte-piege"><div class="carte-tete"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 2.5 20h19z"/><path d="M12 10v4.5M12 17.2v.3"/></svg><span class="carte-type">Piège</span></div><p class="carte-titre">Ambiguïté de signe du cosinus (branche conjuguée)</p><div class="carte-corps"><p>Le cosinus ne distingue pas <span class="km" data-tex="+\Omega">+\Omega</span> de <span class="km" data-tex="-\Omega">-\Omega</span>, puisque <span class="km" data-tex="\cos(\Omega n)=\cos(-\Omega n)">\cos(\Omega n)=\cos(-\Omega n)</span>. La contrainte de l'énoncé est donc satisfaite aussi bien par <span class="km" data-tex="r=e^{\,j\pi/6}">r=e^{\,j\pi/6}</span> que par <span class="km" data-tex="\overline{r}=e^{-j\pi/6}">\overline{r}=e^{-j\pi/6}</span>. Avec la seconde branche on obtiendrait</p>
+<div class="km km-d" data-tex="r=e^{-j\pi/6}\ \Longrightarrow\ y_2=r^{-1}=e^{\,j\pi/6},
+\qquad |y_2|=1,\quad \arg(y_2)=+\frac{\pi}{6}=+30^{\circ}.">r=e^{-j\pi/6}\ \Longrightarrow\ y_2=r^{-1}=e^{\,j\pi/6},
+\qquad |y_2|=1,\quad \arg(y_2)=+\frac{\pi}{6}=+30^{\circ}.</div>
+<p>On présente la convention <em>officielle</em> (<span class="km" data-tex="r=e^{j\pi/6}">r=e^{j\pi/6}</span>, <span class="km" data-tex="y_2=e^{-j\pi/6}">y_2=e^{-j\pi/6}</span>, phase <span class="km" data-tex="-30^{\circ}">-30^{\circ}</span>) comme réponse, et on signale cette autre branche : le couple <span class="km" data-tex="(r,y_2)">(r,y_2)</span> reste conjugué symétrique, le module est inchangé (<span class="km" data-tex="1">1</span>), seule la phase change de signe. Le corrigé officiel <span class="km" data-tex="r=e^{\,j\pi/6}\Rightarrow y_2=e^{-j\pi/6}">r=e^{\,j\pi/6}\Rightarrow y_2=e^{-j\pi/6}</span> confirme le choix de <span class="km" data-tex="\Omega=+\pi/6">\Omega=+\pi/6</span>.</p></div></aside></div></section><section class="station station-normale" id="exercice-15" aria-labelledby="exercice-15-t"><header class="station-tete"><span class="station-num station-num-vide" aria-hidden="true">✦</span><h2 id="exercice-15-t">Exercice 15</h2><label class="revise"><input type="checkbox" data-section="exercice-15"><span class="revise-coche" aria-hidden="true"></span><span class="revise-texte">Révisé</span></label></header><div class="station-corps"><div class="formule"><span class="formule-etiquette">Formule</span><span class="km" data-tex="x_1=\displaystyle\sum_{n=-\infty}^{+\infty}10\,r_1^{\,n}\,\delta[n-3]">x_1=\displaystyle\sum_{n=-\infty}^{+\infty}10\,r_1^{\,n}\,\delta[n-3]</span>, <span class="km" data-tex="\quad">\quad</span><span class="km" data-tex="r_1=2+j">r_1=2+j</span></div>
+<aside class="carte carte-retenir"><div class="carte-tete"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></svg><span class="carte-type">À retenir</span></div><p class="carte-titre">Réponse</p><div class="carte-corps"><p>Le Kronecker <span class="km" data-tex="\delta[n-3]">\delta[n-3]</span> sélectionne l'unique indice <span class="km" data-tex="n=3">n=3</span> :</p>
+<div class="km km-d" data-tex="\boxed{\,x_1=10\,r_1^{\,3}=20+j\,110\,}">\boxed{\,x_1=10\,r_1^{\,3}=20+j\,110\,}</div>
+<div class="km km-d" data-tex="\Re\{x_1\}=20 \qquad \Im\{x_1\}=110
+    \qquad\text{(sans unité, signal discret)}">\Re\{x_1\}=20 \qquad \Im\{x_1\}=110
+    \qquad\text{(sans unité, signal discret)}</div>
+<p>Forme module–phase équivalente : <span class="km" data-tex="\;x_1=111.8\,e^{\,j1.391} \;\;\Leftrightarrow\;\; |x_1|=111.8,\ \arg x_1=1.391\ \text{rad}=79.70^\circ">\;x_1=111.8\,e^{\,j1.391} \;\;\Leftrightarrow\;\; |x_1|=111.8,\ \arg x_1=1.391\ \text{rad}=79.70^\circ</span>.</p></div></aside>
+<h3 id="exercice-15-demarche" class="sous-titre">Démarche</h3>
+<p><strong>1. Effet du Dirac discret (Kronecker).</strong> La somme porte sur <span class="km" data-tex="n\in\mathbb{Z}">n\in\mathbb{Z}</span> d'un produit <span class="km" data-tex="10\,r_1^{\,n}\,\delta[n-3]">10\,r_1^{\,n}\,\delta[n-3]</span>. Or</p>
+<div class="km km-d" data-tex="\delta[n-3]=
+  \begin{cases}
+    1, &amp; n=3,\\
+    0, &amp; n\neq 3,
+  \end{cases}">\delta[n-3]=
+  \begin{cases}
+    1, &amp; n=3,\\
+    0, &amp; n\neq 3,
+  \end{cases}</div>
+<p>donc tous les termes s'annulent sauf celui où <span class="km" data-tex="n=3">n=3</span> (propriété de sélection, Leibniz discret). La somme infinie se réduit à un seul terme :</p>
+<div class="km km-d" data-tex="x_1=\sum_{n=-\infty}^{+\infty}10\,r_1^{\,n}\delta[n-3]
+     =10\,r_1^{\,3}.">x_1=\sum_{n=-\infty}^{+\infty}10\,r_1^{\,n}\delta[n-3]
+     =10\,r_1^{\,3}.</div>
+<p><strong>2. Puissance du complexe <span class="km" data-tex="r_1=2+j">r_1=2+j</span>.</strong> On développe pas à pas avec <span class="km" data-tex="j^2=-1">j^2=-1</span> :</p>
+<div class="km km-d" data-tex="(2+j)^2=4+4j+j^2=4+4j-1=3+4j,">(2+j)^2=4+4j+j^2=4+4j-1=3+4j,</div>
+<div class="km km-d" data-tex="(2+j)^3=(3+4j)(2+j)=6+3j+8j+4j^2=6+11j-4=2+11j.">(2+j)^3=(3+4j)(2+j)=6+3j+8j+4j^2=6+11j-4=2+11j.</div>
+<p>D'où, en appliquant le facteur <span class="km" data-tex="10">10</span> :</p>
+<div class="km km-d" data-tex="x_1=10\,(2+11j)=20+j\,110.">x_1=10\,(2+11j)=20+j\,110.</div>
+<p><strong>3. Contrôle par la forme polaire.</strong></p>
+<div class="km km-d" data-tex="r_1=2+j=\sqrt{2^2+1^2}\,e^{\,j\arctan(1/2)}
+        =\sqrt5\,e^{\,j0.4636}
+        =2.236\,e^{\,j0.4636}.">r_1=2+j=\sqrt{2^2+1^2}\,e^{\,j\arctan(1/2)}
+        =\sqrt5\,e^{\,j0.4636}
+        =2.236\,e^{\,j0.4636}.</div>
+<p>La puissance cubique multiplie module au cube et phase par <span class="km" data-tex="3">3</span> :</p>
+<div class="km km-d" data-tex="x_1=10\,r_1^{\,3}
+     =10\bigl(\sqrt5\bigr)^3 e^{\,j\cdot 3\cdot 0.4636}
+     =10\cdot 11.180\,e^{\,j1.391}
+     =111.8\,e^{\,j1.391}.">x_1=10\,r_1^{\,3}
+     =10\bigl(\sqrt5\bigr)^3 e^{\,j\cdot 3\cdot 0.4636}
+     =10\cdot 11.180\,e^{\,j1.391}
+     =111.8\,e^{\,j1.391}.</div>
+<p>En repassant en cartésien, <span class="km" data-tex="111.8\cos(1.391)=20.0">111.8\cos(1.391)=20.0</span> et <span class="km" data-tex="111.8\sin(1.391)=110.0">111.8\sin(1.391)=110.0</span>, ce qui confirme <span class="km" data-tex="x_1=20+j110">x_1=20+j110</span>.</p>
+<aside class="carte carte-retenir"><div class="carte-tete"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></svg><span class="carte-type">À retenir</span></div><p class="carte-titre">Notation</p><div class="carte-corps"><span class="km" data-tex="j">j</span> désigne l'unité imaginaire (<span class="km" data-tex="j^2=-1">j^2=-1</span>, convention du cours, pas <span class="km" data-tex="i">i</span>) ; <span class="km" data-tex="\delta[n]">\delta[n]</span> est le Dirac discret (Kronecker), qui <em>sélectionne</em> une valeur alors que le Dirac continu <span class="km" data-tex="\delta(t)">\delta(t)</span> sélectionne un instant. Les deux notations ne sont pas interchangeables.</div></aside></div></section>
+    <footer class="pied">
+      <p>Converti depuis <code>Semestre-3/E2-SIGSYS1/Exercices/Serie-03-Exercices-8-15/sigsys1-serie-03-exercices-8-15-corrige.tex</code> · <a href="../../../assets/pdf/e2-sigsys1/sigsys1-serie-03-exercices-8-15-corrige.pdf" target="_blank" rel="noopener">version imprimable (PDF)</a></p>
+    </footer>
+  </main>
+</div>
+<dialog id="formulaire" class="dialogue" aria-labelledby="formulaire-titre">
+  <header class="dialogue-tete"><h2 id="formulaire-titre"><span class="btn-sigma" aria-hidden="true">Σ</span> Formulaire — Série 03 — exercices 8 à 15</h2>
+  <button type="button" class="btn-icone" data-fermer aria-label="Fermer">✕</button></header>
+  <div class="dialogue-corps"><section class="formulaire-groupe"><h3><a href="#exercice-8" data-fermer>Exercice 8</a></h3><div class="formule"><span class="km" data-tex="s_1=-0{,}5+j\,0{,}5">s_1=-0{,}5+j\,0{,}5</span> ;  <span class="km" data-tex="T=2">T=2</span> s ;  <span class="km" data-tex="\omega=0{,}5">\omega=0{,}5</span> rad/s ;   <span class="km" data-tex="y_1=\dfrac{2}{e}\,e^{\,j\,1}=0{,}736\,e^{\,j\,1}">y_1=\dfrac{2}{e}\,e^{\,j\,1}=0{,}736\,e^{\,j\,1}</span><span class="km" data-tex="\quad">\quad</span> (module <span class="km" data-tex="0{,}736">0{,}736</span>, phase <span class="km" data-tex="1">1</span> rad <span class="km" data-tex="\approx 57{,}3^{\circ}">\approx 57{,}3^{\circ}</span>).</div></section><section class="formulaire-groupe"><h3><a href="#exercice-9" data-fermer>Exercice 9</a></h3><div class="formule"><div class="km km-d" data-tex="y_1=\int_{-\infty}^{+\infty} x_1\,\delta(t-10)\,\mathrm{d}t
+      =x_1(10)=10\,e^{-1+2j}
+      =10\,e^{-1}e^{2j}
+      \;\approx\;3.68\,e^{\,j2},
+  \ensuremath{\qquad}
+  \boxed{\;|y_1|=10\,e^{-1}\approx 3.68\;}\;\text{et}\;
+  \boxed{\;\arg y_1=2\ \text{rad}\approx 114.59^{\circ}\;}">y_1=\int_{-\infty}^{+\infty} x_1\,\delta(t-10)\,\mathrm{d}t
+      =x_1(10)=10\,e^{-1+2j}
+      =10\,e^{-1}e^{2j}
+      \;\approx\;3.68\,e^{\,j2},
+  \ensuremath{\qquad}
+  \boxed{\;|y_1|=10\,e^{-1}\approx 3.68\;}\;\text{et}\;
+  \boxed{\;\arg y_1=2\ \text{rad}\approx 114.59^{\circ}\;}</div></div></section><section class="formulaire-groupe"><h3><a href="#exercice-10" data-fermer>Exercice 10</a></h3><div class="formule"><div class="km km-d" data-tex="\boxed{\,A_2 = 5\,}\qquad
+  \boxed{\,\sigma_2 = -10\ \text{s}^{-1}\,}\qquad
+  \boxed{\,\omega_2 = 100\ \text{rad/s}\,}">\boxed{\,A_2 = 5\,}\qquad
+  \boxed{\,\sigma_2 = -10\ \text{s}^{-1}\,}\qquad
+  \boxed{\,\omega_2 = 100\ \text{rad/s}\,}</div></div></section><section class="formulaire-groupe"><h3><a href="#exercice-11" data-fermer>Exercice 11</a></h3><div class="formule"><div class="km km-d" data-tex="C = 4,\ensuremath{\qquad} r = \sqrt{0.5} = \frac{1}{\sqrt{2}} \approx 0{,}707,
+    \ensuremath{\qquad} \Omega = \frac{\pi}{4}\ \text{rad} = 45^{\circ},\ensuremath{\qquad} \varphi = 0.">C = 4,\ensuremath{\qquad} r = \sqrt{0.5} = \frac{1}{\sqrt{2}} \approx 0{,}707,
+    \ensuremath{\qquad} \Omega = \frac{\pi}{4}\ \text{rad} = 45^{\circ},\ensuremath{\qquad} \varphi = 0.</div></div></section><section class="formulaire-groupe"><h3><a href="#exercice-13" data-fermer>Exercice 13</a></h3><div class="formule"><div class="km km-d" data-tex="x_2=\sum_{n=-\infty}^{+\infty} r^{\,n}\,\bigl(\delta[n]-\delta[n-2]\bigr)
+= r^{0}-r^{2}=1-0{,}64=\boxed{0{,}36}">x_2=\sum_{n=-\infty}^{+\infty} r^{\,n}\,\bigl(\delta[n]-\delta[n-2]\bigr)
+= r^{0}-r^{2}=1-0{,}64=\boxed{0{,}36}</div></div></section><section class="formulaire-groupe"><h3><a href="#exercice-14" data-fermer>Exercice 14</a></h3><div class="formule">Avec la convention officielle du cours <span class="km" data-tex="r=e^{\,j\pi/6}">r=e^{\,j\pi/6}</span> (pulsation <span class="km" data-tex="\Omega=+\pi/6">\Omega=+\pi/6</span> rad/échantillon, <span class="km" data-tex="|r|=1">|r|=1</span>) :  <span class="km" data-tex="y_2=r^{-1}=e^{-j\pi/6}">y_2=r^{-1}=e^{-j\pi/6}</span><span class="km" data-tex="\quad">\quad</span> soit <strong>module <span class="km" data-tex="|y_2|=1">|y_2|=1</span></strong> et <strong>phase <span class="km" data-tex="\arg(y_2)=-\pi/6~\text{rad}=-30^{\circ}">\arg(y_2)=-\pi/6~\text{rad}=-30^{\circ}</span></strong>.</div></section><section class="formulaire-groupe"><h3><a href="#exercice-15" data-fermer>Exercice 15</a></h3><div class="formule"><span class="km" data-tex="x_1=\displaystyle\sum_{n=-\infty}^{+\infty}10\,r_1^{\,n}\,\delta[n-3]">x_1=\displaystyle\sum_{n=-\infty}^{+\infty}10\,r_1^{\,n}\,\delta[n-3]</span>, <span class="km" data-tex="\quad">\quad</span><span class="km" data-tex="r_1=2+j">r_1=2+j</span></div></section></div>
+</dialog>
+<dialog id="loupe" class="dialogue loupe" aria-label="Figure agrandie">
+  <button type="button" class="btn-icone loupe-fermer" data-fermer aria-label="Fermer">✕</button>
+  <img alt="">
+</dialog>
+
+</body>
+</html>

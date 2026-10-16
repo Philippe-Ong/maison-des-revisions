@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Analyse 3 · Corrigé · Devoir — exercice 20</title>
+<meta name="description" content="Analyse 3 — Devoir — exercice 20 (Équations différentielles)">
+<link rel="icon" href="../../../assets/favicon.svg?v=012e46bcde" type="image/svg+xml">
+<script>try{var t=localStorage.getItem("maison:theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+
+<link rel="stylesheet" href="../../../assets/styles.css?v=012e46bcde">
+<style>:root{--c-heia:#0E5A8A;--c-pale:#EEF5FB;--c-okgreen:#0A7A46;--c-warnred:#B00020}@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--c-heia:color-mix(in srgb,#0E5A8A 50%,#fff);--c-pale:color-mix(in srgb,#EEF5FB 50%,#fff);--c-okgreen:color-mix(in srgb,#0A7A46 50%,#fff);--c-warnred:color-mix(in srgb,#B00020 50%,#fff)}}:root[data-theme=dark]{--c-heia:color-mix(in srgb,#0E5A8A 50%,#fff);--c-pale:color-mix(in srgb,#EEF5FB 50%,#fff);--c-okgreen:color-mix(in srgb,#0A7A46 50%,#fff);--c-warnred:color-mix(in srgb,#B00020 50%,#fff)}</style>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+
+<script defer src="../../../assets/maison.js?v=012e46bcde"></script>
+</head>
+<body class="page-resume" style="--piece:#4338CA" data-cle="E2-ANA3/exercices/devoir-ex20" data-sections='["a-y-dfrac-k-x-k-in-mathbb-r", "b-y-kx-2-k-in-mathbb-r", "c-x-2-y-2-k-2-k-0", "recapitulatif", "trace-des-deux-familles-dans-une-meme-fenetre"]' data-url-racine="pieces/e2-ana3/exercices/devoir-ex20.html" data-titre="Analyse 3 · Corrigé · Devoir — exercice 20">
+<a class="evitement" href="#contenu">Aller au contenu</a>
+
+<header class="barre">
+  <nav class="ariane" aria-label="Fil d'Ariane">
+    <a href="../../../index.html"><svg class="icone-ariane" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 12 4l9 7"/><path d="M5 9.5V20h14V9.5"/><path d="M10 20v-6h4v6"/></svg><span>Maison</span></a><span class="sep" aria-hidden="true">›</span>
+    <a href="../index.html">Analyse 3</a><span class="sep" aria-hidden="true">›</span>
+    <span aria-current="page">Corrigé · Devoir — exercice 20</span>
+  </nav>
+  <div class="barre-actions">
+    <button type="button" class="btn" data-ouvrir="formulaire"><span class="btn-sigma" aria-hidden="true">Σ</span> Formulaire</button>
+    <a class="btn btn-discret" href="../../../assets/pdf/e2-ana3/devoir-analyse3-exercice-20.pdf" target="_blank" rel="noopener">PDF</a>
+    <button type="button" class="btn-icone" data-theme-bascule aria-label="Basculer clair / sombre"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 4a8 8 0 0 1 0 16z" fill="currentColor"/></svg></button>
+  </div>
+</header>
+<div class="cadre">
+  <aside class="sommaire" aria-label="Sommaire">
+    <details class="sommaire-details" open>
+      <summary><span>Sommaire</span><span class="sommaire-prog" data-progression-texte>0 / 5</span></summary>
+      <ol class="sommaire-liste"><li data-cible="a-y-dfrac-k-x-k-in-mathbb-r"><div class="sommaire-ligne"><a href="#a-y-dfrac-k-x-k-in-mathbb-r"><span class="num num-vide">·</span>a)  <span class="km" data-tex="y=\dfrac{k}{x}">y=\dfrac{k}{x}</span>, <span class="km" data-tex="k\in\mathbb{R}^{*}">k\in\mathbb{R}^{*}</span></a><label class="revise-mini" title="Marquer « a) y=\dfrac{k}{x} , k\in\mathbb{R}^{*} » comme révisé"><input type="checkbox" data-section="a-y-dfrac-k-x-k-in-mathbb-r" aria-label="Révisé : a) y=\dfrac{k}{x} , k\in\mathbb{R}^{*}"><span class="revise-coche" aria-hidden="true"></span></label></div></li><li data-cible="b-y-kx-2-k-in-mathbb-r"><div class="sommaire-ligne"><a href="#b-y-kx-2-k-in-mathbb-r"><span class="num num-vide">·</span>b)  <span class="km" data-tex="y=kx^{2}">y=kx^{2}</span>, <span class="km" data-tex="k\in\mathbb{R}">k\in\mathbb{R}</span></a><label class="revise-mini" title="Marquer « b) y=kx^{2} , k\in\mathbb{R} » comme révisé"><input type="checkbox" data-section="b-y-kx-2-k-in-mathbb-r" aria-label="Révisé : b) y=kx^{2} , k\in\mathbb{R}"><span class="revise-coche" aria-hidden="true"></span></label></div></li><li data-cible="c-x-2-y-2-k-2-k-0"><div class="sommaire-ligne"><a href="#c-x-2-y-2-k-2-k-0"><span class="num num-vide">·</span>c)  <span class="km" data-tex="x^{2}+y^{2}=k^{2}">x^{2}+y^{2}=k^{2}</span>, <span class="km" data-tex="k&gt;0">k&gt;0</span></a><label class="revise-mini" title="Marquer « c) x^{2}+y^{2}=k^{2} , k&gt;0 » comme révisé"><input type="checkbox" data-section="c-x-2-y-2-k-2-k-0" aria-label="Révisé : c) x^{2}+y^{2}=k^{2} , k&gt;0"><span class="revise-coche" aria-hidden="true"></span></label></div></li><li data-cible="recapitulatif"><div class="sommaire-ligne"><a href="#recapitulatif"><span class="num num-vide">·</span>Récapitulatif</a><label class="revise-mini" title="Marquer « Récapitulatif » comme révisé"><input type="checkbox" data-section="recapitulatif" aria-label="Révisé : Récapitulatif"><span class="revise-coche" aria-hidden="true"></span></label></div></li><li data-cible="trace-des-deux-familles-dans-une-meme-fenetre"><div class="sommaire-ligne"><a href="#trace-des-deux-familles-dans-une-meme-fenetre"><span class="num num-vide">·</span>Tracé des deux familles dans une même fenêtre</a><label class="revise-mini" title="Marquer « Tracé des deux familles dans une même fenêtre » comme révisé"><input type="checkbox" data-section="trace-des-deux-familles-dans-une-meme-fenetre" aria-label="Révisé : Tracé des deux familles dans une même fenêtre"><span class="revise-coche" aria-hidden="true"></span></label></div></li></ol>
+    </details>
+  </aside>
+  <main id="contenu">
+    <section class="hero">
+      <div class="hero-papier" aria-hidden="true"></div>
+      <div class="hero-tete">
+        <a class="hero-piece" href="../index.html"><svg class="icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3c-2 0-3 1-3 3v12c0 2-1 3-3 3"/><path d="M15 9h5M17.5 6.5v5"/></svg><span>Analyse 3</span><span class="hero-aile">Aile Sciences</span></a>
+        <div class="anneau" data-anneau role="img" aria-label="Progression"><span data-progression-pourcent>0 %</span></div>
+      </div>
+      <p class="hero-entete">E2-ANA3 — Analyse 3 · Exercice 20 — trajectoires orthogonales</p>
+      <h1 class="visuellement-cache">Analyse 3 · Corrigé · Devoir — exercice 20</h1>
+      <div class="hero-intro"><p><span class="t-titre"><span class="gras"><span style="color:var(--c-heia)">Exercice 20 — trajectoires orthogonales</span></span></span></p>
+<p>Série « Équations différentielles », exercices 20 a, b et c · E2-ANA3, F. Yerly</p>
+<aside class="carte carte-retenir"><div class="carte-tete"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></svg><span class="carte-type">À retenir</span></div><div class="carte-corps"><strong>Méthode.</strong> Une <em>trajectoire orthogonale</em> d'une famille de courbes coupe chaque membre de cette famille à angle droit. Quatre temps : (1) <strong>dériver</strong> l'équation de la famille, le paramètre <span class="km" data-tex="k">k</span> restant constant ; (2) <strong>éliminer</strong> <span class="km" data-tex="k">k</span> à l'aide de l'équation de la famille, ce qui donne la pente <span class="km" data-tex="y&#x27;=f(x,y)">y&#x27;=f(x,y)</span> ; (3) <strong>remplacer</strong> la pente par son opposé réciproque <span class="km" data-tex="y&#x27;_{\perp}=-\dfrac{1}{f(x,y)}">y&#x27;_{\perp}=-\dfrac{1}{f(x,y)}</span> (là où <span class="km" data-tex="f">f</span> est fini et non nul) ; (4) <strong>résoudre</strong> cette nouvelle équation différentielle, puis <strong>vérifier</strong> que le produit des pentes vaut <span class="km" data-tex="-1">-1</span> aux intersections régulières.</div></aside></div>
+      <div class="hero-puces"><span class="puce puce-te puce-attente">Date du TE : pas encore annoncée</span><span class="puce puce-corrige">Corrigé</span><span class="puce">5 sections</span><span class="puce">3 formules</span></div>
+    </section>
+    <section class="station station-normale" id="a-y-dfrac-k-x-k-in-mathbb-r" aria-labelledby="a-y-dfrac-k-x-k-in-mathbb-r-t"><header class="station-tete"><span class="station-num station-num-vide" aria-hidden="true">✦</span><h2 id="a-y-dfrac-k-x-k-in-mathbb-r-t">a)  <span class="km" data-tex="y=\dfrac{k}{x}">y=\dfrac{k}{x}</span>, <span class="km" data-tex="k\in\mathbb{R}^{*}">k\in\mathbb{R}^{*}</span></h2><label class="revise"><input type="checkbox" data-section="a-y-dfrac-k-x-k-in-mathbb-r"><span class="revise-coche" aria-hidden="true"></span><span class="revise-texte">Révisé</span></label></header><div class="station-corps"><p><strong><span style="color:var(--c-heia)">1. Dériver, puis éliminer <span class="km" data-tex="k">k</span> (pour <span class="km" data-tex="x\ne 0">x\ne 0</span>).</span></strong></p>
+<div class="km km-d" data-tex="y=\frac{k}{x}
+ \quad\Longrightarrow\quad
+ y&#x27;=-\frac{k}{x^{2}},
+ \qquad\text{et}\qquad
+ k=xy
+ \quad\Longrightarrow\quad
+ y&#x27;=-\frac{xy}{x^{2}}=-\frac{y}{x}.">y=\frac{k}{x}
+ \quad\Longrightarrow\quad
+ y&#x27;=-\frac{k}{x^{2}},
+ \qquad\text{et}\qquad
+ k=xy
+ \quad\Longrightarrow\quad
+ y&#x27;=-\frac{xy}{x^{2}}=-\frac{y}{x}.</div>
+<p><strong><span style="color:var(--c-heia)">2. Pente orthogonale (pour <span class="km" data-tex="y\ne 0">y\ne 0</span>).</span></strong></p>
+<div class="km km-d" data-tex="y&#x27;_{\perp}=-\frac{1}{f(x,y)}=-\frac{1}{-y/x}=\frac{x}{y}.">y&#x27;_{\perp}=-\frac{1}{f(x,y)}=-\frac{1}{-y/x}=\frac{x}{y}.</div>
+<p><strong><span style="color:var(--c-heia)">3. Séparer et intégrer.</span></strong></p>
+<div class="km km-d" data-tex="\frac{\mathrm{d}y}{\mathrm{d}x}=\frac{x}{y}
+ \quad\Longleftrightarrow\quad
+ y\,\mathrm{d}y=x\,\mathrm{d}x
+ \quad\Longrightarrow\quad
+ \frac{y^{2}}{2}=\frac{x^{2}}{2}+C_{0}
+ \quad\Longrightarrow\quad
+ y^{2}-x^{2}=C,\qquad C=2C_{0}.">\frac{\mathrm{d}y}{\mathrm{d}x}=\frac{x}{y}
+ \quad\Longleftrightarrow\quad
+ y\,\mathrm{d}y=x\,\mathrm{d}x
+ \quad\Longrightarrow\quad
+ \frac{y^{2}}{2}=\frac{x^{2}}{2}+C_{0}
+ \quad\Longrightarrow\quad
+ y^{2}-x^{2}=C,\qquad C=2C_{0}.</div>
+<p><strong><span style="color:var(--c-heia)">4. Vérifier que les familles se coupent à angle droit.</span></strong></p>
+<div class="km km-d" data-tex="y&#x27;\,y&#x27;_{\perp}
+ =\left(-\frac{y}{x}\right)\left(\frac{x}{y}\right)=-1.\qquad\textbf{\color{okgreen}(vérifié)}{}">y&#x27;\,y&#x27;_{\perp}
+ =\left(-\frac{y}{x}\right)\left(\frac{x}{y}\right)=-1.\qquad\textbf{\color{okgreen}(vérifié)}{}</div>
+<div class="formule"><span class="formule-etiquette">Formule</span><div class="km km-d" data-tex="y^{2}-x^{2}=C,\qquad C\in\mathbb{R}
+ \quad\text{(hyperboles équilatères d&#x27;asymptotes }y=\pm x\text{)}.">y^{2}-x^{2}=C,\qquad C\in\mathbb{R}
+ \quad\text{(hyperboles équilatères d&#x27;asymptotes }y=\pm x\text{)}.</div></div>
+<p><strong>Remarques.</strong> La famille donnée est un réseau d'hyperboles équilatères d'asymptotes les axes ; la famille orthogonale est le réseau conjugué, d'asymptotes <span class="km" data-tex="y=\pm x">y=\pm x</span>. Le cas <span class="km" data-tex="C=0">C=0</span> fournit la paire de droites <span class="km" data-tex="y=\pm x">y=\pm x</span>, qui est bien orthogonale à <span class="km" data-tex="y=k/x">y=k/x</span> (produit des pentes <span class="km" data-tex="-1">-1</span>). Le point <span class="km" data-tex="(1,1)">(1,1)</span> est l'intersection de <span class="km" data-tex="y=1/x">y=1/x</span> et de <span class="km" data-tex="y=x">y=x</span> ; le carré marqué sur la figure ci-dessous y matérialise l'angle droit.</p>
+<figure class="figure"><button type="button" class="loupe-ouvrir" aria-label="Agrandir la figure"><img src="../../../assets/figures/e2-ana3/exercice-20-trajectoires-orthogonales-a.png" alt="Figure — a) y=\dfrac{k}{x} , k\in\mathbb{R}^{*}" loading="lazy"></button></figure></div></section><section class="station station-normale" id="b-y-kx-2-k-in-mathbb-r" aria-labelledby="b-y-kx-2-k-in-mathbb-r-t"><header class="station-tete"><span class="station-num station-num-vide" aria-hidden="true">✦</span><h2 id="b-y-kx-2-k-in-mathbb-r-t">b)  <span class="km" data-tex="y=kx^{2}">y=kx^{2}</span>, <span class="km" data-tex="k\in\mathbb{R}">k\in\mathbb{R}</span></h2><label class="revise"><input type="checkbox" data-section="b-y-kx-2-k-in-mathbb-r"><span class="revise-coche" aria-hidden="true"></span><span class="revise-texte">Révisé</span></label></header><div class="station-corps"><p><strong><span style="color:var(--c-heia)">1. Dériver, puis éliminer <span class="km" data-tex="k">k</span> (pour <span class="km" data-tex="x\ne 0">x\ne 0</span>).</span></strong></p>
+<div class="km km-d" data-tex="y=kx^{2}
+ \quad\Longrightarrow\quad
+ y&#x27;=2kx,
+ \qquad\text{et}\qquad
+ k=\frac{y}{x^{2}}
+ \quad\Longrightarrow\quad
+ y&#x27;=2\cdot\frac{y}{x^{2}}\cdot x=\frac{2y}{x}.">y=kx^{2}
+ \quad\Longrightarrow\quad
+ y&#x27;=2kx,
+ \qquad\text{et}\qquad
+ k=\frac{y}{x^{2}}
+ \quad\Longrightarrow\quad
+ y&#x27;=2\cdot\frac{y}{x^{2}}\cdot x=\frac{2y}{x}.</div>
+<p><strong><span style="color:var(--c-heia)">2. Pente orthogonale (pour <span class="km" data-tex="y\ne 0">y\ne 0</span>).</span></strong></p>
+<div class="km km-d" data-tex="y&#x27;_{\perp}=-\frac{1}{2y/x}=-\frac{x}{2y}.">y&#x27;_{\perp}=-\frac{1}{2y/x}=-\frac{x}{2y}.</div>
+<p><strong><span style="color:var(--c-heia)">3. Séparer et intégrer.</span></strong></p>
+<div class="km km-d" data-tex="\frac{\mathrm{d}y}{\mathrm{d}x}=-\frac{x}{2y}
+ \quad\Longleftrightarrow\quad
+ 2y\,\mathrm{d}y=-x\,\mathrm{d}x
+ \quad\Longrightarrow\quad
+ y^{2}=-\frac{x^{2}}{2}+C_{0}
+ \quad\Longrightarrow\quad
+ x^{2}+2y^{2}=C,\qquad C=2C_{0}.">\frac{\mathrm{d}y}{\mathrm{d}x}=-\frac{x}{2y}
+ \quad\Longleftrightarrow\quad
+ 2y\,\mathrm{d}y=-x\,\mathrm{d}x
+ \quad\Longrightarrow\quad
+ y^{2}=-\frac{x^{2}}{2}+C_{0}
+ \quad\Longrightarrow\quad
+ x^{2}+2y^{2}=C,\qquad C=2C_{0}.</div>
+<p><strong><span style="color:var(--c-heia)">4. Vérifier.</span></strong></p>
+<div class="km km-d" data-tex="y&#x27;\,y&#x27;_{\perp}
+ =\left(\frac{2y}{x}\right)\left(-\frac{x}{2y}\right)=-1.\qquad\textbf{\color{okgreen}(vérifié)}{}">y&#x27;\,y&#x27;_{\perp}
+ =\left(\frac{2y}{x}\right)\left(-\frac{x}{2y}\right)=-1.\qquad\textbf{\color{okgreen}(vérifié)}{}</div>
+<div class="formule"><span class="formule-etiquette">Formule</span><div class="km km-d" data-tex="x^{2}+2y^{2}=C,\qquad C&gt;0
+ \quad\text{(ellipses centrées à l&#x27;origine).}">x^{2}+2y^{2}=C,\qquad C&gt;0
+ \quad\text{(ellipses centrées à l&#x27;origine).}</div></div>
+<p><strong>Remarques.</strong> Pour <span class="km" data-tex="C&gt;0">C&gt;0</span> ce sont des ellipses de demi-axes <span class="km" data-tex="\sqrt{C}">\sqrt{C}</span> selon <span class="km" data-tex="x">x</span> et <span class="km" data-tex="\sqrt{C/2}">\sqrt{C/2}</span> selon <span class="km" data-tex="y">y</span>. Le cas <span class="km" data-tex="C=0">C=0</span> ne donne que le point <span class="km" data-tex="(0,0)">(0,0)</span> : ce n'est pas une trajectoire régulière. Les paraboles ont une tangente verticale en <span class="km" data-tex="(0,0)">(0,0)</span>, où la pente <span class="km" data-tex="y&#x27;=2y/x">y&#x27;=2y/x</span> n'est pas définie ; sur l'axe <span class="km" data-tex="y=0">y=0</span> (<span class="km" data-tex="x\ne0">x\ne0</span>) la tangente des paraboles est horizontale et celle des ellipses est verticale. Le carré marqué est en <span class="km" data-tex="\left(\frac{1}{\sqrt2},\frac12\right)">\left(\frac{1}{\sqrt2},\frac12\right)</span>, intersection de <span class="km" data-tex="y=x^{2}">y=x^{2}</span> et de <span class="km" data-tex="x^{2}+2y^{2}=1">x^{2}+2y^{2}=1</span>.</p>
+<figure class="figure"><button type="button" class="loupe-ouvrir" aria-label="Agrandir la figure"><img src="../../../assets/figures/e2-ana3/exercice-20-trajectoires-orthogonales-b.png" alt="Figure — b) y=kx^{2} , k\in\mathbb{R}" loading="lazy"></button></figure></div></section><section class="station station-normale" id="c-x-2-y-2-k-2-k-0" aria-labelledby="c-x-2-y-2-k-2-k-0-t"><header class="station-tete"><span class="station-num station-num-vide" aria-hidden="true">✦</span><h2 id="c-x-2-y-2-k-2-k-0-t">c)  <span class="km" data-tex="x^{2}+y^{2}=k^{2}">x^{2}+y^{2}=k^{2}</span>, <span class="km" data-tex="k&gt;0">k&gt;0</span></h2><label class="revise"><input type="checkbox" data-section="c-x-2-y-2-k-2-k-0"><span class="revise-coche" aria-hidden="true"></span><span class="revise-texte">Révisé</span></label></header><div class="station-corps"><p><strong><span style="color:var(--c-heia)">1. Dériver (le paramètre <span class="km" data-tex="k">k</span> disparaît de lui-même).</span></strong></p>
+<div class="km km-d" data-tex="2x+2y\,y&#x27;=0
+ \quad\Longrightarrow\quad
+ y&#x27;=-\frac{x}{y}\qquad(y\ne 0).">2x+2y\,y&#x27;=0
+ \quad\Longrightarrow\quad
+ y&#x27;=-\frac{x}{y}\qquad(y\ne 0).</div>
+<p><strong><span style="color:var(--c-heia)">2. Pente orthogonale (pour <span class="km" data-tex="x\ne 0">x\ne 0</span>, <span class="km" data-tex="y\ne 0">y\ne 0</span>).</span></strong></p>
+<div class="km km-d" data-tex="y&#x27;_{\perp}=-\frac{1}{-x/y}=\frac{y}{x}.">y&#x27;_{\perp}=-\frac{1}{-x/y}=\frac{y}{x}.</div>
+<p><strong><span style="color:var(--c-heia)">3. Séparer et intégrer.</span></strong></p>
+<div class="km km-d" data-tex="\frac{\mathrm{d}y}{y}=\frac{\mathrm{d}x}{x}
+ \quad\Longrightarrow\quad
+ \ln|y|=\ln|x|+K
+ \quad\Longrightarrow\quad
+ y=Cx,\qquad C\in\mathbb{R}^{*}.">\frac{\mathrm{d}y}{y}=\frac{\mathrm{d}x}{x}
+ \quad\Longrightarrow\quad
+ \ln|y|=\ln|x|+K
+ \quad\Longrightarrow\quad
+ y=Cx,\qquad C\in\mathbb{R}^{*}.</div>
+<p><strong><span style="color:var(--c-heia)">4. Compléter la famille : la droite <span class="km" data-tex="x=0">x=0</span>.</span></strong></p>
+<p>Aux points <span class="km" data-tex="(0,\pm k)">(0,\pm k)</span>, la pente du cercle est <span class="km" data-tex="y&#x27;=-x/y=0">y&#x27;=-x/y=0</span> (tangente horizontale) et celle des droites <span class="km" data-tex="y=Cx">y=Cx</span> tend vers <span class="km" data-tex="0">0</span> : la trajectoire orthogonale cherchée est la droite <em>verticale</em> <span class="km" data-tex="x=0">x=0</span>, qui n'est pas de la forme <span class="km" data-tex="y=Cx">y=Cx</span>.</p>
+<p><strong><span style="color:var(--c-heia)">5. Vérifier (intersections régulières).</span></strong></p>
+<div class="km km-d" data-tex="y&#x27;\,y&#x27;_{\perp}
+ =\left(-\frac{x}{y}\right)\left(\frac{y}{x}\right)=-1.\qquad\textbf{\color{okgreen}(vérifié)}{}">y&#x27;\,y&#x27;_{\perp}
+ =\left(-\frac{x}{y}\right)\left(\frac{y}{x}\right)=-1.\qquad\textbf{\color{okgreen}(vérifié)}{}</div>
+<div class="formule"><span class="formule-etiquette">Formule</span><div class="km km-d" data-tex="y=Cx,\quad C\in\mathbb{R}
+ \qquad\text{et}\qquad
+ x=0
+ \qquad\text{(droites passant par l&#x27;origine).}">y=Cx,\quad C\in\mathbb{R}
+ \qquad\text{et}\qquad
+ x=0
+ \qquad\text{(droites passant par l&#x27;origine).}</div></div>
+<p><strong>Remarques.</strong> Les cercles <span class="km" data-tex="x^{2}+y^{2}=k^{2}">x^{2}+y^{2}=k^{2}</span> sont centrés en l'origine : leurs rayons sont donc les trajectoires orthogonales, ce qui redonne le résultat classique « les trajectoires orthogonales d'un faisceau de cercles centrés à l'origine sont les droites passant par le centre ». Pour <span class="km" data-tex="y=0">y=0</span> (<span class="km" data-tex="C=0">C=0</span>), la droite est bien orthogonale aux cercles aux points <span class="km" data-tex="(\pm k,0)">(\pm k,0)</span>, où la tangente du cercle est verticale.</p>
+<figure class="figure"><button type="button" class="loupe-ouvrir" aria-label="Agrandir la figure"><img src="../../../assets/figures/e2-ana3/exercice-20-trajectoires-orthogonales-c.png" alt="Figure — c) x^{2}+y^{2}=k^{2} , k&gt;0" loading="lazy"></button></figure></div></section><section class="station station-normale" id="recapitulatif" aria-labelledby="recapitulatif-t"><header class="station-tete"><span class="station-num station-num-vide" aria-hidden="true">✦</span><h2 id="recapitulatif-t">Récapitulatif</h2><label class="revise"><input type="checkbox" data-section="recapitulatif"><span class="revise-coche" aria-hidden="true"></span><span class="revise-texte">Révisé</span></label></header><div class="station-corps"><div class="tableau"><table><tbody><tr><td><strong>Famille donnée</strong></td><td><strong>Trajectoires orthogonales</strong></td></tr><tr><td><span class="km" data-tex="y=k/x">y=k/x</span></td><td><span class="km" data-tex="y^{2}-x^{2}=C">y^{2}-x^{2}=C</span></td></tr><tr><td><span class="km" data-tex="y=kx^{2}">y=kx^{2}</span></td><td><span class="km" data-tex="x^{2}+2y^{2}=C">x^{2}+2y^{2}=C</span>, <span class="km" data-tex="C&gt;0">C&gt;0</span></td></tr><tr><td><span class="km" data-tex="x^{2}+y^{2}=k^{2}">x^{2}+y^{2}=k^{2}</span></td><td><span class="km" data-tex="y=Cx">y=Cx</span> et <span class="km" data-tex="x=0">x=0</span></td></tr></tbody></table></div></div></section><section class="station station-normale" id="trace-des-deux-familles-dans-une-meme-fenetre" aria-labelledby="trace-des-deux-familles-dans-une-meme-fenetre-t"><header class="station-tete"><span class="station-num station-num-vide" aria-hidden="true">✦</span><h2 id="trace-des-deux-familles-dans-une-meme-fenetre-t">Tracé des deux familles dans une même fenêtre</h2><label class="revise"><input type="checkbox" data-section="trace-des-deux-familles-dans-une-meme-fenetre"><span class="revise-coche" aria-hidden="true"></span><span class="revise-texte">Révisé</span></label></header><div class="station-corps"><p>Les trois figures ci-dessus reproduisent la demande de l'énoncé : quelques membres de la famille et quelques membres de la famille orthogonale dans une même fenêtre, avec un carré marquant un angle droit à une intersection. Elles sont produites par <code>scripts/generer_graphes_ex20.py</code> (matplotlib, 300 dpi).</p>
+<figure class="figure"><button type="button" class="loupe-ouvrir" aria-label="Agrandir la figure"><img src="../../../assets/figures/e2-ana3/exercice-20-trajectoires-orthogonales.png" alt="Figure — Tracé des deux familles dans une même fenêtre" loading="lazy"></button></figure>
+<p><strong>Reproduction dans GeoGebra</strong> (barre de saisie ; les paramètres peuvent aussi être créés comme curseurs, ce qui permet de faire varier <span class="km" data-tex="k">k</span> et <span class="km" data-tex="C">C</span>) :</p>
+<div class="tableau"><table><tbody><tr><td>a)</td><td><code>y = k/x</code>  puis  <code>ŷ2 - x̂2 = C</code></td></tr><tr><td>b)</td><td><code>y = k x̂2</code>  puis  <code>x̂2 + 2 ŷ2 = C</code></td></tr><tr><td>c)</td><td><code>x̂2 + ŷ2 = k̂2</code>  puis  <code>y = C x</code>  et  <code>x = 0</code></td></tr></tbody></table></div>
+<aside class="carte carte-retenir"><div class="carte-tete"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></svg><span class="carte-type">À retenir</span></div><div class="carte-corps"><strong>Contrôles effectués.</strong> Les trois familles ont été vérifiées de quatre façons indépendantes : (1) pente <span class="km" data-tex="f(x,y)">f(x,y)</span> obtenue en éliminant le paramètre <span class="km" data-tex="k">k</span>, puis dérivée directe d'un membre explicite ; (2) pente de la famille proposée calculée par dérivation implicite de son intégrale première, produit des pentes <span class="km" data-tex="=-1">=-1</span> ; (3) intégration de l'équation orthogonale par <code>sympy.dsolve</code>, qui redonne l'intégrale première annoncée ; (4) intégration numérique de l'ED orthogonale (<code>scipy.integrate.solve_ivp</code>) : l'intégrale première reste constante le long de la trajectoire et le produit de la pente numérique par la pente de la famille vaut <span class="km" data-tex="-1">-1</span> à mieux que <span class="km" data-tex="10^{-5}">10^{-5}</span>. Les points marqués sur les figures ont en outre été vérifiés comme intersections exactes des deux familles. Script : <code>E2-ANA3/scripts/verifier_devoir_ex20.py</code> (<strong>50 contrôles, tous OK</strong>).</div></aside>
+<p>Corrigé proposé, non officiel.</p></div></section>
+    <footer class="pied">
+      <p>Converti depuis <code>Semestre-3/E2-ANA3/Fiches-Revision/devoir-analyse3-exercice-20.tex</code> · <a href="../../../assets/pdf/e2-ana3/devoir-analyse3-exercice-20.pdf" target="_blank" rel="noopener">version imprimable (PDF)</a></p>
+    </footer>
+  </main>
+</div>
+<dialog id="formulaire" class="dialogue" aria-labelledby="formulaire-titre">
+  <header class="dialogue-tete"><h2 id="formulaire-titre"><span class="btn-sigma" aria-hidden="true">Σ</span> Formulaire — Devoir — exercice 20</h2>
+  <button type="button" class="btn-icone" data-fermer aria-label="Fermer">✕</button></header>
+  <div class="dialogue-corps"><section class="formulaire-groupe"><h3><a href="#a-y-dfrac-k-x-k-in-mathbb-r" data-fermer>a) y=\dfrac{k}{x} , k\in\mathbb{R}^{*}</a></h3><div class="formule"><div class="km km-d" data-tex="y^{2}-x^{2}=C,\qquad C\in\mathbb{R}
+ \quad\text{(hyperboles équilatères d&#x27;asymptotes }y=\pm x\text{)}.">y^{2}-x^{2}=C,\qquad C\in\mathbb{R}
+ \quad\text{(hyperboles équilatères d&#x27;asymptotes }y=\pm x\text{)}.</div></div></section><section class="formulaire-groupe"><h3><a href="#b-y-kx-2-k-in-mathbb-r" data-fermer>b) y=kx^{2} , k\in\mathbb{R}</a></h3><div class="formule"><div class="km km-d" data-tex="x^{2}+2y^{2}=C,\qquad C&gt;0
+ \quad\text{(ellipses centrées à l&#x27;origine).}">x^{2}+2y^{2}=C,\qquad C&gt;0
+ \quad\text{(ellipses centrées à l&#x27;origine).}</div></div></section><section class="formulaire-groupe"><h3><a href="#c-x-2-y-2-k-2-k-0" data-fermer>c) x^{2}+y^{2}=k^{2} , k&gt;0</a></h3><div class="formule"><div class="km km-d" data-tex="y=Cx,\quad C\in\mathbb{R}
+ \qquad\text{et}\qquad
+ x=0
+ \qquad\text{(droites passant par l&#x27;origine).}">y=Cx,\quad C\in\mathbb{R}
+ \qquad\text{et}\qquad
+ x=0
+ \qquad\text{(droites passant par l&#x27;origine).}</div></div></section></div>
+</dialog>
+<dialog id="loupe" class="dialogue loupe" aria-label="Figure agrandie">
+  <button type="button" class="btn-icone loupe-fermer" data-fermer aria-label="Fermer">✕</button>
+  <img alt="">
+</dialog>
+
+</body>
+</html>

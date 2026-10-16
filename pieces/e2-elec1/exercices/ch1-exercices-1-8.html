@@ -1,0 +1,672 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Électronique 1 · Corrigé · Chapitre 1 — exercices 1 à 8</title>
+<meta name="description" content="Électronique 1 — Chapitre 1 — exercices 1 à 8 (Corrigé détaillé des rappels)">
+<link rel="icon" href="../../../assets/favicon.svg?v=012e46bcde" type="image/svg+xml">
+<script>try{var t=localStorage.getItem("maison:theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+
+<link rel="stylesheet" href="../../../assets/styles.css?v=012e46bcde">
+<style>:root{--c-heia:#0E5A8A;--c-orangeheia:#E67E22;--c-ink:#1D2A35;--c-pale:#EEF5FB;--c-palewarm:#FBF3E8;--c-palered:#FBEEED;--c-palegreen:#EDF7F1;--c-grid:#C7D3DE}@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--c-heia:color-mix(in srgb,#0E5A8A 50%,#fff);--c-orangeheia:color-mix(in srgb,#E67E22 50%,#fff);--c-ink:color-mix(in srgb,#1D2A35 50%,#fff);--c-pale:color-mix(in srgb,#EEF5FB 50%,#fff);--c-palewarm:color-mix(in srgb,#FBF3E8 50%,#fff);--c-palered:color-mix(in srgb,#FBEEED 50%,#fff);--c-palegreen:color-mix(in srgb,#EDF7F1 50%,#fff);--c-grid:color-mix(in srgb,#C7D3DE 50%,#fff)}}:root[data-theme=dark]{--c-heia:color-mix(in srgb,#0E5A8A 50%,#fff);--c-orangeheia:color-mix(in srgb,#E67E22 50%,#fff);--c-ink:color-mix(in srgb,#1D2A35 50%,#fff);--c-pale:color-mix(in srgb,#EEF5FB 50%,#fff);--c-palewarm:color-mix(in srgb,#FBF3E8 50%,#fff);--c-palered:color-mix(in srgb,#FBEEED 50%,#fff);--c-palegreen:color-mix(in srgb,#EDF7F1 50%,#fff);--c-grid:color-mix(in srgb,#C7D3DE 50%,#fff)}</style>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+
+<script defer src="../../../assets/maison.js?v=012e46bcde"></script>
+</head>
+<body class="page-resume" style="--piece:#C2410C" data-cle="E2-ELEC1/exercices/ch1-exercices-1-8" data-sections='["exercice-1", "exercice-2", "exercice-3-circuit-equivalent-de-norton-aux-bornes-a-b", "exercice-4", "exercice-5-equivalent-de-norton-aux-bornes-a-b", "exercice-6", "exercice-7", "exercice-8"]' data-url-racine="pieces/e2-elec1/exercices/ch1-exercices-1-8.html" data-titre="Électronique 1 · Corrigé · Chapitre 1 — exercices 1 à 8">
+<a class="evitement" href="#contenu">Aller au contenu</a>
+
+<header class="barre">
+  <nav class="ariane" aria-label="Fil d'Ariane">
+    <a href="../../../index.html"><svg class="icone-ariane" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 12 4l9 7"/><path d="M5 9.5V20h14V9.5"/><path d="M10 20v-6h4v6"/></svg><span>Maison</span></a><span class="sep" aria-hidden="true">›</span>
+    <a href="../index.html">Électronique 1</a><span class="sep" aria-hidden="true">›</span>
+    <span aria-current="page">Corrigé · Chapitre 1 — exercices 1 à 8</span>
+  </nav>
+  <div class="barre-actions">
+    <button type="button" class="btn" data-ouvrir="formulaire"><span class="btn-sigma" aria-hidden="true">Σ</span> Formulaire</button>
+    <a class="btn btn-discret" href="../../../assets/pdf/e2-elec1/elec1-ch1-exercices-1-8-corrige.pdf" target="_blank" rel="noopener">PDF</a>
+    <button type="button" class="btn-icone" data-theme-bascule aria-label="Basculer clair / sombre"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 4a8 8 0 0 1 0 16z" fill="currentColor"/></svg></button>
+  </div>
+</header>
+<div class="cadre">
+  <aside class="sommaire" aria-label="Sommaire">
+    <details class="sommaire-details" open>
+      <summary><span>Sommaire</span><span class="sommaire-prog" data-progression-texte>0 / 8</span></summary>
+      <ol class="sommaire-liste"><li data-cible="exercice-1"><div class="sommaire-ligne"><a href="#exercice-1"><span class="num num-vide">·</span>Exercice 1</a><label class="revise-mini" title="Marquer « Exercice 1 » comme révisé"><input type="checkbox" data-section="exercice-1" aria-label="Révisé : Exercice 1"><span class="revise-coche" aria-hidden="true"></span></label></div><ol><li><a href="#exercice-1-1-lecture-du-schema-et-conventions"><span class="num"></span>1. Lecture du schéma et conventions</a></li><li><a href="#exercice-1-2-loi-des-nuds-au-nud-central-b"><span class="num"></span>2. Loi des nœuds au nœud central <span class="km" data-tex="B">B</span></a></li><li><a href="#exercice-1-3-courants-demandes"><span class="num"></span>3. Courants demandés</a></li><li><a href="#exercice-1-4-controles-de-kirchhoff"><span class="num"></span>4. Contrôles de Kirchhoff</a></li><li><a href="#exercice-1-5-controle-par-superposition-bonus"><span class="num"></span>5. Contrôle par superposition (bonus)</a></li></ol></li><li data-cible="exercice-2"><div class="sommaire-ligne"><a href="#exercice-2"><span class="num num-vide">·</span>Exercice 2</a><label class="revise-mini" title="Marquer « Exercice 2 » comme révisé"><input type="checkbox" data-section="exercice-2" aria-label="Révisé : Exercice 2"><span class="revise-coche" aria-hidden="true"></span></label></div><ol><li><a href="#exercice-2-demarche-analyse-nodale-au-nud-v"><span class="num"></span>Démarche — analyse nodale au nœud <span class="km" data-tex="V">V</span></a></li><li><a href="#exercice-2-courant-i"><span class="num"></span>Courant <span class="km" data-tex="I">I</span></a></li><li><a href="#exercice-2-autres-courants-du-circuit"><span class="num"></span>Autres courants du circuit</a></li><li><a href="#exercice-2-controles"><span class="num"></span>Contrôles</a></li></ol></li><li data-cible="exercice-3-circuit-equivalent-de-norton-aux-bornes-a-b"><div class="sommaire-ligne"><a href="#exercice-3-circuit-equivalent-de-norton-aux-bornes-a-b"><span class="num num-vide">·</span>Exercice 3 : circuit équivalent de Norton aux bornes (a, b)</a><label class="revise-mini" title="Marquer « Exercice 3 : circuit équivalent de Norton aux bornes (a, b) » comme révisé"><input type="checkbox" data-section="exercice-3-circuit-equivalent-de-norton-aux-bornes-a-b" aria-label="Révisé : Exercice 3 : circuit équivalent de Norton aux bornes (a, b)"><span class="revise-coche" aria-hidden="true"></span></label></div><ol><li><a href="#exercice-3-circuit-equivalent-de-norton-aux-bornes-a-b-donnees-et-conventions"><span class="num"></span>Données et conventions</a></li><li><a href="#exercice-3-circuit-equivalent-de-norton-aux-bornes-a-b-1-fonctionnement-a-vide-borne-a-ouverte"><span class="num"></span>1. Fonctionnement à vide (borne <span class="km" data-tex="a">a</span> ouverte)</a></li><li><a href="#exercice-3-circuit-equivalent-de-norton-aux-bornes-a-b-2-fonctionnement-en-court-circuit-borne-a-reliee-a-b"><span class="num"></span>2. Fonctionnement en court-circuit (borne <span class="km" data-tex="a">a</span> reliée à <span class="km" data-tex="b">b</span>)</a></li><li><a href="#exercice-3-circuit-equivalent-de-norton-aux-bornes-a-b-3-resistance-de-norton"><span class="num"></span>3. Résistance de Norton</a></li><li><a href="#exercice-3-circuit-equivalent-de-norton-aux-bornes-a-b-4-controle-par-une-charge-d-epreuve"><span class="num"></span>4. Contrôle par une charge d'épreuve</a></li><li><a href="#exercice-3-circuit-equivalent-de-norton-aux-bornes-a-b-conclusion"><span class="num"></span>Conclusion</a></li></ol></li><li data-cible="exercice-4"><div class="sommaire-ligne"><a href="#exercice-4"><span class="num num-vide">·</span>Exercice 4</a><label class="revise-mini" title="Marquer « Exercice 4 » comme révisé"><input type="checkbox" data-section="exercice-4" aria-label="Révisé : Exercice 4"><span class="revise-coche" aria-hidden="true"></span></label></div></li><li data-cible="exercice-5-equivalent-de-norton-aux-bornes-a-b"><div class="sommaire-ligne"><a href="#exercice-5-equivalent-de-norton-aux-bornes-a-b"><span class="num num-vide">·</span>Exercice 5 — Équivalent de Norton aux bornes (a, b)</a><label class="revise-mini" title="Marquer « Exercice 5 — Équivalent de Norton aux bornes (a, b) » comme révisé"><input type="checkbox" data-section="exercice-5-equivalent-de-norton-aux-bornes-a-b" aria-label="Révisé : Exercice 5 — Équivalent de Norton aux bornes (a, b)"><span class="revise-coche" aria-hidden="true"></span></label></div><ol><li><a href="#exercice-5-equivalent-de-norton-aux-bornes-a-b-reponse"><span class="num"></span>Réponse</a></li><li><a href="#exercice-5-equivalent-de-norton-aux-bornes-a-b-1-conventions-sens-des-fleches-et-references"><span class="num"></span>1. Conventions, sens des flèches et références</a></li><li><a href="#exercice-5-equivalent-de-norton-aux-bornes-a-b-2-observation-decisive-aucune-source-independante"><span class="num"></span>2. Observation décisive : aucune source indépendante</a></li><li><a href="#exercice-5-equivalent-de-norton-aux-bornes-a-b-3-tension-a-vide-v-ab-bornes-a-b-ouvertes"><span class="num"></span>3. Tension à vide <span class="km" data-tex="v_{ab}">v_{ab}</span> (bornes <span class="km" data-tex="(a,b)">(a,b)</span> ouvertes)</a></li><li><a href="#exercice-5-equivalent-de-norton-aux-bornes-a-b-4-courant-de-norton-i-n-bornes-a-b-court-circuitees"><span class="num"></span>4. Courant de Norton <span class="km" data-tex="I_N">I_N</span> (bornes <span class="km" data-tex="(a,b)">(a,b)</span> court-circuitées)</a></li><li><a href="#exercice-5-equivalent-de-norton-aux-bornes-a-b-5-resistance-de-norton-r-n-par-la-source-d-epreuve"><span class="num"></span>5. Résistance de Norton <span class="km" data-tex="R_N">R_N</span> par la source d'épreuve</a></li><li><a href="#exercice-5-equivalent-de-norton-aux-bornes-a-b-6-controles-numeriques-source-d-epreuve-v-1-mathrm-v"><span class="num"></span>6. Contrôles numériques (source d'épreuve <span class="km" data-tex="V = 1\ \mathrm{V}">V = 1\ \mathrm{V}</span>)</a></li></ol></li><li data-cible="exercice-6"><div class="sommaire-ligne"><a href="#exercice-6"><span class="num num-vide">·</span>Exercice 6</a><label class="revise-mini" title="Marquer « Exercice 6 » comme révisé"><input type="checkbox" data-section="exercice-6" aria-label="Révisé : Exercice 6"><span class="revise-coche" aria-hidden="true"></span></label></div><ol><li><a href="#exercice-6-1-reperage-des-nuds-et-des-donnees"><span class="num"></span>1. Repérage des nœuds et des données</a></li><li><a href="#exercice-6-2-tension-de-thevenin-circuit-a-vide"><span class="num"></span>2. Tension de Thévenin : circuit à vide</a></li><li><a href="#exercice-6-3-resistance-de-thevenin-sources-eteintes"><span class="num"></span>3. Résistance de Thévenin : sources éteintes</a></li><li><a href="#exercice-6-4-controle-par-le-courant-de-court-circuit"><span class="num"></span>4. Contrôle par le courant de court-circuit</a></li><li><a href="#exercice-6-5-controles-de-kirchhoff-et-bilan-de-puissance"><span class="num"></span>5. Contrôles de Kirchhoff et bilan de puissance</a></li><li><a href="#exercice-6-6-conclusion"><span class="num"></span>6. Conclusion</a></li></ol></li><li data-cible="exercice-7"><div class="sommaire-ligne"><a href="#exercice-7"><span class="num num-vide">·</span>Exercice 7</a><label class="revise-mini" title="Marquer « Exercice 7 » comme révisé"><input type="checkbox" data-section="exercice-7" aria-label="Révisé : Exercice 7"><span class="revise-coche" aria-hidden="true"></span></label></div><ol><li><a href="#exercice-7-1-lecture-du-schema-et-mise-en-equations"><span class="num"></span>1. Lecture du schéma et mise en équations</a></li><li><a href="#exercice-7-2-association-r-3-parallel-r-4-puis-r-2-en-serie"><span class="num"></span>2. Association <span class="km" data-tex="R_3 \parallel R_4">R_3 \parallel R_4</span>, puis <span class="km" data-tex="R_2">R_2</span> en série</a></li><li><a href="#exercice-7-3-tension-au-noeud-b-par-diviseur-de-tension"><span class="num"></span>3. Tension au noeud <span class="km" data-tex="B">B</span> par diviseur de tension</a></li><li><a href="#exercice-7-4-courant-dans-r-4-et-courants-de-controle"><span class="num"></span>4. Courant dans <span class="km" data-tex="R_4">R_4</span> (et courants de contrôle)</a></li><li><a href="#exercice-7-5-controles-de-kirchhoff"><span class="num"></span>5. Contrôles de Kirchhoff</a></li></ol></li><li data-cible="exercice-8"><div class="sommaire-ligne"><a href="#exercice-8"><span class="num num-vide">·</span>Exercice 8</a><label class="revise-mini" title="Marquer « Exercice 8 » comme révisé"><input type="checkbox" data-section="exercice-8" aria-label="Révisé : Exercice 8"><span class="revise-coche" aria-hidden="true"></span></label></div><ol><li><a href="#exercice-8-reponse"><span class="num"></span>Réponse</a></li><li><a href="#exercice-8-demarche"><span class="num"></span>Démarche</a></li></ol></li></ol>
+    </details>
+  </aside>
+  <main id="contenu">
+    <section class="hero">
+      <div class="hero-papier" aria-hidden="true"></div>
+      <div class="hero-tete">
+        <a class="hero-piece" href="../index.html"><svg class="icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg><span>Électronique 1</span><span class="hero-aile">Aile Électricité</span></a>
+        <div class="anneau" data-anneau role="img" aria-label="Progression"><span data-progression-pourcent>0 %</span></div>
+      </div>
+      <p class="hero-entete">E2-ELEC1 — Électronique 1 · Devoir — fiche corrigée</p>
+      <h1 class="visuellement-cache">Électronique 1 · Corrigé · Chapitre 1 — exercices 1 à 8</h1>
+      <div class="hero-intro"><div class="centre"><span class="t-titre"><span class="gras"><span style="color:var(--c-heia)"> Électronique 1 — fiche corrigée</span></span></span><br> <span class="t-grand">Chapitre 1 — exercices 1 à 8</span><br> HEIA-FR — classe E2 — corrigé proposé, non officiel</div>
+<aside class="carte carte-retenir"><div class="carte-tete"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></svg><span class="carte-type">À retenir</span></div><p class="carte-titre">Lecture</p><div class="carte-corps">Réponses puis calculs développés. 174 contrôles reproductibles dans les scripts joints. Les divergences de l’énoncé ou du corrigé officiel sont signalées dans les exercices concernés.</div></aside></div>
+      <div class="hero-puces"><span class="puce puce-te puce-attente">Date du TE : pas encore annoncée</span><span class="puce puce-corrige">Corrigé</span><span class="puce">8 sections</span><span class="puce">17 formules</span></div>
+    </section>
+    <section class="station station-normale" id="exercice-1" aria-labelledby="exercice-1-t"><header class="station-tete"><span class="station-num station-num-vide" aria-hidden="true">✦</span><h2 id="exercice-1-t">Exercice 1</h2><label class="revise"><input type="checkbox" data-section="exercice-1"><span class="revise-coche" aria-hidden="true"></span><span class="revise-texte">Révisé</span></label></header><div class="station-corps"><p><strong>Énoncé.</strong> Déterminer <span class="km" data-tex="I_1">I_1</span>, <span class="km" data-tex="I_2">I_2</span> et <span class="km" data-tex="I_3">I_3</span> sachant que <span class="km" data-tex="E_1 = 10\ \text{V}">E_1 = 10\ \text{V}</span>, <span class="km" data-tex="E_2 = 5\ \text{V}">E_2 = 5\ \text{V}</span>, <span class="km" data-tex="R_1 = 15\ \Omega">R_1 = 15\ \Omega</span>, <span class="km" data-tex="R_2 = 10\ \Omega">R_2 = 10\ \Omega</span> et <span class="km" data-tex="R_3 = 5\ \Omega">R_3 = 5\ \Omega</span>.</p>
+<figure class="figure"><button type="button" class="loupe-ouvrir" aria-label="Agrandir la figure"><img src="../../../assets/figures/e2-elec1/circuit-ex1.png" alt="Figure — Exercice 1" loading="lazy"></button></figure>
+<div class="centre"><strong>Réponse.</strong><br> <span class="km" data-tex="\displaystyle I_1 = \frac{5}{11}\ \text{A} \approx 0{,}455\ \text{A}">\displaystyle I_1 = \frac{5}{11}\ \text{A} \approx 0{,}455\ \text{A}</span>  (sens de la flèche <span class="km" data-tex="i_1">i_1</span>, vers la gauche en bas de branche)<br> <span class="km" data-tex="\displaystyle I_3 = \frac{7}{11}\ \text{A} \approx 0{,}636\ \text{A}">\displaystyle I_3 = \frac{7}{11}\ \text{A} \approx 0{,}636\ \text{A}</span>  (sens de la flèche <span class="km" data-tex="i_3">i_3</span>, descendant)<br> <span class="km" data-tex="\displaystyle I_2 = -\frac{2}{11}\ \text{A} \approx -0{,}182\ \text{A}">\displaystyle I_2 = -\frac{2}{11}\ \text{A} \approx -0{,}182\ \text{A}</span> : le courant vaut <span class="km" data-tex="0{,}182\ \text{A}">0{,}182\ \text{A}</span> et circule en réalité <em>de la jonction centrale vers la borne inférieure de <span class="km" data-tex="E_2">E_2</span></em>, soit dans le sens opposé à la flèche <span class="km" data-tex="i_2">i_2</span> (laquelle est dessinée vers la gauche).</div>
+<h3 id="exercice-1-1-lecture-du-schema-et-conventions" class="sous-titre">1. Lecture du schéma et conventions</h3>
+<p>Le schéma comporte deux mailles accolées partageant la branche centrale <span class="km" data-tex="R_3">R_3</span> :</p>
+<ul><li>branche gauche : source <span class="km" data-tex="E_1">E_1</span> en série avec <span class="km" data-tex="R_1">R_1</span> ;</li><li>branche centrale : <span class="km" data-tex="R_3">R_3</span>, parcourue vers le bas ;</li><li>branche droite : source <span class="km" data-tex="E_2">E_2</span> en série avec <span class="km" data-tex="R_2">R_2</span>.</li></ul>
+<p>Les deux sources portent une flèche de tension verticale orientée vers le bas (même sens pour les deux) : leurs bornes supérieures sont prises comme pôles <span class="km" data-tex="+">+</span>. On repère trois nœuds :</p>
+<ul><li><span class="km" data-tex="A">A</span> : jonction <span class="km" data-tex="E_1">E_1</span>–<span class="km" data-tex="R_1">R_1</span> (en haut à gauche) ;</li><li><span class="km" data-tex="B">B</span> : jonction centrale <span class="km" data-tex="R_1">R_1</span>–<span class="km" data-tex="R_3">R_3</span>–<span class="km" data-tex="R_2">R_2</span> (en haut au milieu) ;</li><li>référence (masse, <span class="km" data-tex="0\ \text{V}">0\ \text{V}</span>) : le fil horizontal inférieur, qui réunit la borne inférieure de <span class="km" data-tex="E_1">E_1</span>, le bas de <span class="km" data-tex="R_3">R_3</span> et la borne inférieure de <span class="km" data-tex="E_2">E_2</span>.</li></ul>
+<p>On en déduit immédiatement</p>
+<div class="km km-d" data-tex="V_A = E_1 = 10\ \text{V}, \qquad V_B = \text{inconnue}, \qquad
+  V_C = E_2 = 5\ \text{V},">V_A = E_1 = 10\ \text{V}, \qquad V_B = \text{inconnue}, \qquad
+  V_C = E_2 = 5\ \text{V},</div>
+<p>où <span class="km" data-tex="C">C</span> est la jonction <span class="km" data-tex="R_2">R_2</span>–<span class="km" data-tex="E_2">E_2</span> (en haut à droite).</p>
+<aside class="carte carte-retenir"><div class="carte-tete"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></svg><span class="carte-type">À retenir</span></div><p class="carte-titre">Références des courants</p><div class="carte-corps">Les flèches de la figure imposent : <span class="km" data-tex="i_1">i_1</span> vers la gauche (branche de <span class="km" data-tex="E_1">E_1</span>), <span class="km" data-tex="i_2">i_2</span> vers la gauche (branche de <span class="km" data-tex="E_2">E_2</span>), <span class="km" data-tex="i_3">i_3</span> vers le bas (branche <span class="km" data-tex="R_3">R_3</span>). Les valeurs calculées ci-dessous sont exprimées <em>dans ces sens de référence</em>.</div></aside>
+<h3 id="exercice-1-2-loi-des-nuds-au-nud-central-b" class="sous-titre">2. Loi des nœuds au nœud central <span class="km" data-tex="B">B</span></h3>
+<p>Le seul potentiel inconnu est <span class="km" data-tex="V_B">V_B</span>. On écrit que la somme des courants sortant du nœud <span class="km" data-tex="B">B</span> est nulle :</p>
+<div class="formule"><span class="formule-etiquette">Formule</span><div class="km km-d" data-tex="\frac{V_B - V_A}{R_1} + \frac{V_B - V_C}{R_2} + \frac{V_B - 0}{R_3} = 0">\frac{V_B - V_A}{R_1} + \frac{V_B - V_C}{R_2} + \frac{V_B - 0}{R_3} = 0</div></div>
+<p>En reportant les valeurs numériques :</p>
+<div class="km km-d" data-tex="\frac{V_B - 10}{15} + \frac{V_B - 5}{10} + \frac{V_B}{5} = 0 .">\frac{V_B - 10}{15} + \frac{V_B - 5}{10} + \frac{V_B}{5} = 0 .</div>
+<p>On multiplie tout par <span class="km" data-tex="30">30</span> (ppcm de <span class="km" data-tex="15">15</span>, <span class="km" data-tex="10">10</span>, <span class="km" data-tex="5">5</span>) :</p>
+<div class="km km-d" data-tex="2\,(V_B - 10) + 3\,(V_B - 5) + 6\,V_B = 0
+  \;\Longrightarrow\;
+  2V_B - 20 + 3V_B - 15 + 6V_B = 0 ,">2\,(V_B - 10) + 3\,(V_B - 5) + 6\,V_B = 0
+  \;\Longrightarrow\;
+  2V_B - 20 + 3V_B - 15 + 6V_B = 0 ,</div>
+<div class="km km-d" data-tex="11\,V_B = 35 \;\Longrightarrow\; \boxed{\,V_B = \frac{35}{11}\ \text{V}
+  \approx 3{,}18\ \text{V}\,} .">11\,V_B = 35 \;\Longrightarrow\; \boxed{\,V_B = \frac{35}{11}\ \text{V}
+  \approx 3{,}18\ \text{V}\,} .</div>
+<aside class="carte carte-retenir"><div class="carte-tete"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></svg><span class="carte-type">À retenir</span></div><p class="carte-titre">Formule de Millman</p><div class="carte-corps"><p>On retrouve le même résultat d'un coup, en écrivant directement le potentiel du nœud <span class="km" data-tex="B">B</span> (les sources en série avec <span class="km" data-tex="R_1">R_1</span> et <span class="km" data-tex="R_2">R_2</span> agissent comme générateurs de Norton) :</p>
+<div class="km km-d" data-tex="V_B = \frac{\dfrac{E_1}{R_1} + \dfrac{E_2}{R_2}}
+             {\dfrac{1}{R_1} + \dfrac{1}{R_2} + \dfrac{1}{R_3}}
+      = \frac{\dfrac{10}{15} + \dfrac{5}{10}}
+             {\dfrac{1}{15} + \dfrac{1}{10} + \dfrac{1}{5}}
+      = \frac{\dfrac{7}{6}}{\dfrac{11}{30}}
+      = \frac{35}{11}\ \text{V} . \text{(vérifié)}">V_B = \frac{\dfrac{E_1}{R_1} + \dfrac{E_2}{R_2}}
+             {\dfrac{1}{R_1} + \dfrac{1}{R_2} + \dfrac{1}{R_3}}
+      = \frac{\dfrac{10}{15} + \dfrac{5}{10}}
+             {\dfrac{1}{15} + \dfrac{1}{10} + \dfrac{1}{5}}
+      = \frac{\dfrac{7}{6}}{\dfrac{11}{30}}
+      = \frac{35}{11}\ \text{V} . \text{(vérifié)}</div></div></aside>
+<h3 id="exercice-1-3-courants-demandes" class="sous-titre">3. Courants demandés</h3>
+<h4 class="paragraphe-titre">Courant <span class="km" data-tex="I_1">I_1</span> (branche de <span class="km" data-tex="E_1">E_1</span>).</h4>
+<p>Le courant traverse <span class="km" data-tex="R_1">R_1</span> du nœud <span class="km" data-tex="A">A</span> (<span class="km" data-tex="10\ \text{V}">10\ \text{V}</span>) vers le nœud <span class="km" data-tex="B">B</span> (<span class="km" data-tex="3{,}18\ \text{V}">3{,}18\ \text{V}</span>) ; il ressort donc de la borne <span class="km" data-tex="+">+</span> de <span class="km" data-tex="E_1">E_1</span>, puis <em>remonte</em> le fil inférieur gauche de la jonction centrale vers <span class="km" data-tex="E_1">E_1</span> : c'est exactement le sens de la flèche <span class="km" data-tex="i_1">i_1</span>.</p>
+<div class="formule"><span class="formule-etiquette">Formule</span><div class="km km-d" data-tex="I_1 = \frac{E_1 - V_B}{R_1} = \frac{10 - \frac{35}{11}}{15}\ \text{A}
+      = \frac{\frac{110 - 35}{11}}{15}\ \text{A}
+      = \frac{75}{11 \cdot 15}\ \text{A}
+      = \frac{5}{11}\ \text{A} \approx 0{,}455\ \text{A}">I_1 = \frac{E_1 - V_B}{R_1} = \frac{10 - \frac{35}{11}}{15}\ \text{A}
+      = \frac{\frac{110 - 35}{11}}{15}\ \text{A}
+      = \frac{75}{11 \cdot 15}\ \text{A}
+      = \frac{5}{11}\ \text{A} \approx 0{,}455\ \text{A}</div></div>
+<h4 class="paragraphe-titre">Courant <span class="km" data-tex="I_3">I_3</span> (branche centrale).</h4>
+<p><span class="km" data-tex="R_3">R_3</span> voit la tension <span class="km" data-tex="V_B">V_B</span> et conduit vers la masse :</p>
+<div class="formule"><span class="formule-etiquette">Formule</span><div class="km km-d" data-tex="I_3 = \frac{V_B}{R_3} = \frac{\frac{35}{11}}{5}\ \text{A}
+      = \frac{7}{11}\ \text{A} \approx 0{,}636\ \text{A}">I_3 = \frac{V_B}{R_3} = \frac{\frac{35}{11}}{5}\ \text{A}
+      = \frac{7}{11}\ \text{A} \approx 0{,}636\ \text{A}</div></div>
+<p>Le signe est positif : le courant descend bien, conformément à la flèche <span class="km" data-tex="i_3">i_3</span>.</p>
+<h4 class="paragraphe-titre">Courant <span class="km" data-tex="I_2">I_2</span> (branche de <span class="km" data-tex="E_2">E_2</span>).</h4>
+<p>Le courant traverse <span class="km" data-tex="R_2">R_2</span> du nœud <span class="km" data-tex="C">C</span> (<span class="km" data-tex="5\ \text{V}">5\ \text{V}</span>) vers le nœud <span class="km" data-tex="B">B</span> (<span class="km" data-tex="3{,}18\ \text{V}">3{,}18\ \text{V}</span>) ; il ressort donc de la borne <span class="km" data-tex="+">+</span> de <span class="km" data-tex="E_2">E_2</span> et le courant revient vers <span class="km" data-tex="E_2">E_2</span> par le fil inférieur droit, c'est-à-dire <em>de la jonction centrale vers la droite</em>. Pour ne pas confondre un module avec une valeur algébrique, on nomme <span class="km" data-tex="i_{R_2}">i_{R_2}</span> le courant <em>positif</em> traversant <span class="km" data-tex="R_2">R_2</span> de <span class="km" data-tex="C">C</span> vers <span class="km" data-tex="B">B</span> :</p>
+<div class="formule"><span class="formule-etiquette">Formule</span><div class="km km-d" data-tex="i_{R_2} = \frac{E_2 - V_B}{R_2} = \frac{5 - \frac{35}{11}}{10}\ \text{A}
+      = \frac{\frac{55 - 35}{11}}{10}\ \text{A}
+      = \frac{20}{110}\ \text{A}
+      = \frac{2}{11}\ \text{A} \approx 0{,}182\ \text{A} &gt; 0 .">i_{R_2} = \frac{E_2 - V_B}{R_2} = \frac{5 - \frac{35}{11}}{10}\ \text{A}
+      = \frac{\frac{55 - 35}{11}}{10}\ \text{A}
+      = \frac{20}{110}\ \text{A}
+      = \frac{2}{11}\ \text{A} \approx 0{,}182\ \text{A} &gt; 0 .</div></div>
+<p>Ce courant circule de <span class="km" data-tex="C">C</span> vers <span class="km" data-tex="B">B</span>, donc sur le fil inférieur droit de la jonction centrale vers <span class="km" data-tex="E_2">E_2</span> (vers la droite). Or la flèche <span class="km" data-tex="i_2">i_2</span> est dessinée vers la gauche : la valeur algébrique de <span class="km" data-tex="I_2">I_2</span> dans ce sens de référence est l'opposé de <span class="km" data-tex="i_{R_2}">i_{R_2}</span>,</p>
+<div class="km km-d" data-tex="\boxed{\,I_2 = -\,i_{R_2} = -\frac{2}{11}\ \text{A} \approx -0{,}182\ \text{A}\,} .">\boxed{\,I_2 = -\,i_{R_2} = -\frac{2}{11}\ \text{A} \approx -0{,}182\ \text{A}\,} .</div>
+<h3 id="exercice-1-4-controles-de-kirchhoff" class="sous-titre">4. Contrôles de Kirchhoff</h3>
+<aside class="carte carte-retenir"><div class="carte-tete"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></svg><span class="carte-type">À retenir</span></div><p class="carte-titre">Loi des nœuds au nœud <span class="km" data-tex="B">B</span></p><div class="carte-corps"><p>Les courants entrant par <span class="km" data-tex="R_1">R_1</span> et <span class="km" data-tex="R_2">R_2</span> alimentent exactement <span class="km" data-tex="R_3">R_3</span> :</p>
+<div class="km km-d" data-tex="I_1 + i_{R_2} = \frac{5}{11} + \frac{2}{11} = \frac{7}{11} = I_3
+  \quad \text{(vérifié)}">I_1 + i_{R_2} = \frac{5}{11} + \frac{2}{11} = \frac{7}{11} = I_3
+  \quad \text{(vérifié)}</div>
+<p>(<span class="km" data-tex="i_{R_2} &gt; 0">i_{R_2} &gt; 0</span> : <span class="km" data-tex="E_2">E_2</span> <em>débite</em> elle aussi vers le nœud <span class="km" data-tex="B">B</span> ; écrit le long de la flèche <span class="km" data-tex="i_2">i_2</span> — algébriquement négative — cela devient <span class="km" data-tex="I_1 - I_2 = I_3">I_1 - I_2 = I_3</span>, qui redonne bien le même résultat).</p></div></aside>
+<aside class="carte carte-retenir"><div class="carte-tete"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></svg><span class="carte-type">À retenir</span></div><p class="carte-titre">Loi des nœuds au nœud inférieur</p><div class="carte-corps">Avec les sens de référence : <span class="km" data-tex="i_3 = i_1 - i_2">i_3 = i_1 - i_2</span>, soit <span class="km" data-tex="\dfrac{7}{11} = \dfrac{5}{11} - \left(-\dfrac{2}{11}\right) = \dfrac{7}{11}">\dfrac{7}{11} = \dfrac{5}{11} - \left(-\dfrac{2}{11}\right) = \dfrac{7}{11}</span>. (vérifié)</div></aside>
+<aside class="carte carte-retenir"><div class="carte-tete"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></svg><span class="carte-type">À retenir</span></div><p class="carte-titre">Loi des mailles</p><div class="carte-corps"><p>Maille gauche (<span class="km" data-tex="E_1">E_1</span>, <span class="km" data-tex="R_1">R_1</span>, <span class="km" data-tex="R_3">R_3</span>) : <span class="km" data-tex="E_1 - R_1 I_1 - R_3 I_3 = 10 - 15\cdot\frac{5}{11} - 5\cdot\frac{7}{11} = 10 - \frac{75}{11} - \frac{35}{11} = 10 - \frac{110}{11} = 0">E_1 - R_1 I_1 - R_3 I_3 = 10 - 15\cdot\frac{5}{11} - 5\cdot\frac{7}{11} = 10 - \frac{75}{11} - \frac{35}{11} = 10 - \frac{110}{11} = 0</span>. (vérifié)</p>
+<p>Maille droite (<span class="km" data-tex="E_2">E_2</span>, <span class="km" data-tex="R_2">R_2</span>, <span class="km" data-tex="R_3">R_3</span>) : <span class="km" data-tex="E_2 - R_2\, i_{R_2} - R_3 I_3 = 5 - 10\cdot\frac{2}{11} - 5\cdot\frac{7}{11} = 5 - \frac{20}{11} - \frac{35}{11} = 5 - \frac{55}{11} = 0">E_2 - R_2\, i_{R_2} - R_3 I_3 = 5 - 10\cdot\frac{2}{11} - 5\cdot\frac{7}{11} = 5 - \frac{20}{11} - \frac{35}{11} = 5 - \frac{55}{11} = 0</span>. (vérifié)</p>
+<p>(On remplace bien le courant de branche <span class="km" data-tex="i_{R_2}">i_{R_2}</span> — positif, de <span class="km" data-tex="C">C</span> vers <span class="km" data-tex="B">B</span> — et non la valeur algébrique <span class="km" data-tex="I_2 = -2/11\ \text{A}">I_2 = -2/11\ \text{A}</span> ; remplacer cette dernière donnerait <span class="km" data-tex="E_2 - R_2 I_2 - R_3 I_3 = 40/11\ \text{V} \neq 0">E_2 - R_2 I_2 - R_3 I_3 = 40/11\ \text{V} \neq 0</span>.)</p></div></aside>
+<aside class="carte carte-retenir"><div class="carte-tete"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></svg><span class="carte-type">À retenir</span></div><p class="carte-titre">Bilan de puissance</p><div class="carte-corps">La puissance fournie par une source vaut <span class="km" data-tex="E">E</span> multipliée par le courant qui <em>sort de sa borne <span class="km" data-tex="+">+</span></em> : ce sont les courants de branche <span class="km" data-tex="I_1">I_1</span> et <span class="km" data-tex="i_{R_2}">i_{R_2}</span>, et non la valeur algébrique <span class="km" data-tex="I_2">I_2</span> (laquelle est négative et ferait croire à tort que <span class="km" data-tex="E_2">E_2</span> absorbe de la puissance). Ainsi <span class="km" data-tex="P_{E_1} = E_1 I_1 = 10 \cdot \frac{5}{11} = \frac{50}{11}\ \text{W}">P_{E_1} = E_1 I_1 = 10 \cdot \frac{5}{11} = \frac{50}{11}\ \text{W}</span> et <span class="km" data-tex="P_{E_2} = E_2\, i_{R_2} = 5 \cdot \frac{2}{11} = \frac{10}{11}\ \text{W}">P_{E_2} = E_2\, i_{R_2} = 5 \cdot \frac{2}{11} = \frac{10}{11}\ \text{W}</span>, soit <span class="km" data-tex="\frac{60}{11} \approx 5{,}45\ \text{W}">\frac{60}{11} \approx 5{,}45\ \text{W}</span>. Les résistances dissipent <span class="km" data-tex="R_1 I_1^2 + R_2\, i_{R_2}^2 + R_3 I_3^2 = 15\cdot\frac{25}{121} + 10\cdot\frac{4}{121} + 5\cdot\frac{49}{121} = \frac{375 + 40 + 245}{121} = \frac{660}{121} = \frac{60}{11}\ \text{W}">R_1 I_1^2 + R_2\, i_{R_2}^2 + R_3 I_3^2 = 15\cdot\frac{25}{121} + 10\cdot\frac{4}{121} + 5\cdot\frac{49}{121} = \frac{375 + 40 + 245}{121} = \frac{660}{121} = \frac{60}{11}\ \text{W}</span>. Égalité exacte : (vérifié)</div></aside>
+<h3 id="exercice-1-5-controle-par-superposition-bonus" class="sous-titre">5. Contrôle par superposition (bonus)</h3>
+<p>On peut aussi vérifier <span class="km" data-tex="V_B">V_B</span> en superposant les deux sources :</p>
+<ul><li><span class="km" data-tex="E_1">E_1</span> seule (<span class="km" data-tex="E_2">E_2</span> éteinte, remplacée par un court-circuit) : <span class="km" data-tex="V_B&#x27; = E_1\,\dfrac{R_2 \parallel R_3}{R_1 + R_2 \parallel R_3} = 10\cdot\dfrac{\frac{10}{3}}{15 + \frac{10}{3}} = \dfrac{20}{11}\ \text{V}">V_B&#x27; = E_1\,\dfrac{R_2 \parallel R_3}{R_1 + R_2 \parallel R_3} = 10\cdot\dfrac{\frac{10}{3}}{15 + \frac{10}{3}} = \dfrac{20}{11}\ \text{V}</span> ;</li><li><span class="km" data-tex="E_2">E_2</span> seule (<span class="km" data-tex="E_1">E_1</span> éteinte) : <span class="km" data-tex="V_B&#x27;&#x27; = E_2\,\dfrac{R_1 \parallel R_3}{R_2 + R_1 \parallel R_3} = 5\cdot\dfrac{\frac{15}{4}}{10 + \frac{15}{4}} = \dfrac{15}{11}\ \text{V}">V_B&#x27;&#x27; = E_2\,\dfrac{R_1 \parallel R_3}{R_2 + R_1 \parallel R_3} = 5\cdot\dfrac{\frac{15}{4}}{10 + \frac{15}{4}} = \dfrac{15}{11}\ \text{V}</span>.</li></ul>
+<p>Somme : <span class="km" data-tex="V_B = V_B&#x27; + V_B&#x27;&#x27; = \dfrac{20}{11} + \dfrac{15}{11} = \dfrac{35}{11}\ \text{V}">V_B = V_B&#x27; + V_B&#x27;&#x27; = \dfrac{20}{11} + \dfrac{15}{11} = \dfrac{35}{11}\ \text{V}</span>. (vérifié)</p>
+<aside class="carte carte-piege"><div class="carte-tete"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 2.5 20h19z"/><path d="M12 10v4.5M12 17.2v.3"/></svg><span class="carte-type">Piège</span></div><p class="carte-titre">Signes et sens réels</p><div class="carte-corps">Le résultat <span class="km" data-tex="I_2 = -0{,}182\ \text{A}">I_2 = -0{,}182\ \text{A}</span> ne signifie pas une erreur : la flèche <span class="km" data-tex="i_2">i_2</span> de la figure a été dessinée vers la gauche alors que <span class="km" data-tex="E_2">E_2</span> (<span class="km" data-tex="5\ \text{V}">5\ \text{V}</span>) est trop faible pour imposer son courant ; c'est <span class="km" data-tex="V_B \approx 3{,}18\ \text{V}">V_B \approx 3{,}18\ \text{V}</span> qui est inférieur à <span class="km" data-tex="E_2 = 5\ \text{V}">E_2 = 5\ \text{V}</span>, mais le courant de la branche <span class="km" data-tex="R_2">R_2</span> circule de <span class="km" data-tex="C">C</span> vers <span class="km" data-tex="B">B</span>, c'est-à-dire qu'il est <em>injecté</em> dans le nœud central, puis revient vers <span class="km" data-tex="E_2">E_2</span> par le fil inférieur droit. En module : <span class="km" data-tex="|I_2| = 0{,}182\ \text{A}">|I_2| = 0{,}182\ \text{A}</span>.</div></aside></div></section><section class="station station-normale" id="exercice-2" aria-labelledby="exercice-2-t"><header class="station-tete"><span class="station-num station-num-vide" aria-hidden="true">✦</span><h2 id="exercice-2-t">Exercice 2</h2><label class="revise"><input type="checkbox" data-section="exercice-2"><span class="revise-coche" aria-hidden="true"></span><span class="revise-texte">Révisé</span></label></header><div class="station-corps"><div class="formule"><span class="formule-etiquette">Formule</span><div class="km km-d" data-tex="V = 10\ \text{V} \qquad I = 3\ \text{A}">V = 10\ \text{V} \qquad I = 3\ \text{A}</div></div>
+<figure class="figure"><button type="button" class="loupe-ouvrir" aria-label="Agrandir la figure"><img src="../../../assets/figures/e2-elec1/circuit-ex2.png" alt="Figure — Exercice 2" loading="lazy"></button></figure>
+<h3 id="exercice-2-demarche-analyse-nodale-au-nud-v" class="sous-titre">Démarche — analyse nodale au nœud <span class="km" data-tex="V">V</span></h3>
+<p>On prend la masse comme référence (<span class="km" data-tex="0\ \text{V}">0\ \text{V}</span>). La source de gauche vaut <span class="km" data-tex="E_1 = 16\ \text{V}">E_1 = 16\ \text{V}</span> (<span class="km" data-tex="+">+</span> vers le haut) et alimente le nœud <span class="km" data-tex="V">V</span> à travers une résistance <span class="km" data-tex="R_1 = 2\ \Omega">R_1 = 2\ \Omega</span> ; le courant <span class="km" data-tex="I">I</span> est le courant de cette maille, dirigé de la source vers le nœud <span class="km" data-tex="V">V</span>. Du nœud <span class="km" data-tex="V">V</span> partent ensuite une résistance <span class="km" data-tex="R_3 = 3\ \Omega">R_3 = 3\ \Omega</span> vers la masse, et une branche droite formée de <span class="km" data-tex="R_2 = 2\ \Omega + 4\ \Omega = 6\ \Omega">R_2 = 2\ \Omega + 4\ \Omega = 6\ \Omega</span> en série avec une source <span class="km" data-tex="E_2 = 12\ \text{V}">E_2 = 12\ \text{V}</span> (<span class="km" data-tex="+">+</span> vers le haut, masse en bas). Un seul nœud inconnu suffit : la tension <span class="km" data-tex="V">V</span>.</p>
+<aside class="carte carte-retenir"><div class="carte-tete"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></svg><span class="carte-type">À retenir</span></div><p class="carte-titre">Loi des nœuds</p><div class="carte-corps"><p>On écrit que la somme des courants <em>sortant</em> du nœud <span class="km" data-tex="V">V</span> est nulle :</p>
+<div class="km km-d" data-tex="\frac{V - E_1}{R_1} + \frac{V}{R_3} + \frac{V - E_2}{R_2}
+  = 0 .">\frac{V - E_1}{R_1} + \frac{V}{R_3} + \frac{V - E_2}{R_2}
+  = 0 .</div></div></aside>
+<p>En reportant les valeurs numériques :</p>
+<div class="km km-d" data-tex="\frac{V - 16}{2} + \frac{V}{3} + \frac{V - 12}{6} = 0 .">\frac{V - 16}{2} + \frac{V}{3} + \frac{V - 12}{6} = 0 .</div>
+<p>On multiplie les deux membres par <span class="km" data-tex="6">6</span> pour éliminer les dénominateurs :</p>
+<div class="km km-d" data-tex="3\,(V - 16) + 2\,V + (V - 12) = 0
+  \;\Longrightarrow\;
+  3V - 48 + 2V + V - 12 = 0 ,">3\,(V - 16) + 2\,V + (V - 12) = 0
+  \;\Longrightarrow\;
+  3V - 48 + 2V + V - 12 = 0 ,</div>
+<div class="km km-d" data-tex="6V = 60 \;\Longrightarrow\; \boxed{V = 10\ \text{V}} .">6V = 60 \;\Longrightarrow\; \boxed{V = 10\ \text{V}} .</div>
+<h3 id="exercice-2-courant-i" class="sous-titre">Courant <span class="km" data-tex="I">I</span></h3>
+<p>Le courant <span class="km" data-tex="I">I</span> traverse <span class="km" data-tex="R_1">R_1</span> de la source (<span class="km" data-tex="16\ \text{V}">16\ \text{V}</span>) vers le nœud (<span class="km" data-tex="10\ \text{V}">10\ \text{V}</span>) :</p>
+<div class="km km-d" data-tex="I = \frac{E_1 - V}{R_1} = \frac{16 - 10}{2} = 3\ \text{A}
+  \;\Longrightarrow\; \boxed{I = 3\ \text{A}} .">I = \frac{E_1 - V}{R_1} = \frac{16 - 10}{2} = 3\ \text{A}
+  \;\Longrightarrow\; \boxed{I = 3\ \text{A}} .</div>
+<h3 id="exercice-2-autres-courants-du-circuit" class="sous-titre">Autres courants du circuit</h3>
+<aside class="carte carte-retenir"><div class="carte-tete"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></svg><span class="carte-type">À retenir</span></div><p class="carte-titre">Courants dérivés</p><div class="carte-corps"><p>Le courant de la branche centrale descend vers la masse :</p>
+<div class="km km-d" data-tex="I_{3\,\Omega} = \frac{V}{R_3} = \frac{10}{3} \approx 3{,}33\ \text{A}.">I_{3\,\Omega} = \frac{V}{R_3} = \frac{10}{3} \approx 3{,}33\ \text{A}.</div>
+<p>Le courant de la branche droite, compté de <span class="km" data-tex="V">V</span> vers la droite, vaut</p>
+<div class="km km-d" data-tex="I_{\text{dr}} = \frac{V - E_2}{R_2} = \frac{10 - 12}{6}
+  = -\frac{1}{3}\ \text{A},">I_{\text{dr}} = \frac{V - E_2}{R_2} = \frac{10 - 12}{6}
+  = -\frac{1}{3}\ \text{A},</div>
+<p>soit <span class="km" data-tex="0{,}33\ \text{A}">0{,}33\ \text{A}</span> circulant en réalité de la source <span class="km" data-tex="12\ \text{V}">12\ \text{V}</span> vers le nœud <span class="km" data-tex="V">V</span> : c'est elle qui « remonte  » vers le nœud, car <span class="km" data-tex="E_2 &gt; V">E_2 &gt; V</span>.</p></div></aside>
+<h3 id="exercice-2-controles" class="sous-titre">Contrôles</h3>
+<aside class="carte carte-retenir"><div class="carte-tete"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></svg><span class="carte-type">À retenir</span></div><p class="carte-titre">Vérification de Kirchhoff</p><div class="carte-corps"><p>Loi des nœuds au nœud <span class="km" data-tex="V">V</span> (courants entrant <span class="km" data-tex="-">-</span> courants sortants) :</p>
+<div class="km km-d" data-tex="3 - \frac{10}{3} + \frac{1}{3} = 3 - \frac{9}{3} = 0 . \text{(vérifié)}">3 - \frac{10}{3} + \frac{1}{3} = 3 - \frac{9}{3} = 0 . \text{(vérifié)}</div>
+<p>Maille gauche (<span class="km" data-tex="E_1">E_1</span>, <span class="km" data-tex="R_1">R_1</span>, <span class="km" data-tex="R_3">R_3</span>) : <span class="km" data-tex="16 - 2\cdot 3 - 3\cdot\tfrac{10}{3} = 16 - 6 - 10 = 0">16 - 2\cdot 3 - 3\cdot\tfrac{10}{3} = 16 - 6 - 10 = 0</span>. (vérifié)</p>
+<p>Maille droite (<span class="km" data-tex="V">V</span>, <span class="km" data-tex="R_2">R_2</span>, <span class="km" data-tex="E_2">E_2</span>) : <span class="km" data-tex="10 - 6\cdot\left(-\tfrac{1}{3}\right) - 12 = 10 + 2 - 12 = 0">10 - 6\cdot\left(-\tfrac{1}{3}\right) - 12 = 10 + 2 - 12 = 0</span>. (vérifié)</p>
+<p>Bilan de puissance : la source de <span class="km" data-tex="16\ \text{V}">16\ \text{V}</span> fournit <span class="km" data-tex="16\cdot 3 = 48\ \text{W}">16\cdot 3 = 48\ \text{W}</span>, la source de <span class="km" data-tex="12\ \text{V}">12\ \text{V}</span> fournit <span class="km" data-tex="12\cdot\tfrac{1}{3} = 4\ \text{W}">12\cdot\tfrac{1}{3} = 4\ \text{W}</span>, soit <span class="km" data-tex="52\ \text{W}">52\ \text{W}</span> au total ; les dissipations valent <span class="km" data-tex="2\cdot 3^2 = 18\ \text{W}">2\cdot 3^2 = 18\ \text{W}</span> (<span class="km" data-tex="R_1">R_1</span>), <span class="km" data-tex="3\cdot\left(\tfrac{10}{3}\right)^2 = \tfrac{100}{3} \approx 33{,}3\ \text{W}">3\cdot\left(\tfrac{10}{3}\right)^2 = \tfrac{100}{3} \approx 33{,}3\ \text{W}</span> (<span class="km" data-tex="R_3">R_3</span>) et <span class="km" data-tex="6\cdot\left(\tfrac{1}{3}\right)^2 = \tfrac{2}{3}\ \text{W}">6\cdot\left(\tfrac{1}{3}\right)^2 = \tfrac{2}{3}\ \text{W}</span> (branche droite), ce qui donne bien <span class="km" data-tex="52\ \text{W}">52\ \text{W}</span>. (vérifié)</p></div></aside>
+<aside class="carte carte-piege"><div class="carte-tete"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 2.5 20h19z"/><path d="M12 10v4.5M12 17.2v.3"/></svg><span class="carte-type">Piège</span></div><p class="carte-titre">Signes et conventions</p><div class="carte-corps">Toutes les tensions sont écrites par rapport à la masse (<span class="km" data-tex="0\ \text{V}">0\ \text{V}</span>). Un courant positif de la branche droite signifie un courant allant du nœud vers la source <span class="km" data-tex="12\ \text{V}">12\ \text{V}</span> ; comme <span class="km" data-tex="V = 10\ \text{V} &lt; 12\ \text{V}">V = 10\ \text{V} &lt; 12\ \text{V}</span>, ce courant est négatif, donc la source de droite <em>fournit</em> de la puissance au circuit.</div></aside></div></section><section class="station station-normale" id="exercice-3-circuit-equivalent-de-norton-aux-bornes-a-b" aria-labelledby="exercice-3-circuit-equivalent-de-norton-aux-bornes-a-b-t"><header class="station-tete"><span class="station-num station-num-vide" aria-hidden="true">✦</span><h2 id="exercice-3-circuit-equivalent-de-norton-aux-bornes-a-b-t">Exercice 3 : circuit équivalent de Norton aux bornes (a, b)</h2><label class="revise"><input type="checkbox" data-section="exercice-3-circuit-equivalent-de-norton-aux-bornes-a-b"><span class="revise-coche" aria-hidden="true"></span><span class="revise-texte">Révisé</span></label></header><div class="station-corps"><figure class="figure"><button type="button" class="loupe-ouvrir" aria-label="Agrandir la figure"><img src="../../../assets/figures/e2-elec1/circuit-ex3.png" alt="Figure 1 – Circuit de l&#x27;exercice 3 : source de courant 2 A, résistance 10 \Omega parcourue par I , résistance 3 \Omega en parallèle avec la source de courant dépendante 3I , aux bornes de sortie (a,b) ." loading="lazy"></button><figcaption><strong>Figure 1</strong> – Circuit de l'exercice 3 : source de courant 2 A, résistance 10 <span class="km" data-tex="\Omega">\Omega</span> parcourue par <span class="km" data-tex="I">I</span>, résistance 3 <span class="km" data-tex="\Omega">\Omega</span> en parallèle avec la source de courant dépendante <span class="km" data-tex="3I">3I</span>, aux bornes de sortie <span class="km" data-tex="(a,b)">(a,b)</span>.</figcaption></figure>
+<div class="formule"><span class="formule-etiquette">Formule</span><span class="km" data-tex="R_N = 4\ \Omega">R_N = 4\ \Omega</span>,<span class="km" data-tex="\qquad">\qquad</span><span class="km" data-tex="I_N = 0{,}5\ \text{A}\ \text{orienté de } b \text{ vers } a">I_N = 0{,}5\ \text{A}\ \text{orienté de } b \text{ vers } a</span><span class="km" data-tex="\quad">\quad</span><span class="km" data-tex="\bigl(">\bigl(</span>soit <span class="km" data-tex="I_{cc,\,a\to b}=0{,}5\ \text{A}\bigr)">I_{cc,\,a\to b}=0{,}5\ \text{A}\bigr)</span>,<span class="km" data-tex="\qquad">\qquad</span><span class="km" data-tex="V_{ab}^{\text{à vide}} = 2\ \text{V}">V_{ab}^{\text{à vide}} = 2\ \text{V}</span>.</div>
+<h3 id="exercice-3-circuit-equivalent-de-norton-aux-bornes-a-b-donnees-et-conventions" class="sous-titre">Données et conventions</h3>
+<ul><li>Nœud de référence : <span class="km" data-tex="b \equiv 0\ \text{V}">b \equiv 0\ \text{V}</span>. On note <span class="km" data-tex="V_A">V_A</span> le potentiel du nœud central <span class="km" data-tex="A">A</span> et <span class="km" data-tex="V_a">V_a</span> celui de la borne <span class="km" data-tex="a">a</span>.</li><li>Source indépendante de courant <span class="km" data-tex="2\ \text{A}">2\ \text{A}</span> : injectée vers <span class="km" data-tex="A">A</span> (flèche orientée de <span class="km" data-tex="b">b</span> vers <span class="km" data-tex="A">A</span>).</li><li>Résistance <span class="km" data-tex="10\ \Omega">10\ \Omega</span> entre <span class="km" data-tex="A">A</span> et <span class="km" data-tex="b">b</span> ; c'est elle qui est parcourue par le courant <span class="km" data-tex="I">I</span> de <span class="km" data-tex="A">A</span> vers <span class="km" data-tex="b">b</span>, donc <span class="km" data-tex="I = V_A/10">I = V_A/10</span>.</li><li>Résistance <span class="km" data-tex="3\ \Omega">3\ \Omega</span> entre <span class="km" data-tex="A">A</span> et <span class="km" data-tex="a">a</span>.</li><li>Source de courant dépendante <span class="km" data-tex="3I">3I</span> entre <span class="km" data-tex="a">a</span> et <span class="km" data-tex="A">A</span>, flèche orientée vers <span class="km" data-tex="A">A</span> : elle injecte donc un courant <span class="km" data-tex="3I">3I</span> <em>dans</em> le nœud <span class="km" data-tex="A">A</span> (équivalent à un courant <span class="km" data-tex="-3I">-3I</span> sortant de <span class="km" data-tex="A">A</span>).</li><li>Bornes <span class="km" data-tex="(a,b)">(a,b)</span> : <span class="km" data-tex="a">a</span> est la borne supérieure (positive pour la convention récepteur), <span class="km" data-tex="b">b</span> la borne inférieure.</li></ul>
+<aside class="carte carte-retenir"><div class="carte-tete"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></svg><span class="carte-type">À retenir</span></div><p class="carte-titre">Rappel de la méthode</p><div class="carte-corps">Le modèle de Norton vu de <span class="km" data-tex="(a,b)">(a,b)</span> s'écrit <span class="km" data-tex="I_N">I_N</span> en parallèle avec <span class="km" data-tex="R_N">R_N</span>. On identifie <span class="km" data-tex="I_N">I_N</span> au courant de court-circuit <span class="km" data-tex="I_{cc}">I_{cc}</span> mesuré de <span class="km" data-tex="a">a</span> vers <span class="km" data-tex="b">b</span>, et on obtient <span class="km" data-tex="R_N">R_N</span> par le rapport <span class="km" data-tex="V_{ab}^{\text{à vide}}/I_{cc}">V_{ab}^{\text{à vide}}/I_{cc}</span>, ou par la méthode de la source d'épreuve (sources indépendantes éteintes, sources dépendantes conservées).</div></aside>
+<h3 id="exercice-3-circuit-equivalent-de-norton-aux-bornes-a-b-1-fonctionnement-a-vide-borne-a-ouverte" class="sous-titre">1. Fonctionnement à vide (borne <span class="km" data-tex="a">a</span> ouverte)</h3>
+<p>Aucun courant ne sort par la borne <span class="km" data-tex="a">a</span>, et on impose la loi des nœuds en <span class="km" data-tex="A">A</span> et en <span class="km" data-tex="a">a</span>. Avec <span class="km" data-tex="I=V_A/10">I=V_A/10</span> :</p>
+<div class="km km-d" data-tex="\begin{align}
+  \text{KCL en } A :&amp;\quad \frac{V_A}{10} + \frac{V_A-V_a}{3} - 3I - 2 = 0, \tag{1}\\
+  \text{KCL en } a :&amp;\quad \frac{V_a-V_A}{3} + 3I = 0 . \tag{2}\end{align}">\begin{align}
+  \text{KCL en } A :&amp;\quad \frac{V_A}{10} + \frac{V_A-V_a}{3} - 3I - 2 = 0, \tag{1}\\
+  \text{KCL en } a :&amp;\quad \frac{V_a-V_A}{3} + 3I = 0 . \tag{2}\end{align}</div>
+<p>La seconde équation donne <span class="km" data-tex="V_a - V_A = -9I">V_a - V_A = -9I</span>, soit, avec <span class="km" data-tex="I=V_A/10">I=V_A/10</span>, <span class="km" data-tex="V_a = V_A - 0{,}9\,V_A = 0{,}1\,V_A">V_a = V_A - 0{,}9\,V_A = 0{,}1\,V_A</span>. En reportant dans la première (<span class="km" data-tex="V_A - V_a = 0{,}9\,V_A">V_A - V_a = 0{,}9\,V_A</span>) :</p>
+<div class="km km-d" data-tex="-\frac{V_A}{5} + \frac{0{,}9\,V_A}{3} - 2 = 0
+  \;\Longrightarrow\; -0{,}2\,V_A + 0{,}3\,V_A = 2
+  \;\Longrightarrow\; \boxed{V_A = 20\ \text{V}} .">-\frac{V_A}{5} + \frac{0{,}9\,V_A}{3} - 2 = 0
+  \;\Longrightarrow\; -0{,}2\,V_A + 0{,}3\,V_A = 2
+  \;\Longrightarrow\; \boxed{V_A = 20\ \text{V}} .</div>
+<p>D'où</p>
+<div class="km km-d" data-tex="I = \frac{20}{10} = 2\ \text{A},
+  \qquad V_a = 0{,}1\times 20 = 2\ \text{V},
+  \qquad \boxed{V_{ab}^{\text{à vide}} = V_a - V_b = 2\ \text{V}} .">I = \frac{20}{10} = 2\ \text{A},
+  \qquad V_a = 0{,}1\times 20 = 2\ \text{V},
+  \qquad \boxed{V_{ab}^{\text{à vide}} = V_a - V_b = 2\ \text{V}} .</div>
+<p><strong>Contrôle de Kirchhoff :</strong> en <span class="km" data-tex="A">A</span>, <span class="km" data-tex="2 + 6 - 6 - 2 = 0">2 + 6 - 6 - 2 = 0</span> (les <span class="km" data-tex="6\ \text{A}">6\ \text{A}</span> sont respectivement la résistance <span class="km" data-tex="3\ \Omega">3\ \Omega</span> et la source <span class="km" data-tex="3I">3I</span>); en <span class="km" data-tex="a">a</span>, <span class="km" data-tex="(2-20)/3 + 6 = 0">(2-20)/3 + 6 = 0</span>. Les deux nœuds sont équilibrés.</p>
+<h3 id="exercice-3-circuit-equivalent-de-norton-aux-bornes-a-b-2-fonctionnement-en-court-circuit-borne-a-reliee-a-b" class="sous-titre">2. Fonctionnement en court-circuit (borne <span class="km" data-tex="a">a</span> reliée à <span class="km" data-tex="b">b</span>)</h3>
+<p>On impose <span class="km" data-tex="V_a = 0">V_a = 0</span> et on appelle <span class="km" data-tex="I_{cc}">I_{cc}</span> le courant qui sort de la borne <span class="km" data-tex="a">a</span> vers <span class="km" data-tex="b">b</span>. La loi des nœuds en <span class="km" data-tex="A">A</span> donne alors, avec <span class="km" data-tex="I=V_A/10">I=V_A/10</span> :</p>
+<div class="km km-d" data-tex="\frac{V_A}{10} + \frac{V_A}{3} - 3\,\frac{V_A}{10} - 2 = 0
+  \;\Longrightarrow\; V_A\left(\frac{1}{10}+\frac{1}{3}-\frac{3}{10}\right) = 2 .">\frac{V_A}{10} + \frac{V_A}{3} - 3\,\frac{V_A}{10} - 2 = 0
+  \;\Longrightarrow\; V_A\left(\frac{1}{10}+\frac{1}{3}-\frac{3}{10}\right) = 2 .</div>
+<p>Or</p>
+<div class="km km-d" data-tex="\frac{1}{10}+\frac{1}{3}-\frac{3}{10}
+  = \frac{3}{30}+\frac{10}{30}-\frac{9}{30}
+  = \frac{4}{30} = \frac{2}{15},">\frac{1}{10}+\frac{1}{3}-\frac{3}{10}
+  = \frac{3}{30}+\frac{10}{30}-\frac{9}{30}
+  = \frac{4}{30} = \frac{2}{15},</div>
+<p>d'où</p>
+<div class="km km-d" data-tex="\frac{2}{15}\,V_A = 2
+  \;\Longrightarrow\; V_A = 2\times\frac{15}{2} = 15\ \text{V}.">\frac{2}{15}\,V_A = 2
+  \;\Longrightarrow\; V_A = 2\times\frac{15}{2} = 15\ \text{V}.</div>
+<p>La loi des nœuds en <span class="km" data-tex="a">a</span> (<span class="km" data-tex="V_a=0">V_a=0</span>) fournit le courant de court-circuit :</p>
+<div class="km km-d" data-tex="\frac{0 - V_A}{3} + 3I + I_{cc} = 0
+  \;\Longrightarrow\; I_{cc} = \frac{V_A}{3} - 3I
+  = \frac{15}{3} - 3\times 1{,}5 = 5 - 4{,}5 = 0{,}5\ \text{A}.">\frac{0 - V_A}{3} + 3I + I_{cc} = 0
+  \;\Longrightarrow\; I_{cc} = \frac{V_A}{3} - 3I
+  = \frac{15}{3} - 3\times 1{,}5 = 5 - 4{,}5 = 0{,}5\ \text{A}.</div>
+<div class="km km-d" data-tex="\boxed{I_N = I_{cc} = 0{,}5\ \text{A}}
+  \quad(\text{courant mesuré de } a \text{ vers } b,\ \text{donc } I \text{ dans la
+  résistance } 10\ \Omega \text{ vaut } 1{,}5\ \text{A}).">\boxed{I_N = I_{cc} = 0{,}5\ \text{A}}
+  \quad(\text{courant mesuré de } a \text{ vers } b,\ \text{donc } I \text{ dans la
+  résistance } 10\ \Omega \text{ vaut } 1{,}5\ \text{A}).</div>
+<h3 id="exercice-3-circuit-equivalent-de-norton-aux-bornes-a-b-3-resistance-de-norton" class="sous-titre">3. Résistance de Norton</h3>
+<p>Par le rapport des grandeurs de sortie :</p>
+<div class="km km-d" data-tex="R_N = \frac{V_{ab}^{\text{à vide}}}{I_{cc}} = \frac{2}{0{,}5} = \boxed{4\ \Omega} .">R_N = \frac{V_{ab}^{\text{à vide}}}{I_{cc}} = \frac{2}{0{,}5} = \boxed{4\ \Omega} .</div>
+<p><strong>Vérification par la source d'épreuve.</strong> Source <span class="km" data-tex="2\ \text{A}">2\ \text{A}</span> éteinte (circuit ouvert), on applique <span class="km" data-tex="V_{test}">V_{test}</span> entre <span class="km" data-tex="a\,(+)">a\,(+)</span> et <span class="km" data-tex="b\,(-)">b\,(-)</span>. La loi des nœuds en <span class="km" data-tex="A">A</span> s'écrit <span class="km" data-tex="\frac{V_A}{10} + \frac{V_A - V_{test}}{3} - 3\frac{V_A}{10} = 0">\frac{V_A}{10} + \frac{V_A - V_{test}}{3} - 3\frac{V_A}{10} = 0</span>, d'où <span class="km" data-tex="V_A = 2{,}5\,V_{test}">V_A = 2{,}5\,V_{test}</span>. Le courant entrant par <span class="km" data-tex="a">a</span> vaut alors</p>
+<div class="km km-d" data-tex="I_{test} = \frac{V_{test}-V_A}{3} + 3\frac{V_A}{10}
+           = \frac{-1{,}5\,V_{test}}{3} + 0{,}75\,V_{test}
+           = 0{,}25\,V_{test},">I_{test} = \frac{V_{test}-V_A}{3} + 3\frac{V_A}{10}
+           = \frac{-1{,}5\,V_{test}}{3} + 0{,}75\,V_{test}
+           = 0{,}25\,V_{test},</div>
+<div class="km km-d" data-tex="R_N = \frac{V_{test}}{I_{test}} = \frac{1}{0{,}25} = 4\ \Omega .">R_N = \frac{V_{test}}{I_{test}} = \frac{1}{0{,}25} = 4\ \Omega .</div>
+<h3 id="exercice-3-circuit-equivalent-de-norton-aux-bornes-a-b-4-controle-par-une-charge-d-epreuve" class="sous-titre">4. Contrôle par une charge d'épreuve</h3>
+<p>Entre <span class="km" data-tex="a">a</span> et <span class="km" data-tex="b">b</span> on branche une charge <span class="km" data-tex="R_L = 6\ \Omega">R_L = 6\ \Omega</span>. Le circuit réel donne <span class="km" data-tex="V_{ab} = 1{,}2\ \text{V}">V_{ab} = 1{,}2\ \text{V}</span> ; le modèle de Norton <span class="km" data-tex="V_{ab} = I_N/(1/R_N + 1/R_L) = 0{,}5/(0{,}25 + 0{,}1667) = 1{,}2\ \text{V}">V_{ab} = I_N/(1/R_N + 1/R_L) = 0{,}5/(0{,}25 + 0{,}1667) = 1{,}2\ \text{V}</span>. Les deux valeurs coïncident : l'équivalence est confirmée.</p>
+<h3 id="exercice-3-circuit-equivalent-de-norton-aux-bornes-a-b-conclusion" class="sous-titre">Conclusion</h3>
+<p>Le circuit équivalent de Norton vu des bornes <span class="km" data-tex="(a,b)">(a,b)</span> est une source de courant <span class="km" data-tex="I_N = 0{,}5\ \text{A}">I_N = 0{,}5\ \text{A}</span> orientée de <span class="km" data-tex="b">b</span> vers <span class="km" data-tex="a">a</span> (elle débite <span class="km" data-tex="0{,}5\ \text{A}">0{,}5\ \text{A}</span> par la borne <span class="km" data-tex="a">a</span>), en parallèle avec <span class="km" data-tex="R_N = 4\ \Omega">R_N = 4\ \Omega</span>. Le modèle de Thévenin associé est <span class="km" data-tex="V_{th} = I_N R_N = 2\ \text{V}">V_{th} = I_N R_N = 2\ \text{V}</span> en série avec <span class="km" data-tex="R_{th} = 4\ \Omega">R_{th} = 4\ \Omega</span>.</p>
+<aside class="carte carte-piege"><div class="carte-tete"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 2.5 20h19z"/><path d="M12 10v4.5M12 17.2v.3"/></svg><span class="carte-type">Piège</span></div><p class="carte-titre">Sens à ne pas inverser</p><div class="carte-corps">La source dépendante <span class="km" data-tex="3I">3I</span> est orientée <em>vers</em> <span class="km" data-tex="A">A</span> : elle injecte <span class="km" data-tex="3I">3I</span> dans le nœud <span class="km" data-tex="A">A</span>. Le signe de <span class="km" data-tex="I_N">I_N</span> en découle strictement : <span class="km" data-tex="I_N = 0{,}5\ \text{A}">I_N = 0{,}5\ \text{A}</span> est mesuré de <span class="km" data-tex="a">a</span> vers <span class="km" data-tex="b">b</span> (courant de court-circuit). Une orientation opposée donnerait un résultat différent.</div></aside></div></section><section class="station station-normale" id="exercice-4" aria-labelledby="exercice-4-t"><header class="station-tete"><span class="station-num station-num-vide" aria-hidden="true">✦</span><h2 id="exercice-4-t">Exercice 4</h2><label class="revise"><input type="checkbox" data-section="exercice-4"><span class="revise-coche" aria-hidden="true"></span><span class="revise-texte">Révisé</span></label></header><div class="station-corps"><div class="formule"><span class="formule-etiquette">Formule</span><div class="km km-d" data-tex="V_L = \dfrac{40}{21}\,\text{V} \approx 1{,}905\ \text{V}">V_L = \dfrac{40}{21}\,\text{V} \approx 1{,}905\ \text{V}</div></div>
+<figure class="figure"><button type="button" class="loupe-ouvrir" aria-label="Agrandir la figure"><img src="../../../assets/figures/e2-elec1/circuit-ex4.png" alt="Figure — Exercice 4" loading="lazy"></button></figure>
+<p><strong>Nœuds et conventions.</strong> On repère trois nœuds actifs et la masse : le nœud <span class="km" data-tex="A">A</span> (jonction après la résistance <span class="km" data-tex="2\,\text{k}\Omega">2\,\text{k}\Omega</span>) porte <span class="km" data-tex="V_x">V_x</span> à cause de la résistance <span class="km" data-tex="4\,\text{k}\Omega">4\,\text{k}\Omega</span> placée vers la masse, donc</p>
+<div class="km km-d" data-tex="V_x = V_A .">V_x = V_A .</div>
+<p>Le nœud <span class="km" data-tex="B">B</span> (jonction à droite, entre <span class="km" data-tex="3\,\text{k}\Omega">3\,\text{k}\Omega</span>, <span class="km" data-tex="1\,\text{k}\Omega">1\,\text{k}\Omega</span> et <span class="km" data-tex="2\,\text{k}\Omega">2\,\text{k}\Omega</span>) est le siège de la tension cherchée :</p>
+<div class="km km-d" data-tex="V_L = V_B .">V_L = V_B .</div>
+<p>Le nœud <span class="km" data-tex="C">C</span> est la borne supérieure (positive) de la source dépendante <span class="km" data-tex="3V_x">3V_x</span> reliée à la masse :</p>
+<div class="km km-d" data-tex="V_C = 3\,V_x = 3\,V_A .">V_C = 3\,V_x = 3\,V_A .</div>
+<p>Tensions en volts, résistances en <span class="km" data-tex="\text{k}\Omega">\text{k}\Omega</span> ; les courants s'expriment alors en mA. On écrit les lois de Kirchhoff des courants en supposant les courants sortants de chaque nœud.</p>
+<p><strong>Équations nodales.</strong></p>
+<div class="km km-d" data-tex="\text{Nœud } A:\quad
+\frac{V_A - 1}{2} + \frac{V_A}{4} + \frac{V_A - V_B}{3} = 0">\text{Nœud } A:\quad
+\frac{V_A - 1}{2} + \frac{V_A}{4} + \frac{V_A - V_B}{3} = 0</div>
+<div class="km km-d" data-tex="\text{Nœud } B:\quad
+\frac{V_B - V_A}{3} + \frac{V_B - V_C}{1} + \frac{V_B}{2} = 0 .">\text{Nœud } B:\quad
+\frac{V_B - V_A}{3} + \frac{V_B - V_C}{1} + \frac{V_B}{2} = 0 .</div>
+<p><strong>Résolution.</strong> Dans l'équation du nœud <span class="km" data-tex="B">B</span> on remplace <span class="km" data-tex="V_C = 3V_A">V_C = 3V_A</span> :</p>
+<div class="km km-d" data-tex="\frac{V_B - V_A}{3} + (V_B - 3V_A) + \frac{V_B}{2} = 0
+\;\Longrightarrow\;
+\Bigl(\tfrac13 + 1 + \tfrac12\Bigr)V_B = \Bigl(\tfrac13 + 3\Bigr) V_A .">\frac{V_B - V_A}{3} + (V_B - 3V_A) + \frac{V_B}{2} = 0
+\;\Longrightarrow\;
+\Bigl(\tfrac13 + 1 + \tfrac12\Bigr)V_B = \Bigl(\tfrac13 + 3\Bigr) V_A .</div>
+<p>Avec <span class="km" data-tex="\tfrac13+1+\tfrac12 = \tfrac{11}{6}">\tfrac13+1+\tfrac12 = \tfrac{11}{6}</span> et <span class="km" data-tex="\tfrac13+3 = \tfrac{10}{3}">\tfrac13+3 = \tfrac{10}{3}</span> :</p>
+<div class="km km-d" data-tex="\frac{11}{6}\,V_B = \frac{10}{3}\,V_A
+\;\Longrightarrow\;
+V_B = \frac{10}{3}\cdot\frac{6}{11}\,V_A = \frac{20}{11}\,V_A .
+\tag{1}">\frac{11}{6}\,V_B = \frac{10}{3}\,V_A
+\;\Longrightarrow\;
+V_B = \frac{10}{3}\cdot\frac{6}{11}\,V_A = \frac{20}{11}\,V_A .
+\tag{1}</div>
+<p>L'équation du nœud <span class="km" data-tex="A">A</span>, multipliée par <span class="km" data-tex="12">12</span>, donne</p>
+<div class="km km-d" data-tex="6(V_A - 1) + 3V_A + 4(V_A - V_B) = 0
+\;\Longrightarrow\;
+13\,V_A - 4\,V_B = 6 .
+\tag{2}">6(V_A - 1) + 3V_A + 4(V_A - V_B) = 0
+\;\Longrightarrow\;
+13\,V_A - 4\,V_B = 6 .
+\tag{2}</div>
+<p>En injectant (1) dans (2) :</p>
+<div class="km km-d" data-tex="13\,V_A - 4\cdot\frac{20}{11}V_A = 6
+\;\Longrightarrow\;
+\frac{143 - 80}{11}\,V_A = 6
+\;\Longrightarrow\;
+\frac{63}{11}\,V_A = 6 ,">13\,V_A - 4\cdot\frac{20}{11}V_A = 6
+\;\Longrightarrow\;
+\frac{143 - 80}{11}\,V_A = 6
+\;\Longrightarrow\;
+\frac{63}{11}\,V_A = 6 ,</div>
+<p>d'où</p>
+<div class="km km-d" data-tex="V_A = \frac{66}{63} = \frac{22}{21}\ \text{V} \approx 1{,}048\ \text{V},
+\qquad
+V_B = \frac{20}{11}\cdot\frac{22}{21} = \frac{40}{21}\ \text{V} .">V_A = \frac{66}{63} = \frac{22}{21}\ \text{V} \approx 1{,}048\ \text{V},
+\qquad
+V_B = \frac{20}{11}\cdot\frac{22}{21} = \frac{40}{21}\ \text{V} .</div>
+<p>On en déduit la tension demandée et les grandeurs annexes :</p>
+<div class="km km-d" data-tex="\boxed{\,V_L = V_B = \frac{40}{21}\ \text{V} \approx 1{,}905\ \text{V}\,},
+\qquad
+V_x = \frac{22}{21}\ \text{V} \approx 1{,}048\ \text{V},
+\qquad
+V_C = 3V_x = \frac{22}{7}\ \text{V} \approx 3{,}143\ \text{V}.">\boxed{\,V_L = V_B = \frac{40}{21}\ \text{V} \approx 1{,}905\ \text{V}\,},
+\qquad
+V_x = \frac{22}{21}\ \text{V} \approx 1{,}048\ \text{V},
+\qquad
+V_C = 3V_x = \frac{22}{7}\ \text{V} \approx 3{,}143\ \text{V}.</div>
+<p><strong>Courants de branche.</strong> Convention unique : pour chaque nœud on écrit le courant <em>sortant</em> par la branche, soit <span class="km" data-tex="(V_{\text{nœud}} - V_{\text{voisin}})/R">(V_{\text{nœud}} - V_{\text{voisin}})/R</span>. Tout courant positif sort donc du nœud retenu.</p>
+<p><em>Au nœud <span class="km" data-tex="A">A</span></em> (branches source, masse, <span class="km" data-tex="B">B</span>) :</p>
+<div class="km km-d" data-tex="i_{A\to\text{src}} = \frac{V_A - 1}{2} = \frac{1}{42}\ \text{mA},
+\qquad
+i_{A\to\text{masse}} = \frac{V_A}{4} = \frac{11}{42}\ \text{mA},
+\qquad
+i_{A\to B} = \frac{V_A - V_B}{3} = -\frac{2}{7}\ \text{mA}.">i_{A\to\text{src}} = \frac{V_A - 1}{2} = \frac{1}{42}\ \text{mA},
+\qquad
+i_{A\to\text{masse}} = \frac{V_A}{4} = \frac{11}{42}\ \text{mA},
+\qquad
+i_{A\to B} = \frac{V_A - V_B}{3} = -\frac{2}{7}\ \text{mA}.</div>
+<p><em>Au nœud <span class="km" data-tex="B">B</span></em> (branches <span class="km" data-tex="A">A</span>, <span class="km" data-tex="C">C</span>, masse) :</p>
+<div class="km km-d" data-tex="i_{B\to A} = \frac{V_B - V_A}{3} = +\frac{2}{7}\ \text{mA},
+\qquad
+i_{B\to C} = \frac{V_B - V_C}{1} = -\frac{26}{21}\ \text{mA},
+\qquad
+i_{B\to\text{masse}} = \frac{V_B}{2} = \frac{20}{21}\ \text{mA}.">i_{B\to A} = \frac{V_B - V_A}{3} = +\frac{2}{7}\ \text{mA},
+\qquad
+i_{B\to C} = \frac{V_B - V_C}{1} = -\frac{26}{21}\ \text{mA},
+\qquad
+i_{B\to\text{masse}} = \frac{V_B}{2} = \frac{20}{21}\ \text{mA}.</div>
+<p>Tous ces courants sont en mA (<span class="km" data-tex="\text{V}/\text{k}\Omega = \text{mA}">\text{V}/\text{k}\Omega = \text{mA}</span>), sans facteur d'échelle supplémentaire.</p>
+<aside class="carte carte-retenir"><div class="carte-tete"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></svg><span class="carte-type">À retenir</span></div><p class="carte-titre">Contrôles de Kirchhoff</p><div class="carte-corps"><ul><li><strong>KCL au nœud <span class="km" data-tex="A">A</span></strong> — somme des trois courants <em>sortants</em> : <span class="km" data-tex="\;\frac{V_A-1}{2}+\frac{V_A}{4}+\frac{V_A-V_B}{3} = \frac{1}{42}+\frac{11}{42}-\frac{12}{42}=0">\;\frac{V_A-1}{2}+\frac{V_A}{4}+\frac{V_A-V_B}{3} = \frac{1}{42}+\frac{11}{42}-\frac{12}{42}=0</span>.</li><li><strong>KCL au nœud <span class="km" data-tex="B">B</span></strong> — somme des trois courants <em>sortants</em> : <span class="km" data-tex="\;\frac{V_B-V_A}{3}+\frac{V_B-V_C}{1}+\frac{V_B}{2} = \frac{6}{21}-\frac{26}{21}+\frac{20}{21}=0">\;\frac{V_B-V_A}{3}+\frac{V_B-V_C}{1}+\frac{V_B}{2} = \frac{6}{21}-\frac{26}{21}+\frac{20}{21}=0</span>. Le terme <span class="km" data-tex="(V_B-V_A)/3 = +\frac{2}{7} = \frac{6}{21}">(V_B-V_A)/3 = +\frac{2}{7} = \frac{6}{21}</span> mA est bien le courant <em>sortant</em> de <span class="km" data-tex="B">B</span> par la résistance de <span class="km" data-tex="3\,\text{k}\Omega">3\,\text{k}\Omega</span> (il circule de <span class="km" data-tex="B">B</span> vers <span class="km" data-tex="A">A</span>) : il est positif, donc l'étiquette « entrant en <span class="km" data-tex="B">B</span> » était erronée. Avec la convention « sortant », il entre dans l'équation nodale du nœud <span class="km" data-tex="B">B</span> avec le signe <span class="km" data-tex="+">+</span>.</li><li><strong>Source dépendante</strong> : <span class="km" data-tex="V_C = 3V_x = 3\cdot\frac{22}{21} = \frac{22}{7}">V_C = 3V_x = 3\cdot\frac{22}{21} = \frac{22}{7}</span> V, cohérent avec la définition de <span class="km" data-tex="V_C">V_C</span>.</li><li><strong>Bilan de puissance</strong> : la source dépendante fournit <span class="km" data-tex="\,V_C\cdot\frac{26}{21} \approx 3{,}891">\,V_C\cdot\frac{26}{21} \approx 3{,}891</span> mW, la source <span class="km" data-tex="1">1</span> V absorbe <span class="km" data-tex="\frac{1}{42} \approx 23{,}8\,\mu\text{W}">\frac{1}{42} \approx 23{,}8\,\mu\text{W}</span>, et l'ensemble des résistances dissipe <span class="km" data-tex="\sum i^2 R \approx 3{,}867">\sum i^2 R \approx 3{,}867</span> mW. La somme des puissances est nulle (résidu <span class="km" data-tex="&lt; 10^{-9}">&lt; 10^{-9}</span> mW), aux arrondis près.</li></ul></div></aside>
+<aside class="carte carte-piege"><div class="carte-tete"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 2.5 20h19z"/><path d="M12 10v4.5M12 17.2v.3"/></svg><span class="carte-type">Piège</span></div><p class="carte-titre">Vérification</p><div class="carte-corps">Analyse de mailles indépendante et résolution numérique (<code>verifier.py</code>) donnent <span class="km" data-tex="V_A = \frac{22}{21}\,\text{V}">V_A = \frac{22}{21}\,\text{V}</span> et <span class="km" data-tex="V_L = \frac{40}{21}\,\text{V}">V_L = \frac{40}{21}\,\text{V}</span> : 19 contrôles effectifs réussis, dont un contrôle d'étiquetage du KCL au nœud <span class="km" data-tex="B">B</span> qui réfute l'ancienne mention « entrant » pour <span class="km" data-tex="(V_B-V_A)/3">(V_B-V_A)/3</span>.</div></aside></div></section><section class="station station-normale" id="exercice-5-equivalent-de-norton-aux-bornes-a-b" aria-labelledby="exercice-5-equivalent-de-norton-aux-bornes-a-b-t"><header class="station-tete"><span class="station-num station-num-vide" aria-hidden="true">✦</span><h2 id="exercice-5-equivalent-de-norton-aux-bornes-a-b-t">Exercice 5 — Équivalent de Norton aux bornes (a, b)</h2><label class="revise"><input type="checkbox" data-section="exercice-5-equivalent-de-norton-aux-bornes-a-b"><span class="revise-coche" aria-hidden="true"></span><span class="revise-texte">Révisé</span></label></header><div class="station-corps"><p>Énoncé : <em>déterminer le circuit équivalent de Norton aux bornes <span class="km" data-tex="(a,b)">(a,b)</span> du circuit ci-dessous</em> — branche de gauche <span class="km" data-tex="R_1 = 0{,}1\ \Omega">R_1 = 0{,}1\ \Omega</span> (entre le noeud <span class="km" data-tex="N">N</span> et le rail inférieur) ; branche centrale : <span class="km" data-tex="R_2 = 0{,}2\ \Omega">R_2 = 0{,}2\ \Omega</span> en série avec la source de tension <em>dépendante</em> <span class="km" data-tex="e = 0{,}2\,I_0">e = 0{,}2\,I_0</span> (borne <span class="km" data-tex="+">+</span> vers le haut) ; branche de droite : <span class="km" data-tex="R_3 = 0{,}2\ \Omega">R_3 = 0{,}2\ \Omega</span> entre <span class="km" data-tex="N">N</span> et la borne <span class="km" data-tex="a">a</span> ; le courant <span class="km" data-tex="I_0">I_0</span> est le courant du fil supérieur gauche, flèche orientée vers <span class="km" data-tex="N">N</span>.</p>
+<figure class="figure"><button type="button" class="loupe-ouvrir" aria-label="Agrandir la figure"><img src="../../../assets/figures/e2-elec1/circuit_origine.png" alt="Figure — Exercice 5 — Équivalent de Norton aux bornes (a, b)" loading="lazy"></button></figure>
+<h3 id="exercice-5-equivalent-de-norton-aux-bornes-a-b-reponse" class="sous-titre">Réponse</h3>
+<div class="formule"><span class="formule-etiquette">Formule</span><div class="km km-d" data-tex="\boxed{\ I_N = 0\ \mathrm{A}
+\ensuremath{\qquad}\text{et}\ensuremath{\qquad}
+R_N = \frac{6}{25}\ \Omega = 0{,}24\ \Omega\ }">\boxed{\ I_N = 0\ \mathrm{A}
+\ensuremath{\qquad}\text{et}\ensuremath{\qquad}
+R_N = \frac{6}{25}\ \Omega = 0{,}24\ \Omega\ }</div></div>
+<p>Le bipôle vu des bornes <span class="km" data-tex="(a,b)">(a,b)</span> est donc <em>purement résistif</em> : une source de courant de Norton nulle en parallèle avec <span class="km" data-tex="R_N = 0{,}24\ \Omega">R_N = 0{,}24\ \Omega</span>, c'est-à-dire en pratique une simple résistance de <span class="km" data-tex="0{,}24\ \Omega">0{,}24\ \Omega</span> entre <span class="km" data-tex="a">a</span> et <span class="km" data-tex="b">b</span>. L'équivalent de Thévenin associé est <span class="km" data-tex="v_{th} = 0\ \mathrm{V}">v_{th} = 0\ \mathrm{V}</span> en série avec <span class="km" data-tex="R_{th} = R_N = 0{,}24\ \Omega">R_{th} = R_N = 0{,}24\ \Omega</span> : l'identité <span class="km" data-tex="v_{ab}^{\text{à vide}} = R_N\,I_N">v_{ab}^{\text{à vide}} = R_N\,I_N</span> est bien vérifiée (<span class="km" data-tex="0 = 0{,}24 \times 0">0 = 0{,}24 \times 0</span>).</p>
+<h3 id="exercice-5-equivalent-de-norton-aux-bornes-a-b-1-conventions-sens-des-fleches-et-references" class="sous-titre">1. Conventions, sens des flèches et références</h3>
+<ul><li>Le rail inférieur est la référence des potentiels (<span class="km" data-tex="v_b = 0\ \mathrm{V}">v_b = 0\ \mathrm{V}</span>) ; la borne <span class="km" data-tex="a">a</span> est la borne supérieure et la tension est comptée de <span class="km" data-tex="a">a</span> vers <span class="km" data-tex="b">b</span> : <span class="km" data-tex="v_{ab} = v_a - v_b">v_{ab} = v_a - v_b</span>.</li><li><span class="km" data-tex="N">N</span> désigne le noeud d'interconnexion du fil supérieur gauche, de la branche centrale (<span class="km" data-tex="R_2">R_2</span> + source <span class="km" data-tex="0{,}2\,I_0">0{,}2\,I_0</span>) et de la branche droite (<span class="km" data-tex="R_3">R_3</span> puis <span class="km" data-tex="a">a</span>) ; son potentiel est noté <span class="km" data-tex="v_N">v_N</span>.</li><li><p>La flèche <span class="km" data-tex="I_0">I_0</span> longe le fil supérieur gauche et pointe <em>vers</em> <span class="km" data-tex="N">N</span> : <span class="km" data-tex="I_0">I_0</span> est le courant qui <em>entre</em> dans <span class="km" data-tex="N">N</span> par ce fil. Comme la seule branche en série avec ce fil est <span class="km" data-tex="R_1">R_1</span>, le courant sortant de <span class="km" data-tex="N">N</span> par <span class="km" data-tex="R_1">R_1</span> vaut <span class="km" data-tex="v_N/R_1">v_N/R_1</span>, d'où</p>
+<div class="km km-d" data-tex="I_0 = -\frac{v_N}{R_1} = -\frac{v_N}{0{,}1} = -10\,v_N .">I_0 = -\frac{v_N}{R_1} = -\frac{v_N}{0{,}1} = -10\,v_N .</div></li><li>La source dépendante impose la tension <span class="km" data-tex="0{,}2\,I_0">0{,}2\,I_0</span> : en parcourant la branche centrale de haut en bas on traverse la borne <span class="km" data-tex="+">+</span>, donc sa contribution à la chute de tension (de <span class="km" data-tex="N">N</span> vers <span class="km" data-tex="b">b</span>) est <span class="km" data-tex="+\,0{,}2\,I_0">+\,0{,}2\,I_0</span>.</li></ul>
+<h3 id="exercice-5-equivalent-de-norton-aux-bornes-a-b-2-observation-decisive-aucune-source-independante" class="sous-titre">2. Observation décisive : aucune source indépendante</h3>
+<p>Le réseau ne contient que trois résistances et <em>une source dépendante</em> : il n'existe ni source de tension ni source de courant <em>indépendante</em> (la flèche <span class="km" data-tex="I_0">I_0</span> n'est qu'un courant de référence : le fil est continu et aucun symbole de source n'y figure). Le système d'équations du circuit est donc <em>homogène</em> ; sa solution (unique) est la solution nulle, à vide comme en court-circuit. C'est l'origine directe de <span class="km" data-tex="I_N = 0">I_N = 0</span> et de <span class="km" data-tex="v_{ab} = 0">v_{ab} = 0</span> ci-dessous.</p>
+<h3 id="exercice-5-equivalent-de-norton-aux-bornes-a-b-3-tension-a-vide-v-ab-bornes-a-b-ouvertes" class="sous-titre">3. Tension à vide <span class="km" data-tex="v_{ab}">v_{ab}</span> (bornes <span class="km" data-tex="(a,b)">(a,b)</span> ouvertes)</h3>
+<p>Bornes ouvertes <span class="km" data-tex="\Rightarrow">\Rightarrow</span> aucun courant dans <span class="km" data-tex="R_3">R_3</span>. Loi des noeuds en <span class="km" data-tex="N">N</span> (somme des courants <em>sortants</em>) :</p>
+<div class="km km-d" data-tex="\underbrace{\frac{v_N}{R_1}}_{i_{R_1}=10\,v_N}
++\underbrace{\frac{v_N - 0{,}2\,I_0}{R_2}}_{i_{\text{centre}}}
++\underbrace{\frac{v_N - v_a}{R_3}}_{=\,0}=0 .">\underbrace{\frac{v_N}{R_1}}_{i_{R_1}=10\,v_N}
++\underbrace{\frac{v_N - 0{,}2\,I_0}{R_2}}_{i_{\text{centre}}}
++\underbrace{\frac{v_N - v_a}{R_3}}_{=\,0}=0 .</div>
+<p>Avec <span class="km" data-tex="I_0 = -10\,v_N">I_0 = -10\,v_N</span> :</p>
+<div class="km km-d" data-tex="i_{\text{centre}} = \frac{v_N + 0{,}2 \times 10\,v_N}{0{,}2}
+                 = \frac{v_N + 2\,v_N}{0{,}2} = 15\,v_N .">i_{\text{centre}} = \frac{v_N + 0{,}2 \times 10\,v_N}{0{,}2}
+                 = \frac{v_N + 2\,v_N}{0{,}2} = 15\,v_N .</div>
+<p>En reportant dans l'équation nodale, il vient</p>
+<div class="km km-d" data-tex="10\,v_N + 15\,v_N = 25\,v_N = 0 .">10\,v_N + 15\,v_N = 25\,v_N = 0 .</div>
+<div class="formule"><span class="formule-etiquette">Formule</span><div class="km km-d" data-tex="v_{ab}^{\text{à vide}} = v_a - v_b = v_N - 0 = 0\ \mathrm{V}">v_{ab}^{\text{à vide}} = v_a - v_b = v_N - 0 = 0\ \mathrm{V}</div></div>
+<h3 id="exercice-5-equivalent-de-norton-aux-bornes-a-b-4-courant-de-norton-i-n-bornes-a-b-court-circuitees" class="sous-titre">4. Courant de Norton <span class="km" data-tex="I_N">I_N</span> (bornes <span class="km" data-tex="(a,b)">(a,b)</span> court-circuitées)</h3>
+<p>On relie <span class="km" data-tex="a">a</span> à <span class="km" data-tex="b">b</span> : <span class="km" data-tex="v_a = 0">v_a = 0</span>. Le courant <span class="km" data-tex="I_N">I_N</span> est le courant de court-circuit sortant de <span class="km" data-tex="a">a</span> vers <span class="km" data-tex="b">b</span>, soit le courant traversant <span class="km" data-tex="R_3">R_3</span> de <span class="km" data-tex="N">N</span> vers <span class="km" data-tex="a">a</span> :</p>
+<div class="km km-d" data-tex="i_{R_3} = \frac{v_N - 0}{R_3} = \frac{v_N}{0{,}2} = 5\,v_N .">i_{R_3} = \frac{v_N - 0}{R_3} = \frac{v_N}{0{,}2} = 5\,v_N .</div>
+<p>Loi des noeuds en <span class="km" data-tex="N">N</span> :</p>
+<div class="km km-d" data-tex="10\,v_N + 15\,v_N + 5\,v_N = 30\,v_N = 0
+\quad\Longrightarrow\quad v_N = 0\ \mathrm{V} .">10\,v_N + 15\,v_N + 5\,v_N = 30\,v_N = 0
+\quad\Longrightarrow\quad v_N = 0\ \mathrm{V} .</div>
+<div class="formule"><span class="formule-etiquette">Formule</span><div class="km km-d" data-tex="I_N = i_{R_3} = 0\ \mathrm{A}">I_N = i_{R_3} = 0\ \mathrm{A}</div></div>
+<h3 id="exercice-5-equivalent-de-norton-aux-bornes-a-b-5-resistance-de-norton-r-n-par-la-source-d-epreuve" class="sous-titre">5. Résistance de Norton <span class="km" data-tex="R_N">R_N</span> par la source d'épreuve</h3>
+<p>La source dépendante <em>ne peut pas</em> être éteinte : on applique donc une source d'épreuve de tension <span class="km" data-tex="V">V</span> en <span class="km" data-tex="a">a</span> (la source dépendante reste active) et on mesure le courant <span class="km" data-tex="i">i</span> qu'elle débite, avec <span class="km" data-tex="R_N = V/i">R_N = V/i</span>.</p>
+<p>La relation <span class="km" data-tex="I_0 = -v_N/R_1">I_0 = -v_N/R_1</span> ne dépend pas de <span class="km" data-tex="V">V</span>, donc la branche centrale vaut toujours <span class="km" data-tex="i_{\text{centre}} = 15\,v_N">i_{\text{centre}} = 15\,v_N</span> ; la loi des noeuds en <span class="km" data-tex="N">N</span> s'écrit</p>
+<div class="km km-d" data-tex="10\,v_N + 15\,v_N + \frac{v_N - V}{0{,}2} = 0
+\;\Longrightarrow\;
+30\,v_N = 5\,V
+\;\Longrightarrow\;
+v_N = \frac{V}{6}.">10\,v_N + 15\,v_N + \frac{v_N - V}{0{,}2} = 0
+\;\Longrightarrow\;
+30\,v_N = 5\,V
+\;\Longrightarrow\;
+v_N = \frac{V}{6}.</div>
+<p>Le courant débité par la source d'épreuve traverse <span class="km" data-tex="R_3">R_3</span> de <span class="km" data-tex="a">a</span> vers <span class="km" data-tex="N">N</span> (il <em>entre</em> donc dans le noeud <span class="km" data-tex="N">N</span>) :</p>
+<div class="km km-d" data-tex="i = \frac{V - v_N}{R_3} = \frac{V - V/6}{0{,}2}
+  = \frac{5V/6}{1/5} = \frac{25}{6}\,V
+\qquad\Longrightarrow\qquad
+R_N = \frac{V}{i} = \frac{6}{25}\ \Omega .">i = \frac{V - v_N}{R_3} = \frac{V - V/6}{0{,}2}
+  = \frac{5V/6}{1/5} = \frac{25}{6}\,V
+\qquad\Longrightarrow\qquad
+R_N = \frac{V}{i} = \frac{6}{25}\ \Omega .</div>
+<div class="formule"><span class="formule-etiquette">Formule</span><div class="km km-d" data-tex="R_N = \frac{6}{25}\ \Omega = 0{,}24\ \Omega">R_N = \frac{6}{25}\ \Omega = 0{,}24\ \Omega</div></div>
+<p>Contrôle par la méthode duale (source d'épreuve de courant <span class="km" data-tex="1\ \mathrm{A}">1\ \mathrm{A}</span> en <span class="km" data-tex="a">a</span>) : la tension qui apparaît alors en <span class="km" data-tex="a">a</span> vaut <span class="km" data-tex="v_a = 1\ \mathrm{A} \times R_N = 0{,}24\ \mathrm{V}">v_a = 1\ \mathrm{A} \times R_N = 0{,}24\ \mathrm{V}</span> (vérifié au §6).</p>
+<h3 id="exercice-5-equivalent-de-norton-aux-bornes-a-b-6-controles-numeriques-source-d-epreuve-v-1-mathrm-v" class="sous-titre">6. Contrôles numériques (source d'épreuve <span class="km" data-tex="V = 1\ \mathrm{V}">V = 1\ \mathrm{V}</span>)</h3>
+<p>Avec <span class="km" data-tex="V = 1\ \mathrm{V}">V = 1\ \mathrm{V}</span> : <span class="km" data-tex="v_N = \tfrac{1}{6}\ \mathrm{V} \approx 0{,}1667\ \mathrm{V}">v_N = \tfrac{1}{6}\ \mathrm{V} \approx 0{,}1667\ \mathrm{V}</span> et <span class="km" data-tex="I_0 = -10\,v_N = -\tfrac{10}{6}\ \mathrm{A} \approx -1{,}667\ \mathrm{A}">I_0 = -10\,v_N = -\tfrac{10}{6}\ \mathrm{A} \approx -1{,}667\ \mathrm{A}</span>.</p>
+<div class="ajuste"><div class="tableau"><table><tbody><tr><td>Grandeur</td><td class="a-centre">Expression</td><td class="a-centre">Valeur</td></tr><tr><td><span class="km" data-tex="v_N">v_N</span></td><td class="a-centre"><span class="km" data-tex="V/6">V/6</span></td><td class="a-centre"><span class="km" data-tex="0{,}1667\ \mathrm{V}">0{,}1667\ \mathrm{V}</span></td></tr><tr><td><span class="km" data-tex="i_{R_1}">i_{R_1}</span> (sortant de <span class="km" data-tex="N">N</span> par <span class="km" data-tex="R_1">R_1</span>)</td><td class="a-centre"><span class="km" data-tex="10\,v_N">10\,v_N</span></td><td class="a-centre"><span class="km" data-tex="1{,}667\ \mathrm{A}">1{,}667\ \mathrm{A}</span></td></tr><tr><td><span class="km" data-tex="i_{\text{centre}}">i_{\text{centre}}</span> (descendant)</td><td class="a-centre"><span class="km" data-tex="15\,v_N">15\,v_N</span></td><td class="a-centre"><span class="km" data-tex="2{,}500\ \mathrm{A}">2{,}500\ \mathrm{A}</span></td></tr><tr><td><span class="km" data-tex="i_{R_3}">i_{R_3}</span> (de <span class="km" data-tex="a">a</span> vers <span class="km" data-tex="N">N</span>, entrant en <span class="km" data-tex="N">N</span>)</td><td class="a-centre"><span class="km" data-tex="5\,(V-v_N)">5\,(V-v_N)</span></td><td class="a-centre"><span class="km" data-tex="4{,}167\ \mathrm{A}">4{,}167\ \mathrm{A}</span></td></tr><tr><td><span class="km" data-tex="i">i</span> débité par la source d'épreuve</td><td class="a-centre"><span class="km" data-tex="25\,V/6">25\,V/6</span></td><td class="a-centre"><span class="km" data-tex="4{,}167\ \mathrm{A}">4{,}167\ \mathrm{A}</span></td></tr><tr><td><span class="km" data-tex="e = 0{,}2\,I_0">e = 0{,}2\,I_0</span></td><td class="a-centre"><span class="km" data-tex="-2\,v_N">-2\,v_N</span></td><td class="a-centre"><span class="km" data-tex="-0{,}3333\ \mathrm{V}">-0{,}3333\ \mathrm{V}</span></td></tr></tbody></table></div></div>
+<ul><li><strong>Loi des noeuds en <span class="km" data-tex="N">N</span></strong> : <span class="km" data-tex="1{,}667 + 2{,}500 - 4{,}167 = 0{,}000\ \mathrm{A}">1{,}667 + 2{,}500 - 4{,}167 = 0{,}000\ \mathrm{A}</span> (résidu <span class="km" data-tex="&lt; 10^{-12}\ \mathrm{A}">&lt; 10^{-12}\ \mathrm{A}</span>).</li><li><strong>Loi des noeuds en <span class="km" data-tex="a">a</span></strong> : le courant débité par la source d'épreuve (<span class="km" data-tex="4{,}167\ \mathrm{A}">4{,}167\ \mathrm{A}</span>) est exactement le courant dans <span class="km" data-tex="R_3">R_3</span>, orienté de <span class="km" data-tex="a">a</span> vers <span class="km" data-tex="N">N</span> (entrant en <span class="km" data-tex="N">N</span>, d'où <span class="km" data-tex="V - v_N &gt; 0">V - v_N &gt; 0</span>).</li><li><strong>Loi des mailles</strong>, branche centrale de <span class="km" data-tex="N">N</span> vers <span class="km" data-tex="b">b</span> : <span class="km" data-tex="R_2\,i_{\text{centre}} + 0{,}2\,I_0 = 0{,}2 \times 2{,}5 + 0{,}2 \times (-1{,}667) = 0{,}500 - 0{,}333 = 0{,}167\ \mathrm{V} = v_N">R_2\,i_{\text{centre}} + 0{,}2\,I_0 = 0{,}2 \times 2{,}5 + 0{,}2 \times (-1{,}667) = 0{,}500 - 0{,}333 = 0{,}167\ \mathrm{V} = v_N</span> : vérifiée.</li><li><strong>Chute dans <span class="km" data-tex="R_3">R_3</span></strong> : <span class="km" data-tex="V - v_N = 1 - 0{,}1667 = 0{,}8333\ \mathrm{V} = R_3\,i_{R_3}">V - v_N = 1 - 0{,}1667 = 0{,}8333\ \mathrm{V} = R_3\,i_{R_3}</span>, soit <span class="km" data-tex="V - v_N = 5V/6">V - v_N = 5V/6</span> : vérifiée.</li><li><p><strong>Contrôle global par décomposition.</strong> En parcourant la branche centrale de haut en bas, la chute vaut <span class="km" data-tex="R_2\,i_{\text{centre}} + 0{,}2\,I_0">R_2\,i_{\text{centre}} + 0{,}2\,I_0</span> : la source dépendante se comporte donc, dans cette branche, comme une résistance <em>négative</em></p>
+<div class="km km-d" data-tex="z = \frac{0{,}2\,I_0}{i_{\text{centre}}} = -\frac{2}{15}\ \Omega ,
+        \qquad
+        R_2 + z = 0{,}2 - \frac{2}{15} = \frac{1}{15}\ \Omega = 0{,}0667\ \Omega ,">z = \frac{0{,}2\,I_0}{i_{\text{centre}}} = -\frac{2}{15}\ \Omega ,
+        \qquad
+        R_2 + z = 0{,}2 - \frac{2}{15} = \frac{1}{15}\ \Omega = 0{,}0667\ \Omega ,</div>
+<p>d'où</p>
+<div class="km km-d" data-tex="R_N = R_3 + \bigl(R_1 \parallel \tfrac{1}{15}\bigr)
+            = 0{,}2 + \frac{0{,}1 \times 0{,}0667}{0{,}1 + 0{,}0667}
+            = 0{,}2 + 0{,}04 = 0{,}24\ \Omega ,">R_N = R_3 + \bigl(R_1 \parallel \tfrac{1}{15}\bigr)
+            = 0{,}2 + \frac{0{,}1 \times 0{,}0667}{0{,}1 + 0{,}0667}
+            = 0{,}2 + 0{,}04 = 0{,}24\ \Omega ,</div>
+<p>ce qui redonne bien <span class="km" data-tex="R_N = 6/25\ \Omega">R_N = 6/25\ \Omega</span>.</p></li><li><strong>Identité Thévenin/Norton</strong> : <span class="km" data-tex="v_{ab}^{\text{à vide}} = R_N\,I_N">v_{ab}^{\text{à vide}} = R_N\,I_N</span>, soit <span class="km" data-tex="0 = 0{,}24 \times 0">0 = 0{,}24 \times 0</span> ; avec une charge quelconque les deux modèles donnent la même tension (nulle) et la puissance disponible est nulle.</li></ul>
+<aside class="carte carte-piege"><div class="carte-tete"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 2.5 20h19z"/><path d="M12 10v4.5M12 17.2v.3"/></svg><span class="carte-type">Piège</span></div><p class="carte-titre">Pièges classiques sur cet exercice</p><div class="carte-corps"><ul><li><em>Éteindre la source dépendante</em> : on trouverait <span class="km" data-tex="R_N = 0{,}2 + (0{,}1 \parallel 0{,}2) = 0{,}2667\ \Omega">R_N = 0{,}2 + (0{,}1 \parallel 0{,}2) = 0{,}2667\ \Omega</span> — <strong>faux</strong>. Une source dépendante ne s'éteint jamais : elle est pilotée par un courant du circuit elle-même.</li><li><em>Croire la branche gauche ouverte</em> (au motif que <span class="km" data-tex="I_0">I_0</span> n'a « pas de source ») : on trouverait <span class="km" data-tex="R_N = 0{,}2 + 0{,}2 = 0{,}4\ \Omega">R_N = 0{,}2 + 0{,}2 = 0{,}4\ \Omega</span> — <strong>faux</strong>. <span class="km" data-tex="I_0">I_0</span> est le courant de <span class="km" data-tex="R_1">R_1</span> ; il n'est nul qu'à l'arrêt (aucune source indépendante).</li><li><em>Refuser <span class="km" data-tex="I_N = 0">I_N = 0</span></em> : c'est au contraire la conséquence directe de l'absence de source indépendante ; l'équivalent de Norton est alors un dipôle purement résistif.</li><li><em>Se tromper sur le sens de <span class="km" data-tex="I_0">I_0</span></em> (flèche orientée <em>vers</em> <span class="km" data-tex="N">N</span>) : le signe <span class="km" data-tex="I_0 = -v_N/R_1">I_0 = -v_N/R_1</span> — donc le terme <span class="km" data-tex="+2\,v_N">+2\,v_N</span> dans la branche centrale — en dépend.</li></ul></div></aside>
+<aside class="carte carte-retenir"><div class="carte-tete"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></svg><span class="carte-type">À retenir</span></div><p class="carte-titre">Hypothèse de lecture du schéma</p><div class="carte-corps">Sur la diapositive source, <span class="km" data-tex="I_0">I_0</span> est une flèche posée le long d'un fil <em>continu</em>, sans symbole de source : c'est un courant de référence (le courant de <span class="km" data-tex="R_1">R_1</span>) et le réseau ne comporte aucune source indépendante. Si le professeur avait voulu une source de courant <em>indépendante</em> <span class="km" data-tex="I_0">I_0</span> en série avec <span class="km" data-tex="R_1">R_1</span>, le résultat serait différent : <span class="km" data-tex="I_N = I_0">I_N = I_0</span> et <span class="km" data-tex="R_N = 0{,}4\ \Omega">R_N = 0{,}4\ \Omega</span> (l'extinction de cette source annulerait alors <span class="km" data-tex="I_0">I_0</span>, donc la source dépendante). La lecture littérale du schéma — retenue ici — conduit à <span class="km" data-tex="I_N = 0\ \mathrm{A}">I_N = 0\ \mathrm{A}</span> et <span class="km" data-tex="R_N = 0{,}24\ \Omega">R_N = 0{,}24\ \Omega</span>.</div></aside>
+<figure class="figure"><button type="button" class="loupe-ouvrir" aria-label="Agrandir la figure"><img src="../../../assets/figures/e2-elec1/equivalent_norton.png" alt="Figure — Exercice 5 — Équivalent de Norton aux bornes (a, b)" loading="lazy"></button></figure>
+<aside class="carte carte-retenir"><div class="carte-tete"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></svg><span class="carte-type">À retenir</span></div><p class="carte-titre">Vérification</p><div class="carte-corps">Fragment vérifié par exécution réelle de <code>workers/ex5/verifier.py</code> : 31 contrôles (résolution symbolique SymPy, contrôles numériques des lois de Kirchhoff, méthode de la source d'épreuve en tension puis en courant, décomposition de la source dépendante, contrôle ciblé du sens du courant dans <span class="km" data-tex="R_3">R_3</span>, exclusion des valeurs fausses <span class="km" data-tex="0{,}2667\ \Omega">0{,}2667\ \Omega</span> et <span class="km" data-tex="0{,}4\ \Omega">0{,}4\ \Omega</span>) ; résultats consignés dans <code>workers/ex5/resultat.json</code>. La figure du circuit est recadrée automatiquement depuis la page 25 du PDF source <code>elec1-ch1-rappels-definitions.pdf</code> à 300 dpi.</div></aside></div></section><section class="station station-normale" id="exercice-6" aria-labelledby="exercice-6-t"><header class="station-tete"><span class="station-num station-num-vide" aria-hidden="true">✦</span><h2 id="exercice-6-t">Exercice 6</h2><label class="revise"><input type="checkbox" data-section="exercice-6"><span class="revise-coche" aria-hidden="true"></span><span class="revise-texte">Révisé</span></label></header><div class="station-corps"><p><strong>Énoncé.</strong> Déterminer le circuit équivalent de Thévenin aux bornes <span class="km" data-tex="(a,b)">(a,b)</span> du circuit ci-dessous. On prend le rail inférieur comme masse (référence <span class="km" data-tex="0\,\mathrm{V}">0\,\mathrm{V}</span>).</p>
+<figure class="figure"><button type="button" class="loupe-ouvrir" aria-label="Agrandir la figure"><img src="../../../assets/figures/e2-elec1/circuit-ex6.png" alt="Figure — Exercice 6" loading="lazy"></button></figure>
+<div class="formule"><span class="formule-etiquette">Formule</span><div class="km km-d" data-tex="V_{Th}=V_{ab}=1\,\mathrm{V}\ \text{(a positif par
+rapport à b)},\ensuremath{\qquad} R_{Th}=2{,}4\,\Omega=\frac{12}{5}\,\Omega">V_{Th}=V_{ab}=1\,\mathrm{V}\ \text{(a positif par
+rapport à b)},\ensuremath{\qquad} R_{Th}=2{,}4\,\Omega=\frac{12}{5}\,\Omega</div></div>
+<p>Le générateur de Thévenin vu de <span class="km" data-tex="(a,b)">(a,b)</span> est donc une source de <span class="km" data-tex="1\,\mathrm{V}">1\,\mathrm{V}</span> (pôle <span class="km" data-tex="+">+</span> vers <span class="km" data-tex="a">a</span>) en série avec une résistance de <span class="km" data-tex="2{,}4\,\Omega">2{,}4\,\Omega</span>. Le courant de court-circuit associé vaut <span class="km" data-tex="\displaystyle I_{cc}=\frac{V_{Th}}{R_{Th}}=\frac{5}{12}\,\mathrm{A}\approx 0{,}4167\,\mathrm{A}">\displaystyle I_{cc}=\frac{V_{Th}}{R_{Th}}=\frac{5}{12}\,\mathrm{A}\approx 0{,}4167\,\mathrm{A}</span>, dirigé de <span class="km" data-tex="a">a</span> vers <span class="km" data-tex="b">b</span>.</p>
+<h3 id="exercice-6-1-reperage-des-nuds-et-des-donnees" class="sous-titre">1. Repérage des nœuds et des données</h3>
+<p>Notons <span class="km" data-tex="B">B</span> la borne <span class="km" data-tex="b">b</span>, <span class="km" data-tex="C">C</span> le nœud intermédiaire, <span class="km" data-tex="D">D</span> le second nœud et <span class="km" data-tex="A">A</span> la borne <span class="km" data-tex="a">a</span>. Chaque source de tension est en parallèle sur le rail bas (masse), pôle <span class="km" data-tex="+">+</span> vers le haut : elle fixe donc directement le potentiel de son nœud.</p>
+<div class="ajuste"><div class="tableau"><table><tbody><tr><td>Grandeur</td><td>Valeur</td></tr><tr><td><span class="km" data-tex="R_1">R_1</span> (entre <span class="km" data-tex="b">b</span> et <span class="km" data-tex="C">C</span>)</td><td><span class="km" data-tex="2\,\Omega">2\,\Omega</span></td></tr><tr><td><span class="km" data-tex="R_2">R_2</span> (entre <span class="km" data-tex="C">C</span> et la masse)</td><td><span class="km" data-tex="4\,\Omega">4\,\Omega</span></td></tr><tr><td><span class="km" data-tex="R_3">R_3</span> (entre <span class="km" data-tex="C">C</span> et <span class="km" data-tex="D">D</span>)</td><td><span class="km" data-tex="8\,\Omega">8\,\Omega</span></td></tr><tr><td><span class="km" data-tex="R_4">R_4</span> (entre <span class="km" data-tex="D">D</span> et <span class="km" data-tex="a">a</span>)</td><td><span class="km" data-tex="6\,\Omega">6\,\Omega</span></td></tr><tr><td><span class="km" data-tex="R_5">R_5</span> (entre <span class="km" data-tex="a">a</span> et la masse)</td><td><span class="km" data-tex="4\,\Omega">4\,\Omega</span></td></tr><tr><td>Source entre <span class="km" data-tex="b">b</span> et la masse</td><td><span class="km" data-tex="1\,\mathrm{V}\Rightarrow V_b=1\,\mathrm{V}">1\,\mathrm{V}\Rightarrow V_b=1\,\mathrm{V}</span></td></tr><tr><td>Source entre <span class="km" data-tex="D">D</span> et la masse</td><td><span class="km" data-tex="5\,\mathrm{V}\Rightarrow V_D=5\,\mathrm{V}">5\,\mathrm{V}\Rightarrow V_D=5\,\mathrm{V}</span></td></tr></tbody></table></div></div>
+<h3 id="exercice-6-2-tension-de-thevenin-circuit-a-vide" class="sous-titre">2. Tension de Thévenin : circuit à vide</h3>
+<p>Bornes <span class="km" data-tex="(a,b)">(a,b)</span> ouvertes, aucun courant ne sort par <span class="km" data-tex="a">a</span>. Les deux sources imposent <span class="km" data-tex="V_b=1\,\mathrm{V}">V_b=1\,\mathrm{V}</span> et <span class="km" data-tex="V_D=5\,\mathrm{V}">V_D=5\,\mathrm{V}</span> ; les inconnues sont <span class="km" data-tex="V_C">V_C</span> et <span class="km" data-tex="V_a">V_a</span>. On écrit la loi de Kirchhoff des courants (KCL) aux deux nœuds libres, courants sortants égaux à zéro.</p>
+<aside class="carte carte-retenir"><div class="carte-tete"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></svg><span class="carte-type">À retenir</span></div><p class="carte-titre">Équations nodales (à vide)</p><div class="carte-corps"><p>Nœud <span class="km" data-tex="C">C</span> :</p>
+<div class="km km-d" data-tex="\frac{V_C-V_b}{R_1}+\frac{V_C}{R_2}+\frac{V_C-V_D}{R_3}=0
+\quad\Longrightarrow\quad
+\frac{V_C-1}{2}+\frac{V_C}{4}+\frac{V_C-5}{8}=0 .">\frac{V_C-V_b}{R_1}+\frac{V_C}{R_2}+\frac{V_C-V_D}{R_3}=0
+\quad\Longrightarrow\quad
+\frac{V_C-1}{2}+\frac{V_C}{4}+\frac{V_C-5}{8}=0 .</div>
+<p>Nœud <span class="km" data-tex="a">a</span> :</p>
+<div class="km km-d" data-tex="\frac{V_a-V_D}{R_4}+\frac{V_a}{R_5}=0
+\quad\Longrightarrow\quad
+\frac{V_a-5}{6}+\frac{V_a}{4}=0 .">\frac{V_a-V_D}{R_4}+\frac{V_a}{R_5}=0
+\quad\Longrightarrow\quad
+\frac{V_a-5}{6}+\frac{V_a}{4}=0 .</div></div></aside>
+<p><strong>Résolution du nœud <span class="km" data-tex="C">C</span></strong> (multiplication par <span class="km" data-tex="8">8</span>) :</p>
+<div class="km km-d" data-tex="4(V_C-1)+2V_C+(V_C-5)=0
+\;\Rightarrow\; 7V_C=9
+\;\Rightarrow\; V_C=\frac{9}{7}\,\mathrm{V}\approx 1{,}286\,\mathrm{V}.">4(V_C-1)+2V_C+(V_C-5)=0
+\;\Rightarrow\; 7V_C=9
+\;\Rightarrow\; V_C=\frac{9}{7}\,\mathrm{V}\approx 1{,}286\,\mathrm{V}.</div>
+<p><strong>Résolution du nœud <span class="km" data-tex="a">a</span></strong> (multiplication par <span class="km" data-tex="12">12</span>) :</p>
+<div class="km km-d" data-tex="2(V_a-5)+3V_a=0 \;\Rightarrow\; 5V_a=10 \;\Rightarrow\; V_a=2\,\mathrm{V}.">2(V_a-5)+3V_a=0 \;\Rightarrow\; 5V_a=10 \;\Rightarrow\; V_a=2\,\mathrm{V}.</div>
+<p>La tension de Thévenin, orientée de <span class="km" data-tex="a">a</span> vers <span class="km" data-tex="b">b</span>, est donc</p>
+<div class="km km-d" data-tex="V_{Th}=V_{ab}=V_a-V_b=2-1=\boxed{1\,\mathrm{V}} .">V_{Th}=V_{ab}=V_a-V_b=2-1=\boxed{1\,\mathrm{V}} .</div>
+<h3 id="exercice-6-3-resistance-de-thevenin-sources-eteintes" class="sous-titre">3. Résistance de Thévenin : sources éteintes</h3>
+<p>On éteint les deux sources indépendantes : chaque source de tension devient un court-circuit entre son nœud et la masse. Les nœuds <span class="km" data-tex="B">B</span> et <span class="km" data-tex="D">D</span> sont alors confondus avec la masse, et <span class="km" data-tex="b">b</span> est lui aussi ramené à la masse par le court-circuit de la source <span class="km" data-tex="1\,\mathrm{V}">1\,\mathrm{V}</span>. On calcule la résistance vue entre <span class="km" data-tex="a">a</span> et <span class="km" data-tex="b">b</span> en injectant un courant de test.</p>
+<p>Seules deux branches partent du nœud <span class="km" data-tex="a">a</span> vers la masse :</p>
+<div class="km km-d" data-tex="R_{Th}=R_5 \parallel R_4=\frac{4\cdot 6}{4+6}=\frac{24}{10}
+=\boxed{2{,}4\,\Omega}=\frac{12}{5}\,\Omega .">R_{Th}=R_5 \parallel R_4=\frac{4\cdot 6}{4+6}=\frac{24}{10}
+=\boxed{2{,}4\,\Omega}=\frac{12}{5}\,\Omega .</div>
+<p>(La branche <span class="km" data-tex="b\!-\!C\!-\!D">b\!-\!C\!-\!D</span> ne relie que des points portés au même potentiel de masse : elle n'intervient pas.)</p>
+<h3 id="exercice-6-4-controle-par-le-courant-de-court-circuit" class="sous-titre">4. Contrôle par le courant de court-circuit</h3>
+<p>En court-circuitant <span class="km" data-tex="a">a</span> et <span class="km" data-tex="b">b</span>, on impose <span class="km" data-tex="V_a=V_b=1\,\mathrm{V}">V_a=V_b=1\,\mathrm{V}</span> tandis que <span class="km" data-tex="V_D=5\,\mathrm{V}">V_D=5\,\mathrm{V}</span> et <span class="km" data-tex="V_C=\tfrac97\,\mathrm{V}">V_C=\tfrac97\,\mathrm{V}</span> restent inchangés. Le courant qui sort de <span class="km" data-tex="a">a</span> vers <span class="km" data-tex="b">b</span> vaut</p>
+<div class="km km-d" data-tex="I_{cc}=\frac{V_D-V_a}{R_4}+\frac{0-V_a}{R_5}
+=\frac{5-1}{6}+\frac{0-1}{4}
+=\frac{2}{3}-\frac{1}{4}=\frac{5}{12}\,\mathrm{A}.">I_{cc}=\frac{V_D-V_a}{R_4}+\frac{0-V_a}{R_5}
+=\frac{5-1}{6}+\frac{0-1}{4}
+=\frac{2}{3}-\frac{1}{4}=\frac{5}{12}\,\mathrm{A}.</div>
+<p>On retrouve bien</p>
+<div class="km km-d" data-tex="R_{Th}=\frac{V_{Th}}{I_{cc}}=\frac{1}{5/12}=\frac{12}{5}=2{,}4\,\Omega,">R_{Th}=\frac{V_{Th}}{I_{cc}}=\frac{1}{5/12}=\frac{12}{5}=2{,}4\,\Omega,</div>
+<p>en accord avec la méthode par désactivation des sources.</p>
+<h3 id="exercice-6-5-controles-de-kirchhoff-et-bilan-de-puissance" class="sous-titre">5. Contrôles de Kirchhoff et bilan de puissance</h3>
+<p><strong>Courants de branche</strong> (sens positifs : <span class="km" data-tex="b\!\to\!C">b\!\to\!C</span>, <span class="km" data-tex="C\!\to\!D">C\!\to\!D</span>, <span class="km" data-tex="D\!\to\!a">D\!\to\!a</span>) :</p>
+<div class="km km-d" data-tex="i_{bC}=\frac{1-\tfrac97}{2}=-\frac17\,\mathrm{A},\qquad
+i_{CD}=\frac{\tfrac97-5}{8}=-\frac{13}{28}\,\mathrm{A},\qquad
+i_{Da}=\frac{5-2}{6}=\frac12\,\mathrm{A}.">i_{bC}=\frac{1-\tfrac97}{2}=-\frac17\,\mathrm{A},\qquad
+i_{CD}=\frac{\tfrac97-5}{8}=-\frac{13}{28}\,\mathrm{A},\qquad
+i_{Da}=\frac{5-2}{6}=\frac12\,\mathrm{A}.</div>
+<aside class="carte carte-piege"><div class="carte-tete"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 2.5 20h19z"/><path d="M12 10v4.5M12 17.2v.3"/></svg><span class="carte-type">Piège</span></div><p class="carte-titre">Signe à surveiller</p><div class="carte-corps">Le courant <span class="km" data-tex="i_{bC}&lt;0">i_{bC}&lt;0</span> signifie que la source <span class="km" data-tex="1\,\mathrm{V}">1\,\mathrm{V}</span> <em>absorbe</em> de la puissance : elle fonctionne en récepteur. Elle fournit en réalité <span class="km" data-tex="-1/7\,\mathrm{W}">-1/7\,\mathrm{W}</span>.</div></aside>
+<p><strong>KCL</strong> : <span class="km" data-tex="C:\ i_{bC}=i_{C,\text{masse}}+i_{CD}">C:\ i_{bC}=i_{C,\text{masse}}+i_{CD}</span> ; <span class="km" data-tex="a:\ i_{Da}=i_{a,\text{masse}}">a:\ i_{Da}=i_{a,\text{masse}}</span>. Les résidus nodaux sont nuls, ce qui confirme <span class="km" data-tex="V_C=9/7\,\mathrm{V}">V_C=9/7\,\mathrm{V}</span> et <span class="km" data-tex="V_a=2\,\mathrm{V}">V_a=2\,\mathrm{V}</span>.</p>
+<p><strong>Bilan de puissance</strong> (somme dissipée dans les résistances = somme fournie par les sources) :</p>
+<div class="km km-d" data-tex="P_{\text{res}}=\sum i^2R
+=\frac{2}{49}+\frac{81}{196}+\frac{169}{98}+\frac{3}{2}+1
+=\frac{917}{196}\,\mathrm{W}\approx 4{,}679\,\mathrm{W},">P_{\text{res}}=\sum i^2R
+=\frac{2}{49}+\frac{81}{196}+\frac{169}{98}+\frac{3}{2}+1
+=\frac{917}{196}\,\mathrm{W}\approx 4{,}679\,\mathrm{W},</div>
+<div class="km km-d" data-tex="P_{\text{src}}=i_{\text{src},b}E_1+i_{\text{src},D}E_2
+=\left(-\frac17\right)(1)+\left(\frac{27}{28}\right)(5)
+=\frac{131}{28}\,\mathrm{W}=\frac{917}{196}\,\mathrm{W}.">P_{\text{src}}=i_{\text{src},b}E_1+i_{\text{src},D}E_2
+=\left(-\frac17\right)(1)+\left(\frac{27}{28}\right)(5)
+=\frac{131}{28}\,\mathrm{W}=\frac{917}{196}\,\mathrm{W}.</div>
+<p>L'égalité <span class="km" data-tex="P_{\text{res}}=P_{\text{src}}">P_{\text{res}}=P_{\text{src}}</span> est vérifiée : la solution est cohérente.</p>
+<h3 id="exercice-6-6-conclusion" class="sous-titre">6. Conclusion</h3>
+<div class="km km-d" data-tex="\boxed{\,V_{Th}=1\,\mathrm{V}\ (\text{bornes}\ a,b\ :\ a\ \text{positif}),
+\qquad R_{Th}=2{,}4\,\Omega\,}">\boxed{\,V_{Th}=1\,\mathrm{V}\ (\text{bornes}\ a,b\ :\ a\ \text{positif}),
+\qquad R_{Th}=2{,}4\,\Omega\,}</div>
+<p>Circuit équivalent : source de <span class="km" data-tex="1\,\mathrm{V}">1\,\mathrm{V}</span> en série avec <span class="km" data-tex="2{,}4\,\Omega">2{,}4\,\Omega</span>, délivrant au court-circuit <span class="km" data-tex="I_{cc}=5/12\,\mathrm{A}">I_{cc}=5/12\,\mathrm{A}</span>. Tous les résultats sont confirmés par résolution matricielle indépendante, par double calcul de <span class="km" data-tex="R_{Th}">R_{Th}</span> et par le bilan de puissance.</p></div></section><section class="station station-normale" id="exercice-7" aria-labelledby="exercice-7-t"><header class="station-tete"><span class="station-num station-num-vide" aria-hidden="true">✦</span><h2 id="exercice-7-t">Exercice 7</h2><label class="revise"><input type="checkbox" data-section="exercice-7"><span class="revise-coche" aria-hidden="true"></span><span class="revise-texte">Révisé</span></label></header><div class="station-corps"><p><strong>Énoncé.</strong> Déterminer le courant qui traverse <span class="km" data-tex="R_4">R_4</span> si <span class="km" data-tex="V_s = 50">V_s = 50</span> V.</p>
+<figure class="figure"><button type="button" class="loupe-ouvrir" aria-label="Agrandir la figure"><img src="../../../assets/figures/e2-elec1/circuit-ex7.png" alt="Figure — Exercice 7" loading="lazy"></button></figure>
+<div class="centre"><strong>Réponse.</strong><br> <span class="km" data-tex="\displaystyle I_4 = \frac{1}{29}\ \text{A} \approx 34.5\ \text{mA}">\displaystyle I_4 = \frac{1}{29}\ \text{A} \approx 34.5\ \text{mA}</span>  (sens descendant de <span class="km" data-tex="B">B</span> vers <span class="km" data-tex="C">C</span>)</div>
+<h3 id="exercice-7-1-lecture-du-schema-et-mise-en-equations" class="sous-titre">1. Lecture du schéma et mise en équations</h3>
+<p>Le pôle <span class="km" data-tex="+">+</span> de la source est reliée directement au noeud <span class="km" data-tex="A">A</span> (aucun élément en série), et le pôle <span class="km" data-tex="-">-</span> au noeud <span class="km" data-tex="C">C</span> pris comme référence. On a donc immédiatement</p>
+<div class="km km-d" data-tex="V_A = V_s = 50\ \text{V}, \qquad V_C = 0\ \text{V}.">V_A = V_s = 50\ \text{V}, \qquad V_C = 0\ \text{V}.</div>
+<p>Topologie (flèches toutes dirigées vers le bas) :</p>
+<ul><li><span class="km" data-tex="R_1 = 560\ \Omega">R_1 = 560\ \Omega</span> entre <span class="km" data-tex="A">A</span> et <span class="km" data-tex="C">C</span> : courant <span class="km" data-tex="I_1">I_1</span> ;</li><li><span class="km" data-tex="R_2 = 330\ \Omega">R_2 = 330\ \Omega</span> entre <span class="km" data-tex="A">A</span> et <span class="km" data-tex="B">B</span> : courant <span class="km" data-tex="I_2">I_2</span> ;</li><li><span class="km" data-tex="R_3 = 330\ \Omega">R_3 = 330\ \Omega</span> entre <span class="km" data-tex="B">B</span> et <span class="km" data-tex="C">C</span> : courant <span class="km" data-tex="I_3">I_3</span> ;</li><li><span class="km" data-tex="R_4 = 560\ \Omega">R_4 = 560\ \Omega</span> entre <span class="km" data-tex="B">B</span> et <span class="km" data-tex="C">C</span> : courant <span class="km" data-tex="I_4">I_4</span> (grandeur demandée).</li></ul>
+<p><span class="km" data-tex="R_3">R_3</span> et <span class="km" data-tex="R_4">R_4</span> sont donc <em>en parallèle</em> entre <span class="km" data-tex="B">B</span> et <span class="km" data-tex="C">C</span>, et l'ensemble forme avec <span class="km" data-tex="R_2">R_2</span> la branche <span class="km" data-tex="A \to B \to C">A \to B \to C</span> ; <span class="km" data-tex="R_1">R_1</span> est en parallèle sur cette branche.</p>
+<h3 id="exercice-7-2-association-r-3-parallel-r-4-puis-r-2-en-serie" class="sous-titre">2. Association <span class="km" data-tex="R_3 \parallel R_4">R_3 \parallel R_4</span>, puis <span class="km" data-tex="R_2">R_2</span> en série</h3>
+<div class="formule"><span class="formule-etiquette">Formule</span><div class="km km-d" data-tex="R_{34} = \frac{R_3 R_4}{R_3 + R_4}
+      = \frac{330 \cdot 560}{330 + 560}\ \Omega
+      = \frac{184800}{890}\ \Omega
+      = \frac{18480}{89}\ \Omega
+      \approx 207.64\ \Omega">R_{34} = \frac{R_3 R_4}{R_3 + R_4}
+      = \frac{330 \cdot 560}{330 + 560}\ \Omega
+      = \frac{184800}{890}\ \Omega
+      = \frac{18480}{89}\ \Omega
+      \approx 207.64\ \Omega</div></div>
+<div class="formule"><span class="formule-etiquette">Formule</span><div class="km km-d" data-tex="R_{234} = R_2 + R_{34}
+        = 330 + \frac{18480}{89}\ \Omega
+        = \frac{330 \cdot 89 + 18480}{89}\ \Omega
+        = \frac{47850}{89}\ \Omega
+        \approx 537.64\ \Omega">R_{234} = R_2 + R_{34}
+        = 330 + \frac{18480}{89}\ \Omega
+        = \frac{330 \cdot 89 + 18480}{89}\ \Omega
+        = \frac{47850}{89}\ \Omega
+        \approx 537.64\ \Omega</div></div>
+<p>L'impédance totale vue de la source est</p>
+<div class="km km-d" data-tex="R_{\mathrm{tot}} = R_1 \parallel R_{234}
+ = \frac{560 \cdot \frac{47850}{89}}{560 + \frac{47850}{89}}\ \Omega
+ = \frac{2679600}{9769}\ \Omega
+ \approx 274.29\ \Omega,">R_{\mathrm{tot}} = R_1 \parallel R_{234}
+ = \frac{560 \cdot \frac{47850}{89}}{560 + \frac{47850}{89}}\ \Omega
+ = \frac{2679600}{9769}\ \Omega
+ \approx 274.29\ \Omega,</div>
+<p>d'où un courant total débité</p>
+<div class="km km-d" data-tex="I_{\mathrm{tot}} = \frac{V_s}{R_{\mathrm{tot}}}
+ = \frac{9769}{53592}\ \text{A} \approx 182.28\ \text{mA}.">I_{\mathrm{tot}} = \frac{V_s}{R_{\mathrm{tot}}}
+ = \frac{9769}{53592}\ \text{A} \approx 182.28\ \text{mA}.</div>
+<h3 id="exercice-7-3-tension-au-noeud-b-par-diviseur-de-tension" class="sous-titre">3. Tension au noeud <span class="km" data-tex="B">B</span> par diviseur de tension</h3>
+<p>La branche <span class="km" data-tex="A \to B \to C">A \to B \to C</span> (résistance <span class="km" data-tex="R_{234}">R_{234}</span>) est alimentée sous <span class="km" data-tex="V_A = 50">V_A = 50</span> V. La tension <span class="km" data-tex="V_B">V_B</span> est la fraction de cette tension qui tombe aux bornes de <span class="km" data-tex="R_{34}">R_{34}</span> :</p>
+<div class="formule"><span class="formule-etiquette">Formule</span><div class="km km-d" data-tex="V_B = V_A \cdot \frac{R_{34}}{R_2 + R_{34}}
+    = 50 \cdot \frac{\frac{18480}{89}}{\frac{47850}{89}}\ \text{V}
+    = 50 \cdot \frac{18480}{47850}\ \text{V}
+    = \frac{560}{29}\ \text{V}
+    \approx 19.31\ \text{V}">V_B = V_A \cdot \frac{R_{34}}{R_2 + R_{34}}
+    = 50 \cdot \frac{\frac{18480}{89}}{\frac{47850}{89}}\ \text{V}
+    = 50 \cdot \frac{18480}{47850}\ \text{V}
+    = \frac{560}{29}\ \text{V}
+    \approx 19.31\ \text{V}</div></div>
+<h3 id="exercice-7-4-courant-dans-r-4-et-courants-de-controle" class="sous-titre">4. Courant dans <span class="km" data-tex="R_4">R_4</span> (et courants de contrôle)</h3>
+<p>La loi d'Ohm dans <span class="km" data-tex="R_4">R_4</span>, entre <span class="km" data-tex="B">B</span> et la référence <span class="km" data-tex="C">C</span>, donne directement</p>
+<div class="formule"><span class="formule-etiquette">Formule</span><div class="km km-d" data-tex="I_4 = \frac{V_B}{R_4} = \frac{\frac{560}{29}}{560}\ \text{A}
+    = \frac{1}{29}\ \text{A} \approx 34.48\ \text{mA}">I_4 = \frac{V_B}{R_4} = \frac{\frac{560}{29}}{560}\ \text{A}
+    = \frac{1}{29}\ \text{A} \approx 34.48\ \text{mA}</div></div>
+<p>Les autres courants, utiles pour les contrôles :</p>
+<div class="km km-d" data-tex="I_1 = \frac{V_A}{R_1} = \frac{50}{560} = \frac{5}{56}\ \text{A} \approx 89.29\ \text{mA},">I_1 = \frac{V_A}{R_1} = \frac{50}{560} = \frac{5}{56}\ \text{A} \approx 89.29\ \text{mA},</div>
+<div class="km km-d" data-tex="I_2 = \frac{V_A - V_B}{R_2} = \frac{50 - \frac{560}{29}}{330}
+    = \frac{89}{957}\ \text{A} \approx 93.00\ \text{mA},">I_2 = \frac{V_A - V_B}{R_2} = \frac{50 - \frac{560}{29}}{330}
+    = \frac{89}{957}\ \text{A} \approx 93.00\ \text{mA},</div>
+<div class="km km-d" data-tex="I_3 = \frac{V_B}{R_3} = \frac{\frac{560}{29}}{330}
+    = \frac{56}{957}\ \text{A} \approx 58.52\ \text{mA}.">I_3 = \frac{V_B}{R_3} = \frac{\frac{560}{29}}{330}
+    = \frac{56}{957}\ \text{A} \approx 58.52\ \text{mA}.</div>
+<h3 id="exercice-7-5-controles-de-kirchhoff" class="sous-titre">5. Contrôles de Kirchhoff</h3>
+<aside class="carte carte-retenir"><div class="carte-tete"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></svg><span class="carte-type">À retenir</span></div><p class="carte-titre">Loi des noeuds au noeud <span class="km" data-tex="B">B</span></p><div class="carte-corps"><span class="km" data-tex="I_2 = I_3 + I_4">I_2 = I_3 + I_4</span> : <span class="km" data-tex="\dfrac{89}{957} = \dfrac{56}{957} + \dfrac{1}{29} = \dfrac{56 + 33}{957} = \dfrac{89}{957}">\dfrac{89}{957} = \dfrac{56}{957} + \dfrac{1}{29} = \dfrac{56 + 33}{957} = \dfrac{89}{957}</span>. <strong>Exact.</strong></div></aside>
+<aside class="carte carte-retenir"><div class="carte-tete"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></svg><span class="carte-type">À retenir</span></div><p class="carte-titre">Loi des noeuds au noeud <span class="km" data-tex="A">A</span></p><div class="carte-corps"><span class="km" data-tex="I_{\mathrm{tot}} = I_1 + I_2">I_{\mathrm{tot}} = I_1 + I_2</span> : <span class="km" data-tex="\dfrac{9769}{53592} = \dfrac{5}{56} + \dfrac{89}{957}">\dfrac{9769}{53592} = \dfrac{5}{56} + \dfrac{89}{957}</span>. <strong>Exact</strong> (vérifié au dénominateur commun <span class="km" data-tex="53592">53592</span>).</div></aside>
+<aside class="carte carte-retenir"><div class="carte-tete"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></svg><span class="carte-type">À retenir</span></div><p class="carte-titre">Loi des mailles</p><div class="carte-corps"><span class="km" data-tex="V_s - R_2 I_2 - R_4 I_4 = 50 - 330 \cdot \frac{89}{957} - 560 \cdot \frac{1}{29} = 50 - 30.69 - 19.31 = 0">V_s - R_2 I_2 - R_4 I_4 = 50 - 330 \cdot \frac{89}{957} - 560 \cdot \frac{1}{29} = 50 - 30.69 - 19.31 = 0</span>. <strong>Exact.</strong> De même pour la maille passant par <span class="km" data-tex="R_3">R_3</span>, et <span class="km" data-tex="R_3 I_3 = R_4 I_4 = \frac{560}{29}">R_3 I_3 = R_4 I_4 = \frac{560}{29}</span> V (même tension aux bornes de deux résistances en parallèle).</div></aside>
+<aside class="carte carte-retenir"><div class="carte-tete"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></svg><span class="carte-type">À retenir</span></div><p class="carte-titre">Bilan de puissance</p><div class="carte-corps"><span class="km" data-tex="P_{\text{source}} = V_s I_{\mathrm{tot}} \approx 9.11">P_{\text{source}} = V_s I_{\mathrm{tot}} \approx 9.11</span> W et <span class="km" data-tex="P_{R_1} + P_{R_2} + P_{R_3} + P_{R_4} = R_1 I_1^2 + R_2 I_2^2 + R_3 I_3^2 + R_4 I_4^2 \approx 9.11">P_{R_1} + P_{R_2} + P_{R_3} + P_{R_4} = R_1 I_1^2 + R_2 I_2^2 + R_3 I_3^2 + R_4 I_4^2 \approx 9.11</span> W. <strong>Égalité exacte.</strong></div></aside>
+<aside class="carte carte-piege"><div class="carte-tete"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 2.5 20h19z"/><path d="M12 10v4.5M12 17.2v.3"/></svg><span class="carte-type">Piège</span></div><p class="carte-titre">Point sensible</p><div class="carte-corps">Ne pas oublier que <span class="km" data-tex="V_A = V_s = 50">V_A = V_s = 50</span> V : la source n'est pas en série avec <span class="km" data-tex="R_1">R_1</span>, elle fixe directement le potentiel du noeud <span class="km" data-tex="A">A</span>. Le courant dans <span class="km" data-tex="R_4">R_4</span> ne découle donc <em>pas</em> d'un simple diviseur sur <span class="km" data-tex="R_3 \parallel R_4">R_3 \parallel R_4</span> alimenté par la source entière, mais du diviseur en deux étages <span class="km" data-tex="R_2">R_2</span> puis <span class="km" data-tex="R_3 \parallel R_4">R_3 \parallel R_4</span> (section 3).</div></aside></div></section><section class="station station-normale" id="exercice-8" aria-labelledby="exercice-8-t"><header class="station-tete"><span class="station-num station-num-vide" aria-hidden="true">✦</span><h2 id="exercice-8-t">Exercice 8</h2><label class="revise"><input type="checkbox" data-section="exercice-8"><span class="revise-coche" aria-hidden="true"></span><span class="revise-texte">Révisé</span></label></header><div class="station-corps"><p>Énoncé : <em>au moyen du théorème de superposition, calculer le courant dans la branche droite du circuit</em> (branche de <span class="km" data-tex="R_5">R_5</span>, entre le noeud <span class="km" data-tex="B">B</span> et la masse).</p>
+<figure class="figure"><button type="button" class="loupe-ouvrir" aria-label="Agrandir la figure"><img src="../../../assets/figures/e2-elec1/circuit-ex8.png" alt="Figure — Exercice 8" loading="lazy"></button></figure>
+<aside class="carte carte-retenir"><div class="carte-tete"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></svg><span class="carte-type">À retenir</span></div><p class="carte-titre">Données</p><div class="carte-corps"><span class="km" data-tex="E_1=2\ \text{V}">E_1=2\ \text{V}</span> (source de gauche, pôle <span class="km" data-tex="+">+</span> vers le haut) ; <span class="km" data-tex="E_2=3\ \text{V}">E_2=3\ \text{V}</span> (source de droite, en série avec <span class="km" data-tex="R_4">R_4</span>) ; <span class="km" data-tex="R_1=R_3=R_4=1{,}0\ \text{k}\Omega">R_1=R_3=R_4=1{,}0\ \text{k}\Omega</span> ; <span class="km" data-tex="R_2=R_5=2{,}2\ \text{k}\Omega">R_2=R_5=2{,}2\ \text{k}\Omega</span>. Le rail inférieur est la masse (<span class="km" data-tex="0\ \text{V}">0\ \text{V}</span>). On note <span class="km" data-tex="V_A">V_A</span> le noeud entre <span class="km" data-tex="R_1,R_2,R_3">R_1,R_2,R_3</span> et <span class="km" data-tex="V_B">V_B</span> le noeud entre <span class="km" data-tex="R_3,R_4,R_5">R_3,R_4,R_5</span>.</div></aside>
+<h3 id="exercice-8-reponse" class="sous-titre">Réponse</h3>
+<div class="formule"><span class="formule-etiquette">Formule</span><div class="km km-d" data-tex="\boxed{\,I_{R_5}=+0{,}847\ \text{mA}\ensuremath{\quad}\text{circulant de } B \text{ vers la masse}\,}">\boxed{\,I_{R_5}=+0{,}847\ \text{mA}\ensuremath{\quad}\text{circulant de } B \text{ vers la masse}\,}</div></div>
+<p>soit, en valeur exacte, <span class="km" data-tex="I_{R_5}=\dfrac{103}{121600}\ \text{A}\approx 847\ \mu\text{A}">I_{R_5}=\dfrac{103}{121600}\ \text{A}\approx 847\ \mu\text{A}</span>.</p>
+<h3 id="exercice-8-demarche" class="sous-titre">Démarche</h3>
+<p><strong>1. Principe de superposition.</strong> Le circuit comportant deux sources indépendantes (<span class="km" data-tex="E_1">E_1</span> et <span class="km" data-tex="E_2">E_2</span>), le courant dans une branche est la <em>somme algébrique</em> des courants produits par chaque source prise séparément, l'autre étant éteinte :</p>
+<ul><li>pour la contribution de <span class="km" data-tex="E_1">E_1</span> : on remplace <span class="km" data-tex="E_2">E_2</span> par un court-circuit ;</li><li>pour la contribution de <span class="km" data-tex="E_2">E_2</span> : on remplace <span class="km" data-tex="E_1">E_1</span> par un court-circuit.</li></ul>
+<p><strong>2. Équations nodales du circuit complet.</strong> Avec <span class="km" data-tex="G_i=1/R_i">G_i=1/R_i</span> et en écrivant la loi des noeuds (somme des courants sortants nulle) :</p>
+<div class="km km-d" data-tex="\begin{align*}
+\text{noeud } A &amp;: \frac{V_A-E_1}{R_1}+\frac{V_A}{R_2}+\frac{V_A-V_B}{R_3}=0,\\
+\text{noeud } B &amp;: \frac{V_B-V_A}{R_3}+\frac{V_B-E_2}{R_4}+\frac{V_B}{R_5}=0.
+\end{align*}">\begin{align*}
+\text{noeud } A &amp;: \frac{V_A-E_1}{R_1}+\frac{V_A}{R_2}+\frac{V_A-V_B}{R_3}=0,\\
+\text{noeud } B &amp;: \frac{V_B-V_A}{R_3}+\frac{V_B-E_2}{R_4}+\frac{V_B}{R_5}=0.
+\end{align*}</div>
+<p>La branche <span class="km" data-tex="R_4">R_4</span> se termine sur la borne <span class="km" data-tex="+">+</span> de <span class="km" data-tex="E_2">E_2</span>, d'où le terme <span class="km" data-tex="(V_B-E_2)/R_4">(V_B-E_2)/R_4</span>. En résolvant ce système linéaire :</p>
+<div class="km km-d" data-tex="V_A=\frac{957}{608}\ \text{V}\approx1{,}574\ \text{V},\qquad
+V_B=\frac{1133}{608}\ \text{V}\approx1{,}863\ \text{V}.">V_A=\frac{957}{608}\ \text{V}\approx1{,}574\ \text{V},\qquad
+V_B=\frac{1133}{608}\ \text{V}\approx1{,}863\ \text{V}.</div>
+<p>Le courant cherché traverse <span class="km" data-tex="R_5">R_5</span> sous la d.d.p. <span class="km" data-tex="V_B">V_B</span> :</p>
+<div class="km km-d" data-tex="I_{R_5}=\frac{V_B}{R_5}=\frac{1133/608}{2200}=\frac{103}{121600}\ \text{A}.">I_{R_5}=\frac{V_B}{R_5}=\frac{1133/608}{2200}=\frac{103}{121600}\ \text{A}.</div>
+<p><strong>3. Contribution de <span class="km" data-tex="E_1=2\ \text{V}">E_1=2\ \text{V}</span> seule</strong> (<span class="km" data-tex="E_2">E_2</span> court-circuitée, donc terme <span class="km" data-tex="V_{B1}/R_4">V_{B1}/R_4</span> au noeud <span class="km" data-tex="B">B</span>) :</p>
+<div class="km km-d" data-tex="(V_{A1}-E_1)G_1+V_{A1}G_2+(V_{A1}-V_{B1})G_3=0,\qquad
+(V_{B1}-V_{A1})G_3+V_{B1}G_4+V_{B1}G_5=0,">(V_{A1}-E_1)G_1+V_{A1}G_2+(V_{A1}-V_{B1})G_3=0,\qquad
+(V_{B1}-V_{A1})G_3+V_{B1}G_4+V_{B1}G_5=0,</div>
+<div class="km km-d" data-tex="V_{A1}=\frac{297}{304}\ \text{V},\quad
+V_{B1}=\frac{121}{304}\ \text{V},\quad
+I_{R_5}^{(1)}=\frac{V_{B1}}{R_5}=+0{,}181\ \text{mA}.">V_{A1}=\frac{297}{304}\ \text{V},\quad
+V_{B1}=\frac{121}{304}\ \text{V},\quad
+I_{R_5}^{(1)}=\frac{V_{B1}}{R_5}=+0{,}181\ \text{mA}.</div>
+<p><strong>4. Contribution de <span class="km" data-tex="E_2=3\ \text{V}">E_2=3\ \text{V}</span> seule</strong> (<span class="km" data-tex="E_1">E_1</span> court-circuitée, donc <span class="km" data-tex="E_1\to0">E_1\to0</span> dans l'équation du noeud <span class="km" data-tex="A">A</span>) :</p>
+<div class="km km-d" data-tex="V_{A2}G_1+V_{A2}G_2+(V_{A2}-V_{B2})G_3=0,\qquad
+(V_{B2}-V_{A2})G_3+(V_{B2}-E_2)G_4+V_{B2}G_5=0,">V_{A2}G_1+V_{A2}G_2+(V_{A2}-V_{B2})G_3=0,\qquad
+(V_{B2}-V_{A2})G_3+(V_{B2}-E_2)G_4+V_{B2}G_5=0,</div>
+<div class="km km-d" data-tex="V_{A2}=\frac{363}{608}\ \text{V},\quad
+V_{B2}=\frac{891}{608}\ \text{V},\quad
+I_{R_5}^{(2)}=\frac{V_{B2}}{R_5}=+0{,}666\ \text{mA}.">V_{A2}=\frac{363}{608}\ \text{V},\quad
+V_{B2}=\frac{891}{608}\ \text{V},\quad
+I_{R_5}^{(2)}=\frac{V_{B2}}{R_5}=+0{,}666\ \text{mA}.</div>
+<p><strong>5. Somme des contributions.</strong></p>
+<div class="km km-d" data-tex="I_{R_5}=I_{R_5}^{(1)}+I_{R_5}^{(2)}
+=0{,}181+0{,}666=0{,}847\ \text{mA},">I_{R_5}=I_{R_5}^{(1)}+I_{R_5}^{(2)}
+=0{,}181+0{,}666=0{,}847\ \text{mA},</div>
+<div class="km km-d" data-tex="V_A=V_{A1}+V_{A2}=0{,}977+0{,}597=1{,}574\ \text{V},\qquad
+V_B=V_{B1}+V_{B2}=0{,}398+1{,}465=1{,}863\ \text{V}.">V_A=V_{A1}+V_{A2}=0{,}977+0{,}597=1{,}574\ \text{V},\qquad
+V_B=V_{B1}+V_{B2}=0{,}398+1{,}465=1{,}863\ \text{V}.</div>
+<p>La superposition redonne bien la solution directe : le courant est <em>positif de <span class="km" data-tex="B">B</span> vers la masse</em>, c.-à-d. vers le bas dans <span class="km" data-tex="R_5">R_5</span>.</p>
+<p><strong>6. Contrôles de Kirchhoff.</strong> Courants de branche du circuit complet : <span class="km" data-tex="I_{R_1}=(E_1-V_A)/R_1=0{,}426\ \text{mA}">I_{R_1}=(E_1-V_A)/R_1=0{,}426\ \text{mA}</span>, <span class="km" data-tex="I_{R_3}=(V_A-V_B)/R_3=-0{,}289\ \text{mA}">I_{R_3}=(V_A-V_B)/R_3=-0{,}289\ \text{mA}</span> (il circule en réalité de <span class="km" data-tex="B">B</span> vers <span class="km" data-tex="A">A</span>), <span class="km" data-tex="I_{R_4}=(V_B-E_2)/R_4=-1{,}137\ \text{mA}">I_{R_4}=(V_B-E_2)/R_4=-1{,}137\ \text{mA}</span> (la source <span class="km" data-tex="E_2">E_2</span> pousse le courant de la borne <span class="km" data-tex="+">+</span> vers le noeud <span class="km" data-tex="B">B</span>). On vérifie</p>
+<div class="km km-d" data-tex="\begin{align*}
+\text{KCL noeud } A &amp;: I_{R_1}=I_{R_2}+I_{R_3},\\
+\text{KCL noeud } B &amp;: I_{R_3}=I_{R_4}+I_{R_5},\\
+\text{KVL maille gauche} &amp;: E_1-R_1I_{R_1}-V_A=0,\\
+\text{KVL branche droite} &amp;: V_B-R_5I_{R_5}=0.
+\end{align*}">\begin{align*}
+\text{KCL noeud } A &amp;: I_{R_1}=I_{R_2}+I_{R_3},\\
+\text{KCL noeud } B &amp;: I_{R_3}=I_{R_4}+I_{R_5},\\
+\text{KVL maille gauche} &amp;: E_1-R_1I_{R_1}-V_A=0,\\
+\text{KVL branche droite} &amp;: V_B-R_5I_{R_5}=0.
+\end{align*}</div>
+<aside class="carte carte-piege"><div class="carte-tete"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 2.5 20h19z"/><path d="M12 10v4.5M12 17.2v.3"/></svg><span class="carte-type">Piège</span></div><p class="carte-titre">Unités et signes</p><div class="carte-corps">Les courants sont exprimés en milliampères (<span class="km" data-tex="\text{mA}">\text{mA}</span>), les tensions en volts, les résistances en kilohms (<span class="km" data-tex="1\ \text{k}\Omega=10^3\ \Omega">1\ \text{k}\Omega=10^3\ \Omega</span>). Le signe <span class="km" data-tex="+">+</span> du résultat signifie que le courant sort du noeud <span class="km" data-tex="B">B</span> vers la masse ; un signe opposé l'aurait fait remonter de la masse vers <span class="km" data-tex="B">B</span>.</div></aside></div></section>
+    <footer class="pied">
+      <p>Converti depuis <code>Semestre-3/E2-ELEC1/Exercices/Chapitre-1-Exercices-1-8/elec1-ch1-exercices-1-8-corrige.tex</code> · <a href="../../../assets/pdf/e2-elec1/elec1-ch1-exercices-1-8-corrige.pdf" target="_blank" rel="noopener">version imprimable (PDF)</a></p>
+    </footer>
+  </main>
+</div>
+<dialog id="formulaire" class="dialogue" aria-labelledby="formulaire-titre">
+  <header class="dialogue-tete"><h2 id="formulaire-titre"><span class="btn-sigma" aria-hidden="true">Σ</span> Formulaire — Chapitre 1 — exercices 1 à 8</h2>
+  <button type="button" class="btn-icone" data-fermer aria-label="Fermer">✕</button></header>
+  <div class="dialogue-corps"><section class="formulaire-groupe"><h3><a href="#exercice-1" data-fermer>Exercice 1</a></h3><div class="formule"><div class="km km-d" data-tex="\frac{V_B - V_A}{R_1} + \frac{V_B - V_C}{R_2} + \frac{V_B - 0}{R_3} = 0">\frac{V_B - V_A}{R_1} + \frac{V_B - V_C}{R_2} + \frac{V_B - 0}{R_3} = 0</div></div><div class="formule"><div class="km km-d" data-tex="I_1 = \frac{E_1 - V_B}{R_1} = \frac{10 - \frac{35}{11}}{15}\ \text{A}
+      = \frac{\frac{110 - 35}{11}}{15}\ \text{A}
+      = \frac{75}{11 \cdot 15}\ \text{A}
+      = \frac{5}{11}\ \text{A} \approx 0{,}455\ \text{A}">I_1 = \frac{E_1 - V_B}{R_1} = \frac{10 - \frac{35}{11}}{15}\ \text{A}
+      = \frac{\frac{110 - 35}{11}}{15}\ \text{A}
+      = \frac{75}{11 \cdot 15}\ \text{A}
+      = \frac{5}{11}\ \text{A} \approx 0{,}455\ \text{A}</div></div><div class="formule"><div class="km km-d" data-tex="I_3 = \frac{V_B}{R_3} = \frac{\frac{35}{11}}{5}\ \text{A}
+      = \frac{7}{11}\ \text{A} \approx 0{,}636\ \text{A}">I_3 = \frac{V_B}{R_3} = \frac{\frac{35}{11}}{5}\ \text{A}
+      = \frac{7}{11}\ \text{A} \approx 0{,}636\ \text{A}</div></div><div class="formule"><div class="km km-d" data-tex="i_{R_2} = \frac{E_2 - V_B}{R_2} = \frac{5 - \frac{35}{11}}{10}\ \text{A}
+      = \frac{\frac{55 - 35}{11}}{10}\ \text{A}
+      = \frac{20}{110}\ \text{A}
+      = \frac{2}{11}\ \text{A} \approx 0{,}182\ \text{A} &gt; 0 .">i_{R_2} = \frac{E_2 - V_B}{R_2} = \frac{5 - \frac{35}{11}}{10}\ \text{A}
+      = \frac{\frac{55 - 35}{11}}{10}\ \text{A}
+      = \frac{20}{110}\ \text{A}
+      = \frac{2}{11}\ \text{A} \approx 0{,}182\ \text{A} &gt; 0 .</div></div></section><section class="formulaire-groupe"><h3><a href="#exercice-2" data-fermer>Exercice 2</a></h3><div class="formule"><div class="km km-d" data-tex="V = 10\ \text{V} \qquad I = 3\ \text{A}">V = 10\ \text{V} \qquad I = 3\ \text{A}</div></div></section><section class="formulaire-groupe"><h3><a href="#exercice-3-circuit-equivalent-de-norton-aux-bornes-a-b" data-fermer>Exercice 3 : circuit équivalent de Norton aux bornes (a, b)</a></h3><div class="formule"><span class="km" data-tex="R_N = 4\ \Omega">R_N = 4\ \Omega</span>,<span class="km" data-tex="\qquad">\qquad</span><span class="km" data-tex="I_N = 0{,}5\ \text{A}\ \text{orienté de } b \text{ vers } a">I_N = 0{,}5\ \text{A}\ \text{orienté de } b \text{ vers } a</span><span class="km" data-tex="\quad">\quad</span><span class="km" data-tex="\bigl(">\bigl(</span>soit <span class="km" data-tex="I_{cc,\,a\to b}=0{,}5\ \text{A}\bigr)">I_{cc,\,a\to b}=0{,}5\ \text{A}\bigr)</span>,<span class="km" data-tex="\qquad">\qquad</span><span class="km" data-tex="V_{ab}^{\text{à vide}} = 2\ \text{V}">V_{ab}^{\text{à vide}} = 2\ \text{V}</span>.</div></section><section class="formulaire-groupe"><h3><a href="#exercice-4" data-fermer>Exercice 4</a></h3><div class="formule"><div class="km km-d" data-tex="V_L = \dfrac{40}{21}\,\text{V} \approx 1{,}905\ \text{V}">V_L = \dfrac{40}{21}\,\text{V} \approx 1{,}905\ \text{V}</div></div></section><section class="formulaire-groupe"><h3><a href="#exercice-5-equivalent-de-norton-aux-bornes-a-b" data-fermer>Exercice 5 — Équivalent de Norton aux bornes (a, b)</a></h3><div class="formule"><div class="km km-d" data-tex="\boxed{\ I_N = 0\ \mathrm{A}
+\ensuremath{\qquad}\text{et}\ensuremath{\qquad}
+R_N = \frac{6}{25}\ \Omega = 0{,}24\ \Omega\ }">\boxed{\ I_N = 0\ \mathrm{A}
+\ensuremath{\qquad}\text{et}\ensuremath{\qquad}
+R_N = \frac{6}{25}\ \Omega = 0{,}24\ \Omega\ }</div></div><div class="formule"><div class="km km-d" data-tex="v_{ab}^{\text{à vide}} = v_a - v_b = v_N - 0 = 0\ \mathrm{V}">v_{ab}^{\text{à vide}} = v_a - v_b = v_N - 0 = 0\ \mathrm{V}</div></div><div class="formule"><div class="km km-d" data-tex="I_N = i_{R_3} = 0\ \mathrm{A}">I_N = i_{R_3} = 0\ \mathrm{A}</div></div><div class="formule"><div class="km km-d" data-tex="R_N = \frac{6}{25}\ \Omega = 0{,}24\ \Omega">R_N = \frac{6}{25}\ \Omega = 0{,}24\ \Omega</div></div></section><section class="formulaire-groupe"><h3><a href="#exercice-6" data-fermer>Exercice 6</a></h3><div class="formule"><div class="km km-d" data-tex="V_{Th}=V_{ab}=1\,\mathrm{V}\ \text{(a positif par
+rapport à b)},\ensuremath{\qquad} R_{Th}=2{,}4\,\Omega=\frac{12}{5}\,\Omega">V_{Th}=V_{ab}=1\,\mathrm{V}\ \text{(a positif par
+rapport à b)},\ensuremath{\qquad} R_{Th}=2{,}4\,\Omega=\frac{12}{5}\,\Omega</div></div></section><section class="formulaire-groupe"><h3><a href="#exercice-7" data-fermer>Exercice 7</a></h3><div class="formule"><div class="km km-d" data-tex="R_{34} = \frac{R_3 R_4}{R_3 + R_4}
+      = \frac{330 \cdot 560}{330 + 560}\ \Omega
+      = \frac{184800}{890}\ \Omega
+      = \frac{18480}{89}\ \Omega
+      \approx 207.64\ \Omega">R_{34} = \frac{R_3 R_4}{R_3 + R_4}
+      = \frac{330 \cdot 560}{330 + 560}\ \Omega
+      = \frac{184800}{890}\ \Omega
+      = \frac{18480}{89}\ \Omega
+      \approx 207.64\ \Omega</div></div><div class="formule"><div class="km km-d" data-tex="R_{234} = R_2 + R_{34}
+        = 330 + \frac{18480}{89}\ \Omega
+        = \frac{330 \cdot 89 + 18480}{89}\ \Omega
+        = \frac{47850}{89}\ \Omega
+        \approx 537.64\ \Omega">R_{234} = R_2 + R_{34}
+        = 330 + \frac{18480}{89}\ \Omega
+        = \frac{330 \cdot 89 + 18480}{89}\ \Omega
+        = \frac{47850}{89}\ \Omega
+        \approx 537.64\ \Omega</div></div><div class="formule"><div class="km km-d" data-tex="V_B = V_A \cdot \frac{R_{34}}{R_2 + R_{34}}
+    = 50 \cdot \frac{\frac{18480}{89}}{\frac{47850}{89}}\ \text{V}
+    = 50 \cdot \frac{18480}{47850}\ \text{V}
+    = \frac{560}{29}\ \text{V}
+    \approx 19.31\ \text{V}">V_B = V_A \cdot \frac{R_{34}}{R_2 + R_{34}}
+    = 50 \cdot \frac{\frac{18480}{89}}{\frac{47850}{89}}\ \text{V}
+    = 50 \cdot \frac{18480}{47850}\ \text{V}
+    = \frac{560}{29}\ \text{V}
+    \approx 19.31\ \text{V}</div></div><div class="formule"><div class="km km-d" data-tex="I_4 = \frac{V_B}{R_4} = \frac{\frac{560}{29}}{560}\ \text{A}
+    = \frac{1}{29}\ \text{A} \approx 34.48\ \text{mA}">I_4 = \frac{V_B}{R_4} = \frac{\frac{560}{29}}{560}\ \text{A}
+    = \frac{1}{29}\ \text{A} \approx 34.48\ \text{mA}</div></div></section><section class="formulaire-groupe"><h3><a href="#exercice-8" data-fermer>Exercice 8</a></h3><div class="formule"><div class="km km-d" data-tex="\boxed{\,I_{R_5}=+0{,}847\ \text{mA}\ensuremath{\quad}\text{circulant de } B \text{ vers la masse}\,}">\boxed{\,I_{R_5}=+0{,}847\ \text{mA}\ensuremath{\quad}\text{circulant de } B \text{ vers la masse}\,}</div></div></section></div>
+</dialog>
+<dialog id="loupe" class="dialogue loupe" aria-label="Figure agrandie">
+  <button type="button" class="btn-icone loupe-fermer" data-fermer aria-label="Fermer">✕</button>
+  <img alt="">
+</dialog>
+
+</body>
+</html>

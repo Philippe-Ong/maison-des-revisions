@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Électromécanique 1 · Corrigé · Chapitre 1 — exercice 2</title>
+<meta name="description" content="Électromécanique 1 — Chapitre 1 — exercice 2 (Généralités : corrigé expliqué)">
+<link rel="icon" href="../../../assets/favicon.svg?v=012e46bcde" type="image/svg+xml">
+<script>try{var t=localStorage.getItem("maison:theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+
+<link rel="stylesheet" href="../../../assets/styles.css?v=012e46bcde">
+<style>:root{--c-heia:#0E5A8A;--c-orangeheia:#E67E22;--c-ink:#1D2A35;--c-pale:#EEF5FB;--c-palewarm:#FBF3E8;--c-grid:#C7D3DE}@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--c-heia:color-mix(in srgb,#0E5A8A 50%,#fff);--c-orangeheia:color-mix(in srgb,#E67E22 50%,#fff);--c-ink:color-mix(in srgb,#1D2A35 50%,#fff);--c-pale:color-mix(in srgb,#EEF5FB 50%,#fff);--c-palewarm:color-mix(in srgb,#FBF3E8 50%,#fff);--c-grid:color-mix(in srgb,#C7D3DE 50%,#fff)}}:root[data-theme=dark]{--c-heia:color-mix(in srgb,#0E5A8A 50%,#fff);--c-orangeheia:color-mix(in srgb,#E67E22 50%,#fff);--c-ink:color-mix(in srgb,#1D2A35 50%,#fff);--c-pale:color-mix(in srgb,#EEF5FB 50%,#fff);--c-palewarm:color-mix(in srgb,#FBF3E8 50%,#fff);--c-grid:color-mix(in srgb,#C7D3DE 50%,#fff)}</style>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+
+<script defer src="../../../assets/maison.js?v=012e46bcde"></script>
+</head>
+<body class="page-resume" style="--piece:#7C3AED" data-cle="E2-ELMEC1/exercices/ch1-ex2" data-sections='["s1-enonce", "s2-rappels-formulaire-te1-chapitre-1", "s3-question-1-gradient-de-f", "s4-question-2-divergence-de-vec-u", "s5-question-3-rotationnel-de-vec-u", "s6-question-4-overrightarrow-mathrm-rot-bigl-overrightarrow-mat", "s7-question-5-overrightarrow-mathrm-div-bigl-overrightarrow-mat", "s8-resultats-a-retenir"]' data-url-racine="pieces/e2-elmec1/exercices/ch1-ex2.html" data-titre="Électromécanique 1 · Corrigé · Chapitre 1 — exercice 2">
+<a class="evitement" href="#contenu">Aller au contenu</a>
+
+<header class="barre">
+  <nav class="ariane" aria-label="Fil d'Ariane">
+    <a href="../../../index.html"><svg class="icone-ariane" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 12 4l9 7"/><path d="M5 9.5V20h14V9.5"/><path d="M10 20v-6h4v6"/></svg><span>Maison</span></a><span class="sep" aria-hidden="true">›</span>
+    <a href="../index.html">Électromécanique 1</a><span class="sep" aria-hidden="true">›</span>
+    <span aria-current="page">Corrigé · Chapitre 1 — exercice 2</span>
+  </nav>
+  <div class="barre-actions">
+    <button type="button" class="btn" data-ouvrir="formulaire"><span class="btn-sigma" aria-hidden="true">Σ</span> Formulaire</button>
+    <a class="btn btn-discret" href="../../../assets/pdf/e2-elmec1/elmec1-ch1-ex2-corrige.pdf" target="_blank" rel="noopener">PDF</a>
+    <button type="button" class="btn-icone" data-theme-bascule aria-label="Basculer clair / sombre"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 4a8 8 0 0 1 0 16z" fill="currentColor"/></svg></button>
+  </div>
+</header>
+<div class="cadre">
+  <aside class="sommaire" aria-label="Sommaire">
+    <details class="sommaire-details" open>
+      <summary><span>Sommaire</span><span class="sommaire-prog" data-progression-texte>0 / 8</span></summary>
+      <ol class="sommaire-liste"><li data-cible="s1-enonce"><div class="sommaire-ligne"><a href="#s1-enonce"><span class="num">1</span>Énoncé</a><label class="revise-mini" title="Marquer « Énoncé » comme révisé"><input type="checkbox" data-section="s1-enonce" aria-label="Révisé : Énoncé"><span class="revise-coche" aria-hidden="true"></span></label></div></li><li data-cible="s2-rappels-formulaire-te1-chapitre-1"><div class="sommaire-ligne"><a href="#s2-rappels-formulaire-te1-chapitre-1"><span class="num">2</span>Rappels (formulaire TE1, chapitre 1)</a><label class="revise-mini" title="Marquer « Rappels (formulaire TE1, chapitre 1) » comme révisé"><input type="checkbox" data-section="s2-rappels-formulaire-te1-chapitre-1" aria-label="Révisé : Rappels (formulaire TE1, chapitre 1)"><span class="revise-coche" aria-hidden="true"></span></label></div></li><li data-cible="s3-question-1-gradient-de-f"><div class="sommaire-ligne"><a href="#s3-question-1-gradient-de-f"><span class="num">3</span>Question 1 — gradient de <span class="km" data-tex="f">f</span></a><label class="revise-mini" title="Marquer « Question 1 — gradient de f » comme révisé"><input type="checkbox" data-section="s3-question-1-gradient-de-f" aria-label="Révisé : Question 1 — gradient de f"><span class="revise-coche" aria-hidden="true"></span></label></div></li><li data-cible="s4-question-2-divergence-de-vec-u"><div class="sommaire-ligne"><a href="#s4-question-2-divergence-de-vec-u"><span class="num">4</span>Question 2 — divergence de <span class="km" data-tex="\vec u">\vec u</span></a><label class="revise-mini" title="Marquer « Question 2 — divergence de \vec u » comme révisé"><input type="checkbox" data-section="s4-question-2-divergence-de-vec-u" aria-label="Révisé : Question 2 — divergence de \vec u"><span class="revise-coche" aria-hidden="true"></span></label></div></li><li data-cible="s5-question-3-rotationnel-de-vec-u"><div class="sommaire-ligne"><a href="#s5-question-3-rotationnel-de-vec-u"><span class="num">5</span>Question 3 — rotationnel de <span class="km" data-tex="\vec u">\vec u</span></a><label class="revise-mini" title="Marquer « Question 3 — rotationnel de \vec u » comme révisé"><input type="checkbox" data-section="s5-question-3-rotationnel-de-vec-u" aria-label="Révisé : Question 3 — rotationnel de \vec u"><span class="revise-coche" aria-hidden="true"></span></label></div></li><li data-cible="s6-question-4-overrightarrow-mathrm-rot-bigl-overrightarrow-mat"><div class="sommaire-ligne"><a href="#s6-question-4-overrightarrow-mathrm-rot-bigl-overrightarrow-mat"><span class="num">6</span>Question 4 — <span class="km" data-tex="\overrightarrow{\mathrm{rot}}\bigl(\overrightarrow{\mathrm{grad}}(f)\bigr)=\vec 0">\overrightarrow{\mathrm{rot}}\bigl(\overrightarrow{\mathrm{grad}}(f)\bigr)=\vec 0</span></a><label class="revise-mini" title="Marquer « Question 4 — \overrightarrow{\mathrm{rot}}\bigl(\overrightarrow{\mathrm{grad}}(f)\bigr)=\vec 0 » comme révisé"><input type="checkbox" data-section="s6-question-4-overrightarrow-mathrm-rot-bigl-overrightarrow-mat" aria-label="Révisé : Question 4 — \overrightarrow{\mathrm{rot}}\bigl(\overrightarrow{\mathrm{grad}}(f)\bigr)=\vec 0"><span class="revise-coche" aria-hidden="true"></span></label></div></li><li data-cible="s7-question-5-overrightarrow-mathrm-div-bigl-overrightarrow-mat"><div class="sommaire-ligne"><a href="#s7-question-5-overrightarrow-mathrm-div-bigl-overrightarrow-mat"><span class="num">7</span>Question 5 — <span class="km" data-tex="\overrightarrow{\mathrm{div}}\bigl(\overrightarrow{\mathrm{rot}}(\vec u)\bigr)=0">\overrightarrow{\mathrm{div}}\bigl(\overrightarrow{\mathrm{rot}}(\vec u)\bigr)=0</span></a><label class="revise-mini" title="Marquer « Question 5 — \overrightarrow{\mathrm{div}}\bigl(\overrightarrow{\mathrm{rot}}(\vec u)\bigr)=0 » comme révisé"><input type="checkbox" data-section="s7-question-5-overrightarrow-mathrm-div-bigl-overrightarrow-mat" aria-label="Révisé : Question 5 — \overrightarrow{\mathrm{div}}\bigl(\overrightarrow{\mathrm{rot}}(\vec u)\bigr)=0"><span class="revise-coche" aria-hidden="true"></span></label></div></li><li data-cible="s8-resultats-a-retenir"><div class="sommaire-ligne"><a href="#s8-resultats-a-retenir"><span class="num">8</span>Résultats à retenir</a><label class="revise-mini" title="Marquer « Résultats à retenir » comme révisé"><input type="checkbox" data-section="s8-resultats-a-retenir" aria-label="Révisé : Résultats à retenir"><span class="revise-coche" aria-hidden="true"></span></label></div><ol><li><a href="#s8-resultats-a-retenir-sources-locales"><span class="num"></span>Sources locales</a></li></ol></li></ol>
+    </details>
+  </aside>
+  <main id="contenu">
+    <section class="hero">
+      <div class="hero-papier" aria-hidden="true"></div>
+      <div class="hero-tete">
+        <a class="hero-piece" href="../index.html"><svg class="icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3v9a6 6 0 0 0 12 0V3h-4v9a2 2 0 0 1-4 0V3z"/><path d="M6 7h4M14 7h4"/></svg><span>Électromécanique 1</span><span class="hero-aile">Aile Électricité</span></a>
+        <div class="anneau" data-anneau role="img" aria-label="Progression"><span data-progression-pourcent>0 %</span></div>
+      </div>
+      <p class="hero-entete">E2-ELMEC1 — Électromécanique 1 · Chapitre 1 — Exercice 2 : corrigé détaillé</p>
+      <h1 class="visuellement-cache">Électromécanique 1 · Corrigé · Chapitre 1 — exercice 2</h1>
+      <div class="hero-intro"><div class="centre"><span class="t-titre"><span class="gras"><span style="color:var(--c-heia)">Électromécanique 1 — Chapitre 1</span></span></span><br> <span class="t-grand"><span class="gras">Exercice 2 : gradient, divergence, rotationnel</span></span><br> Énoncé : <code>Consignes/sources/elmec1-ch1-generalites-ex2.pdf</code> (feuille du professeur). Rappels et notations : formulaire autorisé TE1, chapitre 1.<br> <strong>Corrigé proposé, non officiel.</strong></div></div>
+      <div class="hero-puces"><span class="puce puce-te puce-attente">Date du TE : pas encore annoncée</span><span class="puce puce-corrige">Corrigé</span><span class="puce">8 sections</span><span class="puce">5 formules</span></div>
+    </section>
+    <section class="station station-normale" id="s1-enonce" aria-labelledby="s1-enonce-t"><header class="station-tete"><span class="station-num">1</span><h2 id="s1-enonce-t">Énoncé</h2><label class="revise"><input type="checkbox" data-section="s1-enonce"><span class="revise-coche" aria-hidden="true"></span><span class="revise-texte">Révisé</span></label></header><div class="station-corps"><p><em>Résoudre les problèmes suivants en détaillant chaque étape de vos calculs :</em></p>
+<ol><li>Calculer le gradient <span class="km" data-tex="\overrightarrow{\mathrm{grad}}(f)">\overrightarrow{\mathrm{grad}}(f)</span> de <span class="km" data-tex="f(x,y,z)=3x^2+8y-7e^{z}+9">f(x,y,z)=3x^2+8y-7e^{z}+9</span>.</li><li>Calculer la divergence <span class="km" data-tex="\overrightarrow{\mathrm{div}}(\vec u)">\overrightarrow{\mathrm{div}}(\vec u)</span> de <span class="km" data-tex="\vec u=\begin{pmatrix}3x-2z\\ 8x^{2}-9\sqrt{y}+3yz\\ 7x-2y^{3}\end{pmatrix}">\vec u=\begin{pmatrix}3x-2z\\ 8x^{2}-9\sqrt{y}+3yz\\ 7x-2y^{3}\end{pmatrix}</span>.</li><li>Calculer le rotationnel <span class="km" data-tex="\overrightarrow{\mathrm{rot}}(\vec u)">\overrightarrow{\mathrm{rot}}(\vec u)</span> de <span class="km" data-tex="\vec u=\begin{pmatrix}3xy-5z\\ xz^{2}-2y^{2}\\ x+3e^{z}\end{pmatrix}">\vec u=\begin{pmatrix}3xy-5z\\ xz^{2}-2y^{2}\\ x+3e^{z}\end{pmatrix}</span>.</li><li>Démontrer que <span class="km" data-tex="\overrightarrow{\mathrm{rot}}\bigl(\overrightarrow{\mathrm{grad}}(f)\bigr)=\vec 0">\overrightarrow{\mathrm{rot}}\bigl(\overrightarrow{\mathrm{grad}}(f)\bigr)=\vec 0</span>.</li><li>Démontrer que <span class="km" data-tex="\overrightarrow{\mathrm{div}}\bigl(\overrightarrow{\mathrm{rot}}(\vec u)\bigr)=0">\overrightarrow{\mathrm{div}}\bigl(\overrightarrow{\mathrm{rot}}(\vec u)\bigr)=0</span>.</li></ol></div></section><section class="station station-normale" id="s2-rappels-formulaire-te1-chapitre-1" aria-labelledby="s2-rappels-formulaire-te1-chapitre-1-t"><header class="station-tete"><span class="station-num">2</span><h2 id="s2-rappels-formulaire-te1-chapitre-1-t">Rappels (formulaire TE1, chapitre 1)</h2><label class="revise"><input type="checkbox" data-section="s2-rappels-formulaire-te1-chapitre-1"><span class="revise-coche" aria-hidden="true"></span><span class="revise-texte">Révisé</span></label></header><div class="station-corps"><p>L'opérateur nabla s'écrit, en coordonnées cartésiennes, <span class="km" data-tex="\nabla=\left(\dfrac{\partial}{\partial x};\dfrac{\partial}{\partial y};\dfrac{\partial}{\partial z}\right)">\nabla=\left(\dfrac{\partial}{\partial x};\dfrac{\partial}{\partial y};\dfrac{\partial}{\partial z}\right)</span>.</p>
+<div class="tableau"><table><tbody><tr><td><strong>Opérateur</strong></td><td><strong>Définition</strong></td><td><strong>Coordonnées cartésiennes</strong></td></tr><tr><td>gradient d'un scalaire</td><td><span class="km" data-tex="\overrightarrow{\mathrm{grad}}(f)=\nabla f">\overrightarrow{\mathrm{grad}}(f)=\nabla f</span></td><td><span class="km" data-tex="\left(\dfrac{\partial f}{\partial x};\dfrac{\partial f}{\partial y};\dfrac{\partial f}{\partial z}\right)">\left(\dfrac{\partial f}{\partial x};\dfrac{\partial f}{\partial y};\dfrac{\partial f}{\partial z}\right)</span></td></tr><tr><td>divergence d'un vecteur</td><td><span class="km" data-tex="\overrightarrow{\mathrm{div}}(\vec u)=\nabla\cdot\vec u">\overrightarrow{\mathrm{div}}(\vec u)=\nabla\cdot\vec u</span></td><td><span class="km" data-tex="\dfrac{\partial u_x}{\partial x}+\dfrac{\partial u_y}{\partial y}+\dfrac{\partial u_z}{\partial z}">\dfrac{\partial u_x}{\partial x}+\dfrac{\partial u_y}{\partial y}+\dfrac{\partial u_z}{\partial z}</span></td></tr><tr><td>rotationnel d'un vecteur</td><td><span class="km" data-tex="\overrightarrow{\mathrm{rot}}(\vec u)=\nabla\times\vec u">\overrightarrow{\mathrm{rot}}(\vec u)=\nabla\times\vec u</span></td><td><span class="km" data-tex="\left(\dfrac{\partial u_z}{\partial y}-\dfrac{\partial u_y}{\partial z}; \dfrac{\partial u_x}{\partial z}-\dfrac{\partial u_z}{\partial x}; \dfrac{\partial u_y}{\partial x}-\dfrac{\partial u_x}{\partial y}\right)">\left(\dfrac{\partial u_z}{\partial y}-\dfrac{\partial u_y}{\partial z}; \dfrac{\partial u_x}{\partial z}-\dfrac{\partial u_z}{\partial x}; \dfrac{\partial u_y}{\partial x}-\dfrac{\partial u_x}{\partial y}\right)</span></td></tr></tbody></table></div>
+<div class="colonne" style="--part:0.94">Théorème de Schwarz : <span class="km" data-tex="\dfrac{\partial^{2}f}{\partial x\,\partial y}=\dfrac{\partial^{2}f}{\partial y\,\partial x}">\dfrac{\partial^{2}f}{\partial x\,\partial y}=\dfrac{\partial^{2}f}{\partial y\,\partial x}</span> — les dérivées partielles croisées commutent. C'est ce théorème qui rend vraies les questions 4 et 5.</div></div></section><section class="station station-normale" id="s3-question-1-gradient-de-f" aria-labelledby="s3-question-1-gradient-de-f-t"><header class="station-tete"><span class="station-num">3</span><h2 id="s3-question-1-gradient-de-f-t">Question 1 — gradient de <span class="km" data-tex="f">f</span></h2><label class="revise"><input type="checkbox" data-section="s3-question-1-gradient-de-f"><span class="revise-coche" aria-hidden="true"></span><span class="revise-texte">Révisé</span></label></header><div class="station-corps"><p><span class="km" data-tex="f(x,y,z)=3x^{2}+8y-7e^{z}+9">f(x,y,z)=3x^{2}+8y-7e^{z}+9</span>. Chaque dérivée partielle se calcule en traitant les autres variables comme des constantes :</p>
+<div class="km km-d" data-tex="\begin{align*}
+  \frac{\partial f}{\partial x} &amp;= 6x, &amp;
+  \frac{\partial f}{\partial y} &amp;= 8, &amp;
+  \frac{\partial f}{\partial z} &amp;= -7e^{z}.
+\end{align*}">\begin{align*}
+  \frac{\partial f}{\partial x} &amp;= 6x, &amp;
+  \frac{\partial f}{\partial y} &amp;= 8, &amp;
+  \frac{\partial f}{\partial z} &amp;= -7e^{z}.
+\end{align*}</div>
+<div class="formule"><span class="formule-etiquette">Formule</span><div class="km km-d" data-tex="\overrightarrow{\mathrm{grad}}(f)=\nabla f=\bigl(6x\,;\ 8\,;\ -7e^{z}\bigr)">\overrightarrow{\mathrm{grad}}(f)=\nabla f=\bigl(6x\,;\ 8\,;\ -7e^{z}\bigr)</div></div>
+<aside class="carte carte-retenir"><div class="carte-tete"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></svg><span class="carte-type">À retenir</span></div><p class="carte-titre">Points de vigilance</p><div class="carte-corps"><ul><li>le terme constant <span class="km" data-tex="9">9</span> disparaît (dérivée nulle) ;</li><li><span class="km" data-tex="8y">8y</span> ne dépend que de <span class="km" data-tex="y">y</span> : sa dérivée vaut <span class="km" data-tex="8">8</span> en <span class="km" data-tex="y">y</span>, et <span class="km" data-tex="0">0</span> en <span class="km" data-tex="x">x</span> et en <span class="km" data-tex="z">z</span> ;</li><li><span class="km" data-tex="7e^{z}">7e^{z}</span> ne dépend que de <span class="km" data-tex="z">z</span> : <span class="km" data-tex="\dfrac{\mathrm{d}}{\mathrm{d}z}e^{z}=e^{z}">\dfrac{\mathrm{d}}{\mathrm{d}z}e^{z}=e^{z}</span>, le facteur <span class="km" data-tex="-7">-7</span> reste.</li></ul>
+<p>Le gradient est un <strong>champ de vecteurs</strong> : à chaque point il associe le vecteur « pente maximale » de <span class="km" data-tex="f">f</span>.</p></div></aside></div></section><section class="station station-normale" id="s4-question-2-divergence-de-vec-u" aria-labelledby="s4-question-2-divergence-de-vec-u-t"><header class="station-tete"><span class="station-num">4</span><h2 id="s4-question-2-divergence-de-vec-u-t">Question 2 — divergence de <span class="km" data-tex="\vec u">\vec u</span></h2><label class="revise"><input type="checkbox" data-section="s4-question-2-divergence-de-vec-u"><span class="revise-coche" aria-hidden="true"></span><span class="revise-texte">Révisé</span></label></header><div class="station-corps"><div class="km km-d" data-tex="\vec u=\begin{pmatrix}3x-2z\\ 8x^{2}-9\sqrt{y}+3yz\\ 7x-2y^{3}\end{pmatrix},
+  \qquad
+  \overrightarrow{\mathrm{div}}(\vec u)=\frac{\partial u_x}{\partial x}
+    +\frac{\partial u_y}{\partial y}+\frac{\partial u_z}{\partial z}.">\vec u=\begin{pmatrix}3x-2z\\ 8x^{2}-9\sqrt{y}+3yz\\ 7x-2y^{3}\end{pmatrix},
+  \qquad
+  \overrightarrow{\mathrm{div}}(\vec u)=\frac{\partial u_x}{\partial x}
+    +\frac{\partial u_y}{\partial y}+\frac{\partial u_z}{\partial z}.</div>
+<div class="km km-d" data-tex="\begin{align*}
+  u_x=3x-2z &amp;\quad\Longrightarrow\quad \frac{\partial u_x}{\partial x}=3
+    &amp; &amp;\text{(le terme } -2z \text{ ne dépend pas de } x)\\
+  u_y=8x^{2}-9\sqrt{y}+3yz &amp;\quad\Longrightarrow\quad
+    \frac{\partial u_y}{\partial y}=-\frac{9}{2\sqrt{y}}+3z
+    &amp; &amp;\text{(}8x^{2}\to 0,\ \sqrt{y}\to\tfrac{1}{2\sqrt{y}},\ 3yz\to 3z)\\
+  u_z=7x-2y^{3} &amp;\quad\Longrightarrow\quad \frac{\partial u_z}{\partial z}=0
+    &amp; &amp;\text{(}u_z \text{ ne dépend pas de } z)
+\end{align*}">\begin{align*}
+  u_x=3x-2z &amp;\quad\Longrightarrow\quad \frac{\partial u_x}{\partial x}=3
+    &amp; &amp;\text{(le terme } -2z \text{ ne dépend pas de } x)\\
+  u_y=8x^{2}-9\sqrt{y}+3yz &amp;\quad\Longrightarrow\quad
+    \frac{\partial u_y}{\partial y}=-\frac{9}{2\sqrt{y}}+3z
+    &amp; &amp;\text{(}8x^{2}\to 0,\ \sqrt{y}\to\tfrac{1}{2\sqrt{y}},\ 3yz\to 3z)\\
+  u_z=7x-2y^{3} &amp;\quad\Longrightarrow\quad \frac{\partial u_z}{\partial z}=0
+    &amp; &amp;\text{(}u_z \text{ ne dépend pas de } z)
+\end{align*}</div>
+<div class="formule"><span class="formule-etiquette">Formule</span><span class="km" data-tex="\overrightarrow{\mathrm{div}}(\vec u)=3-\dfrac{9}{2\sqrt{y}}+3z">\overrightarrow{\mathrm{div}}(\vec u)=3-\dfrac{9}{2\sqrt{y}}+3z</span> (défini pour <span class="km" data-tex="y&gt;0">y&gt;0</span>)</div>
+<aside class="carte carte-retenir"><div class="carte-tete"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></svg><span class="carte-type">À retenir</span></div><p class="carte-titre">Points de vigilance</p><div class="carte-corps"><ul><li>la divergence d'un vecteur est un <strong>scalaire</strong> ;</li><li><span class="km" data-tex="\dfrac{\mathrm{d}\sqrt{y}}{\mathrm{d}y}=\dfrac{1}{2\sqrt{y}}">\dfrac{\mathrm{d}\sqrt{y}}{\mathrm{d}y}=\dfrac{1}{2\sqrt{y}}</span> : on ne dérive pas une racine comme une puissance entière ; le domaine impose <span class="km" data-tex="y&gt;0">y&gt;0</span> (seule restriction de l'exercice) ;</li><li>dans <span class="km" data-tex="3yz">3yz</span>, seul <span class="km" data-tex="y">y</span> est la variable de dérivation : <span class="km" data-tex="3z">3z</span> est un coefficient constant.</li></ul></div></aside></div></section><section class="station station-normale" id="s5-question-3-rotationnel-de-vec-u" aria-labelledby="s5-question-3-rotationnel-de-vec-u-t"><header class="station-tete"><span class="station-num">5</span><h2 id="s5-question-3-rotationnel-de-vec-u-t">Question 3 — rotationnel de <span class="km" data-tex="\vec u">\vec u</span></h2><label class="revise"><input type="checkbox" data-section="s5-question-3-rotationnel-de-vec-u"><span class="revise-coche" aria-hidden="true"></span><span class="revise-texte">Révisé</span></label></header><div class="station-corps"><div class="km km-d" data-tex="\vec u=\begin{pmatrix}3xy-5z\\ xz^{2}-2y^{2}\\ x+3e^{z}\end{pmatrix},
+  \qquad
+  \overrightarrow{\mathrm{rot}}(\vec u)=\begin{pmatrix}
+    \dfrac{\partial u_z}{\partial y}-\dfrac{\partial u_y}{\partial z}\\[2mm]
+    \dfrac{\partial u_x}{\partial z}-\dfrac{\partial u_z}{\partial x}\\[2mm]
+    \dfrac{\partial u_y}{\partial x}-\dfrac{\partial u_x}{\partial y}
+  \end{pmatrix}.">\vec u=\begin{pmatrix}3xy-5z\\ xz^{2}-2y^{2}\\ x+3e^{z}\end{pmatrix},
+  \qquad
+  \overrightarrow{\mathrm{rot}}(\vec u)=\begin{pmatrix}
+    \dfrac{\partial u_z}{\partial y}-\dfrac{\partial u_y}{\partial z}\\[2mm]
+    \dfrac{\partial u_x}{\partial z}-\dfrac{\partial u_z}{\partial x}\\[2mm]
+    \dfrac{\partial u_y}{\partial x}-\dfrac{\partial u_x}{\partial y}
+  \end{pmatrix}.</div>
+<p>Composante par composante :</p>
+<div class="km km-d" data-tex="\begin{align*}
+  \bigl(\overrightarrow{\mathrm{rot}}(\vec u)\bigr)_x
+    &amp;= \frac{\partial (x+3e^{z})}{\partial y}-\frac{\partial (xz^{2}-2y^{2})}{\partial z}
+     = 0-2xz = -2xz,\\[2pt]
+  \bigl(\overrightarrow{\mathrm{rot}}(\vec u)\bigr)_y
+    &amp;= \frac{\partial (3xy-5z)}{\partial z}-\frac{\partial (x+3e^{z})}{\partial x}
+     = -5-1 = -6,\\[2pt]
+  \bigl(\overrightarrow{\mathrm{rot}}(\vec u)\bigr)_z
+    &amp;= \frac{\partial (xz^{2}-2y^{2})}{\partial x}-\frac{\partial (3xy-5z)}{\partial y}
+     = z^{2}-3x.
+\end{align*}">\begin{align*}
+  \bigl(\overrightarrow{\mathrm{rot}}(\vec u)\bigr)_x
+    &amp;= \frac{\partial (x+3e^{z})}{\partial y}-\frac{\partial (xz^{2}-2y^{2})}{\partial z}
+     = 0-2xz = -2xz,\\[2pt]
+  \bigl(\overrightarrow{\mathrm{rot}}(\vec u)\bigr)_y
+    &amp;= \frac{\partial (3xy-5z)}{\partial z}-\frac{\partial (x+3e^{z})}{\partial x}
+     = -5-1 = -6,\\[2pt]
+  \bigl(\overrightarrow{\mathrm{rot}}(\vec u)\bigr)_z
+    &amp;= \frac{\partial (xz^{2}-2y^{2})}{\partial x}-\frac{\partial (3xy-5z)}{\partial y}
+     = z^{2}-3x.
+\end{align*}</div>
+<div class="formule"><span class="formule-etiquette">Formule</span><div class="km km-d" data-tex="\overrightarrow{\mathrm{rot}}(\vec u)=\bigl(-2xz\,;\ -6\,;\ z^{2}-3x\bigr)">\overrightarrow{\mathrm{rot}}(\vec u)=\bigl(-2xz\,;\ -6\,;\ z^{2}-3x\bigr)</div></div>
+<aside class="carte carte-retenir"><div class="carte-tete"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></svg><span class="carte-type">À retenir</span></div><p class="carte-titre">Points de vigilance</p><div class="carte-corps"><ul><li>le rotationnel d'un vecteur est un <strong>vecteur</strong> ;</li><li>chaque composante <em>croise</em> les deux autres : la composante <span class="km" data-tex="x">x</span> ne contient aucune dérivée par rapport à <span class="km" data-tex="x">x</span> ;</li><li>le <span class="km" data-tex="-5">-5</span> vient de <span class="km" data-tex="\partial(3xy-5z)/\partial z">\partial(3xy-5z)/\partial z</span> et le <span class="km" data-tex="-1">-1</span> de <span class="km" data-tex="\partial(x+3e^{z})/\partial x">\partial(x+3e^{z})/\partial x</span> : ne pas oublier le signe de la formule.</li></ul></div></aside></div></section><section class="station station-normale" id="s6-question-4-overrightarrow-mathrm-rot-bigl-overrightarrow-mat" aria-labelledby="s6-question-4-overrightarrow-mathrm-rot-bigl-overrightarrow-mat-t"><header class="station-tete"><span class="station-num">6</span><h2 id="s6-question-4-overrightarrow-mathrm-rot-bigl-overrightarrow-mat-t">Question 4 — <span class="km" data-tex="\overrightarrow{\mathrm{rot}}\bigl(\overrightarrow{\mathrm{grad}}(f)\bigr)=\vec 0">\overrightarrow{\mathrm{rot}}\bigl(\overrightarrow{\mathrm{grad}}(f)\bigr)=\vec 0</span></h2><label class="revise"><input type="checkbox" data-section="s6-question-4-overrightarrow-mathrm-rot-bigl-overrightarrow-mat"><span class="revise-coche" aria-hidden="true"></span><span class="revise-texte">Révisé</span></label></header><div class="station-corps"><p><strong>Démonstration générale.</strong> Posons <span class="km" data-tex="\vec g=\overrightarrow{\mathrm{grad}}(f)">\vec g=\overrightarrow{\mathrm{grad}}(f)</span>, c'est-à-dire <span class="km" data-tex="g_x=\dfrac{\partial f}{\partial x}">g_x=\dfrac{\partial f}{\partial x}</span>, <span class="km" data-tex="g_y=\dfrac{\partial f}{\partial y}">g_y=\dfrac{\partial f}{\partial y}</span>, <span class="km" data-tex="g_z=\dfrac{\partial f}{\partial z}">g_z=\dfrac{\partial f}{\partial z}</span>. La composante <span class="km" data-tex="x">x</span> du rotationnel de <span class="km" data-tex="\vec g">\vec g</span> vaut</p>
+<div class="km km-d" data-tex="\bigl(\overrightarrow{\mathrm{rot}}(\vec g)\bigr)_x
+  =\frac{\partial g_z}{\partial y}-\frac{\partial g_y}{\partial z}
+  =\frac{\partial^{2}f}{\partial y\,\partial z}-\frac{\partial^{2}f}{\partial z\,\partial y}=0
+  \qquad\text{(théorème de Schwarz)}.">\bigl(\overrightarrow{\mathrm{rot}}(\vec g)\bigr)_x
+  =\frac{\partial g_z}{\partial y}-\frac{\partial g_y}{\partial z}
+  =\frac{\partial^{2}f}{\partial y\,\partial z}-\frac{\partial^{2}f}{\partial z\,\partial y}=0
+  \qquad\text{(théorème de Schwarz)}.</div>
+<p>Le même calcul donne <span class="km" data-tex="0">0</span> pour les composantes <span class="km" data-tex="y">y</span> et <span class="km" data-tex="z">z</span> :</p>
+<div class="km km-d" data-tex="\bigl(\overrightarrow{\mathrm{rot}}(\vec g)\bigr)_y
+  =\frac{\partial^{2}f}{\partial z\,\partial x}-\frac{\partial^{2}f}{\partial x\,\partial z}=0,
+  \qquad
+  \bigl(\overrightarrow{\mathrm{rot}}(\vec g)\bigr)_z
+  =\frac{\partial^{2}f}{\partial x\,\partial y}-\frac{\partial^{2}f}{\partial y\,\partial x}=0.">\bigl(\overrightarrow{\mathrm{rot}}(\vec g)\bigr)_y
+  =\frac{\partial^{2}f}{\partial z\,\partial x}-\frac{\partial^{2}f}{\partial x\,\partial z}=0,
+  \qquad
+  \bigl(\overrightarrow{\mathrm{rot}}(\vec g)\bigr)_z
+  =\frac{\partial^{2}f}{\partial x\,\partial y}-\frac{\partial^{2}f}{\partial y\,\partial x}=0.</div>
+<div class="formule"><span class="formule-etiquette">Formule</span><div class="km km-d" data-tex="\overrightarrow{\mathrm{rot}}\bigl(\overrightarrow{\mathrm{grad}}(f)\bigr)=\vec 0">\overrightarrow{\mathrm{rot}}\bigl(\overrightarrow{\mathrm{grad}}(f)\bigr)=\vec 0</div></div>
+<p><strong>Vérification sur le <span class="km" data-tex="f">f</span> de la question 1</strong>, avec <span class="km" data-tex="\vec g=(6x\,;\ 8\,;\ -7e^{z})">\vec g=(6x\,;\ 8\,;\ -7e^{z})</span> :</p>
+<div class="km km-d" data-tex="\begin{align*}
+  \overrightarrow{\mathrm{rot}}(\vec g)
+  &amp;=\begin{pmatrix}
+      \dfrac{\partial(-7e^{z})}{\partial y}-\dfrac{\partial 8}{\partial z}\\[1.5mm]
+      \dfrac{\partial 6x}{\partial z}-\dfrac{\partial(-7e^{z})}{\partial x}\\[1.5mm]
+      \dfrac{\partial 8}{\partial x}-\dfrac{\partial 6x}{\partial y}
+    \end{pmatrix}
+  =\begin{pmatrix}0-0\\ 0-0\\ 0-0\end{pmatrix}=\vec 0 .
+\end{align*}">\begin{align*}
+  \overrightarrow{\mathrm{rot}}(\vec g)
+  &amp;=\begin{pmatrix}
+      \dfrac{\partial(-7e^{z})}{\partial y}-\dfrac{\partial 8}{\partial z}\\[1.5mm]
+      \dfrac{\partial 6x}{\partial z}-\dfrac{\partial(-7e^{z})}{\partial x}\\[1.5mm]
+      \dfrac{\partial 8}{\partial x}-\dfrac{\partial 6x}{\partial y}
+    \end{pmatrix}
+  =\begin{pmatrix}0-0\\ 0-0\\ 0-0\end{pmatrix}=\vec 0 .
+\end{align*}</div>
+<aside class="carte carte-retenir"><div class="carte-tete"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></svg><span class="carte-type">À retenir</span></div><p class="carte-titre">Interprétation</p><div class="carte-corps">Un champ de gradient est <strong>irrotationnel</strong> : aucune circulation n'y est lisible, et il dérive d'un potentiel scalaire <span class="km" data-tex="f">f</span>. Réciproquement, sur un domaine simplement connexe, tout champ irrotationnel s'écrit comme un gradient.</div></aside></div></section><section class="station station-normale" id="s7-question-5-overrightarrow-mathrm-div-bigl-overrightarrow-mat" aria-labelledby="s7-question-5-overrightarrow-mathrm-div-bigl-overrightarrow-mat-t"><header class="station-tete"><span class="station-num">7</span><h2 id="s7-question-5-overrightarrow-mathrm-div-bigl-overrightarrow-mat-t">Question 5 — <span class="km" data-tex="\overrightarrow{\mathrm{div}}\bigl(\overrightarrow{\mathrm{rot}}(\vec u)\bigr)=0">\overrightarrow{\mathrm{div}}\bigl(\overrightarrow{\mathrm{rot}}(\vec u)\bigr)=0</span></h2><label class="revise"><input type="checkbox" data-section="s7-question-5-overrightarrow-mathrm-div-bigl-overrightarrow-mat"><span class="revise-coche" aria-hidden="true"></span><span class="revise-texte">Révisé</span></label></header><div class="station-corps"><p><strong>Démonstration générale.</strong> Posons <span class="km" data-tex="\vec w=\overrightarrow{\mathrm{rot}}(\vec u)">\vec w=\overrightarrow{\mathrm{rot}}(\vec u)</span>, soit</p>
+<div class="km km-d" data-tex="w_x=\frac{\partial u_z}{\partial y}-\frac{\partial u_y}{\partial z},\qquad
+  w_y=\frac{\partial u_x}{\partial z}-\frac{\partial u_z}{\partial x},\qquad
+  w_z=\frac{\partial u_y}{\partial x}-\frac{\partial u_x}{\partial y}.">w_x=\frac{\partial u_z}{\partial y}-\frac{\partial u_y}{\partial z},\qquad
+  w_y=\frac{\partial u_x}{\partial z}-\frac{\partial u_z}{\partial x},\qquad
+  w_z=\frac{\partial u_y}{\partial x}-\frac{\partial u_x}{\partial y}.</div>
+<p>Alors</p>
+<div class="km km-d" data-tex="\begin{align*}
+  \overrightarrow{\mathrm{div}}(\vec w)
+  &amp;=\frac{\partial w_x}{\partial x}+\frac{\partial w_y}{\partial y}+\frac{\partial w_z}{\partial z}\\[2pt]
+  &amp;=\underbrace{\frac{\partial^{2}u_z}{\partial x\,\partial y}
+     -\frac{\partial^{2}u_y}{\partial x\,\partial z}
+     +\frac{\partial^{2}u_x}{\partial y\,\partial z}
+     -\frac{\partial^{2}u_z}{\partial y\,\partial x}
+     +\frac{\partial^{2}u_y}{\partial z\,\partial x}
+     -\frac{\partial^{2}u_x}{\partial z\,\partial y}}_{=\,0\text{ (trois paires opposées, Schwarz)}} .
+\end{align*}">\begin{align*}
+  \overrightarrow{\mathrm{div}}(\vec w)
+  &amp;=\frac{\partial w_x}{\partial x}+\frac{\partial w_y}{\partial y}+\frac{\partial w_z}{\partial z}\\[2pt]
+  &amp;=\underbrace{\frac{\partial^{2}u_z}{\partial x\,\partial y}
+     -\frac{\partial^{2}u_y}{\partial x\,\partial z}
+     +\frac{\partial^{2}u_x}{\partial y\,\partial z}
+     -\frac{\partial^{2}u_z}{\partial y\,\partial x}
+     +\frac{\partial^{2}u_y}{\partial z\,\partial x}
+     -\frac{\partial^{2}u_x}{\partial z\,\partial y}}_{=\,0\text{ (trois paires opposées, Schwarz)}} .
+\end{align*}</div>
+<div class="formule"><span class="formule-etiquette">Formule</span><div class="km km-d" data-tex="\overrightarrow{\mathrm{div}}\bigl(\overrightarrow{\mathrm{rot}}(\vec u)\bigr)=0">\overrightarrow{\mathrm{div}}\bigl(\overrightarrow{\mathrm{rot}}(\vec u)\bigr)=0</div></div>
+<p><strong>Vérification sur le <span class="km" data-tex="\vec u">\vec u</span> de la question 3</strong>, avec <span class="km" data-tex="\vec w=(-2xz\,;\ -6\,;\ z^{2}-3x)">\vec w=(-2xz\,;\ -6\,;\ z^{2}-3x)</span> :</p>
+<div class="km km-d" data-tex="\overrightarrow{\mathrm{div}}(\vec w)
+  =\frac{\partial(-2xz)}{\partial x}+\frac{\partial(-6)}{\partial y}
+   +\frac{\partial(z^{2}-3x)}{\partial z}
+  =-2z+0+2z=0 .">\overrightarrow{\mathrm{div}}(\vec w)
+  =\frac{\partial(-2xz)}{\partial x}+\frac{\partial(-6)}{\partial y}
+   +\frac{\partial(z^{2}-3x)}{\partial z}
+  =-2z+0+2z=0 .</div>
+<p>Les deux termes en <span class="km" data-tex="z">z</span> s'annulent : c'est exactement le mécanisme de la démonstration générale.</p>
+<aside class="carte carte-retenir"><div class="carte-tete"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></svg><span class="carte-type">À retenir</span></div><p class="carte-titre">Interprétation</p><div class="carte-corps">Un champ de rotationnel est <strong>à flux conservatif</strong> (<span class="km" data-tex="\overrightarrow{\mathrm{div}}(\vec B)=0">\overrightarrow{\mathrm{div}}(\vec B)=0</span> pour <span class="km" data-tex="\vec B=\overrightarrow{\mathrm{rot}}(\vec A)">\vec B=\overrightarrow{\mathrm{rot}}(\vec A)</span>) : le flux à travers toute surface fermée est nul. En électromagnétisme, c'est ce qui rend Maxwell–Faraday <span class="km" data-tex="\overrightarrow{\mathrm{rot}}(\vec E)=-\dfrac{\partial\vec B}{\partial t}">\overrightarrow{\mathrm{rot}}(\vec E)=-\dfrac{\partial\vec B}{\partial t}</span> compatible avec <span class="km" data-tex="\overrightarrow{\mathrm{div}}(\vec B)=0">\overrightarrow{\mathrm{div}}(\vec B)=0</span> (conservation du flux) : en prenant la divergence des deux membres, le premier est nul et il reste <span class="km" data-tex="\dfrac{\partial}{\partial t}\overrightarrow{\mathrm{div}}(\vec B)=0">\dfrac{\partial}{\partial t}\overrightarrow{\mathrm{div}}(\vec B)=0</span>.</div></aside></div></section><section class="station station-normale" id="s8-resultats-a-retenir" aria-labelledby="s8-resultats-a-retenir-t"><header class="station-tete"><span class="station-num">8</span><h2 id="s8-resultats-a-retenir-t">Résultats à retenir</h2><label class="revise"><input type="checkbox" data-section="s8-resultats-a-retenir"><span class="revise-coche" aria-hidden="true"></span><span class="revise-texte">Révisé</span></label></header><div class="station-corps"><div class="tableau"><table><tbody><tr><td class="a-centre"><strong>Question</strong></td><td><strong>Résultat</strong></td><td><strong>Nature</strong></td></tr><tr><td class="a-centre">1</td><td><span class="km" data-tex="\overrightarrow{\mathrm{grad}}(f)=(6x\,;\ 8\,;\ -7e^{z})">\overrightarrow{\mathrm{grad}}(f)=(6x\,;\ 8\,;\ -7e^{z})</span></td><td>vecteur</td></tr><tr><td class="a-centre">2</td><td><span class="km" data-tex="\overrightarrow{\mathrm{div}}(\vec u)=3-\dfrac{9}{2\sqrt{y}}+3z">\overrightarrow{\mathrm{div}}(\vec u)=3-\dfrac{9}{2\sqrt{y}}+3z</span></td><td>scalaire</td></tr><tr><td class="a-centre">3</td><td><span class="km" data-tex="\overrightarrow{\mathrm{rot}}(\vec u)=(-2xz\,;\ -6\,;\ z^{2}-3x)">\overrightarrow{\mathrm{rot}}(\vec u)=(-2xz\,;\ -6\,;\ z^{2}-3x)</span></td><td>vecteur</td></tr><tr><td class="a-centre">4</td><td><span class="km" data-tex="\overrightarrow{\mathrm{rot}}\bigl(\overrightarrow{\mathrm{grad}}(f)\bigr)=\vec 0">\overrightarrow{\mathrm{rot}}\bigl(\overrightarrow{\mathrm{grad}}(f)\bigr)=\vec 0</span> (toujours)</td><td>identité</td></tr><tr><td class="a-centre">5</td><td><span class="km" data-tex="\overrightarrow{\mathrm{div}}\bigl(\overrightarrow{\mathrm{rot}}(\vec u)\bigr)=0">\overrightarrow{\mathrm{div}}\bigl(\overrightarrow{\mathrm{rot}}(\vec u)\bigr)=0</span> (toujours)</td><td>identité</td></tr></tbody></table></div>
+<aside class="carte carte-retenir"><div class="carte-tete"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></svg><span class="carte-type">À retenir</span></div><p class="carte-titre">Les questions 4 et 5 sont des identités</p><div class="carte-corps">Elles ne dépendent ni de <span class="km" data-tex="f">f</span> ni de <span class="km" data-tex="\vec u">\vec u</span> : les vérifications explicites ne sont qu'un contrôle.<br> Mnémonique : <span class="km" data-tex="\overrightarrow{\mathrm{rot}}">\overrightarrow{\mathrm{rot}}</span> après <span class="km" data-tex="\overrightarrow{\mathrm{grad}}">\overrightarrow{\mathrm{grad}}</span>, ou <span class="km" data-tex="\overrightarrow{\mathrm{div}}">\overrightarrow{\mathrm{div}}</span> après <span class="km" data-tex="\overrightarrow{\mathrm{rot}}">\overrightarrow{\mathrm{rot}}</span>, donnent zéro ; en revanche <span class="km" data-tex="\overrightarrow{\mathrm{div}}\bigl(\overrightarrow{\mathrm{grad}}(f)\bigr)=\Delta f">\overrightarrow{\mathrm{div}}\bigl(\overrightarrow{\mathrm{grad}}(f)\bigr)=\Delta f</span> (laplacien) et <span class="km" data-tex="\overrightarrow{\mathrm{rot}}\bigl(\overrightarrow{\mathrm{rot}}(\vec u)\bigr) =\overrightarrow{\mathrm{grad}}\bigl(\overrightarrow{\mathrm{div}}(\vec u)\bigr)-\Delta\vec u">\overrightarrow{\mathrm{rot}}\bigl(\overrightarrow{\mathrm{rot}}(\vec u)\bigr) =\overrightarrow{\mathrm{grad}}\bigl(\overrightarrow{\mathrm{div}}(\vec u)\bigr)-\Delta\vec u</span> ne sont <strong>pas</strong> nuls.</div></aside>
+<p><strong>Contrôle numérique des trois calculs</strong> (différences finies, pas <span class="km" data-tex="10^{-6}">10^{-6}</span>, points <span class="km" data-tex="(2;4;1)">(2;4;1)</span>, <span class="km" data-tex="(0{,}5;1{,}3;0{,}7)">(0{,}5;1{,}3;0{,}7)</span>, <span class="km" data-tex="(3;2{,}5;-1{,}2)">(3;2{,}5;-1{,}2)</span>, <span class="km" data-tex="(-1;7;2)">(-1;7;2)</span>) : les expressions ci-dessus coïncident avec les dérivées numériques à mieux que <span class="km" data-tex="10^{-6}">10^{-6}</span> ; les identités 4 et 5 y sont nulles à <span class="km" data-tex="10^{-9}">10^{-9}</span> près.</p>
+<h3 id="s8-resultats-a-retenir-sources-locales" class="sous-titre">Sources locales</h3>
+<p><code>Consignes/sources/elmec1-ch1-generalites-ex2.pdf</code> — énoncé du professeur.<br> <code>Consignes/sources/elmec1-ch0-formulaire-te1.pdf</code> — nabla, gradient, divergence, rotationnel, équations de Maxwell, conservation du flux.<br> <code>Consignes/sources/elmec1-ch1-generalites-theorie.pdf</code> — polycopié CH1, § 5.4.2 à 5.4.4, p. 23–25.</p></div></section>
+    <footer class="pied">
+      <p>Converti depuis <code>Semestre-3/_commun/sandbox/elmec1-ch1-ex2-latex/elmec1-ch1-ex2-corrige.tex</code> · <a href="../../../assets/pdf/e2-elmec1/elmec1-ch1-ex2-corrige.pdf" target="_blank" rel="noopener">version imprimable (PDF)</a></p>
+    </footer>
+  </main>
+</div>
+<dialog id="formulaire" class="dialogue" aria-labelledby="formulaire-titre">
+  <header class="dialogue-tete"><h2 id="formulaire-titre"><span class="btn-sigma" aria-hidden="true">Σ</span> Formulaire — Chapitre 1 — exercice 2</h2>
+  <button type="button" class="btn-icone" data-fermer aria-label="Fermer">✕</button></header>
+  <div class="dialogue-corps"><section class="formulaire-groupe"><h3><a href="#s3-question-1-gradient-de-f" data-fermer>§ 3 — Question 1 — gradient de f</a></h3><div class="formule"><div class="km km-d" data-tex="\overrightarrow{\mathrm{grad}}(f)=\nabla f=\bigl(6x\,;\ 8\,;\ -7e^{z}\bigr)">\overrightarrow{\mathrm{grad}}(f)=\nabla f=\bigl(6x\,;\ 8\,;\ -7e^{z}\bigr)</div></div></section><section class="formulaire-groupe"><h3><a href="#s4-question-2-divergence-de-vec-u" data-fermer>§ 4 — Question 2 — divergence de \vec u</a></h3><div class="formule"><span class="km" data-tex="\overrightarrow{\mathrm{div}}(\vec u)=3-\dfrac{9}{2\sqrt{y}}+3z">\overrightarrow{\mathrm{div}}(\vec u)=3-\dfrac{9}{2\sqrt{y}}+3z</span> (défini pour <span class="km" data-tex="y&gt;0">y&gt;0</span>)</div></section><section class="formulaire-groupe"><h3><a href="#s5-question-3-rotationnel-de-vec-u" data-fermer>§ 5 — Question 3 — rotationnel de \vec u</a></h3><div class="formule"><div class="km km-d" data-tex="\overrightarrow{\mathrm{rot}}(\vec u)=\bigl(-2xz\,;\ -6\,;\ z^{2}-3x\bigr)">\overrightarrow{\mathrm{rot}}(\vec u)=\bigl(-2xz\,;\ -6\,;\ z^{2}-3x\bigr)</div></div></section><section class="formulaire-groupe"><h3><a href="#s6-question-4-overrightarrow-mathrm-rot-bigl-overrightarrow-mat" data-fermer>§ 6 — Question 4 — \overrightarrow{\mathrm{rot}}\bigl(\overrightarrow{\mathrm{grad}}(f)\bigr)=\vec 0</a></h3><div class="formule"><div class="km km-d" data-tex="\overrightarrow{\mathrm{rot}}\bigl(\overrightarrow{\mathrm{grad}}(f)\bigr)=\vec 0">\overrightarrow{\mathrm{rot}}\bigl(\overrightarrow{\mathrm{grad}}(f)\bigr)=\vec 0</div></div></section><section class="formulaire-groupe"><h3><a href="#s7-question-5-overrightarrow-mathrm-div-bigl-overrightarrow-mat" data-fermer>§ 7 — Question 5 — \overrightarrow{\mathrm{div}}\bigl(\overrightarrow{\mathrm{rot}}(\vec u)\bigr)=0</a></h3><div class="formule"><div class="km km-d" data-tex="\overrightarrow{\mathrm{div}}\bigl(\overrightarrow{\mathrm{rot}}(\vec u)\bigr)=0">\overrightarrow{\mathrm{div}}\bigl(\overrightarrow{\mathrm{rot}}(\vec u)\bigr)=0</div></div></section></div>
+</dialog>
+<dialog id="loupe" class="dialogue loupe" aria-label="Figure agrandie">
+  <button type="button" class="btn-icone loupe-fermer" data-fermer aria-label="Fermer">✕</button>
+  <img alt="">
+</dialog>
+
+</body>
+</html>

@@ -1,0 +1,614 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mathématiques numériques · Corrigé · Série 2 — MATLAB</title>
+<meta name="description" content="Mathématiques numériques — Série 2 — MATLAB (Corrigé)">
+<link rel="icon" href="../../../assets/favicon.svg?v=012e46bcde" type="image/svg+xml">
+<script>try{var t=localStorage.getItem("maison:theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css"><script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script><script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/c.min.js"></script>
+<link rel="stylesheet" href="../../../assets/styles.css?v=012e46bcde">
+<style>:root{}@media (prefers-color-scheme:dark){:root:not([data-theme=light]){}}:root[data-theme=dark]{}</style>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+
+<script defer src="../../../assets/maison.js?v=012e46bcde"></script>
+</head>
+<body class="page-resume" style="--piece:#0F766E" data-cle="E2-MATNUM/exercices/serie-2-matlab" data-sections='["representation-et-enumeration", "decoder-l-exposant-biaise", "comptage", "pourquoi-la-formule-du-professeur-fonctionne-ici", "lancer-le-fichier-depuis-le-dossier-scripts", "programme-demande", "d-ou-vient-l-ecart", "verifier-la-formule", "a-programme-utilisant-directement-la-formule", "b-programme-utilisant-une-racine-et-viete", "valeurs-de-reference-et-resultats-mesures", "verification-par-substitution-et-par-viete", "comparaison-matlab-demandee", "s1-addition-d-un-increment-de-plus-en-plus-petit", "s2-division-jusqu-a-zero", "s3-multiplication-jusqu-a-inf", "recurrence-pour-eviter-puissances-et-factorielles", "fonction-mon-exp-m", "script-driver-exp-m-les-50-points-et-les-quatre-sous-graphes", "erreur-relative-mesuree", "a-programme-et-constat", "b-modifier-la-comparaison-pas-seulement-l-affichage", "sources-et-reproduction"]' data-url-racine="pieces/e2-matnum/exercices/serie-2-matlab.html" data-titre="Mathématiques numériques · Corrigé · Série 2 — MATLAB">
+<a class="evitement" href="#contenu">Aller au contenu</a>
+
+<header class="barre">
+  <nav class="ariane" aria-label="Fil d'Ariane">
+    <a href="../../../index.html"><svg class="icone-ariane" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 12 4l9 7"/><path d="M5 9.5V20h14V9.5"/><path d="M10 20v-6h4v6"/></svg><span>Maison</span></a><span class="sep" aria-hidden="true">›</span>
+    <a href="../index.html">Mathématiques numériques</a><span class="sep" aria-hidden="true">›</span>
+    <span aria-current="page">Corrigé · Série 2 — MATLAB</span>
+  </nav>
+  <div class="barre-actions">
+    
+    <a class="btn btn-discret" href="../../../assets/pdf/e2-matnum/corrige-serie-2-matlab.pdf" target="_blank" rel="noopener">PDF</a>
+    <button type="button" class="btn-icone" data-theme-bascule aria-label="Basculer clair / sombre"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 4a8 8 0 0 1 0 16z" fill="currentColor"/></svg></button>
+  </div>
+</header>
+<div class="cadre">
+  <aside class="sommaire" aria-label="Sommaire">
+    <details class="sommaire-details" open>
+      <summary><span>Sommaire</span><span class="sommaire-prog" data-progression-texte>0 / 23</span></summary>
+      <ol class="sommaire-liste"><li data-cible="representation-et-enumeration"><div class="sommaire-ligne"><a href="#representation-et-enumeration"><span class="num num-vide">·</span>Représentation et énumération</a><label class="revise-mini" title="Marquer « Représentation et énumération » comme révisé"><input type="checkbox" data-section="representation-et-enumeration" aria-label="Révisé : Représentation et énumération"><span class="revise-coche" aria-hidden="true"></span></label></div></li><li data-cible="decoder-l-exposant-biaise"><div class="sommaire-ligne"><a href="#decoder-l-exposant-biaise"><span class="num num-vide">·</span>Décoder l'exposant biaisé</a><label class="revise-mini" title="Marquer « Décoder l&#x27;exposant biaisé » comme révisé"><input type="checkbox" data-section="decoder-l-exposant-biaise" aria-label="Révisé : Décoder l&#x27;exposant biaisé"><span class="revise-coche" aria-hidden="true"></span></label></div></li><li data-cible="comptage"><div class="sommaire-ligne"><a href="#comptage"><span class="num num-vide">·</span>Comptage</a><label class="revise-mini" title="Marquer « Comptage » comme révisé"><input type="checkbox" data-section="comptage" aria-label="Révisé : Comptage"><span class="revise-coche" aria-hidden="true"></span></label></div></li><li data-cible="pourquoi-la-formule-du-professeur-fonctionne-ici"><div class="sommaire-ligne"><a href="#pourquoi-la-formule-du-professeur-fonctionne-ici"><span class="num num-vide">·</span>Pourquoi la formule du professeur fonctionne ici</a><label class="revise-mini" title="Marquer « Pourquoi la formule du professeur fonctionne ici » comme révisé"><input type="checkbox" data-section="pourquoi-la-formule-du-professeur-fonctionne-ici" aria-label="Révisé : Pourquoi la formule du professeur fonctionne ici"><span class="revise-coche" aria-hidden="true"></span></label></div></li><li data-cible="lancer-le-fichier-depuis-le-dossier-scripts"><div class="sommaire-ligne"><a href="#lancer-le-fichier-depuis-le-dossier-scripts"><span class="num num-vide">·</span>Lancer le fichier depuis le dossier scripts</a><label class="revise-mini" title="Marquer « Lancer le fichier depuis le dossier scripts » comme révisé"><input type="checkbox" data-section="lancer-le-fichier-depuis-le-dossier-scripts" aria-label="Révisé : Lancer le fichier depuis le dossier scripts"><span class="revise-coche" aria-hidden="true"></span></label></div></li><li data-cible="programme-demande"><div class="sommaire-ligne"><a href="#programme-demande"><span class="num num-vide">·</span>Programme demandé</a><label class="revise-mini" title="Marquer « Programme demandé » comme révisé"><input type="checkbox" data-section="programme-demande" aria-label="Révisé : Programme demandé"><span class="revise-coche" aria-hidden="true"></span></label></div></li><li data-cible="d-ou-vient-l-ecart"><div class="sommaire-ligne"><a href="#d-ou-vient-l-ecart"><span class="num num-vide">·</span>D'où vient l'écart ?</a><label class="revise-mini" title="Marquer « D&#x27;où vient l&#x27;écart ? » comme révisé"><input type="checkbox" data-section="d-ou-vient-l-ecart" aria-label="Révisé : D&#x27;où vient l&#x27;écart ?"><span class="revise-coche" aria-hidden="true"></span></label></div></li><li data-cible="verifier-la-formule"><div class="sommaire-ligne"><a href="#verifier-la-formule"><span class="num num-vide">·</span>Vérifier la formule</a><label class="revise-mini" title="Marquer « Vérifier la formule » comme révisé"><input type="checkbox" data-section="verifier-la-formule" aria-label="Révisé : Vérifier la formule"><span class="revise-coche" aria-hidden="true"></span></label></div></li><li data-cible="a-programme-utilisant-directement-la-formule"><div class="sommaire-ligne"><a href="#a-programme-utilisant-directement-la-formule"><span class="num num-vide">·</span>(a) Programme utilisant directement la formule</a><label class="revise-mini" title="Marquer « (a) Programme utilisant directement la formule » comme révisé"><input type="checkbox" data-section="a-programme-utilisant-directement-la-formule" aria-label="Révisé : (a) Programme utilisant directement la formule"><span class="revise-coche" aria-hidden="true"></span></label></div></li><li data-cible="b-programme-utilisant-une-racine-et-viete"><div class="sommaire-ligne"><a href="#b-programme-utilisant-une-racine-et-viete"><span class="num num-vide">·</span>(b) Programme utilisant une racine et Viète</a><label class="revise-mini" title="Marquer « (b) Programme utilisant une racine et Viète » comme révisé"><input type="checkbox" data-section="b-programme-utilisant-une-racine-et-viete" aria-label="Révisé : (b) Programme utilisant une racine et Viète"><span class="revise-coche" aria-hidden="true"></span></label></div></li><li data-cible="valeurs-de-reference-et-resultats-mesures"><div class="sommaire-ligne"><a href="#valeurs-de-reference-et-resultats-mesures"><span class="num num-vide">·</span>Valeurs de référence et résultats mesurés</a><label class="revise-mini" title="Marquer « Valeurs de référence et résultats mesurés » comme révisé"><input type="checkbox" data-section="valeurs-de-reference-et-resultats-mesures" aria-label="Révisé : Valeurs de référence et résultats mesurés"><span class="revise-coche" aria-hidden="true"></span></label></div></li><li data-cible="verification-par-substitution-et-par-viete"><div class="sommaire-ligne"><a href="#verification-par-substitution-et-par-viete"><span class="num num-vide">·</span>Vérification par substitution et par Viète</a><label class="revise-mini" title="Marquer « Vérification par substitution et par Viète » comme révisé"><input type="checkbox" data-section="verification-par-substitution-et-par-viete" aria-label="Révisé : Vérification par substitution et par Viète"><span class="revise-coche" aria-hidden="true"></span></label></div></li><li data-cible="comparaison-matlab-demandee"><div class="sommaire-ligne"><a href="#comparaison-matlab-demandee"><span class="num num-vide">·</span>Comparaison MATLAB demandée</a><label class="revise-mini" title="Marquer « Comparaison MATLAB demandée » comme révisé"><input type="checkbox" data-section="comparaison-matlab-demandee" aria-label="Révisé : Comparaison MATLAB demandée"><span class="revise-coche" aria-hidden="true"></span></label></div></li><li data-cible="s1-addition-d-un-increment-de-plus-en-plus-petit"><div class="sommaire-ligne"><a href="#s1-addition-d-un-increment-de-plus-en-plus-petit"><span class="num">1</span>Addition d'un incrément de plus en plus petit</a><label class="revise-mini" title="Marquer « Addition d&#x27;un incrément de plus en plus petit » comme révisé"><input type="checkbox" data-section="s1-addition-d-un-increment-de-plus-en-plus-petit" aria-label="Révisé : Addition d&#x27;un incrément de plus en plus petit"><span class="revise-coche" aria-hidden="true"></span></label></div></li><li data-cible="s2-division-jusqu-a-zero"><div class="sommaire-ligne"><a href="#s2-division-jusqu-a-zero"><span class="num">2</span>Division jusqu'à zéro</a><label class="revise-mini" title="Marquer « Division jusqu&#x27;à zéro » comme révisé"><input type="checkbox" data-section="s2-division-jusqu-a-zero" aria-label="Révisé : Division jusqu&#x27;à zéro"><span class="revise-coche" aria-hidden="true"></span></label></div></li><li data-cible="s3-multiplication-jusqu-a-inf"><div class="sommaire-ligne"><a href="#s3-multiplication-jusqu-a-inf"><span class="num">3</span>Multiplication jusqu'à Inf</a><label class="revise-mini" title="Marquer « Multiplication jusqu&#x27;à Inf » comme révisé"><input type="checkbox" data-section="s3-multiplication-jusqu-a-inf" aria-label="Révisé : Multiplication jusqu&#x27;à Inf"><span class="revise-coche" aria-hidden="true"></span></label></div></li><li data-cible="recurrence-pour-eviter-puissances-et-factorielles"><div class="sommaire-ligne"><a href="#recurrence-pour-eviter-puissances-et-factorielles"><span class="num num-vide">·</span>Récurrence pour éviter puissances et factorielles</a><label class="revise-mini" title="Marquer « Récurrence pour éviter puissances et factorielles » comme révisé"><input type="checkbox" data-section="recurrence-pour-eviter-puissances-et-factorielles" aria-label="Révisé : Récurrence pour éviter puissances et factorielles"><span class="revise-coche" aria-hidden="true"></span></label></div></li><li data-cible="fonction-mon-exp-m"><div class="sommaire-ligne"><a href="#fonction-mon-exp-m"><span class="num num-vide">·</span>Fonction mon_exp.m</a><label class="revise-mini" title="Marquer « Fonction mon_exp.m » comme révisé"><input type="checkbox" data-section="fonction-mon-exp-m" aria-label="Révisé : Fonction mon_exp.m"><span class="revise-coche" aria-hidden="true"></span></label></div></li><li data-cible="script-driver-exp-m-les-50-points-et-les-quatre-sous-graphes"><div class="sommaire-ligne"><a href="#script-driver-exp-m-les-50-points-et-les-quatre-sous-graphes"><span class="num num-vide">·</span>Script driver_exp.m : les 50 points et les quatre sous-graphes</a><label class="revise-mini" title="Marquer « Script driver_exp.m : les 50 points et les quatre sous-graphes » comme révisé"><input type="checkbox" data-section="script-driver-exp-m-les-50-points-et-les-quatre-sous-graphes" aria-label="Révisé : Script driver_exp.m : les 50 points et les quatre sous-graphes"><span class="revise-coche" aria-hidden="true"></span></label></div></li><li data-cible="erreur-relative-mesuree"><div class="sommaire-ligne"><a href="#erreur-relative-mesuree"><span class="num num-vide">·</span>Erreur relative mesurée</a><label class="revise-mini" title="Marquer « Erreur relative mesurée » comme révisé"><input type="checkbox" data-section="erreur-relative-mesuree" aria-label="Révisé : Erreur relative mesurée"><span class="revise-coche" aria-hidden="true"></span></label></div></li><li data-cible="a-programme-et-constat"><div class="sommaire-ligne"><a href="#a-programme-et-constat"><span class="num num-vide">·</span>(a) Programme et constat</a><label class="revise-mini" title="Marquer « (a) Programme et constat » comme révisé"><input type="checkbox" data-section="a-programme-et-constat" aria-label="Révisé : (a) Programme et constat"><span class="revise-coche" aria-hidden="true"></span></label></div></li><li data-cible="b-modifier-la-comparaison-pas-seulement-l-affichage"><div class="sommaire-ligne"><a href="#b-modifier-la-comparaison-pas-seulement-l-affichage"><span class="num num-vide">·</span>(b) Modifier la comparaison, pas seulement l'affichage</a><label class="revise-mini" title="Marquer « (b) Modifier la comparaison, pas seulement l&#x27;affichage » comme révisé"><input type="checkbox" data-section="b-modifier-la-comparaison-pas-seulement-l-affichage" aria-label="Révisé : (b) Modifier la comparaison, pas seulement l&#x27;affichage"><span class="revise-coche" aria-hidden="true"></span></label></div></li><li data-cible="sources-et-reproduction"><div class="sommaire-ligne"><a href="#sources-et-reproduction"><span class="num num-vide">·</span>Sources et reproduction</a><label class="revise-mini" title="Marquer « Sources et reproduction » comme révisé"><input type="checkbox" data-section="sources-et-reproduction" aria-label="Révisé : Sources et reproduction"><span class="revise-coche" aria-hidden="true"></span></label></div></li></ol>
+    </details>
+  </aside>
+  <main id="contenu">
+    <section class="hero">
+      <div class="hero-papier" aria-hidden="true"></div>
+      <div class="hero-tete">
+        <a class="hero-piece" href="../index.html"><svg class="icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M3 15h18M9 3v18M15 3v18"/></svg><span>Mathématiques numériques</span><span class="hero-aile">Aile Sciences</span></a>
+        <div class="anneau" data-anneau role="img" aria-label="Progression"><span data-progression-pourcent>0 %</span></div>
+      </div>
+      
+      <h1 class="visuellement-cache">Mathématiques numériques · Corrigé · Série 2 — MATLAB</h1>
+      <div class="hero-intro"><span class="t-titre">Mathématiques numériques — Série 2</span><span class="t-grand">Corrigé détaillé des 8 exercices</span><p>Philippe — E2-p2, Génie électrique · HEIA-FR · Richard Baltensperger</p>
+<p><strong>Statut de vérification.</strong> Les tableaux et les figures proviennent d'une exécution réelle de <code>serie2_verification.py</code> : Python en arithmétique binary64, avec une référence à 80 chiffres pour les exercices 5 et 7. Les fichiers MATLAB sont fournis, mais n'ont pas été exécutés sur ce Mac, où MATLAB est absent. Les conclusions du corrigé du professeur sont distinguées des mesures Python, en particulier pour <code>roots</code> et <code>exp</code>.</p>
+<h1>Exercice 1 — Tous les positifs de Fl(2,3,−2,2)</h1>
+</div>
+      <div class="hero-puces"><span class="puce puce-te"><svg class="icone-puce" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 21V4M4 4h11l-2 3.5L15 11H4"/><path d="M18 21v-6M14 21h8"/></svg>TE1 · ven. 06.11 · <span data-compte-a-rebours="2026-11-06">J-21</span></span><span class="puce puce-corrige">Corrigé</span><span class="puce">23 sections</span></div>
+    </section>
+    <section class="station station-normale" id="representation-et-enumeration" aria-labelledby="representation-et-enumeration-t"><header class="station-tete"><span class="station-num station-num-vide" aria-hidden="true">✦</span><h2 id="representation-et-enumeration-t">Représentation et énumération</h2><label class="revise"><input type="checkbox" data-section="representation-et-enumeration"><span class="revise-coche" aria-hidden="true"></span><span class="revise-texte">Révisé</span></label></header><div class="station-corps"><p>La convention des diapositives « Les nombres réels sur l'ordinateur », pages 4–5, est : 3 bits <strong>après</strong> le point binaire et −2 ≤ E ≤ 2. Le premier bit de la mantisse est nécessairement 1.</p>
+<div class="km km-d" data-tex="x=(1.b_1b_2b_3)_2\,2^E=\left(1+\frac{j}{8}\right)2^E,\quad j=0,\ldots,7.">x=(1.b_1b_2b_3)_2\,2^E=\left(1+\frac{j}{8}\right)2^E,\quad j=0,\ldots,7.</div>
+<p>Il y a 8 mantisses et 5 exposants, donc <strong>40 nombres strictement positifs normalisés</strong>. Zéro n'en fait pas partie ; si l'on ajoutait les négatifs et zéro, on aurait 81 valeurs.</p>
+<div class="tableau"><table>
+<thead>
+<tr>
+<th>Mantisse binaire</th>
+<th>E = −2</th>
+<th>E = −1</th>
+<th>E = 0</th>
+<th>E = 1</th>
+<th>E = 2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1.000</td>
+<td>0,25</td>
+<td>0,5</td>
+<td>1</td>
+<td>2</td>
+<td>4</td>
+</tr>
+<tr>
+<td>1.001</td>
+<td>0,28125</td>
+<td>0,5625</td>
+<td>1,125</td>
+<td>2,25</td>
+<td>4,5</td>
+</tr>
+<tr>
+<td>1.010</td>
+<td>0,3125</td>
+<td>0,625</td>
+<td>1,25</td>
+<td>2,5</td>
+<td>5</td>
+</tr>
+<tr>
+<td>1.011</td>
+<td>0,34375</td>
+<td>0,6875</td>
+<td>1,375</td>
+<td>2,75</td>
+<td>5,5</td>
+</tr>
+<tr>
+<td>1.100</td>
+<td>0,375</td>
+<td>0,75</td>
+<td>1,5</td>
+<td>3</td>
+<td>6</td>
+</tr>
+<tr>
+<td>1.101</td>
+<td>0,40625</td>
+<td>0,8125</td>
+<td>1,625</td>
+<td>3,25</td>
+<td>6,5</td>
+</tr>
+<tr>
+<td>1.110</td>
+<td>0,4375</td>
+<td>0,875</td>
+<td>1,75</td>
+<td>3,5</td>
+<td>7</td>
+</tr>
+<tr>
+<td>1.111</td>
+<td>0,46875</td>
+<td>0,9375</td>
+<td>1,875</td>
+<td>3,75</td>
+<td>7,5</td>
+</tr>
+</tbody>
+</table></div>
+<figure class="figure"><button type="button" class="loupe-ouvrir" aria-label="Agrandir la figure"><img src="../../../assets/figures/e2-matnum/matnum_serie2_ex1_droite.png" alt="Droite réelle : exercice 1" loading="lazy"></button><figcaption>Droite réelle : exercice 1</figcaption></figure>
+<p><strong>À retenir.</strong> Le minimum est 1/4, le maximum est 15/2. Pour un exposant fixé, le pas vaut 2^(E−3) : 1/32, 1/16, 1/8, 1/4 puis 1/2. Les nombres sont plus serrés près de zéro ; le pas double avec l'exposant.</p>
+<p>&lt;!-- saut-page --&gt;</p>
+<h1>Exercice 2 — Mantisse sur 3(+1) bits et exposant sur 2 bits</h1>
+</div></section><section class="station station-normale" id="decoder-l-exposant-biaise" aria-labelledby="decoder-l-exposant-biaise-t"><header class="station-tete"><span class="station-num station-num-vide" aria-hidden="true">✦</span><h2 id="decoder-l-exposant-biaise-t">Décoder l'exposant biaisé</h2><label class="revise"><input type="checkbox" data-section="decoder-l-exposant-biaise"><span class="revise-coche" aria-hidden="true"></span><span class="revise-texte">Révisé</span></label></header><div class="station-corps"><p>Le « +1 » désigne le premier bit 1, implicite : on stocke seulement les 3 bits de fraction. Les 2 bits d'exposant donnent e = 0, 1, 2, 3. Avec le biais d = 1 :</p>
+<div class="km km-d" data-tex="E=e-d=e-1\in\{-1,0,1,2\},\qquad x=\left(1+\frac{j}{8}\right)2^{e-1}.">E=e-d=e-1\in\{-1,0,1,2\},\qquad x=\left(1+\frac{j}{8}\right)2^{e-1}.</div>
+<div class="tableau"><table>
+<thead>
+<tr>
+<th>Bits e</th>
+<th>Valeur de e</th>
+<th>Exposant réel E</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>00</td>
+<td>0</td>
+<td>−1</td>
+</tr>
+<tr>
+<td>01</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>10</td>
+<td>2</td>
+<td>1</td>
+</tr>
+<tr>
+<td>11</td>
+<td>3</td>
+<td>2</td>
+</tr>
+</tbody>
+</table></div>
+<p>Les <strong>32 valeurs</strong> sont le tableau de l'exercice 1 sans sa colonne E = −2 :</p>
+<div class="tableau"><table>
+<thead>
+<tr>
+<th>Bits de fraction</th>
+<th>Mantisse</th>
+<th>e = 00</th>
+<th>e = 01</th>
+<th>e = 10</th>
+<th>e = 11</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>000</td>
+<td>1</td>
+<td>0,5</td>
+<td>1</td>
+<td>2</td>
+<td>4</td>
+</tr>
+<tr>
+<td>001</td>
+<td>1,125</td>
+<td>0,5625</td>
+<td>1,125</td>
+<td>2,25</td>
+<td>4,5</td>
+</tr>
+<tr>
+<td>010</td>
+<td>1,25</td>
+<td>0,625</td>
+<td>1,25</td>
+<td>2,5</td>
+<td>5</td>
+</tr>
+<tr>
+<td>011</td>
+<td>1,375</td>
+<td>0,6875</td>
+<td>1,375</td>
+<td>2,75</td>
+<td>5,5</td>
+</tr>
+<tr>
+<td>100</td>
+<td>1,5</td>
+<td>0,75</td>
+<td>1,5</td>
+<td>3</td>
+<td>6</td>
+</tr>
+<tr>
+<td>101</td>
+<td>1,625</td>
+<td>0,8125</td>
+<td>1,625</td>
+<td>3,25</td>
+<td>6,5</td>
+</tr>
+<tr>
+<td>110</td>
+<td>1,75</td>
+<td>0,875</td>
+<td>1,75</td>
+<td>3,5</td>
+<td>7</td>
+</tr>
+<tr>
+<td>111</td>
+<td>1,875</td>
+<td>0,9375</td>
+<td>1,875</td>
+<td>3,75</td>
+<td>7,5</td>
+</tr>
+</tbody>
+</table></div>
+<figure class="figure"><button type="button" class="loupe-ouvrir" aria-label="Agrandir la figure"><img src="../../../assets/figures/e2-matnum/matnum_serie2_ex2_droite.png" alt="Droite réelle : exercice 2" loading="lazy"></button><figcaption>Droite réelle : exercice 2</figcaption></figure>
+<p><strong>Vérification avec floatgui.</strong> Régler <code>t = 3</code>, <code>emin = -1</code>, <code>emax = 2</code>. Le script complet effectue ces réglages automatiquement. La figure de ce corrigé est une reproduction Python du modèle ; l'interface MATLAB reste à exécuter dans MATLAB.</p>
+<p><strong>Piège.</strong> Cet exercice est un modèle pédagogique, pas un petit format IEEE complet : on ne réserve pas les exposants 00 et 11 pour zéro, les sous-normaux, Inf ou NaN. L'énoncé et le corrigé du professeur utilisent les quatre exposants pour des nombres normalisés.</p>
+<p>&lt;!-- saut-page --&gt;</p>
+<h1>Exercice 3 — Compléter le nombre affiché dans floatgui.m</h1>
+</div></section><section class="station station-normale" id="comptage" aria-labelledby="comptage-t"><header class="station-tete"><span class="station-num station-num-vide" aria-hidden="true">✦</span><h2 id="comptage-t">Comptage</h2><label class="revise"><input type="checkbox" data-section="comptage"><span class="revise-coche" aria-hidden="true"></span><span class="revise-texte">Révisé</span></label></header><div class="station-corps"><p>Le programme construit <code>f = (0:2^t-1)/2^t</code>. Il y a donc 2^t mantisses, chacune étant multipliée par 2^E pour tous les exposants de <code>emin</code> à <code>emax</code>, bornes incluses.</p>
+<div class="km km-d" data-tex="N_+=2^t\,(e_{\max}-e_{\min}+1).">N_+=2^t\,(e_{\max}-e_{\min}+1).</div>
+<p>Le « +1 » est indispensable : de −1 à 2 il y a quatre entiers, pas trois. Remplacer la dernière ligne par :</p>
+<pre class="code"><code class="language-matlab">text(.9*xmax, 2, num2str(2^t*(emax-emin+1)))
+</code></pre>
+<div class="tableau"><table>
+<thead>
+<tr>
+<th>Paramètres</th>
+<th>Nombre de mantisses</th>
+<th>Nombre d'exposants</th>
+<th>Nombres positifs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>t = 3, emin = −2, emax = 2</td>
+<td>8</td>
+<td>5</td>
+<td>40</td>
+</tr>
+<tr>
+<td>t = 3, emin = −1, emax = 2</td>
+<td>8</td>
+<td>4</td>
+<td>32</td>
+</tr>
+<tr>
+<td>Valeurs initiales du fichier : 3, −4, 2</td>
+<td>8</td>
+<td>7</td>
+<td>56</td>
+</tr>
+</tbody>
+</table></div>
+<p>La formule a été contrôlée par énumération et dédoublonnage sur <strong>les 729 combinaisons entières des trois curseurs</strong> : t = 0…8, emin = −8…0, emax = 0…8. Aucun doublon ni différence de comptage.</p>
+<p><strong>Fichier modifié.</strong> Une copie de travail est placée dans <code>scripts/serie2/floatgui.m</code>. Seule sa dernière expression a été changée. La version reçue dans <code>scripts/ncm/floatgui.m</code> et l'archive du professeur sont préservées. Dans la version reçue, la dernière ligne était déjà décommentée, mais affichait seulement <code>t</code>.</p>
+</div></section><section class="station station-normale" id="pourquoi-la-formule-du-professeur-fonctionne-ici" aria-labelledby="pourquoi-la-formule-du-professeur-fonctionne-ici-t"><header class="station-tete"><span class="station-num station-num-vide" aria-hidden="true">✦</span><h2 id="pourquoi-la-formule-du-professeur-fonctionne-ici-t">Pourquoi la formule du professeur fonctionne ici</h2><label class="revise"><input type="checkbox" data-section="pourquoi-la-formule-du-professeur-fonctionne-ici"><span class="revise-coche" aria-hidden="true"></span><span class="revise-texte">Révisé</span></label></header><div class="station-corps"><p>Le corrigé propose <code>2^t*(abs(emin) + emax + 1)</code>. Cette expression est équivalente quand <code>emin ≤ 0</code>, ce qui est imposé par le curseur du GUI. La forme <code>emax-emin+1</code> exprime directement la longueur de l'intervalle et reste correcte même si les deux bornes sont positives.</p>
+<p><strong>À retenir.</strong> Ce GUI compte uniquement les <strong>positifs normalisés</strong>, sans zéro ni sous-normaux. Pour le modèle symétrique avec les négatifs et un zéro :</p>
+<div class="km km-d" data-tex="N_{\mathrm{total}}=2N_++1.">N_{\mathrm{total}}=2N_++1.</div>
+</div></section><section class="station station-normale" id="lancer-le-fichier-depuis-le-dossier-scripts" aria-labelledby="lancer-le-fichier-depuis-le-dossier-scripts-t"><header class="station-tete"><span class="station-num station-num-vide" aria-hidden="true">✦</span><h2 id="lancer-le-fichier-depuis-le-dossier-scripts-t">Lancer le fichier depuis le dossier scripts</h2><label class="revise"><input type="checkbox" data-section="lancer-le-fichier-depuis-le-dossier-scripts"><span class="revise-coche" aria-hidden="true"></span><span class="revise-texte">Révisé</span></label></header><div class="station-corps"><pre class="code"><code class="language-matlab">addpath('serie2', '-begin')
+floatgui
+% Regler ensuite : t=3, emin=-1, emax=2.
+</code></pre>
+<p>Le script <code>serie2_exercices.m</code> ajoute le bon chemin et règle les curseurs pour l'exercice 2.</p>
+<p>&lt;!-- saut-page --&gt;</p>
+<h1>Exercice 4 — Pourquoi 1 − 3(4/3 − 1) n'est pas zéro</h1>
+</div></section><section class="station station-normale" id="programme-demande" aria-labelledby="programme-demande-t"><header class="station-tete"><span class="station-num station-num-vide" aria-hidden="true">✦</span><h2 id="programme-demande-t">Programme demandé</h2><label class="revise"><input type="checkbox" data-section="programme-demande"><span class="revise-coche" aria-hidden="true"></span><span class="revise-texte">Révisé</span></label></header><div class="station-corps"><pre class="code"><code class="language-matlab">format long
+a = 4/3
+b = a - 1
+c = 3*b
+e = 1 - c
+</code></pre>
+<p>En arithmétique exacte :</p>
+<div class="km km-d" data-tex="a=\frac43,\qquad b=\frac13,\qquad c=1,\qquad e=0.">a=\frac43,\qquad b=\frac13,\qquad c=1,\qquad e=0.</div>
+<p>En double précision, le calcul réel effectué en Python donne les valeurs suivantes, imprimées avec 17 chiffres significatifs :</p>
+<div class="tableau"><table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Valeur calculée</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>a</td>
+<td>1.3333333333333333</td>
+</tr>
+<tr>
+<td>b</td>
+<td>0.33333333333333326</td>
+</tr>
+<tr>
+<td>c</td>
+<td>0.99999999999999978</td>
+</tr>
+<tr>
+<td>e</td>
+<td>2.2204460492503131e−16</td>
+</tr>
+</tbody>
+</table></div>
+<p>Ainsi, <strong>le résultat calculé est epsilon machine, alors que le vrai résultat est zéro</strong> :</p>
+<div class="km km-d" data-tex="e=2^{-52}=\operatorname{eps}\ne 0.">e=2^{-52}=\operatorname{eps}\ne 0.</div>
+</div></section><section class="station station-normale" id="d-ou-vient-l-ecart" aria-labelledby="d-ou-vient-l-ecart-t"><header class="station-tete"><span class="station-num station-num-vide" aria-hidden="true">✦</span><h2 id="d-ou-vient-l-ecart-t">D'où vient l'écart ?</h2><label class="revise"><input type="checkbox" data-section="d-ou-vient-l-ecart"><span class="revise-coche" aria-hidden="true"></span><span class="revise-texte">Révisé</span></label></header><div class="station-corps"><p>La fraction 4/3 a un développement binaire infini : sa représentation est arrondie. Le double stocké est légèrement inférieur à 4/3. Dans ce calcul particulier, les opérations suivantes donnent :</p>
+<div class="km km-d" data-tex="\widetilde a=\frac43-\frac{2^{-52}}{3},\quad
+\widetilde b=\frac13-\frac{2^{-52}}{3},\quad
+\widetilde c=1-2^{-52}.">\widetilde a=\frac43-\frac{2^{-52}}{3},\quad
+\widetilde b=\frac13-\frac{2^{-52}}{3},\quad
+\widetilde c=1-2^{-52}.</div>
+<p>La soustraction finale récupère donc exactement 2^−52. Voici les décimales exactes du double de 4/3 et du produit c :</p>
+<pre class="code"><code>a = 1.33333333333333325931846502498956397175788879394531250
+c = 0.99999999999999977795539507496869191527366638183593750
+</code></pre>
+<p><strong>Piège.</strong> <code>format long</code> ne change pas les calculs ni la précision stockée. Il modifie seulement l'affichage ; les dernières différences peuvent être masquées par l'arrondi d'impression.</p>
+<p><strong>À retenir.</strong> On ne peut pas simplifier une expression algébrique comme si chaque valeur intermédiaire était exacte. Ce petit programme retrouve <code>eps</code> dans l'arithmétique utilisée ; le corrigé du professeur rappelle son emploi historique pour déterminer la précision machine.</p>
+<p>&lt;!-- saut-page --&gt;</p>
+<h1>Exercice 5 — Équation quadratique et annulation</h1>
+</div></section><section class="station station-normale" id="verifier-la-formule" aria-labelledby="verifier-la-formule-t"><header class="station-tete"><span class="station-num station-num-vide" aria-hidden="true">✦</span><h2 id="verifier-la-formule-t">Vérifier la formule</h2><label class="revise"><input type="checkbox" data-section="verifier-la-formule"><span class="revise-coche" aria-hidden="true"></span><span class="revise-texte">Révisé</span></label></header><div class="station-corps"><p>Pour x² + ax + b = 0, compléter le carré :</p>
+<div class="km km-d" data-tex="x^2+ax+b=0\iff\left(x+\frac a2\right)^2=\left(\frac a2\right)^2-b.">x^2+ax+b=0\iff\left(x+\frac a2\right)^2=\left(\frac a2\right)^2-b.</div>
+<p>On en déduit, quand le discriminant est positif ou nul :</p>
+<div class="km km-d" data-tex="x_{1,2}=-\frac a2\pm\sqrt{\left(\frac a2\right)^2-b}.">x_{1,2}=-\frac a2\pm\sqrt{\left(\frac a2\right)^2-b}.</div>
+<p>En développant (x−x₁)(x−x₂), les relations de Viète sont :</p>
+<div class="km km-d" data-tex="x_1+x_2=-a,\qquad x_1x_2=b.">x_1+x_2=-a,\qquad x_1x_2=b.</div>
+<p><strong>Coquille dans l'énoncé.</strong> Il imprime <code>x1 + x2 = a</code>. Pour le polynôme x² + ax + b, le signe correct est <strong>−a</strong>.</p>
+</div></section><section class="station station-normale" id="a-programme-utilisant-directement-la-formule" aria-labelledby="a-programme-utilisant-directement-la-formule-t"><header class="station-tete"><span class="station-num station-num-vide" aria-hidden="true">✦</span><h2 id="a-programme-utilisant-directement-la-formule-t">(a) Programme utilisant directement la formule</h2><label class="revise"><input type="checkbox" data-section="a-programme-utilisant-directement-la-formule"><span class="revise-coche" aria-hidden="true"></span><span class="revise-texte">Révisé</span></label></header><div class="station-corps"><p>Ici a = −100000000 et b = 1. Les deux racines sont réelles et positives.</p>
+<pre class="code"><code class="language-matlab">function [x1, x2] = solution_equation_a(a, b)
+    x1 = -a/2 + sqrt((a/2)^2 - b);
+    x2 = -a/2 - sqrt((a/2)^2 - b);
+end
+</code></pre>
+</div></section><section class="station station-normale" id="b-programme-utilisant-une-racine-et-viete" aria-labelledby="b-programme-utilisant-une-racine-et-viete-t"><header class="station-tete"><span class="station-num station-num-vide" aria-hidden="true">✦</span><h2 id="b-programme-utilisant-une-racine-et-viete-t">(b) Programme utilisant une racine et Viète</h2><label class="revise"><input type="checkbox" data-section="b-programme-utilisant-une-racine-et-viete"><span class="revise-coche" aria-hidden="true"></span><span class="revise-texte">Révisé</span></label></header><div class="station-corps"><p>On conserve la grande racine, obtenue par addition de termes de même signe, puis on déduit la petite racine par une division :</p>
+<pre class="code"><code class="language-matlab">function [x1, x2] = solution_equation_b(a, b)
+    x1 = -a/2 + sqrt((a/2)^2 - b);
+    x2 = b/x1;
+end
+</code></pre>
+<p>La réécriture de la petite racine vient aussi de la rationalisation :</p>
+<div class="km km-d" data-tex="x_2=\frac{b}{-a/2+\sqrt{(a/2)^2-b}}.">x_2=\frac{b}{-a/2+\sqrt{(a/2)^2-b}}.</div>
+<p><strong>Pourquoi (a) échoue.</strong> La petite racine est la différence de deux nombres très proches de 50 millions. Leurs erreurs d'arrondi deviennent importantes relativement à un résultat de l'ordre de 10^−8 : c'est une <strong>annulation catastrophique</strong>. La méthode (b) évite cette soustraction.</p>
+<p><strong>Domaine de cette version (b).</strong> La branche « + » est la bonne pour cet exemple où a &lt; 0. Pour un a général, il faut choisir la racine calculée sans annulation (la branche dépend du signe de a), puis obtenir l'autre par le produit de Viète.</p>
+<p>&lt;!-- saut-page --&gt;</p>
+<h1>Exercice 5 — Vérifications et comparaison avec roots</h1>
+</div></section><section class="station station-normale" id="valeurs-de-reference-et-resultats-mesures" aria-labelledby="valeurs-de-reference-et-resultats-mesures-t"><header class="station-tete"><span class="station-num station-num-vide" aria-hidden="true">✦</span><h2 id="valeurs-de-reference-et-resultats-mesures-t">Valeurs de référence et résultats mesurés</h2><label class="revise"><input type="checkbox" data-section="valeurs-de-reference-et-resultats-mesures"><span class="revise-coche" aria-hidden="true"></span><span class="revise-texte">Révisé</span></label></header><div class="station-corps"><p>Les racines exactes, calculées à 80 chiffres, ne sont <strong>pas exactement</strong> 10^8 et 10^−8 :</p>
+<pre class="code"><code>x_grande = 99999999.9999999899999999999999989999999999999998...
+x_petite = 0.000000010000000000000001000000000000000200000000...
+</code></pre>
+<div class="tableau"><table>
+<thead>
+<tr>
+<th>Méthode exécutée en Python</th>
+<th>Grande racine</th>
+<th>Petite racine</th>
+<th>Erreur relative petite</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>(a) formule directe</td>
+<td>100000000</td>
+<td>7.4505805969238281e−9</td>
+<td>0.2549419403</td>
+</tr>
+<tr>
+<td>(b) Viète</td>
+<td>100000000</td>
+<td>1e−8</td>
+<td>7.9077e−17</td>
+</tr>
+<tr>
+<td>NumPy roots (contrôle indépendant)</td>
+<td>99999999.999999985</td>
+<td>1.0000000000000002e−8</td>
+<td>8.6359e−17</td>
+</tr>
+</tbody>
+</table></div>
+<p>La petite racine de (a) présente donc environ <strong>25,49 % d'erreur</strong>, contre une erreur de l'ordre de la précision machine avec (b).</p>
+</div></section><section class="station station-normale" id="verification-par-substitution-et-par-viete" aria-labelledby="verification-par-substitution-et-par-viete-t"><header class="station-tete"><span class="station-num station-num-vide" aria-hidden="true">✦</span><h2 id="verification-par-substitution-et-par-viete-t">Vérification par substitution et par Viète</h2><label class="revise"><input type="checkbox" data-section="verification-par-substitution-et-par-viete"><span class="revise-coche" aria-hidden="true"></span><span class="revise-texte">Révisé</span></label></header><div class="station-corps"><p>On calcule P(x) = x² − 10^8 x + 1, puis le produit et la somme des racines. Les résidus ci-dessous sont ceux de l'évaluation directe en double :</p>
+<div class="tableau"><table>
+<thead>
+<tr>
+<th>Méthode</th>
+<th>P(grande)</th>
+<th>P(petite)</th>
+<th>Produit des racines</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>(a)</td>
+<td>1</td>
+<td>0.2549419403076172</td>
+<td>0.7450580596923828</td>
+</tr>
+<tr>
+<td>(b)</td>
+<td>1</td>
+<td>1.1102230246251565e−16</td>
+<td>1</td>
+</tr>
+</tbody>
+</table></div>
+<p>Le produit de (a) devrait valoir 1 : il confirme l'erreur de la petite racine. Pour (b), la somme calculée est 100000000.00000001, proche de −a = 100000000 à l'échelle de ces nombres.</p>
+<p><strong>Piège du résidu absolu.</strong> P(10^8) = 1, mais les deux grands termes valent 10^16. Un résidu égal à 1 ne signifie donc pas une erreur relative importante sur cette grande racine. Le résidu normalisé vaut :</p>
+<div class="km km-d" data-tex="\eta(x)=\frac{|P(x)|}{|x|^2+|a|\,|x|+|b|};\qquad \eta(10^8)\simeq 5\,10^{-17}.">\eta(x)=\frac{|P(x)|}{|x|^2+|a|\,|x|+|b|};\qquad \eta(10^8)\simeq 5\,10^{-17}.</div>
+<p>Pour la petite racine, le résidu normalisé est environ 0,146 avec (a), contre 3,95·10^−17 avec (b), en évaluant P à 80 chiffres sur les doubles obtenus. L'évaluation du résidu en double peut elle-même subir une annulation.</p>
+</div></section><section class="station station-normale" id="comparaison-matlab-demandee" aria-labelledby="comparaison-matlab-demandee-t"><header class="station-tete"><span class="station-num station-num-vide" aria-hidden="true">✦</span><h2 id="comparaison-matlab-demandee-t">Comparaison MATLAB demandée</h2><label class="revise"><input type="checkbox" data-section="comparaison-matlab-demandee"><span class="revise-coche" aria-hidden="true"></span><span class="revise-texte">Révisé</span></label></header><div class="station-corps"><pre class="code"><code class="language-matlab">a = -100000000; b = 1;
+[x1a, x2a] = solution_equation_a(a, b);
+[x1b, x2b] = solution_equation_b(a, b);
+r = sort(roots([1 a b]), 'descend');
+disp([x1a x2a; x1b x2b; r.'])
+</code></pre>
+<p><strong>Conclusion du professeur.</strong> Sa solution indique que (b) donne de meilleurs résultats que (a) et retrouve la solution de <code>roots</code>. La commande est incluse dans le script livré, mais sa sortie MATLAB n'est pas prétendue mesurée ici. Le contrôle <code>numpy.roots</code> ci-dessus est distinct : il donne lui aussi des racines précises, avec des derniers bits différents de (b).</p>
+<p>&lt;!-- saut-page --&gt;</p>
+<h1>Exercice 6 — Les trois boucles et les limites du double</h1>
+</div></section><section class="station station-normale" id="s1-addition-d-un-increment-de-plus-en-plus-petit" aria-labelledby="s1-addition-d-un-increment-de-plus-en-plus-petit-t"><header class="station-tete"><span class="station-num">1</span><h2 id="s1-addition-d-un-increment-de-plus-en-plus-petit-t">Addition d'un incrément de plus en plus petit</h2><label class="revise"><input type="checkbox" data-section="s1-addition-d-un-increment-de-plus-en-plus-petit"><span class="revise-coche" aria-hidden="true"></span><span class="revise-texte">Révisé</span></label></header><div class="station-corps"><pre class="code"><code class="language-matlab">x = 1; p = 0; y = 1; z = x + y;
+while x ~= z
+    y = y/2;
+    p = p + 1;
+    z = x + y;
+end
+disp(1 + 1/2^p)
+disp(p)
+</code></pre>
+<p><strong>Résultat : 1 puis 53.</strong> Après p passages, y = 2^−p. À p = 52, 1 + 2^−52 est le double qui suit 1. À p = 53, la somme exacte est au milieu de ces deux doubles ; l'arrondi au plus proche, avec égalité départagée vers le bit pair, donne 1. La boucle trouve le <strong>premier incrément perdu</strong>, pas le dernier incrément visible : <code>eps = 2^-(p-1)</code>.</p>
+</div></section><section class="station station-normale" id="s2-division-jusqu-a-zero" aria-labelledby="s2-division-jusqu-a-zero-t"><header class="station-tete"><span class="station-num">2</span><h2 id="s2-division-jusqu-a-zero-t">Division jusqu'à zéro</h2><label class="revise"><input type="checkbox" data-section="s2-division-jusqu-a-zero"><span class="revise-coche" aria-hidden="true"></span><span class="revise-texte">Révisé</span></label></header><div class="station-corps"><pre class="code"><code class="language-matlab">x = 1; q = 0;
+while x &gt; 0
+    x = x/2;
+    q = q + 1;
+end
+disp(1/2^q)
+disp(q)
+</code></pre>
+<p><strong>Résultat : 0 puis 1075.</strong> Les nombres sous-normaux permettent de descendre sous <code>realmin = 2^-1022</code>. À q = 1074, x = 2^−1074 est encore positif, soit environ 4,94·10^−324. À la division suivante, 2^−1075 est arrondi à zéro. Attention : dans l'affichage <code>1/2^q</code>, le dénominateur <code>2^1075</code> déborde déjà vers Inf, donnant aussi 0 ; on vérifie le dernier x positif avec <code>2^-(q-1)</code>, pas <code>1/2^(q-1)</code>.</p>
+</div></section><section class="station station-normale" id="s3-multiplication-jusqu-a-inf" aria-labelledby="s3-multiplication-jusqu-a-inf-t"><header class="station-tete"><span class="station-num">3</span><h2 id="s3-multiplication-jusqu-a-inf-t">Multiplication jusqu'à Inf</h2><label class="revise"><input type="checkbox" data-section="s3-multiplication-jusqu-a-inf"><span class="revise-coche" aria-hidden="true"></span><span class="revise-texte">Révisé</span></label></header><div class="station-corps"><pre class="code"><code class="language-matlab">x = 1; r = 0;
+while x ~= inf
+    x = 2*x;
+    r = r + 1;
+end
+disp(2^r)
+disp(r)
+</code></pre>
+<p><strong>Résultat : Inf puis 1024.</strong> La valeur 2^1023 est finie, mais 2^1024 déborde. Cette boucle repère le premier débordement parmi les puissances de 2 ; elle ne calcule pas directement le plus grand double fini :</p>
+<div class="km km-d" data-tex="\operatorname{realmax}=(2-2^{-52})\,2^{1023}\simeq 1.7976931348623157\,10^{308}.">\operatorname{realmax}=(2-2^{-52})\,2^{1023}\simeq 1.7976931348623157\,10^{308}.</div>
+<p><strong>Vérification.</strong> Les trois comptes 53, 1075 et 1024 ont été retrouvés par exécution des boucles en Python et concordent avec le corrigé du professeur. <code>realmin</code> est le minimum positif <strong>normalisé</strong>, pas le minimum positif tout court.</p>
+<p>&lt;!-- saut-page --&gt;</p>
+<h1>Exercice 7 — Approximer exp(x) par Taylor</h1>
+</div></section><section class="station station-normale" id="recurrence-pour-eviter-puissances-et-factorielles" aria-labelledby="recurrence-pour-eviter-puissances-et-factorielles-t"><header class="station-tete"><span class="station-num station-num-vide" aria-hidden="true">✦</span><h2 id="recurrence-pour-eviter-puissances-et-factorielles-t">Récurrence pour éviter puissances et factorielles</h2><label class="revise"><input type="checkbox" data-section="recurrence-pour-eviter-puissances-et-factorielles"><span class="revise-coche" aria-hidden="true"></span><span class="revise-texte">Révisé</span></label></header><div class="station-corps"><div class="km km-d" data-tex="T_n(x)=\sum_{k=0}^{n}\frac{x^k}{k!},\qquad t_0=1,\quad t_k=t_{k-1}\frac{x}{k}.">T_n(x)=\sum_{k=0}^{n}\frac{x^k}{k!},\qquad t_0=1,\quad t_k=t_{k-1}\frac{x}{k}.</div>
+<p>En effet, si t_(k−1) = x^(k−1)/(k−1)!, alors t_(k−1)·x/k = x^k/k!. On additionne les termes depuis k = 0 jusqu'à n inclus : l'approximation contient <strong>n+1 termes</strong>.</p>
+</div></section><section class="station station-normale" id="fonction-mon-exp-m" aria-labelledby="fonction-mon-exp-m-t"><header class="station-tete"><span class="station-num station-num-vide" aria-hidden="true">✦</span><h2 id="fonction-mon-exp-m-t">Fonction mon_exp.m</h2><label class="revise"><input type="checkbox" data-section="fonction-mon-exp-m"><span class="revise-coche" aria-hidden="true"></span><span class="revise-texte">Révisé</span></label></header><div class="station-corps"><pre class="code"><code class="language-matlab">function y = mon_exp(x, n)
+    % x scalaire ; n entier positif ou nul.
+    terme = 1;
+    y = 1;
+    for k = 1:n
+        terme = terme*x/k;
+        y = y + terme;
+    end
+end
+</code></pre>
+<p>Le fichier livré ajoute une validation des arguments. Pour x = 0, la fonction rend 1 ; pour n = 0, elle rend également 1, quel que soit x. Aucun calcul de factorielle ni de puissance n'est nécessaire.</p>
+</div></section><section class="station station-normale" id="script-driver-exp-m-les-50-points-et-les-quatre-sous-graphes" aria-labelledby="script-driver-exp-m-les-50-points-et-les-quatre-sous-graphes-t"><header class="station-tete"><span class="station-num station-num-vide" aria-hidden="true">✦</span><h2 id="script-driver-exp-m-les-50-points-et-les-quatre-sous-graphes-t">Script driver_exp.m : les 50 points et les quatre sous-graphes</h2><label class="revise"><input type="checkbox" data-section="script-driver-exp-m-les-50-points-et-les-quatre-sous-graphes"><span class="revise-coche" aria-hidden="true"></span><span class="revise-texte">Révisé</span></label></header><div class="station-corps"><pre class="code"><code class="language-matlab">m = 50;
+x = linspace(-1, 1, m);
+reference = exp(x);
+y = zeros(1, m);
+k = 0;
+figure
+for n = [4 8 16 20]
+    for i = 1:m
+        y(i) = mon_exp(x(i), n);
+    end
+    ErrRel = abs(y - reference)./abs(reference);
+    k = k + 1;
+    subplot(2, 2, k)
+    plot(x, ErrRel, '.-')
+    grid on
+    xlabel('x'); ylabel('Erreur relative')
+    title(sprintf('n = %d', n))
+end
+</code></pre>
+<p><strong>Piège MATLAB.</strong> L'erreur relative est un calcul terme à terme : utiliser <code>./</code>, pas <code>/</code>. <code>linspace(-1,1,50)</code> inclut les deux bornes, mais pas zéro, car le nombre de points est pair. Les tests de la fonction à x = 0 ont donc été effectués séparément.</p>
+<p>&lt;!-- saut-page --&gt;</p>
+<h1>Exercice 7 — Courbes et interprétation des erreurs</h1>
+</div></section><section class="station station-normale" id="erreur-relative-mesuree" aria-labelledby="erreur-relative-mesuree-t"><header class="station-tete"><span class="station-num station-num-vide" aria-hidden="true">✦</span><h2 id="erreur-relative-mesuree-t">Erreur relative mesurée</h2><label class="revise"><input type="checkbox" data-section="erreur-relative-mesuree"><span class="revise-coche" aria-hidden="true"></span><span class="revise-texte">Révisé</span></label></header><div class="station-corps"><div class="km km-d" data-tex="\mathrm{ErrRel}(x)=\frac{|T_n(x)-\exp(x)|}{|\exp(x)|}.">\mathrm{ErrRel}(x)=\frac{|T_n(x)-\exp(x)|}{|\exp(x)|}.</div>
+<figure class="figure"><button type="button" class="loupe-ouvrir" aria-label="Agrandir la figure"><img src="../../../assets/figures/e2-matnum/matnum_serie2_ex7_erreurs.png" alt="Les quatre erreurs de Taylor" loading="lazy"></button><figcaption>Les quatre erreurs de Taylor</figcaption></figure>
+<div class="tableau"><table>
+<thead>
+<tr>
+<th>n</th>
+<th>Maximum mesuré en double</th>
+<th>Maximum de troncature à 80 chiffres</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4</td>
+<td>1.9355685672e−2</td>
+<td>1.9355685672e−2</td>
+</tr>
+<tr>
+<td>8</td>
+<td>6.8046015135e−6</td>
+<td>6.8046015133e−6</td>
+</tr>
+<tr>
+<td>16</td>
+<td>7.5447476834e−15</td>
+<td>7.2390386917e−15</td>
+</tr>
+<tr>
+<td>20</td>
+<td>4.1802086435e−16</td>
+<td>5.0887306742e−20</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Interprétation.</strong> De n = 4 à 16, ajouter des termes réduit nettement l'erreur de troncature. À n = 20, cette erreur mathématique est devenue bien inférieure à la précision machine : le graphique est dominé par les arrondis des produits, divisions, additions et de la fonction de référence. Augmenter encore n ne garantit donc pas un résultat plus précis en double.</p>
+<p>Pour n = 4, 8 et 16, les maxima mesurés sont atteints à x = −1. Pour n = 20, le maximum mesuré est à x ≈ −0,632653 : sa position dépend des derniers bits d'arrondi.</p>
+<p><strong>Statut de la figure.</strong> Les 50 abscisses et la récurrence sont celles demandées. Les courbes ont été générées réellement en Python binary64 à 300 dpi. La fonction <code>exp</code> de MATLAB et ses derniers bits peuvent différer : les valeurs proches de 10^−16 ne sont pas une sortie MATLAB reproduite.</p>
+<p>&lt;!-- saut-page --&gt;</p>
+<h1>Exercice 8 — Dix additions de 0,1</h1>
+</div></section><section class="station station-normale" id="a-programme-et-constat" aria-labelledby="a-programme-et-constat-t"><header class="station-tete"><span class="station-num station-num-vide" aria-hidden="true">✦</span><h2 id="a-programme-et-constat-t">(a) Programme et constat</h2><label class="revise"><input type="checkbox" data-section="a-programme-et-constat"><span class="revise-coche" aria-hidden="true"></span><span class="revise-texte">Révisé</span></label></header><div class="station-corps"><pre class="code"><code class="language-matlab">somme = 0;
+for i = 1:10
+    somme = somme + 0.1;
+end
+if somme == 1
+    disp('Le compte est bon')
+else
+    disp('Detournement de fonds!')
+end
+</code></pre>
+<p>L'exécution des dix additions donne :</p>
+<pre class="code"><code>somme     = 0.99999999999999989
+somme - 1 = -1.1102230246251565e-16
+somme == 1 : faux
+</code></pre>
+<p>Le programme affiche donc <strong>« Détournement de fonds! »</strong>, même si dix dixièmes valent mathématiquement 1. La fraction 1/10 possède une écriture binaire infinie ; chaque opération s'effectue sur des valeurs arrondies. Le double représentant 0,1 est exactement :</p>
+<pre class="code"><code>0.1000000000000000055511151231257827021181583404541015625
+</code></pre>
+<p><strong>Piège.</strong> Arrondir l'affichage pour montrer 1 ne rend pas <code>somme == 1</code> vrai. Et le produit <code>10*0.1</code> n'est pas la même suite d'opérations que dix additions : un résultat peut valoir exactement 1 en double sans que l'autre le vaille.</p>
+</div></section><section class="station station-normale" id="b-modifier-la-comparaison-pas-seulement-l-affichage" aria-labelledby="b-modifier-la-comparaison-pas-seulement-l-affichage-t"><header class="station-tete"><span class="station-num station-num-vide" aria-hidden="true">✦</span><h2 id="b-modifier-la-comparaison-pas-seulement-l-affichage-t">(b) Modifier la comparaison, pas seulement l'affichage</h2><label class="revise"><input type="checkbox" data-section="b-modifier-la-comparaison-pas-seulement-l-affichage"><span class="revise-coche" aria-hidden="true"></span><span class="revise-texte">Révisé</span></label></header><div class="station-corps"><p>La solution proposée par le professeur utilise une tolérance absolue :</p>
+<pre class="code"><code class="language-matlab">if abs(somme - 1) &lt;= 1e-5
+    disp('Le compte est bon')
+else
+    disp('Detournement de fonds!')
+end
+</code></pre>
+<p>L'écart mesuré est bien inférieur à 10^−5 : le message devient <strong>« Le compte est bon »</strong>. Pour ce calcul très simple à l'échelle de 1, une tolérance <code>10*eps</code> est aussi suffisante ; elle ne doit pas devenir une règle aveugle pour tous les problèmes. La tolérance doit refléter l'échelle des nombres et l'erreur acceptable.</p>
+<p><strong>Autre approche pour des montants en dixièmes ou en centimes.</strong> Stocker et additionner des unités entières, puis convertir à l'affichage. On ne fait alors pas dépendre un contrôle comptable de l'égalité de deux résultats flottants.</p>
+</div></section><section class="station station-normale" id="sources-et-reproduction" aria-labelledby="sources-et-reproduction-t"><header class="station-tete"><span class="station-num station-num-vide" aria-hidden="true">✦</span><h2 id="sources-et-reproduction-t">Sources et reproduction</h2><label class="revise"><input type="checkbox" data-section="sources-et-reproduction"><span class="revise-coche" aria-hidden="true"></span><span class="revise-texte">Révisé</span></label></header><div class="station-corps"><p>Sources locales : <code>Consignes/sources/matnum-serie2-exercices.pdf</code> (2 p.), <code>matnum-serie2-solutions.pdf</code> (1 p.), diapositives « Les nombres réels sur l'ordinateur » (p. 4–7) et <code>scripts/ncm/floatgui.m</code>.</p>
+<p>MATLAB : ouvrir <code>scripts/serie2_exercices.m</code> et exécuter le script complet ou ses sections. Les fonctions de l'exercice 5 sont définies à sa fin ; <code>mon_exp.m</code> et <code>driver_exp.m</code> sont des fichiers séparés.</p>
+<p>Reproduction des résultats et du PDF depuis la racine du dépôt :</p>
+<pre class="code"><code class="language-sh">.venv/bin/python Semestre-3/E2-MATNUM/scripts/test_serie2_verification.py
+.venv/bin/python Semestre-3/E2-MATNUM/scripts/serie2_verification.py
+.venv/bin/python Semestre-3/E2-MATNUM/scripts/serie2_corrige_pdf.py
+</code></pre>
+</div></section>
+    <footer class="pied">
+      <p>Converti depuis <code>Semestre-3/E2-MATNUM/Fiches-Revision/corrige-serie-2-matlab.md</code> · <a href="../../../assets/pdf/e2-matnum/corrige-serie-2-matlab.pdf" target="_blank" rel="noopener">version imprimable (PDF)</a></p>
+    </footer>
+  </main>
+</div>
+<dialog id="formulaire" class="dialogue" aria-labelledby="formulaire-titre">
+  <header class="dialogue-tete"><h2 id="formulaire-titre"><span class="btn-sigma" aria-hidden="true">Σ</span> Formulaire — Série 2 — MATLAB</h2>
+  <button type="button" class="btn-icone" data-fermer aria-label="Fermer">✕</button></header>
+  <div class="dialogue-corps"><p>Aucune tuile formule dans ce résumé.</p></div>
+</dialog>
+<dialog id="loupe" class="dialogue loupe" aria-label="Figure agrandie">
+  <button type="button" class="btn-icone loupe-fermer" data-fermer aria-label="Fermer">✕</button>
+  <img alt="">
+</dialog>
+
+</body>
+</html>

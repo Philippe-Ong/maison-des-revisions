@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Analyse 3 · Corrigé · Devoir — exercice 23</title>
+<meta name="description" content="Analyse 3 — Devoir — exercice 23 (Équations différentielles)">
+<link rel="icon" href="../../../assets/favicon.svg?v=012e46bcde" type="image/svg+xml">
+<script>try{var t=localStorage.getItem("maison:theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+
+<link rel="stylesheet" href="../../../assets/styles.css?v=012e46bcde">
+<style>:root{--c-heia:#0E5A8A;--c-pale:#EEF5FB;--c-okgreen:#0A7A46;--c-warnred:#B00020}@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--c-heia:color-mix(in srgb,#0E5A8A 50%,#fff);--c-pale:color-mix(in srgb,#EEF5FB 50%,#fff);--c-okgreen:color-mix(in srgb,#0A7A46 50%,#fff);--c-warnred:color-mix(in srgb,#B00020 50%,#fff)}}:root[data-theme=dark]{--c-heia:color-mix(in srgb,#0E5A8A 50%,#fff);--c-pale:color-mix(in srgb,#EEF5FB 50%,#fff);--c-okgreen:color-mix(in srgb,#0A7A46 50%,#fff);--c-warnred:color-mix(in srgb,#B00020 50%,#fff)}</style>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+
+<script defer src="../../../assets/maison.js?v=012e46bcde"></script>
+</head>
+<body class="page-resume" style="--piece:#4338CA" data-cle="E2-ANA3/exercices/devoir-ex23" data-sections='["a-x-mathrm-d-y-x-y-mathrm-d-x", "b-dfrac-mathrm-d-y-mathrm-d-x-dfrac-x-2-xy-y-2-xy", "c-y-dfrac-y-x-sqrt-xy"]' data-url-racine="pieces/e2-ana3/exercices/devoir-ex23.html" data-titre="Analyse 3 · Corrigé · Devoir — exercice 23">
+<a class="evitement" href="#contenu">Aller au contenu</a>
+
+<header class="barre">
+  <nav class="ariane" aria-label="Fil d'Ariane">
+    <a href="../../../index.html"><svg class="icone-ariane" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 12 4l9 7"/><path d="M5 9.5V20h14V9.5"/><path d="M10 20v-6h4v6"/></svg><span>Maison</span></a><span class="sep" aria-hidden="true">›</span>
+    <a href="../index.html">Analyse 3</a><span class="sep" aria-hidden="true">›</span>
+    <span aria-current="page">Corrigé · Devoir — exercice 23</span>
+  </nav>
+  <div class="barre-actions">
+    <button type="button" class="btn" data-ouvrir="formulaire"><span class="btn-sigma" aria-hidden="true">Σ</span> Formulaire</button>
+    <a class="btn btn-discret" href="../../../assets/pdf/e2-ana3/devoir-analyse3-exercice-23.pdf" target="_blank" rel="noopener">PDF</a>
+    <button type="button" class="btn-icone" data-theme-bascule aria-label="Basculer clair / sombre"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 4a8 8 0 0 1 0 16z" fill="currentColor"/></svg></button>
+  </div>
+</header>
+<div class="cadre">
+  <aside class="sommaire" aria-label="Sommaire">
+    <details class="sommaire-details" open>
+      <summary><span>Sommaire</span><span class="sommaire-prog" data-progression-texte>0 / 3</span></summary>
+      <ol class="sommaire-liste"><li data-cible="a-x-mathrm-d-y-x-y-mathrm-d-x"><div class="sommaire-ligne"><a href="#a-x-mathrm-d-y-x-y-mathrm-d-x"><span class="num num-vide">·</span>a)  <span class="km" data-tex="x\,\mathrm{d}y=(x+y)\,\mathrm{d}x">x\,\mathrm{d}y=(x+y)\,\mathrm{d}x</span></a><label class="revise-mini" title="Marquer « a) x\,\mathrm{d}y=(x+y)\,\mathrm{d}x » comme révisé"><input type="checkbox" data-section="a-x-mathrm-d-y-x-y-mathrm-d-x" aria-label="Révisé : a) x\,\mathrm{d}y=(x+y)\,\mathrm{d}x"><span class="revise-coche" aria-hidden="true"></span></label></div></li><li data-cible="b-dfrac-mathrm-d-y-mathrm-d-x-dfrac-x-2-xy-y-2-xy"><div class="sommaire-ligne"><a href="#b-dfrac-mathrm-d-y-mathrm-d-x-dfrac-x-2-xy-y-2-xy"><span class="num num-vide">·</span>b)  <span class="km" data-tex="\dfrac{\mathrm{d}y}{\mathrm{d}x}=\dfrac{x^{2}-xy+y^{2}}{xy}">\dfrac{\mathrm{d}y}{\mathrm{d}x}=\dfrac{x^{2}-xy+y^{2}}{xy}</span></a><label class="revise-mini" title="Marquer « b) \dfrac{\mathrm{d}y}{\mathrm{d}x}=\dfrac{x^{2}-xy+y^{2}}{xy} » comme révisé"><input type="checkbox" data-section="b-dfrac-mathrm-d-y-mathrm-d-x-dfrac-x-2-xy-y-2-xy" aria-label="Révisé : b) \dfrac{\mathrm{d}y}{\mathrm{d}x}=\dfrac{x^{2}-xy+y^{2}}{xy}"><span class="revise-coche" aria-hidden="true"></span></label></div></li><li data-cible="c-y-dfrac-y-x-sqrt-xy"><div class="sommaire-ligne"><a href="#c-y-dfrac-y-x-sqrt-xy"><span class="num num-vide">·</span>c)  <span class="km" data-tex="y&#x27;=\dfrac{y}{x+\sqrt{xy}}">y&#x27;=\dfrac{y}{x+\sqrt{xy}}</span></a><label class="revise-mini" title="Marquer « c) y&#x27;=\dfrac{y}{x+\sqrt{xy}} » comme révisé"><input type="checkbox" data-section="c-y-dfrac-y-x-sqrt-xy" aria-label="Révisé : c) y&#x27;=\dfrac{y}{x+\sqrt{xy}}"><span class="revise-coche" aria-hidden="true"></span></label></div></li></ol>
+    </details>
+  </aside>
+  <main id="contenu">
+    <section class="hero">
+      <div class="hero-papier" aria-hidden="true"></div>
+      <div class="hero-tete">
+        <a class="hero-piece" href="../index.html"><svg class="icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3c-2 0-3 1-3 3v12c0 2-1 3-3 3"/><path d="M15 9h5M17.5 6.5v5"/></svg><span>Analyse 3</span><span class="hero-aile">Aile Sciences</span></a>
+        <div class="anneau" data-anneau role="img" aria-label="Progression"><span data-progression-pourcent>0 %</span></div>
+      </div>
+      <p class="hero-entete">E2-ANA3 — Analyse 3 · Exercice 23 — résolution détaillée</p>
+      <h1 class="visuellement-cache">Analyse 3 · Corrigé · Devoir — exercice 23</h1>
+      <div class="hero-intro"><p><span class="t-titre"><span class="gras"><span style="color:var(--c-heia)">Exercice 23 — équations différentielles homogènes</span></span></span></p>
+<p>Série « Équations différentielles », exercices 23 a, b et c · E2-ANA3, F. Yerly · dû le mercredi 07.10.2026 à 10h15</p>
+<aside class="carte carte-retenir"><div class="carte-tete"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></svg><span class="carte-type">À retenir</span></div><div class="carte-corps"><p><strong>Méthode.</strong> Les trois équations s'écrivent <span class="km" data-tex="y&#x27;=f(y/x)">y&#x27;=f(y/x)</span> : elles sont <em>homogènes</em> (degré <span class="km" data-tex="0">0</span> en <span class="km" data-tex="(x,y)">(x,y)</span>). Sur un intervalle où <span class="km" data-tex="x\ne 0">x\ne 0</span> on pose</p>
+<div class="km km-d" data-tex="v=\frac{y}{x},\qquad y=xv,\qquad y&#x27;=v+xv&#x27;,">v=\frac{y}{x},\qquad y=xv,\qquad y&#x27;=v+xv&#x27;,</div>
+<p>ce qui transforme l'équation en une équation <em>à variables séparables</em> en <span class="km" data-tex="v">v</span> et <span class="km" data-tex="x">x</span>. On sépare, on intègre, puis on revient à <span class="km" data-tex="y">y</span> par <span class="km" data-tex="v=y/x">v=y/x</span>. Les constantes sont indépendantes d'une partie à l'autre.</p></div></aside></div>
+      <div class="hero-puces"><span class="puce puce-te puce-attente">Date du TE : pas encore annoncée</span><span class="puce puce-corrige">Corrigé</span><span class="puce">3 sections</span><span class="puce">3 formules</span></div>
+    </section>
+    <section class="station station-normale" id="a-x-mathrm-d-y-x-y-mathrm-d-x" aria-labelledby="a-x-mathrm-d-y-x-y-mathrm-d-x-t"><header class="station-tete"><span class="station-num station-num-vide" aria-hidden="true">✦</span><h2 id="a-x-mathrm-d-y-x-y-mathrm-d-x-t">a)  <span class="km" data-tex="x\,\mathrm{d}y=(x+y)\,\mathrm{d}x">x\,\mathrm{d}y=(x+y)\,\mathrm{d}x</span></h2><label class="revise"><input type="checkbox" data-section="a-x-mathrm-d-y-x-y-mathrm-d-x"><span class="revise-coche" aria-hidden="true"></span><span class="revise-texte">Révisé</span></label></header><div class="station-corps"><p><strong>Énoncé.</strong>   <span class="km" data-tex="x\,y&#x27;=x+y">x\,y&#x27;=x+y</span>, soit, pour <span class="km" data-tex="x\ne 0">x\ne 0</span> :</p>
+<div class="km km-d" data-tex="y&#x27;=1+\frac{y}{x}.">y&#x27;=1+\frac{y}{x}.</div>
+<p><strong><span style="color:var(--c-heia)">1. Substitution.</span></strong></p>
+<p>Avec <span class="km" data-tex="v=y/x">v=y/x</span>, donc <span class="km" data-tex="y=xv">y=xv</span> et <span class="km" data-tex="y&#x27;=v+xv&#x27;">y&#x27;=v+xv&#x27;</span> :</p>
+<div class="km km-d" data-tex="v+xv&#x27;=1+v.">v+xv&#x27;=1+v.</div>
+<p><strong><span style="color:var(--c-heia)">2. Séparation.</span></strong></p>
+<p>Le terme <span class="km" data-tex="v">v</span> s'élimine :</p>
+<div class="km km-d" data-tex="xv&#x27;=1\quad\Longleftrightarrow\quad v&#x27;=\frac{1}{x}
+ \quad\Longleftrightarrow\quad \mathrm{d}v=\frac{\mathrm{d}x}{x}.">xv&#x27;=1\quad\Longleftrightarrow\quad v&#x27;=\frac{1}{x}
+ \quad\Longleftrightarrow\quad \mathrm{d}v=\frac{\mathrm{d}x}{x}.</div>
+<p><strong><span style="color:var(--c-heia)">3. Intégration.</span></strong></p>
+<div class="km km-d" data-tex="v=\int\frac{\mathrm{d}x}{x}=\ln|x|+C.">v=\int\frac{\mathrm{d}x}{x}=\ln|x|+C.</div>
+<p><strong><span style="color:var(--c-heia)">4. Retour à <span class="km" data-tex="y">y</span>.</span></strong></p>
+<p><span class="km" data-tex="y=xv">y=xv</span> :</p>
+<div class="formule"><span class="formule-etiquette">Formule</span><div class="km km-d" data-tex="y(x)=x\bigl(\ln|x|+C\bigr)=x\ln|x|+Cx,\qquad C\in\mathbb R.">y(x)=x\bigl(\ln|x|+C\bigr)=x\ln|x|+Cx,\qquad C\in\mathbb R.</div></div>
+<p><strong><span style="color:var(--c-heia)">Domaine et remarques.</span></strong></p>
+<p>L'intervalle de validité ne doit pas contenir <span class="km" data-tex="x=0">x=0</span> (on a divisé par <span class="km" data-tex="x">x</span> et <span class="km" data-tex="\ln|x|">\ln|x|</span> explose en <span class="km" data-tex="0">0</span>) : on travaille sur <span class="km" data-tex="]0,+\infty[">]0,+\infty[</span> ou <span class="km" data-tex="]-\infty,0[">]-\infty,0[</span>. Aucune solution singulière : <span class="km" data-tex="v&#x27;=1/x">v&#x27;=1/x</span> n'a pas de zéro du dénominateur autre que <span class="km" data-tex="x=0">x=0</span>.</p>
+<p><strong><span style="color:var(--c-heia)">Vérification.</span></strong></p>
+<p><span class="km" data-tex="y&#x27;=\ln|x|+1+C">y&#x27;=\ln|x|+1+C</span>, d'où <span class="km" data-tex="x y&#x27;=x\ln|x|+x+Cx=x+y">x y&#x27;=x\ln|x|+x+Cx=x+y</span>. <strong><span style="color:var(--c-okgreen)">(vérifié)</span></strong></p></div></section><section class="station station-normale" id="b-dfrac-mathrm-d-y-mathrm-d-x-dfrac-x-2-xy-y-2-xy" aria-labelledby="b-dfrac-mathrm-d-y-mathrm-d-x-dfrac-x-2-xy-y-2-xy-t"><header class="station-tete"><span class="station-num station-num-vide" aria-hidden="true">✦</span><h2 id="b-dfrac-mathrm-d-y-mathrm-d-x-dfrac-x-2-xy-y-2-xy-t">b)  <span class="km" data-tex="\dfrac{\mathrm{d}y}{\mathrm{d}x}=\dfrac{x^{2}-xy+y^{2}}{xy}">\dfrac{\mathrm{d}y}{\mathrm{d}x}=\dfrac{x^{2}-xy+y^{2}}{xy}</span></h2><label class="revise"><input type="checkbox" data-section="b-dfrac-mathrm-d-y-mathrm-d-x-dfrac-x-2-xy-y-2-xy"><span class="revise-coche" aria-hidden="true"></span><span class="revise-texte">Révisé</span></label></header><div class="station-corps"><p><strong>Énoncé.</strong>   <span class="km" data-tex="y&#x27;=\dfrac{x^{2}-xy+y^{2}}{xy}">y&#x27;=\dfrac{x^{2}-xy+y^{2}}{xy}</span>. Le membre de droite se réécrit, terme à terme, en fonction de <span class="km" data-tex="v=y/x">v=y/x</span> :</p>
+<div class="km km-d" data-tex="\frac{x^{2}-xy+y^{2}}{xy}
+ =\frac{x^{2}}{xy}-\frac{xy}{xy}+\frac{y^{2}}{xy}
+ =\frac{x}{y}-1+\frac{y}{x}
+ =\frac{1}{v}-1+v.">\frac{x^{2}-xy+y^{2}}{xy}
+ =\frac{x^{2}}{xy}-\frac{xy}{xy}+\frac{y^{2}}{xy}
+ =\frac{x}{y}-1+\frac{y}{x}
+ =\frac{1}{v}-1+v.</div>
+<p><strong><span style="color:var(--c-heia)">1. Substitution.</span></strong></p>
+<p><span class="km" data-tex="y=xv">y=xv</span>, <span class="km" data-tex="y&#x27;=v+xv&#x27;">y&#x27;=v+xv&#x27;</span> :</p>
+<div class="km km-d" data-tex="v+xv&#x27;=\frac{1}{v}-1+v
+ \quad\Longrightarrow\quad
+ xv&#x27;=\frac{1}{v}-1=\frac{1-v}{v}.">v+xv&#x27;=\frac{1}{v}-1+v
+ \quad\Longrightarrow\quad
+ xv&#x27;=\frac{1}{v}-1=\frac{1-v}{v}.</div>
+<p><strong><span style="color:var(--c-heia)">2. Séparation.</span></strong></p>
+<div class="km km-d" data-tex="\frac{v}{1-v}\,\mathrm{d}v=\frac{\mathrm{d}x}{x}.">\frac{v}{1-v}\,\mathrm{d}v=\frac{\mathrm{d}x}{x}.</div>
+<p><strong><span style="color:var(--c-heia)">3. Intégration du membre de gauche.</span></strong></p>
+<p>On décompose en éléments simples :</p>
+<div class="km km-d" data-tex="\frac{v}{1-v}=-1+\frac{1}{1-v},
+ \qquad\text{d&#x27;où}\qquad
+ \int\frac{v}{1-v}\,\mathrm{d}v=-v-\ln|1-v|.">\frac{v}{1-v}=-1+\frac{1}{1-v},
+ \qquad\text{d&#x27;où}\qquad
+ \int\frac{v}{1-v}\,\mathrm{d}v=-v-\ln|1-v|.</div>
+<p><strong><span style="color:var(--c-heia)">4. Intégration complète.</span></strong></p>
+<div class="km km-d" data-tex="-v-\ln|1-v|=\ln|x|+C_0
+ \quad\Longrightarrow\quad
+ v+\ln|1-v|+\ln|x|=-C_0.">-v-\ln|1-v|=\ln|x|+C_0
+ \quad\Longrightarrow\quad
+ v+\ln|1-v|+\ln|x|=-C_0.</div>
+<p>Or <span class="km" data-tex="x(1-v)=x\left(1-\frac{y}{x}\right)=x-y">x(1-v)=x\left(1-\frac{y}{x}\right)=x-y</span>, donc <span class="km" data-tex="\ln|1-v|+\ln|x|=\ln|x-y|">\ln|1-v|+\ln|x|=\ln|x-y|</span> et l'on obtient l'intégrale première</p>
+<div class="km km-d" data-tex="v+\ln|x-y|=C_1.">v+\ln|x-y|=C_1.</div>
+<p><strong><span style="color:var(--c-heia)">5. Forme exponentielle.</span></strong></p>
+<p>On isole <span class="km" data-tex="\ln|x-y|=C_1-v">\ln|x-y|=C_1-v</span> et on passe à l'exponentielle :</p>
+<div class="km km-d" data-tex="|x-y|=e^{C_1}e^{-v}
+ \quad\Longrightarrow\quad
+ e^{v}\,|x-y|=e^{C_1}=A,">|x-y|=e^{C_1}e^{-v}
+ \quad\Longrightarrow\quad
+ e^{v}\,|x-y|=e^{C_1}=A,</div>
+<p>avec <span class="km" data-tex="A&gt;0">A&gt;0</span> ; en absorbant le signe dans la constante on écrit la famille complète :</p>
+<div class="formule"><span class="formule-etiquette">Formule</span><div class="km km-d" data-tex="e^{\,y/x}\,(x-y)=A,\qquad A\in\mathbb R.">e^{\,y/x}\,(x-y)=A,\qquad A\in\mathbb R.</div></div>
+<p><strong><span style="color:var(--c-heia)">Domaine et cas singulier.</span></strong></p>
+<p>Il faut <span class="km" data-tex="x\ne0">x\ne0</span> (division par <span class="km" data-tex="x">x</span>), <span class="km" data-tex="y\ne0">y\ne0</span> (le membre de droite a <span class="km" data-tex="xy">xy</span> au dénominateur) et <span class="km" data-tex="x\ne y">x\ne y</span> (division par <span class="km" data-tex="1-v">1-v</span> à l'étape 2). Le cas écarté <span class="km" data-tex="v=1">v=1</span>, c'est-à-dire <span class="km" data-tex="y=x">y=x</span>, vérifie pourtant l'équation originale : <span class="km" data-tex="y&#x27;=1">y&#x27;=1</span> et <span class="km" data-tex="\dfrac{x^{2}-x^{2}+x^{2}}{x^{2}}=1">\dfrac{x^{2}-x^{2}+x^{2}}{x^{2}}=1</span>. Cette solution particulière correspond à <span class="km" data-tex="A=0">A=0</span> dans la famille (car <span class="km" data-tex="x-y=0">x-y=0</span>) : elle n'est donc pas perdue, elle est la valeur limite <span class="km" data-tex="A\to0">A\to0</span>. On retrouve bien le résultat du corrigé officiel, <span class="km" data-tex="e^{y/x}(x-y)=A">e^{y/x}(x-y)=A</span>.</p>
+<p><strong><span style="color:var(--c-heia)">Vérification.</span></strong></p>
+<p>Posons <span class="km" data-tex="\Phi(x,y)=e^{y/x}(x-y)">\Phi(x,y)=e^{y/x}(x-y)</span>. Le long d'une solution, <span class="km" data-tex="\Phi">\Phi</span> est constante, donc <span class="km" data-tex="y&#x27;=-\Phi_x/\Phi_y">y&#x27;=-\Phi_x/\Phi_y</span>. Avec</p>
+<div class="km km-d" data-tex="\Phi_x=e^{y/x}\left(1-\frac{y(x-y)}{x^{2}}\right)
+        =e^{y/x}\,\frac{x^{2}-xy+y^{2}}{x^{2}},
+ \qquad
+ \Phi_y=e^{y/x}\left(\frac{x-y}{x}-1\right)
+        =-\frac{y}{x}\,e^{y/x},">\Phi_x=e^{y/x}\left(1-\frac{y(x-y)}{x^{2}}\right)
+        =e^{y/x}\,\frac{x^{2}-xy+y^{2}}{x^{2}},
+ \qquad
+ \Phi_y=e^{y/x}\left(\frac{x-y}{x}-1\right)
+        =-\frac{y}{x}\,e^{y/x},</div>
+<div class="km km-d" data-tex="-\frac{\Phi_x}{\Phi_y}
+ =\frac{x^{2}-xy+y^{2}}{x^{2}}\cdot\frac{x}{y}
+ =\frac{x^{2}-xy+y^{2}}{xy}. \qquad\textbf{\color{okgreen}(vérifié)}{}">-\frac{\Phi_x}{\Phi_y}
+ =\frac{x^{2}-xy+y^{2}}{x^{2}}\cdot\frac{x}{y}
+ =\frac{x^{2}-xy+y^{2}}{xy}. \qquad\textbf{\color{okgreen}(vérifié)}{}</div></div></section><section class="station station-normale" id="c-y-dfrac-y-x-sqrt-xy" aria-labelledby="c-y-dfrac-y-x-sqrt-xy-t"><header class="station-tete"><span class="station-num station-num-vide" aria-hidden="true">✦</span><h2 id="c-y-dfrac-y-x-sqrt-xy-t">c)  <span class="km" data-tex="y&#x27;=\dfrac{y}{x+\sqrt{xy}}">y&#x27;=\dfrac{y}{x+\sqrt{xy}}</span></h2><label class="revise"><input type="checkbox" data-section="c-y-dfrac-y-x-sqrt-xy"><span class="revise-coche" aria-hidden="true"></span><span class="revise-texte">Révisé</span></label></header><div class="station-corps"><p><strong>Énoncé.</strong>   <span class="km" data-tex="y&#x27;=\dfrac{y}{x+\sqrt{xy}}">y&#x27;=\dfrac{y}{x+\sqrt{xy}}</span>. La racine impose <span class="km" data-tex="xy\ge 0">xy\ge 0</span> et le dénominateur <span class="km" data-tex="x+\sqrt{xy}\ne 0">x+\sqrt{xy}\ne 0</span> ; on travaille sur le quadrant <span class="km" data-tex="x&gt;0">x&gt;0</span>, <span class="km" data-tex="y&gt;0">y&gt;0</span>.</p>
+<p><strong><span style="color:var(--c-heia)">1. Mise sous forme homogène.</span></strong></p>
+<p>En divisant numérateur et dénominateur par <span class="km" data-tex="x">x</span> (non nul), et comme <span class="km" data-tex="\sqrt{xy}/x=\sqrt{y/x}">\sqrt{xy}/x=\sqrt{y/x}</span> pour <span class="km" data-tex="x&gt;0">x&gt;0</span> :</p>
+<div class="km km-d" data-tex="y&#x27;=\frac{y/x}{1+\sqrt{xy}/x}=\frac{v}{1+\sqrt{v}},
+ \qquad v=\frac{y}{x}.">y&#x27;=\frac{y/x}{1+\sqrt{xy}/x}=\frac{v}{1+\sqrt{v}},
+ \qquad v=\frac{y}{x}.</div>
+<p><strong><span style="color:var(--c-heia)">2. Substitution.</span></strong></p>
+<p><span class="km" data-tex="y=xv">y=xv</span>, <span class="km" data-tex="y&#x27;=v+xv&#x27;">y&#x27;=v+xv&#x27;</span> :</p>
+<div class="km km-d" data-tex="v+xv&#x27;=\frac{v}{1+\sqrt v}
+ \quad\Longrightarrow\quad
+ xv&#x27;=\frac{v}{1+\sqrt v}-v
+      =\frac{v-v-v\sqrt v}{1+\sqrt v}
+      =-\frac{v\sqrt v}{1+\sqrt v}.">v+xv&#x27;=\frac{v}{1+\sqrt v}
+ \quad\Longrightarrow\quad
+ xv&#x27;=\frac{v}{1+\sqrt v}-v
+      =\frac{v-v-v\sqrt v}{1+\sqrt v}
+      =-\frac{v\sqrt v}{1+\sqrt v}.</div>
+<p><strong><span style="color:var(--c-heia)">3. Séparation.</span></strong></p>
+<div class="km km-d" data-tex="\frac{1+\sqrt v}{v\sqrt v}\,\mathrm{d}v=-\frac{\mathrm{d}x}{x}
+ \quad\Longleftrightarrow\quad
+ \left(v^{-3/2}+v^{-1}\right)\mathrm{d}v=-\frac{\mathrm{d}x}{x},">\frac{1+\sqrt v}{v\sqrt v}\,\mathrm{d}v=-\frac{\mathrm{d}x}{x}
+ \quad\Longleftrightarrow\quad
+ \left(v^{-3/2}+v^{-1}\right)\mathrm{d}v=-\frac{\mathrm{d}x}{x},</div>
+<p>où l'on a utilisé <span class="km" data-tex="\dfrac{1+\sqrt v}{v^{3/2}}=\dfrac{1}{v^{3/2}}+\dfrac{1}{v}">\dfrac{1+\sqrt v}{v^{3/2}}=\dfrac{1}{v^{3/2}}+\dfrac{1}{v}</span>.</p>
+<p><strong><span style="color:var(--c-heia)">4. Intégration.</span></strong></p>
+<p>Pour <span class="km" data-tex="v&gt;0">v&gt;0</span> :</p>
+<div class="km km-d" data-tex="\int\left(v^{-3/2}+v^{-1}\right)\mathrm{d}v=-2v^{-1/2}+\ln v,
+ \qquad
+ \int-\frac{\mathrm{d}x}{x}=-\ln x,">\int\left(v^{-3/2}+v^{-1}\right)\mathrm{d}v=-2v^{-1/2}+\ln v,
+ \qquad
+ \int-\frac{\mathrm{d}x}{x}=-\ln x,</div>
+<p>d'où</p>
+<div class="km km-d" data-tex="-2v^{-1/2}+\ln v=-\ln x+C_0
+ \quad\Longrightarrow\quad
+ 2v^{-1/2}=\ln v+\ln x-C_0=\ln(vx)-C_0 .">-2v^{-1/2}+\ln v=-\ln x+C_0
+ \quad\Longrightarrow\quad
+ 2v^{-1/2}=\ln v+\ln x-C_0=\ln(vx)-C_0 .</div>
+<p><strong><span style="color:var(--c-heia)">5. Retour à <span class="km" data-tex="y">y</span>.</span></strong></p>
+<p>Comme <span class="km" data-tex="vx=y">vx=y</span> et <span class="km" data-tex="v^{-1/2}=(y/x)^{-1/2}=\sqrt{x/y}">v^{-1/2}=(y/x)^{-1/2}=\sqrt{x/y}</span> :</p>
+<div class="km km-d" data-tex="2\sqrt{\frac{x}{y}}=\ln y-C_0
+ \quad\Longrightarrow\quad
+ \ln y=2\sqrt{\frac{x}{y}}-C_0
+ \quad\Longrightarrow\quad
+ y=e^{-C_0}\,e^{\,2\sqrt{x/y}}.">2\sqrt{\frac{x}{y}}=\ln y-C_0
+ \quad\Longrightarrow\quad
+ \ln y=2\sqrt{\frac{x}{y}}-C_0
+ \quad\Longrightarrow\quad
+ y=e^{-C_0}\,e^{\,2\sqrt{x/y}}.</div>
+<p>En posant <span class="km" data-tex="A=e^{-C_0}">A=e^{-C_0}</span> (constante <span class="km" data-tex="&gt;0">&gt;0</span>, absorbée dans une constante réelle par continuité) :</p>
+<div class="formule"><span class="formule-etiquette">Formule</span><div class="km km-d" data-tex="e^{\,2\sqrt{x/y}}=A\,y,\qquad A\in\mathbb R.">e^{\,2\sqrt{x/y}}=A\,y,\qquad A\in\mathbb R.</div></div>
+<p><strong><span style="color:var(--c-heia)">Domaine et remarques.</span></strong></p>
+<p>Les manipulations exigent <span class="km" data-tex="x&gt;0">x&gt;0</span> et <span class="km" data-tex="y&gt;0">y&gt;0</span> (racine de <span class="km" data-tex="xy">xy</span> et <span class="km" data-tex="\ln y">\ln y</span>). Il n'y a pas de solution singulière supplémentaire : <span class="km" data-tex="v=0">v=0</span> (<span class="km" data-tex="y=0">y=0</span>) annule le membre de droite et n'est pas admissible dans le quadrant étudié. On retrouve le résultat du corrigé officiel, <span class="km" data-tex="e^{2\sqrt{x/y}}=Ay">e^{2\sqrt{x/y}}=Ay</span>.</p>
+<p><strong><span style="color:var(--c-heia)">Vérification.</span></strong></p>
+<p>Posons <span class="km" data-tex="\Phi(x,y)=\dfrac{e^{\,2\sqrt{x/y}}}{y}">\Phi(x,y)=\dfrac{e^{\,2\sqrt{x/y}}}{y}</span> (de sorte que la famille s'écrive <span class="km" data-tex="\Phi=A">\Phi=A</span>). Alors <span class="km" data-tex="y&#x27;=-\Phi_x/\Phi_y">y&#x27;=-\Phi_x/\Phi_y</span>. Avec <span class="km" data-tex="u=2\sqrt{x/y}">u=2\sqrt{x/y}</span> : <span class="km" data-tex="u_x=\dfrac{1}{\sqrt{xy}}">u_x=\dfrac{1}{\sqrt{xy}}</span> et <span class="km" data-tex="u_y=-\dfrac{\sqrt x}{y^{3/2}}">u_y=-\dfrac{\sqrt x}{y^{3/2}}</span>, d'où</p>
+<div class="km km-d" data-tex="\Phi_x=\frac{e^{u}}{y\sqrt{xy}},
+ \qquad
+ \Phi_y=-\frac{e^{u}\left(\sqrt x+\sqrt y\right)}{y^{5/2}},">\Phi_x=\frac{e^{u}}{y\sqrt{xy}},
+ \qquad
+ \Phi_y=-\frac{e^{u}\left(\sqrt x+\sqrt y\right)}{y^{5/2}},</div>
+<div class="km km-d" data-tex="-\frac{\Phi_x}{\Phi_y}
+ =\frac{y^{5/2}}{y\sqrt{xy}\left(\sqrt x+\sqrt y\right)}
+ =\frac{y}{\sqrt x\left(\sqrt x+\sqrt y\right)}
+ =\frac{y}{x+\sqrt{xy}}. \qquad\textbf{\color{okgreen}(vérifié)}{}">-\frac{\Phi_x}{\Phi_y}
+ =\frac{y^{5/2}}{y\sqrt{xy}\left(\sqrt x+\sqrt y\right)}
+ =\frac{y}{\sqrt x\left(\sqrt x+\sqrt y\right)}
+ =\frac{y}{x+\sqrt{xy}}. \qquad\textbf{\color{okgreen}(vérifié)}{}</div>
+<aside class="carte carte-retenir"><div class="carte-tete"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></svg><span class="carte-type">À retenir</span></div><div class="carte-corps"><strong>Contrôles effectués.</strong> Les trois familles ont été vérifiées de deux façons indépendantes : (1) substitution symbolique dans l'équation d'origine et différentiation implicite de l'intégrale première (SymPy) ; (2) comparaison de la solution explicite — ou de la trajectoire implicite — à une intégration numérique de l'EDO (SciPy, <code>solve_ivp</code>), écart relatif inférieur à <span class="km" data-tex="10^{-10}">10^{-10}</span>. Le script est <code>E2-ANA3/scripts/verifier_devoir_ex23.py</code>.</div></aside></div></section>
+    <footer class="pied">
+      <p>Converti depuis <code>Semestre-3/E2-ANA3/Fiches-Revision/devoir-analyse3-exercice-23.tex</code> · <a href="../../../assets/pdf/e2-ana3/devoir-analyse3-exercice-23.pdf" target="_blank" rel="noopener">version imprimable (PDF)</a></p>
+    </footer>
+  </main>
+</div>
+<dialog id="formulaire" class="dialogue" aria-labelledby="formulaire-titre">
+  <header class="dialogue-tete"><h2 id="formulaire-titre"><span class="btn-sigma" aria-hidden="true">Σ</span> Formulaire — Devoir — exercice 23</h2>
+  <button type="button" class="btn-icone" data-fermer aria-label="Fermer">✕</button></header>
+  <div class="dialogue-corps"><section class="formulaire-groupe"><h3><a href="#a-x-mathrm-d-y-x-y-mathrm-d-x" data-fermer>a) x\,\mathrm{d}y=(x+y)\,\mathrm{d}x</a></h3><div class="formule"><div class="km km-d" data-tex="y(x)=x\bigl(\ln|x|+C\bigr)=x\ln|x|+Cx,\qquad C\in\mathbb R.">y(x)=x\bigl(\ln|x|+C\bigr)=x\ln|x|+Cx,\qquad C\in\mathbb R.</div></div></section><section class="formulaire-groupe"><h3><a href="#b-dfrac-mathrm-d-y-mathrm-d-x-dfrac-x-2-xy-y-2-xy" data-fermer>b) \dfrac{\mathrm{d}y}{\mathrm{d}x}=\dfrac{x^{2}-xy+y^{2}}{xy}</a></h3><div class="formule"><div class="km km-d" data-tex="e^{\,y/x}\,(x-y)=A,\qquad A\in\mathbb R.">e^{\,y/x}\,(x-y)=A,\qquad A\in\mathbb R.</div></div></section><section class="formulaire-groupe"><h3><a href="#c-y-dfrac-y-x-sqrt-xy" data-fermer>c) y&#x27;=\dfrac{y}{x+\sqrt{xy}}</a></h3><div class="formule"><div class="km km-d" data-tex="e^{\,2\sqrt{x/y}}=A\,y,\qquad A\in\mathbb R.">e^{\,2\sqrt{x/y}}=A\,y,\qquad A\in\mathbb R.</div></div></section></div>
+</dialog>
+<dialog id="loupe" class="dialogue loupe" aria-label="Figure agrandie">
+  <button type="button" class="btn-icone loupe-fermer" data-fermer aria-label="Fermer">✕</button>
+  <img alt="">
+</dialog>
+
+</body>
+</html>
