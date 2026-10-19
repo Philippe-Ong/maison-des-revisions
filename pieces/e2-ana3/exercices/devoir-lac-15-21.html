@@ -6,18 +6,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Analyse 3 · Corrigé · Devoir — lac et exercices 15 à 21</title>
 <meta name="description" content="Analyse 3 — Devoir — lac et exercices 15 à 21 (Modélisation et équations différentielles)">
-<link rel="icon" href="../../../assets/favicon.svg?v=012e46bcde" type="image/svg+xml">
+<link rel="icon" href="../../../assets/favicon.svg?v=137f3e9a14" type="image/svg+xml">
 <script>try{var t=localStorage.getItem("maison:theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
 
-<link rel="stylesheet" href="../../../assets/styles.css?v=012e46bcde">
+<link rel="stylesheet" href="../../../assets/styles.css?v=137f3e9a14">
 <style>:root{--c-heia:#00548C;--c-okgreen:#00783C;--c-warnred:#B00020}@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--c-heia:color-mix(in srgb,#00548C 50%,#fff);--c-okgreen:color-mix(in srgb,#00783C 50%,#fff);--c-warnred:color-mix(in srgb,#B00020 50%,#fff)}}:root[data-theme=dark]{--c-heia:color-mix(in srgb,#00548C 50%,#fff);--c-okgreen:color-mix(in srgb,#00783C 50%,#fff);--c-warnred:color-mix(in srgb,#B00020 50%,#fff)}</style>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
 
-<script defer src="../../../assets/maison.js?v=012e46bcde"></script>
+<script defer src="../../../assets/maison.js?v=137f3e9a14"></script>
 </head>
 <body class="page-resume" style="--piece:#4338CA" data-cle="E2-ANA3/exercices/devoir-lac-15-21" data-sections='["1-exemple-lac-exemple-n-circ-2-du-script", "2-exercice-15-detritus-en-foret", "3-exercice-16-croissance-de-von-bertalanffy", "4-exercice-17-balle-dans-un-banc-de-sable", "5-exercice-18-propagation-d-une-rumeur", "6-exercice-21-solution-generale", "7-recapitulatif"]' data-url-racine="pieces/e2-ana3/exercices/devoir-lac-15-21.html" data-titre="Analyse 3 · Corrigé · Devoir — lac et exercices 15 à 21">
 <a class="evitement" href="#contenu">Aller au contenu</a>
@@ -52,7 +52,7 @@
       <h1 class="visuellement-cache">Analyse 3 · Corrigé · Devoir — lac et exercices 15 à 21</h1>
       <div class="hero-intro"><div class="centre"><span class="t-titre"><strong><span style="color:var(--c-heia)">Analyse 3 — Devoir</span></strong><br> <span class="t-grand">Lac Énergie <span class="km" data-tex="\cdot">\cdot</span> Exercices 15 à 18 <span class="km" data-tex="\cdot">\cdot</span> Exercice 21</span></span><br><span class="t-grand">HEIA-FR — E2-ANA3 — Semestre 3, automne 2026</span></div>
 <div class="encadre-bloc"><strong>Objet.</strong> Ce document traite : (1) l'exemple « Lac » du script d'EDO ; (2) les exercices 15, 16, 17 et 18 de la série <em>Équations différentielles</em> ; (3) l'exercice 21 de la même série.<br> <strong>Règle de rédaction :</strong> le détail des calculs est exigé — une réponse non développée est considérée comme fausse. Tous les résultats ci-dessous sont vérifiés (<code>SymPy</code> + intégration numérique).</div></div>
-      <div class="hero-puces"><span class="puce puce-te puce-attente">Date du TE : pas encore annoncée</span><span class="puce puce-corrige">Corrigé</span><span class="puce">7 sections</span></div>
+      <div class="hero-puces"><span class="puce puce-te"><svg class="icone-puce" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 21V4M4 4h11l-2 3.5L15 11H4"/><path d="M18 21v-6M14 21h8"/></svg>TE1 · mer. 11.11 · <span data-compte-a-rebours="2026-11-11">J-23</span></span><span class="puce puce-corrige">Corrigé</span><span class="puce">7 sections</span></div>
     </section>
     <section class="station station-normale" id="1-exemple-lac-exemple-n-circ-2-du-script" aria-labelledby="1-exemple-lac-exemple-n-circ-2-du-script-t"><header class="station-tete"><span class="station-num station-num-vide" aria-hidden="true">✦</span><h2 id="1-exemple-lac-exemple-n-circ-2-du-script-t">1. Exemple « Lac » (exemple <span class="km" data-tex="n^\circ 2">n^\circ 2</span> du script)</h2><label class="revise"><input type="checkbox" data-section="1-exemple-lac-exemple-n-circ-2-du-script"><span class="revise-coche" aria-hidden="true"></span><span class="revise-texte">Révisé</span></label></header><div class="station-corps"><h3 id="1-exemple-lac-exemple-n-circ-2-du-script-1-1-enonce" class="sous-titre">1.1 Énoncé</h3>
 <p>Un ruisseau se déverse à raison de <span class="km" data-tex="500\ \mathrm{m^3/jour}">500\ \mathrm{m^3/jour}</span> dans un lac dont le volume est de <span class="km" data-tex="10^7\ \mathrm{m^3}">10^7\ \mathrm{m^3}</span>. Le débit de décharge du lac est de <span class="km" data-tex="480\ \mathrm{m^3/jour}">480\ \mathrm{m^3/jour}</span>.</p>

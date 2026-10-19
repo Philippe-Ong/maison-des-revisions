@@ -6,18 +6,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Analyse 3 · Corrigé · Fiche de résolution — exercices 1 à 6</title>
 <meta name="description" content="Analyse 3 — Fiche de résolution — exercices 1 à 6 (Série de révision, pas à pas)">
-<link rel="icon" href="../../../assets/favicon.svg?v=012e46bcde" type="image/svg+xml">
+<link rel="icon" href="../../../assets/favicon.svg?v=137f3e9a14" type="image/svg+xml">
 <script>try{var t=localStorage.getItem("maison:theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
 
-<link rel="stylesheet" href="../../../assets/styles.css?v=012e46bcde">
+<link rel="stylesheet" href="../../../assets/styles.css?v=137f3e9a14">
 <style>:root{--c-heia:#1B3A6B;--c-accent:#D98A2B;--c-pale:#EAF0F8;--c-note:#FFF4E6}@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--c-heia:color-mix(in srgb,#1B3A6B 50%,#fff);--c-accent:color-mix(in srgb,#D98A2B 50%,#fff);--c-pale:color-mix(in srgb,#EAF0F8 50%,#fff);--c-note:color-mix(in srgb,#FFF4E6 50%,#fff)}}:root[data-theme=dark]{--c-heia:color-mix(in srgb,#1B3A6B 50%,#fff);--c-accent:color-mix(in srgb,#D98A2B 50%,#fff);--c-pale:color-mix(in srgb,#EAF0F8 50%,#fff);--c-note:color-mix(in srgb,#FFF4E6 50%,#fff)}</style>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
 
-<script defer src="../../../assets/maison.js?v=012e46bcde"></script>
+<script defer src="../../../assets/maison.js?v=137f3e9a14"></script>
 </head>
 <body class="page-resume" style="--piece:#4338CA" data-cle="E2-ANA3/exercices/resolution-serie-1-6" data-sections='["s1-exercice-1-calcul-de-derivees", "s2-exercice-2-aire-maximale-d-un-rectangle", "s3-exercice-3-planche-tangente-a-f-x-sqrt-x", "s4-exercice-4-calcul-de-primitives", "s5-exercice-5-courbe-definie-implicitement", "s6-exercice-6-deux-voitures", "methodes-a-maitriser"]' data-url-racine="pieces/e2-ana3/exercices/resolution-serie-1-6.html" data-titre="Analyse 3 · Corrigé · Fiche de résolution — exercices 1 à 6">
 <a class="evitement" href="#contenu">Aller au contenu</a>
@@ -54,7 +54,7 @@
 <p><span class="t-titre">Série de révision — Formules et résolutions expliquées</span></p>
 <hr>
 <p>Cette fiche développe les exercices 1 à 6. Les notations et les résultats sont ceux de la série de Florence Yerly. Les constantes d'intégration sont notées <span class="km" data-tex="C">C</span>.</p></div>
-      <div class="hero-puces"><span class="puce puce-te puce-attente">Date du TE : pas encore annoncée</span><span class="puce puce-corrige">Corrigé</span><span class="puce">7 sections</span><span class="puce">6 formules</span></div>
+      <div class="hero-puces"><span class="puce puce-te"><svg class="icone-puce" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 21V4M4 4h11l-2 3.5L15 11H4"/><path d="M18 21v-6M14 21h8"/></svg>TE1 · mer. 11.11 · <span data-compte-a-rebours="2026-11-11">J-23</span></span><span class="puce puce-corrige">Corrigé</span><span class="puce">7 sections</span><span class="puce">6 formules</span></div>
     </section>
     <section class="station station-normale" id="s1-exercice-1-calcul-de-derivees" aria-labelledby="s1-exercice-1-calcul-de-derivees-t"><header class="station-tete"><span class="station-num">1</span><h2 id="s1-exercice-1-calcul-de-derivees-t">Exercice 1 — Calcul de dérivées</h2><label class="revise"><input type="checkbox" data-section="s1-exercice-1-calcul-de-derivees"><span class="revise-coche" aria-hidden="true"></span><span class="revise-texte">Révisé</span></label></header><div class="station-corps"><p><strong>Méthodes mobilisées :</strong> dérivation d'une somme, règle de la chaîne, règle du produit et règle du quotient.</p>
 <div class="formule"><span class="formule-etiquette">Formule</span>Pour <span class="km" data-tex="u=u(x)">u=u(x)</span> et <span class="km" data-tex="v=v(x)">v=v(x)</span> : <span class="km" data-tex="(u+v)&#x27;=u&#x27;+v&#x27;">(u+v)&#x27;=u&#x27;+v&#x27;</span> et <span class="km" data-tex="(uv)&#x27;=u&#x27;v+uv&#x27;">(uv)&#x27;=u&#x27;v+uv&#x27;</span>.<br>Règle du quotient : <span class="km" data-tex="\left(\dfrac{u}{v}\right)&#x27;=\dfrac{u&#x27;v-uv&#x27;}{v^2}">\left(\dfrac{u}{v}\right)&#x27;=\dfrac{u&#x27;v-uv&#x27;}{v^2}</span>.<br>Règle de la chaîne : <span class="km" data-tex="(\cos u)&#x27;=-\sin(u)u&#x27;">(\cos u)&#x27;=-\sin(u)u&#x27;</span> et <span class="km" data-tex="(\ln u)&#x27;=\dfrac{u&#x27;}{u}">(\ln u)&#x27;=\dfrac{u&#x27;}{u}</span>.</div>

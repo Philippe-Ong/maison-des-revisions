@@ -6,18 +6,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Statistiques · Corrigé · Probabilités conditionnelles et Bayes</title>
 <meta name="description" content="Statistiques — Probabilités conditionnelles et Bayes (Corrigé des exemples)">
-<link rel="icon" href="../../../assets/favicon.svg?v=012e46bcde" type="image/svg+xml">
+<link rel="icon" href="../../../assets/favicon.svg?v=137f3e9a14" type="image/svg+xml">
 <script>try{var t=localStorage.getItem("maison:theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
 
-<link rel="stylesheet" href="../../../assets/styles.css?v=012e46bcde">
+<link rel="stylesheet" href="../../../assets/styles.css?v=137f3e9a14">
 <style>:root{--c-heia:#0E5A8A;--c-pale:#EEF5FB;--c-orangeheia:#B86518;--c-palewarm:#FBF3E8}@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--c-heia:color-mix(in srgb,#0E5A8A 50%,#fff);--c-pale:color-mix(in srgb,#EEF5FB 50%,#fff);--c-orangeheia:color-mix(in srgb,#B86518 50%,#fff);--c-palewarm:color-mix(in srgb,#FBF3E8 50%,#fff)}}:root[data-theme=dark]{--c-heia:color-mix(in srgb,#0E5A8A 50%,#fff);--c-pale:color-mix(in srgb,#EEF5FB 50%,#fff);--c-orangeheia:color-mix(in srgb,#B86518 50%,#fff);--c-palewarm:color-mix(in srgb,#FBF3E8 50%,#fff)}</style>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
 
-<script defer src="../../../assets/maison.js?v=012e46bcde"></script>
+<script defer src="../../../assets/maison.js?v=137f3e9a14"></script>
 </head>
 <body class="page-resume" style="--piece:#4D7C0F" data-cle="E2-STAT/exercices/bayes" data-sections='["exemple-14-test-diagnostique-et-formule-de-bayes", "exemple-15-trois-tiroirs-pieces-d-argent-et-d-or", "exemple-crm-1-marques-de-biberons-et-formule-de-bayes", "exemple-crm-2-test-sanguin-et-formule-de-bayes", "exemple-serie1-5-machine-manipulee-correctement-ou-non-proba", "exemple-serie1-7-test-binaire-et-formule-de-bayes", "exemple-39-chien-depisteur-de-drogue-poisson-et-bayes"]' data-url-racine="pieces/e2-stat/exercices/bayes.html" data-titre="Statistiques · Corrigé · Probabilités conditionnelles et Bayes">
 <a class="evitement" href="#contenu">Aller au contenu</a>
@@ -52,7 +52,7 @@
       <h1 class="visuellement-cache">Statistiques · Corrigé · Probabilités conditionnelles et Bayes</h1>
       <div class="hero-intro"><p><span class="gras"><span class="t-titre"><span style="color:var(--c-heia)">Formule de Bayes — exercices corrigés</span></span></span></p>
 <p>Sept exercices : script (14, 15, 39), CRM (1, 2), Série 1 (5, 7). Toutes les sous-questions sont traitées.</p></div>
-      <div class="hero-puces"><span class="puce puce-te"><svg class="icone-puce" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 21V4M4 4h11l-2 3.5L15 11H4"/><path d="M18 21v-6M14 21h8"/></svg>TE1 · jeu. 12.11 · <span data-compte-a-rebours="2026-11-12">J-27</span></span><span class="puce puce-corrige">Corrigé</span><span class="puce">7 sections</span></div>
+      <div class="hero-puces"><span class="puce puce-te"><svg class="icone-puce" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 21V4M4 4h11l-2 3.5L15 11H4"/><path d="M18 21v-6M14 21h8"/></svg>TE1 · jeu. 12.11 · <span data-compte-a-rebours="2026-11-12">J-24</span></span><span class="puce puce-corrige">Corrigé</span><span class="puce">7 sections</span></div>
     </section>
     <section class="station station-normale" id="exemple-14-test-diagnostique-et-formule-de-bayes" aria-labelledby="exemple-14-test-diagnostique-et-formule-de-bayes-t"><header class="station-tete"><span class="station-num station-num-vide" aria-hidden="true">✦</span><h2 id="exemple-14-test-diagnostique-et-formule-de-bayes-t">Exemple 14 — Test diagnostique et formule de Bayes</h2><label class="revise"><input type="checkbox" data-section="exemple-14-test-diagnostique-et-formule-de-bayes"><span class="revise-coche" aria-hidden="true"></span><span class="revise-texte">Révisé</span></label></header><div class="station-corps"><p>Un test diagnostique une maladie avec les proportions suivantes : <span class="km" data-tex="95\,\%">95\,\%</span> des personnes malades réagissent positivement au test, et <span class="km" data-tex="93\,\%">93\,\%</span> des personnes en bonne santé réagissent négativement. On admet que <span class="km" data-tex="5">5</span> personnes sur mille sont atteintes de cette maladie. Après un test positif, quelle est la probabilité d'être réellement malade ?</p>
 <h3 id="exemple-14-test-diagnostique-et-formule-de-bayes-evenements-et-donnees" class="sous-titre">Événements et données</h3>
