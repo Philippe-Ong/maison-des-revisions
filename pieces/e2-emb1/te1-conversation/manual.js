@@ -6,6 +6,12 @@
   const chapters = $$(".manual-chapter");
   const tabs = $$(".manual-tabs a");
   const normal = (s) => s.replace(/\s+/g, " ").trim();
+  function disable(button, value) {
+    button.disabled = value;
+    button.setAttribute("aria-disabled", String(value));
+    if (value) button.setAttribute("data-disabled", "");
+    else button.removeAttribute("data-disabled");
+  }
   function showChapter(id, scroll = false) {
     if (!chapters.some(c => c.id === id)) id = chapters[0].id;
     chapters.forEach(c => c.hidden = c.id !== id);
@@ -80,7 +86,7 @@
       cells.forEach((c,i) => { c.style.opacity = (mode === "FIFO" ? i < step : i >= 8-step) ? ".32" : "1"; });
       if (output) output.textContent = order.slice(0, step) || "—";
       if (count) count.textContent = `${step} / 8`;
-      previous.disabled = step === 0; next.disabled = step === 8;
+      disable(previous, step === 0); disable(next, step === 8);
       modeButtons.forEach(b => { const on = b.getAttribute("aria-label") === mode;
         b.setAttribute("aria-checked", String(on)); b.dataset.state = on ? "on" : "off"; });
       if (slider) {
@@ -129,7 +135,7 @@
       if(cpu)cpu.textContent=states[current][1]; if(pending)pending.textContent=states[current][2];
       if(description)description.textContent=states[current][3];
       times.forEach((b,i)=>b.setAttribute("aria-pressed",String(i===current)));
-      back.disabled=current===0;next.disabled=current===5;
+      disable(back,current===0);disable(next,current===5);
     }
     times.forEach((b,i)=>b.addEventListener("click",()=>{current=i;update();}));
     back.addEventListener("click",()=>{current=Math.max(0,current-1);update();});
@@ -158,7 +164,7 @@
     function update(){const s=states[current];if(counter)counter.textContent=`Étape ${current+1}/4`;
       if(phase)phase.textContent=s[0];if(code)code.textContent=s[1];if(pointer)pointer.textContent=s[2];
       if(description)description.textContent=s[3];if(terminal){terminal.textContent=s[4];terminal.style.whiteSpace="pre-line";}
-      back.disabled=current===0;next.disabled=current===3;
+      disable(back,current===0);disable(next,current===3);
     }
     back.addEventListener("click",()=>{current=Math.max(0,current-1);update();});next.addEventListener("click",()=>{current=Math.min(3,current+1);update();});update();
   }
@@ -168,9 +174,15 @@
     groups.forEach((group,i)=>$$('[role="radio"]',group).forEach((b,j)=>b.addEventListener("click",()=>{
       answers[i]=j;$$('[role="radio"]',group).forEach((r,k)=>{r.setAttribute("aria-checked",String(j===k));r.dataset.state=j===k?"checked":"unchecked";});
       if(score)score.textContent=`${answers.filter(a=>a>=0).length} / 4 répondues`;
-      if(check)check.disabled=answers.some(a=>a<0);
+      if(check)disable(check,answers.some(a=>a<0));
+      if(reset)disable(reset,answers.every(a=>a<0));
     })));
     const check=$$("button",quiz).find(b=>normal(b.textContent)==="Corriger mes réponses");
+    const reset=$$("button",quiz).find(b=>!b.getAttribute("role")&&!normal(b.textContent)&&b!==check);
+    if(reset){reset.setAttribute("aria-label","Réinitialiser le mini-test");reset.addEventListener("click",()=>{
+      answers.fill(-1);groups.forEach(g=>$$('[role="radio"]',g).forEach(r=>{r.setAttribute("aria-checked","false");r.dataset.state="unchecked";}));
+      if(score)score.textContent="0 / 4 répondues";$(".quiz-feedback",quiz)?.remove();disable(check,true);disable(reset,true);
+    });}
     check.addEventListener("click",()=>{let feedback=$(".quiz-feedback",quiz);if(!feedback){feedback=document.createElement("div");feedback.className="quiz-feedback";feedback.setAttribute("role","status");quiz.append(feedback);}
       const n=answers.filter((a,i)=>a===correct[i]).length;feedback.replaceChildren();const summary=document.createElement("strong");summary.textContent=`${n} / 4 bonnes réponses`;feedback.append(summary);
       groups.forEach((g,i)=>{const p=document.createElement("p");const option=$$('[role="radio"]',g)[correct[i]].closest("label");p.textContent=`${i+1}. ${normal(option.textContent)}`;feedback.append(p);});
