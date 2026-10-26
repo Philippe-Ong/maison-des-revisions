@@ -41,6 +41,8 @@ body { margin: 0; color: #f1f5f4; background: #101719; font: 15px/1.6 system-ui,
 .source-conversation .flex { display: flex; }
 .source-conversation .katex-mathml { position: absolute; clip: rect(1px,1px,1px,1px); padding: 0; border: 0; height: 1px; width: 1px; overflow: hidden; }
 .source-conversation [aria-label="Options du graphique"] { display: none; }
+.source-conversation .xoF3qW_Edges:empty { display: none !important; }
+.source-conversation [data-d-component="math"][data-d-block] { max-width: 100%; overflow-x: auto; overflow-y: hidden; }
 .source-conversation [data-copy-widget] button:not(:disabled) { cursor: pointer; }
 .source-conversation [data-copy-widget] button[aria-pressed="true"] { box-shadow: inset 0 0 0 1px #6eafff; }
 .source-conversation [role="radio"][aria-checked="true"] { outline: 1px solid #639ada; outline-offset: -1px; }

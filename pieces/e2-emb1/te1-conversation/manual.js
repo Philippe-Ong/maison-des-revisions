@@ -149,7 +149,7 @@
     const labels=$$("p",callback);
     const counter=labels.find(p=>normal(p.textContent)==="Étape 1/4");
     const phase=labels.find(p=>normal(p.textContent)==="Déclaration");
-    const code=$("code",callback);
+    const code=$("code",callback) || labels.find(p=>normal(p.textContent)==="Callback_t callback = NULL;");
     const pointer=labels.find(p=>normal(p.textContent)==="NULL");
     const description=labels.find(p=>p.textContent.includes("On crée le pointeur de fonction."));
     const terminal=labels.find(p=>normal(p.textContent)==="Aucun affichage");
@@ -168,6 +168,7 @@
     groups.forEach((group,i)=>$$('[role="radio"]',group).forEach((b,j)=>b.addEventListener("click",()=>{
       answers[i]=j;$$('[role="radio"]',group).forEach((r,k)=>{r.setAttribute("aria-checked",String(j===k));r.dataset.state=j===k?"checked":"unchecked";});
       if(score)score.textContent=`${answers.filter(a=>a>=0).length} / 4 répondues`;
+      if(check)check.disabled=answers.some(a=>a<0);
     })));
     const check=$$("button",quiz).find(b=>normal(b.textContent)==="Corriger mes réponses");
     check.addEventListener("click",()=>{let feedback=$(".quiz-feedback",quiz);if(!feedback){feedback=document.createElement("div");feedback.className="quiz-feedback";feedback.setAttribute("role","status");quiz.append(feedback);}
