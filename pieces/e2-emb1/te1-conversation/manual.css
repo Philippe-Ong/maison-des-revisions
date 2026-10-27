@@ -26,6 +26,7 @@ body { margin: 0; color: #f1f5f4; background: #101719; font: 15px/1.6 system-ui,
 .manual-toc a:hover, .manual-toc a:focus { color: #fff; text-decoration: underline; }
 .manual-toc [data-progression-texte] { display: block; color: #9aada5; font-size: 12px; margin-top: 8px; }
 .manual-chapter { min-width: 0; width: 100%; }
+#contenu { min-width: 0; }
 .manual-chapter[hidden], .manual-toc ol[hidden] { display: none !important; }
 .source-conversation { min-width: 0; width: 100%; max-width: 768px; margin: 0 auto; background: #000; border-radius: 14px; padding: 25px; overflow-wrap: anywhere; }
 .source-conversation > .puik-root { width: 100%; min-width: 0; font-family: system-ui, "Segoe UI", Helvetica, Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #eee; }
@@ -39,6 +40,60 @@ body { margin: 0; color: #f1f5f4; background: #101719; font: 15px/1.6 system-ui,
 .source-conversation .w-full { width: 100%; }
 .source-conversation .max-w-full { max-width: 100%; }
 .source-conversation .flex { display: flex; }
+.source-conversation [hidden] { display: none !important; }
+/* Les utilitaires de l'application source ne sont pas chargés sur le site. */
+.source-conversation [data-d-component="code_block"] {
+  position: relative; margin: 16px 0; max-width: 100%; min-width: 0;
+  background: #212121; border: 1px solid #ffffff0d; border-radius: 20px;
+  overflow: hidden; color: #fff;
+}
+.source-conversation [data-d-component="code_block"] div { min-width: 0; }
+.source-conversation [data-d-component="code_block"] .select-none.sticky { position: static; }
+.source-conversation [data-d-component="code_block"] .select-none.sticky > div {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 12px; min-height: 48px; padding: 6px 8px 6px 20px;
+  font: 500 14px/20px system-ui, "Segoe UI", sans-serif;
+}
+.source-conversation [data-d-component="code_block"] .select-none.sticky > div > div:first-child {
+  display: flex; align-items: center; gap: 10px;
+}
+.source-conversation [data-d-component="code_block"] button[aria-label="Copier"] {
+  display: inline-flex; align-items: center; justify-content: center;
+  position: static; width: 36px; height: 36px; padding: 8px;
+  border: 0; border-radius: 50%; background: transparent; color: #fff;
+  flex: 0 0 auto; cursor: pointer; pointer-events: auto;
+}
+.source-conversation [data-d-component="code_block"] button[aria-label="Copier"]:hover {
+  background: #ffffff1a;
+}
+.source-conversation [data-d-component="code_block"] button[aria-label="Copier"]:focus-visible {
+  outline: 2px solid #63a8f8; outline-offset: -2px;
+}
+.source-conversation [data-d-component="code_block"] .pointer-events-none.absolute:not(:has(button)) { display: none; }
+.source-conversation [data-d-component="code_block"] .pointer-events-none.absolute:has(button) {
+  position: absolute; top: 6px; right: 8px; z-index: 1;
+}
+.source-conversation [data-d-component="code_block"] .cm-editor {
+  display: flex; flex-direction: column; width: 100%; background: transparent;
+}
+.source-conversation [data-d-component="code_block"] .cm-scroller { width: 100%; overflow-x: auto; }
+.source-conversation [data-d-component="code_block"] pre {
+  display: block; width: max-content; min-width: 100%; margin: 0;
+  padding: 0 20px 12px; border: 0; background: transparent; color: #fff;
+  font: 14px/20px ui-monospace, "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  white-space: pre; overflow-wrap: normal; word-break: normal; tab-size: 4;
+}
+.source-conversation [data-d-component="code_block"]:not(:has(.select-none.sticky)) pre { padding-top: 48px; }
+.source-conversation [data-d-component="code_block"] pre code { font: inherit; background: transparent; }
+/* Palette CodeMirror relevée dans la conversation partagée. */
+.source-conversation [data-d-component="code_block"] .ͼl { color: #d8d8d8; }
+.source-conversation [data-d-component="code_block"] :is(.ͼm,.ͼv,.ͼw) { color: #63a8f8; }
+.source-conversation [data-d-component="code_block"] .ͼn { color: #f8a6c8; }
+.source-conversation [data-d-component="code_block"] :is(.ͼo,.ͼu) { color: #f9dc78; }
+.source-conversation [data-d-component="code_block"] :is(.ͼp,.ͼx) { color: #ff8583; }
+.source-conversation [data-d-component="code_block"] :is(.ͼq,.ͼs) { color: #f1a275; }
+.source-conversation [data-d-component="code_block"] .ͼr { color: #83d197; }
+.source-conversation [data-d-component="code_block"] .ͼt { color: #b897f4; }
 .source-conversation .katex-mathml { position: absolute; clip: rect(1px,1px,1px,1px); padding: 0; border: 0; height: 1px; width: 1px; overflow: hidden; }
 .source-conversation [aria-label="Options du graphique"] { display: none; }
 .source-conversation .xoF3qW_Edges:empty { display: none !important; }
